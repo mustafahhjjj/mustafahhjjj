@@ -1,6 +1,6 @@
 
 const gradeProfiles = [
-  { id: 'pre-k', label: 'Pre-K', stage: 'Okul öncesi', color: '#f97316', href: '#beceri-ara', topics: 'Renkler, şekiller, sayı farkındalığı, dikkat oyunları', counts: { Matematik: 36, Türkçe: 28, Fen: 16 }, tags: ['pre-k', 'okul öncesi', 'renkler', 'şekiller', 'sayılar'] },
+  { id: 'pre-k', label: 'Okul Öncesi', stage: 'Okul öncesi', color: '#f97316', href: '#beceri-ara', topics: 'Renkler, şekiller, sayı farkındalığı, dikkat oyunları', counts: { Matematik: 36, Türkçe: 28, Fen: 16 }, tags: ['pre-k', 'okul öncesi', 'renkler', 'şekiller', 'sayılar'] },
   { id: 'anaokulu', label: 'Anaokulu', stage: 'Okul öncesi', color: '#f59e0b', href: '#beceri-ara', topics: 'Ses farkındalığı, örüntüler, temel sayma, çevremiz', counts: { Matematik: 48, Türkçe: 42, Fen: 20 }, tags: ['anaokulu', 'okul öncesi', 'ses', 'örüntü', 'çevremiz'] },
   { id: '1', label: '1. Sınıf', stage: 'İlkokul', color: '#22c55e', href: 'pages/sinif-1.html', topics: 'Toplama, çıkarma, okuma-anlama, ses bilgisi, çevremiz', counts: { Matematik: 120, Türkçe: 95, Fen: 40 }, tags: ['1. sınıf', 'birinci sınıf', 'toplama', 'çıkarma', 'okuma', 'ses bilgisi', 'çevremiz'] },
   { id: '2', label: '2. Sınıf', stage: 'İlkokul', color: '#14b8a6', href: 'pages/sinif-2.html', topics: 'Ritmik sayma, problemler, akıcı okuma, yazım kuralları', counts: { Matematik: 132, Türkçe: 104, Fen: 46 }, tags: ['2. sınıf', 'ikinci sınıf', 'ritmik sayma', 'problemler', 'okuma', 'yazım'] },
@@ -50,12 +50,18 @@ const courses = [
 
 
 const skillSuggestions = [
-  { icon: '🧮', title: 'Kesirleri karşılaştırma', grade: '4. Sınıf', lesson: 'Matematik', href: 'pages/sinif-4.html', tags: ['kesirler', 'matematik', 'payda'] },
-  { icon: '📖', title: 'Paragrafta ana fikir', grade: '5. Sınıf', lesson: 'Türkçe', href: 'pages/sinif-5.html', tags: ['okuma', 'ana fikir', 'paragraf'] },
-  { icon: '🚀', title: 'LGS problem çözme', grade: '8. Sınıf', lesson: 'LGS Hazırlık', href: 'pages/sinif-8.html', tags: ['lgs', 'problem', 'beceri'] },
-  { icon: '🔬', title: 'Kuvvet ve hareket', grade: '6. Sınıf', lesson: 'Fen Bilimleri', href: 'pages/sinif-6.html', tags: ['fen', 'kuvvet', 'hareket'] },
-  { icon: '🎓', title: 'TYT temel kavramlar', grade: '12. Sınıf', lesson: 'TYT/AYT', href: 'pages/sinif-12.html', tags: ['tyt', 'ayt', 'matematik'] },
-  { icon: '🌍', title: 'Harita okuryazarlığı', grade: '7. Sınıf', lesson: 'Sosyal Bilgiler', href: 'pages/sinif-7.html', tags: ['harita', 'sosyal', 'coğrafya'] }
+  { icon: '➕', title: 'Toplama', grade: '1. Sınıf', lesson: 'Matematik', href: 'pages/sinif-1.html', tags: ['toplama', 'matematik', 'işlem'] },
+  { icon: '➖', title: 'Çıkarma', grade: '1. Sınıf', lesson: 'Matematik', href: 'pages/sinif-1.html', tags: ['çıkarma', 'matematik', 'işlem'] },
+  { icon: '🧮', title: 'Kesirler', grade: '4. Sınıf', lesson: 'Matematik', href: 'pages/sinif-4.html', tags: ['kesirler', 'pay', 'payda'] },
+  { icon: '📖', title: 'Okuma anlama', grade: '3. Sınıf', lesson: 'Türkçe', href: 'pages/sinif-3.html', tags: ['okuma', 'anlama', 'metin'] },
+  { icon: '📝', title: 'Paragraf', grade: '5. Sınıf', lesson: 'Türkçe', href: 'pages/sinif-5.html', tags: ['paragraf', 'ana fikir', 'okuma'] },
+  { icon: '🔤', title: 'Ses bilgisi', grade: '1. Sınıf', lesson: 'Türkçe', href: 'pages/sinif-1.html', tags: ['ses bilgisi', 'harf', 'hece'] },
+  { icon: '🌱', title: 'Canlılar', grade: '3. Sınıf', lesson: 'Fen Bilimleri', href: 'pages/sinif-3.html', tags: ['canlılar', 'fen', 'doğa'] },
+  { icon: '💧', title: 'Maddenin halleri', grade: '4. Sınıf', lesson: 'Fen Bilimleri', href: 'pages/sinif-4.html', tags: ['madde', 'katı', 'sıvı', 'gaz'] },
+  { icon: '🗺️', title: 'Türkiye haritası', grade: '4. Sınıf', lesson: 'Sosyal Bilgiler', href: 'pages/sinif-4.html', tags: ['türkiye haritası', 'harita', 'sosyal'] },
+  { icon: '🧩', title: 'Problemler', grade: '8. Sınıf', lesson: 'Matematik', href: 'pages/sinif-8.html', tags: ['problemler', 'problem', 'lgs'] },
+  { icon: '⚖️', title: 'Denklem', grade: '7. Sınıf', lesson: 'Matematik', href: 'pages/sinif-7.html', tags: ['denklem', 'cebir', 'eşitlik'] },
+  { icon: '📐', title: 'Geometri', grade: '6. Sınıf', lesson: 'Matematik', href: 'pages/sinif-6.html', tags: ['geometri', 'açı', 'şekil'] }
 ];
 
 const panels = [
@@ -134,8 +140,9 @@ function renderGradeCards(query = '') {
       <strong>${profile.label}</strong>
       <p>${profile.topics}</p>
       <div class="grade-meta">
-        ${Object.entries(profile.counts).map(([lesson, count]) => `<span>${lesson}: <b>${count} beceri</b></span>`).join('')}
+        ${Object.entries(profile.counts).map(([lesson, count]) => `<span>${lesson}: <b>${count}</b></span>`).join('')}
       </div>
+      <em class="grade-cta">Becerileri gör →</em>
     </a>
   `).join('');
   if (empty) empty.hidden = matches.length > 0;
@@ -150,11 +157,19 @@ function renderHome() {
 
 function renderSkillSearch() {
   const input = document.querySelector('#skill-search');
+  const globalInput = document.querySelector('#global-skill-search');
   const button = document.querySelector('#skill-search-button');
   const root = document.querySelector('#skill-results');
   if (!input || !button || !root) return;
 
-  function draw(query = '') {
+  function syncInputs(value, source) {
+    [input, globalInput].forEach((field) => {
+      if (field && field !== source) field.value = value;
+    });
+  }
+
+  function draw(query = '', source = null) {
+    syncInputs(query, source);
     const normalized = normalizeText(query);
     const matches = skillSuggestions.filter((skill) => {
       const haystack = [skill.title, skill.grade, skill.lesson, ...skill.tags].join(' ');
@@ -162,7 +177,7 @@ function renderSkillSearch() {
     });
     const gradeMatches = renderGradeCards(query);
     if (normalized && !matches.length && !gradeMatches.length) {
-      root.innerHTML = '<p class="empty-state">Uygun beceri bulunamadı</p>';
+      root.innerHTML = '<p class="empty-state">Uygun beceri bulunamadı.</p>';
       return;
     }
     const list = matches.length ? matches : skillSuggestions.slice(0, 6);
@@ -176,16 +191,20 @@ function renderSkillSearch() {
     `).join('');
   }
 
-  input.addEventListener('input', () => draw(input.value));
-  button.addEventListener('click', () => {
-    draw(input.value);
-    document.querySelector('#siniflar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  [input, globalInput].forEach((field) => {
+    if (!field) return;
+    field.addEventListener('input', () => draw(field.value, field));
+    field.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        draw(field.value, field);
+        document.querySelector('#beceri-ara')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
-  input.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      draw(input.value);
-    }
+  button.addEventListener('click', () => {
+    draw(input.value, input);
+    document.querySelector('#siniflar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
   draw();
 }
