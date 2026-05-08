@@ -3,37 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="e-kurs.com; K-12 öğrencileri için kişiselleştirilmiş ders, beceri, ölçme ve raporlama deneyimi sunan modern öğrenme platformudur.">
-  <title>e-kurs.com | Kişiselleştirilmiş K-12 Öğrenme</title>
+  <meta name="description" content="e-kurs.com; Türkiye K12 öğrencileri için ders, beceri, test, tekrar ve gelişim takibini bir araya getiren modern öğrenme ana sayfası.">
+  <title>e-kurs | K12 Öğrenme</title>
   <style>
     :root {
-      --green: #12a84f;
-      --green-dark: #078140;
-      --green-soft: #eaf9ef;
-      --blue: #168bd6;
-      --blue-dark: #0d67a8;
-      --blue-soft: #e9f6ff;
-      --orange: #f8a51b;
-      --orange-soft: #fff4d8;
-      --purple: #7b5ce1;
-      --pink: #f2649b;
-      --ink: #183247;
-      --muted: #5d7182;
-      --line: #dfeaf1;
-      --paper: #ffffff;
-      --bg: #f7fbfd;
-      --shadow: 0 18px 44px rgba(33, 64, 86, .12);
-      --max: 1188px;
+      --green: #4dbb00;
+      --green-dark: #2f8f00;
+      --blue: #12a8e8;
+      --orange: #ff9800;
+      --purple: #9c4dcc;
+      --bg: #f5fbef;
+      --text: #17324d;
+      --muted: #5b7188;
+      --white: #ffffff;
+      --line: rgba(23, 50, 77, .12);
+      --shadow: 0 18px 42px rgba(23, 50, 77, .14);
+      --soft-shadow: 0 10px 26px rgba(23, 50, 77, .1);
+      --radius: 28px;
+      --max: 1200px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 132px; }
     body {
       margin: 0;
-      color: var(--ink);
+      color: var(--text);
       background: var(--bg);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.45;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
     }
     body.modal-open { overflow: hidden; }
     a { color: inherit; text-decoration: none; }
@@ -43,813 +40,897 @@
 
     .skip-link {
       position: absolute;
-      top: -52px;
       left: 16px;
-      z-index: 200;
+      top: -54px;
+      z-index: 1000;
       padding: 10px 14px;
-      border-radius: 6px;
-      color: #fff;
-      background: var(--blue-dark);
-      font-weight: 700;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--text);
+      font-weight: 800;
     }
-    .skip-link:focus { top: 12px; }
+    .skip-link:focus { top: 14px; }
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 3px 16px rgba(24, 50, 71, .07);
+      background: var(--green);
+      box-shadow: 0 8px 0 rgba(47, 143, 0, .35), 0 14px 26px rgba(23, 50, 77, .16);
     }
-    .header-inner,
-    .mega-inner,
-    .section,
-    .footer-inner {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
+
     .header-inner {
-      min-height: 76px;
+      width: min(var(--max), calc(100% - 32px));
+      min-height: 92px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto minmax(220px, 1fr) auto;
       align-items: center;
-      gap: 24px;
+      gap: 18px;
     }
+
     .brand {
       display: inline-flex;
-      align-items: center;
-      gap: 9px;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1;
+      color: var(--white);
+      min-width: 132px;
+      text-shadow: 0 2px 0 rgba(47, 143, 0, .45);
+    }
+    .brand strong {
+      font-size: clamp(1.9rem, 3vw, 2.55rem);
+      font-weight: 1000;
+      letter-spacing: -.06em;
+    }
+    .brand small {
+      margin-top: 5px;
+      font-size: .82rem;
       font-weight: 900;
-      color: var(--green-dark);
-      letter-spacing: -.03em;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      opacity: .92;
     }
-    .brand-mark {
-      width: 47px;
-      height: 47px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--green), #39c971);
-      box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .1);
-      font-size: 1rem;
-    }
-    .brand strong { font-size: 1.8rem; }
-    .main-nav { display: flex; align-items: center; gap: 6px; }
-    .main-nav a {
-      padding: 12px 13px;
+
+    .header-search { position: relative; }
+    .header-search input {
+      width: 100%;
+      min-height: 58px;
+      padding: 0 54px 0 24px;
+      border: 3px solid rgba(255, 255, 255, .8);
       border-radius: 999px;
-      color: #2d4c63;
+      outline: 0;
+      color: var(--text);
+      background: var(--white);
+      box-shadow: inset 0 -4px 0 rgba(18, 168, 232, .1), 0 9px 18px rgba(23, 50, 77, .14);
+      font-size: 1.05rem;
       font-weight: 800;
-      font-size: .98rem;
     }
-    .main-nav a:hover,
-    .main-nav a:focus { background: var(--blue-soft); color: var(--blue-dark); }
-    .header-actions { display: flex; align-items: center; gap: 10px; }
-    .search-pill {
-      width: 48px;
-      height: 48px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: #fff;
-      position: relative;
+    .header-search input::placeholder { color: #6a8298; }
+    .search-icon {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      pointer-events: none;
     }
-    .search-pill::before {
+    .search-icon::before {
       content: "";
       position: absolute;
       width: 15px;
       height: 15px;
-      left: 14px;
-      top: 13px;
-      border: 3px solid var(--blue);
+      border: 4px solid var(--blue);
       border-radius: 50%;
+      left: 1px;
+      top: 1px;
     }
-    .search-pill::after {
+    .search-icon::after {
       content: "";
       position: absolute;
-      width: 10px;
-      height: 3px;
-      left: 28px;
-      top: 30px;
+      width: 14px;
+      height: 5px;
       border-radius: 999px;
       background: var(--blue);
+      right: 1px;
+      bottom: 3px;
       transform: rotate(45deg);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-toggle {
+      display: none;
+      width: 50px;
+      height: 50px;
+      border: 0;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .22);
+    }
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      border-radius: 999px;
+      background: var(--white);
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      min-height: 46px;
+      min-height: 48px;
       padding: 12px 20px;
       border: 0;
-      border-radius: 5px;
-      font-weight: 900;
+      border-radius: 999px;
+      font-weight: 1000;
       text-align: center;
-      transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+      touch-action: manipulation;
     }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { color: #fff; background: var(--green); box-shadow: 0 5px 0 var(--green-dark); }
-    .btn-primary:hover { background: #0f9749; }
-    .btn-secondary { color: #fff; background: var(--orange); box-shadow: 0 5px 0 #d27b00; }
-    .btn-ghost { color: var(--blue-dark); background: #fff; border: 1px solid var(--line); }
-    .menu-toggle { display: none; width: 46px; height: 46px; border: 0; border-radius: 7px; background: var(--blue-soft); }
-    .menu-toggle span { display: block; width: 23px; height: 3px; margin: 5px auto; border-radius: 999px; background: var(--blue-dark); }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-login {
+      color: var(--white);
+      background: rgba(47, 143, 0, .55);
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .38);
+    }
+    .btn-login:hover { background: var(--green-dark); }
+    .btn-member, .btn-primary {
+      color: var(--white);
+      background: var(--orange);
+      box-shadow: 0 6px 0 #d87600, 0 12px 18px rgba(23, 50, 77, .14);
+    }
+    .btn-member:hover, .btn-primary:hover { background: #ffad26; }
+    .btn-green {
+      color: var(--white);
+      background: var(--green);
+      box-shadow: 0 7px 0 var(--green-dark), 0 16px 24px rgba(47, 143, 0, .25);
+    }
+    .btn-green:hover { background: #59c70a; }
 
-    .mega-strip { background: #f2f8fc; border-bottom: 1px solid var(--line); }
-    .mega-inner {
-      min-height: 50px;
+    .main-nav {
+      border-top: 1px solid rgba(255, 255, 255, .26);
+      background: var(--green-dark);
+    }
+    .nav-inner {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: 52px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 28px;
-      overflow-x: auto;
-      color: #436074;
-      font-size: .92rem;
-      font-weight: 800;
+      gap: 10px;
+    }
+    .main-nav a {
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: var(--white);
+      font-weight: 1000;
       white-space: nowrap;
     }
-    .mega-inner span { color: var(--green-dark); }
+    .main-nav a:hover, .main-nav a:focus {
+      background: rgba(255, 255, 255, .2);
+      outline: 0;
+    }
 
     .hero {
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 17% 18%, rgba(255,255,255,.9) 0 80px, transparent 82px),
-        linear-gradient(180deg, #e8f7ff 0%, #fff 100%);
+        radial-gradient(circle at 13% 16%, rgba(255,255,255,.86) 0 68px, transparent 70px),
+        radial-gradient(circle at 86% 18%, rgba(255,255,255,.72) 0 92px, transparent 94px),
+        linear-gradient(135deg, #e8ffd8 0%, #e9f9ff 48%, #fff7df 100%);
     }
-    .hero::before,
-    .hero::after {
+    .hero::before, .hero::after {
       content: "";
       position: absolute;
-      border-radius: 999px;
-      background: rgba(255,255,255,.72);
-      box-shadow: 0 16px 35px rgba(22,139,214,.12);
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 120px;
+      background-repeat: repeat-x;
+      background-size: 520px 120px;
+      pointer-events: none;
     }
-    .hero::before { width: 320px; height: 96px; left: -120px; top: 120px; }
-    .hero::after { width: 380px; height: 118px; right: -150px; bottom: 42px; }
+    .hero::before {
+      background-image: radial-gradient(ellipse at 50% 100%, #8eda45 0 59%, transparent 60%);
+      opacity: .55;
+      transform: translateX(-80px);
+    }
+    .hero::after {
+      height: 86px;
+      background-size: 420px 86px;
+      background-image: radial-gradient(ellipse at 50% 100%, #65c51f 0 58%, transparent 60%);
+      opacity: .72;
+    }
+    .floating-shape {
+      position: absolute;
+      z-index: 0;
+      display: grid;
+      place-items: center;
+      width: 62px;
+      height: 62px;
+      border-radius: 22px;
+      color: var(--white);
+      font-size: 1.9rem;
+      font-weight: 1000;
+      box-shadow: var(--soft-shadow);
+      animation: float 5.5s ease-in-out infinite;
+    }
+    .shape-1 { left: 6%; top: 31%; background: var(--orange); transform: rotate(-10deg); }
+    .shape-2 { right: 8%; top: 35%; background: var(--purple); animation-delay: .8s; }
+    .shape-3 { right: 18%; bottom: 18%; background: var(--blue); animation-delay: 1.4s; }
+    @keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+
     .hero-inner {
       position: relative;
       z-index: 1;
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
-      min-height: 570px;
-      display: grid;
-      grid-template-columns: minmax(0, .92fr) minmax(390px, 1.08fr);
-      align-items: center;
-      gap: 36px;
-      padding: 54px 0 64px;
+      padding: 76px 0 146px;
+      text-align: center;
     }
-    .hero h1 {
-      margin-bottom: 18px;
-      color: #253c52;
-      font-size: clamp(3rem, 7.4vw, 6.5rem);
-      line-height: .9;
-      letter-spacing: -.075em;
-    }
-    .hero h1 span { display: block; color: var(--green); }
-    .hero-copy {
-      max-width: 560px;
-      margin-bottom: 26px;
-      color: var(--muted);
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-    .questions-counter {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 22px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: #fff;
-      box-shadow: var(--shadow);
-      color: var(--blue-dark);
-      font-weight: 900;
-    }
-    .questions-counter i {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 19px 0 0 var(--green), 38px 0 0 var(--blue);
-    }
-
-    .learning-board {
-      position: relative;
-      display: grid;
-      gap: 18px;
-      min-height: 455px;
-    }
-    .subject-card {
-      display: grid;
-      grid-template-columns: 86px 1fr;
-      align-items: center;
-      gap: 18px;
-      padding: 18px;
-      border: 1px solid #e2edf4;
-      border-radius: 18px;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-    .subject-card:nth-child(2) { margin-left: 44px; }
-    .subject-card:nth-child(3) { margin-right: 42px; }
-    .subject-card:nth-child(4) { margin-left: 78px; }
-    .subject-icon {
-      width: 78px;
-      height: 78px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: #fff;
-      background: var(--tone, var(--blue));
-      box-shadow: inset 0 -9px 0 rgba(0,0,0,.1);
-      font-size: 2.1rem;
-      font-weight: 900;
-    }
-    .subject-card h2 { margin-bottom: 4px; font-size: 1.35rem; color: #233e52; }
-    .subject-card p { margin-bottom: 9px; color: var(--muted); font-weight: 700; }
-    .subject-links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .subject-links span { color: var(--blue-dark); font-weight: 900; font-size: .9rem; }
-
-    .section { padding: 70px 0; }
-    .section-head { max-width: 810px; margin: 0 auto 34px; text-align: center; }
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
+      padding: 9px 16px;
+      border-radius: 999px;
       color: var(--green-dark);
-      font-size: .82rem;
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--soft-shadow);
+      font-weight: 1000;
     }
-    .eyebrow::before,
-    .eyebrow::after { content: ""; width: 24px; height: 4px; border-radius: 999px; background: var(--orange); }
-    .section-head h2 {
-      margin-bottom: 10px;
-      font-size: clamp(2rem, 4vw, 3.45rem);
-      line-height: 1.02;
-      letter-spacing: -.045em;
+    .hero h1 {
+      max-width: 900px;
+      margin: 0 auto 16px;
+      font-size: clamp(2.35rem, 6vw, 5.25rem);
+      line-height: .98;
+      letter-spacing: -.055em;
     }
-    .section-head p { color: var(--muted); font-size: 1.08rem; font-weight: 700; }
-
-    .search-panel {
-      max-width: 930px;
-      margin: 0 auto;
-      padding: 18px;
-      border-radius: 18px;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-    .search-field { position: relative; display: block; }
-    .search-field input {
-      width: 100%;
-      min-height: 64px;
-      padding: 0 20px 0 58px;
-      border: 2px solid var(--line);
-      border-radius: 9px;
-      outline: 0;
-      color: var(--ink);
-      background: #fbfdff;
-      font-size: 1.08rem;
+    .hero-copy {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      color: #3f5c73;
+      font-size: clamp(1.08rem, 2vw, 1.45rem);
       font-weight: 800;
     }
-    .search-field input:focus { border-color: var(--blue); box-shadow: 0 0 0 5px rgba(22,139,214,.12); }
-    .search-field::before {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      width: 16px;
-      height: 16px;
-      left: 22px;
-      top: 21px;
-      border: 3px solid var(--blue);
-      border-radius: 50%;
-    }
-    .search-field::after {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      width: 10px;
-      height: 3px;
-      left: 38px;
-      top: 39px;
-      background: var(--blue);
-      transform: rotate(45deg);
-    }
-
-    .grade-list { display: grid; gap: 14px; }
-    .grade-card {
+    .cloud-grid {
       display: grid;
-      grid-template-columns: 74px 1.15fr 1.15fr auto;
-      align-items: center;
-      gap: 18px;
-      padding: 18px 20px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fff;
-      box-shadow: 0 8px 24px rgba(24,50,71,.06);
-      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin: 0 auto 34px;
     }
-    .grade-card:hover { transform: translateY(-2px); border-color: #b6d5e8; box-shadow: var(--shadow); }
-    .grade-badge {
+    .cloud-card {
+      position: relative;
+      min-height: 210px;
+      padding: 54px 28px 28px;
+      border: 2px solid rgba(255,255,255,.82);
+      border-radius: 52px;
+      background: rgba(255,255,255,.88);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .cloud-card::before, .cloud-card::after {
+      content: "";
+      position: absolute;
+      top: -28px;
+      border-radius: 50%;
+      background: inherit;
+      border-top: 2px solid rgba(255,255,255,.9);
+    }
+    .cloud-card::before { width: 92px; height: 92px; left: 26px; }
+    .cloud-card::after { width: 118px; height: 118px; right: 32px; top: -42px; }
+    .cloud-card:hover { transform: translateY(-8px) rotate(-.4deg); box-shadow: 0 24px 50px rgba(23, 50, 77, .18); }
+    .cloud-icon {
+      position: relative;
+      z-index: 1;
+      display: inline-grid;
+      place-items: center;
+      width: 62px;
+      height: 62px;
+      margin-bottom: 14px;
+      border-radius: 21px;
+      color: var(--white);
+      font-size: 1.7rem;
+      background: var(--blue);
+      box-shadow: inset 0 -5px 0 rgba(0,0,0,.12);
+    }
+    .cloud-card:nth-child(2) .cloud-icon { background: var(--purple); }
+    .cloud-card:nth-child(3) .cloud-icon { background: var(--orange); }
+    .cloud-card h3, .cloud-card p { position: relative; z-index: 1; }
+    .cloud-card h3 { margin-bottom: 9px; font-size: 1.28rem; }
+    .cloud-card p { margin-bottom: 0; color: var(--muted); font-weight: 700; }
+
+    .section {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 72px 0;
+    }
+    .section-header {
+      max-width: 790px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+    .section-kicker {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: #e8f8df;
+      font-size: .92rem;
+      font-weight: 1000;
+    }
+    .section h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.06;
+      letter-spacing: -.04em;
+    }
+    .section-header p { color: var(--muted); font-size: 1.12rem; font-weight: 750; }
+
+    .grades-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .grade-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 360px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--soft-shadow);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .grade-card[hidden] { display: none; }
+    .grade-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(18, 168, 232, .38);
+      box-shadow: var(--shadow);
+    }
+    .grade-top {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 16px;
+    }
+    .badge {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
       width: 64px;
       height: 64px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: #fff;
-      background: var(--accent, var(--green));
-      box-shadow: inset 0 -8px 0 rgba(0,0,0,.12);
+      border-radius: 22px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      box-shadow: inset 0 -6px 0 rgba(0,0,0,.13);
       font-size: 1.28rem;
+      font-weight: 1000;
+    }
+    .grade-card:nth-child(3n+1) .badge { background: linear-gradient(135deg, var(--green), #8eda45); }
+    .grade-card:nth-child(3n+2) .badge { background: linear-gradient(135deg, var(--blue), #71d7ff); }
+    .grade-card:nth-child(3n) .badge { background: linear-gradient(135deg, var(--orange), var(--purple)); }
+    .grade-card h3 { margin-bottom: 3px; font-size: 1.45rem; }
+    .grade-card .desc { color: var(--muted); font-weight: 700; }
+    .subjects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 18px;
+      padding: 0;
+      list-style: none;
+    }
+    .subjects li {
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: #315169;
+      background: #eef8ff;
+      font-size: .9rem;
       font-weight: 900;
     }
-    .grade-card h3 { margin-bottom: 2px; font-size: 1.32rem; }
-    .grade-card p { margin-bottom: 0; color: var(--muted); font-weight: 700; }
-    .course-pills { display: flex; gap: 8px; flex-wrap: wrap; }
-    .course-pills span { padding: 6px 10px; border-radius: 999px; background: var(--blue-soft); color: var(--blue-dark); font-size: .82rem; font-weight: 900; }
-    .grade-cta { color: var(--green-dark); font-weight: 900; white-space: nowrap; }
-
-    .empty-message {
-      margin: 18px 0 0;
-      padding: 14px;
-      border-radius: 9px;
-      text-align: center;
-      color: #8a4e00;
-      background: var(--orange-soft);
-      font-weight: 900;
-    }
-
-    .feature-band { background: #fff; }
-    .feature-grid {
+    .stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: auto;
+      margin-bottom: 18px;
+    }
+    .stat {
+      padding: 13px;
+      border-radius: 18px;
+      background: #f7fbff;
+      border: 1px solid var(--line);
+    }
+    .stat strong { display: block; color: var(--green-dark); font-size: 1.24rem; line-height: 1; }
+    .stat span { color: var(--muted); font-size: .86rem; font-weight: 900; }
+    .card-btn {
+      width: 100%;
+      color: var(--white);
+      background: var(--green);
+      box-shadow: 0 5px 0 var(--green-dark);
+    }
+    .empty-state {
+      display: none;
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: 24px;
+      color: #8a4d00;
+      background: #fff4d9;
+      border: 1px solid rgba(255, 152, 0, .25);
+      text-align: center;
+      font-weight: 1000;
+    }
+    .empty-state.show { display: block; }
+
+    .feature-band {
+      background:
+        radial-gradient(circle at top left, rgba(18,168,232,.14), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(77,187,0,.16), transparent 36%),
+        #ffffff;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
     }
     .feature-card {
-      min-height: 280px;
-      padding: 26px;
+      position: relative;
+      overflow: hidden;
+      min-height: 250px;
+      padding: 34px;
+      border-radius: 32px;
+      color: var(--text);
+      background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 18px;
-      background: linear-gradient(180deg, #fff 0%, #f7fbfd 100%);
-      box-shadow: 0 12px 30px rgba(24,50,71,.07);
+      box-shadow: var(--soft-shadow);
     }
-    .feature-card .subject-icon { margin-bottom: 22px; width: 74px; height: 74px; font-size: 1.6rem; }
-    .feature-card h3 { margin-bottom: 9px; font-size: 1.45rem; }
-    .feature-card p { color: var(--muted); font-weight: 700; }
-    .feature-card a { color: var(--blue-dark); font-weight: 900; }
-
-    .plans-wrap {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 22px;
-      align-items: stretch;
+    .feature-card::after {
+      content: attr(data-icon);
+      position: absolute;
+      right: 22px;
+      bottom: -18px;
+      color: rgba(18,168,232,.12);
+      font-size: 8rem;
+      line-height: 1;
     }
-    .plans-copy,
-    .plans-list {
+    .feature-card h2 { position: relative; z-index: 1; margin-bottom: 12px; font-size: clamp(1.65rem, 3vw, 2.55rem); }
+    .feature-card p { position: relative; z-index: 1; max-width: 570px; color: var(--muted); font-size: 1.08rem; font-weight: 750; }
+    .feature-label {
+      position: relative;
+      z-index: 1;
+      display: inline-grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 18px;
       border-radius: 20px;
-      border: 1px solid var(--line);
-      background: #fff;
-      box-shadow: var(--shadow);
+      color: var(--white);
+      background: var(--blue);
+      box-shadow: inset 0 -5px 0 rgba(0,0,0,.12);
+      font-size: 1.65rem;
     }
-    .plans-copy { padding: 34px; background: linear-gradient(135deg, #fff, var(--green-soft)); }
-    .plans-copy h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.02; letter-spacing: -.045em; }
-    .plans-copy p { color: var(--muted); font-weight: 700; font-size: 1.06rem; }
-    .plans-list { padding: 16px; display: grid; gap: 12px; }
-    .plan-row { display: grid; grid-template-columns: auto 1fr; gap: 14px; padding: 16px; border-radius: 14px; }
-    .plan-row:hover { background: #f4f9fc; }
-    .plan-row h3 { margin-bottom: 4px; }
-    .plan-row p { margin-bottom: 0; color: var(--muted); font-weight: 700; }
-    .mini-icon { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--tone, var(--blue)); font-weight: 900; }
+    .feature-card:nth-child(2) .feature-label { background: var(--green); }
+    .feature-card:nth-child(3) .feature-label { background: var(--purple); }
+    .feature-card:nth-child(4) .feature-label { background: var(--orange); }
 
-    .impact {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .footer {
+      padding: 34px 16px;
+      color: var(--white);
+      background: var(--text);
+      text-align: center;
+      font-weight: 800;
     }
-    .impact-card { padding: 24px; border-radius: 18px; color: #fff; background: var(--tone, var(--green)); box-shadow: var(--shadow); }
-    .impact-card strong { display: block; margin-bottom: 8px; font-size: 2.05rem; line-height: 1; }
-    .impact-card span { font-weight: 800; opacity: .95; }
 
-    .cta-card {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 20px;
-      padding: 32px;
-      border-radius: 20px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--blue-dark), var(--green));
-      box-shadow: var(--shadow);
-    }
-    .cta-card h2 { margin-bottom: 6px; font-size: clamp(1.9rem, 4vw, 3.1rem); letter-spacing: -.04em; line-height: 1.03; }
-    .cta-card p { margin-bottom: 0; max-width: 720px; font-weight: 700; opacity: .92; }
-
-    .site-footer { margin-top: 36px; color: #cfe5f1; background: #183247; }
-    .footer-inner {
-      display: grid;
-      grid-template-columns: 1.25fr repeat(3, 1fr);
-      gap: 26px;
-      padding: 42px 0;
-    }
-    .footer-inner .brand { color: #fff; }
-    .footer-inner p { color: #b8cedb; font-weight: 700; }
-    .footer-inner h3 { color: #fff; margin-bottom: 12px; }
-    .footer-inner nav { display: grid; align-content: start; gap: 9px; }
-    .footer-inner a:hover { color: #fff; text-decoration: underline; }
-
-    .modal-backdrop {
+    .modal {
       position: fixed;
       inset: 0;
-      z-index: 300;
-      display: grid;
-      place-items: center;
-      padding: 18px;
-      background: rgba(24,50,71,.58);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(13, 31, 47, .58);
+      backdrop-filter: blur(5px);
     }
-    .modal-backdrop[hidden] { display: none; }
-    .modal {
-      width: min(520px, 100%);
-      border-radius: 18px;
-      background: #fff;
-      box-shadow: 0 24px 70px rgba(0,0,0,.28);
-      padding: 24px;
+    .modal.open { display: flex; }
+    .modal-card {
+      width: min(480px, 100%);
+      padding: 28px;
+      border-radius: 30px;
+      background: var(--white);
+      box-shadow: 0 28px 70px rgba(0,0,0,.28);
     }
-    .modal-head { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
-    .modal-head h2 { margin-bottom: 4px; font-size: 1.8rem; }
+    .modal-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .modal-head h2 { margin-bottom: 4px; font-size: 2rem; letter-spacing: -.03em; }
     .modal-head p { margin-bottom: 0; color: var(--muted); font-weight: 700; }
-    .close-modal { width: 40px; height: 40px; border: 0; border-radius: 50%; color: #fff; background: var(--ink); font-size: 1.5rem; }
+    .icon-close {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      color: var(--text);
+      background: #eef6fb;
+      font-size: 1.45rem;
+      font-weight: 1000;
+    }
     .form-grid { display: grid; gap: 14px; }
-    .form-grid label { display: grid; gap: 7px; color: #2d4c63; font-weight: 900; }
-    .form-grid input,
-    .form-grid select { min-height: 48px; border: 2px solid var(--line); border-radius: 8px; padding: 0 12px; outline: 0; }
-    .form-grid input:focus,
-    .form-grid select:focus { border-color: var(--blue); }
-    .modal-note { margin: 14px 0 0; color: var(--green-dark); font-weight: 900; }
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      color: #334d63;
+      font-weight: 1000;
+    }
+    .field input, .field select {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 14px;
+      border: 2px solid var(--line);
+      border-radius: 16px;
+      color: var(--text);
+      background: #fbfdff;
+      outline: 0;
+      font-weight: 800;
+    }
+    .field input:focus, .field select:focus { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(18,168,232,.12); }
+    .modal-actions { display: flex; gap: 10px; margin-top: 18px; }
+    .btn-close { color: var(--text); background: #eef3f7; }
 
     @media (max-width: 980px) {
-      .header-inner { grid-template-columns: auto auto 1fr; }
-      .menu-toggle { display: inline-block; order: 2; }
-      .main-nav {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 76px;
-        display: none;
-        padding: 12px 16px 18px;
-        background: #fff;
-        border-bottom: 1px solid var(--line);
-        box-shadow: 0 18px 35px rgba(24,50,71,.12);
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .main-nav.open { display: flex; }
-      .header-actions { justify-self: end; }
-      .hero-inner { grid-template-columns: 1fr; min-height: auto; }
-      .learning-board { min-height: 0; }
-      .subject-card:nth-child(n) { margin: 0; }
-      .grade-card { grid-template-columns: 70px 1fr; }
-      .grade-cta { grid-column: 2; }
-      .feature-grid,
-      .plans-wrap,
-      .impact,
-      .cta-card,
-      .footer-inner { grid-template-columns: 1fr; }
+      .header-inner { grid-template-columns: auto 1fr auto; min-height: 84px; }
+      .menu-toggle { display: inline-block; }
+      .header-right .btn { display: none; }
+      .main-nav { display: none; }
+      .main-nav.open { display: block; }
+      .nav-inner { padding: 10px 0 14px; flex-direction: column; align-items: stretch; }
+      .main-nav a { text-align: center; background: rgba(255,255,255,.12); }
+      .cloud-grid, .grades-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .features-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 640px) {
-      .header-inner { gap: 10px; }
-      .brand strong { font-size: 1.35rem; }
-      .brand-mark { width: 41px; height: 41px; }
-      .btn { width: 100%; }
-      .header-actions .btn-ghost { display: none; }
-      .hero h1 { font-size: clamp(2.6rem, 16vw, 4.2rem); }
-      .subject-card { grid-template-columns: 1fr; text-align: center; justify-items: center; }
-      .grade-card { grid-template-columns: 1fr; text-align: center; justify-items: center; }
-      .grade-cta { grid-column: auto; }
-      .course-pills { justify-content: center; }
-      .mega-inner { justify-content: flex-start; }
+    @media (max-width: 700px) {
+      html { scroll-padding-top: 155px; }
+      .header-inner {
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        padding: 12px 0;
+      }
+      .brand { min-width: 0; }
+      .header-search { grid-column: 1 / -1; order: 3; }
+      .header-search input { min-height: 54px; }
+      .hero-inner { padding: 50px 0 118px; }
+      .cloud-grid, .grades-grid { grid-template-columns: 1fr; }
+      .cloud-card { min-height: 190px; padding-left: 22px; padding-right: 22px; }
       .section { padding: 52px 0; }
-      .cta-card { padding: 24px; }
+      .feature-card { padding: 26px; }
+      .modal-actions { flex-direction: column; }
+      .modal-actions .btn { width: 100%; }
+      .floating-shape { display: none; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+  <a class="skip-link" href="#siniflar">İçeriğe geç</a>
 
-  <header class="site-header" id="anasayfa">
+  <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="#anasayfa" aria-label="e-kurs.com ana sayfa">
-        <span class="brand-mark">ek</span>
+      <a class="brand" href="#hero" aria-label="e-kurs ana sayfa">
         <strong>e-kurs</strong>
+        <small>K12 Öğrenme</small>
       </a>
 
-      <nav class="main-nav" id="main-nav" aria-label="Ana menü">
-        <a href="#ogrenme">Öğrenme</a>
-        <a href="#siniflar">Sınıflar</a>
-        <a href="#planlar">Beceri Planları</a>
-        <a href="#raporlar">Ölçme</a>
-        <a href="#raporlar">Analitik</a>
-      </nav>
+      <div class="header-search" role="search">
+        <input id="searchInput" type="search" placeholder="Konu, beceri veya sınıf ara" aria-label="Konu, beceri veya sınıf ara" autocomplete="off">
+        <span class="search-icon" aria-hidden="true"></span>
+      </div>
 
-      <div class="header-actions">
-        <button class="search-pill" type="button" id="focus-search" aria-label="Beceri ara"></button>
-        <button class="btn btn-ghost" type="button" data-modal="login">Giriş yap</button>
-        <button class="btn btn-primary" type="button" data-modal="signup">Üye ol</button>
-        <button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-controls="main-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="header-right">
+        <button class="btn btn-login" type="button" data-open-modal="loginModal">Giriş Yap</button>
+        <button class="btn btn-member" type="button" data-open-modal="signupModal">Üyelik</button>
+        <button class="menu-toggle" type="button" aria-label="Menüyü aç veya kapat" aria-controls="mainNav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-    <div class="mega-strip" aria-label="Hızlı bağlantılar">
-      <div class="mega-inner">
-        <a href="#siniflar"><span>Matematik</span> becerileri</a>
-        <a href="#siniflar"><span>Türkçe</span> çalışmaları</a>
-        <a href="#siniflar"><span>Fen</span> etkinlikleri</a>
-        <a href="#siniflar"><span>Sosyal</span> bilgiler</a>
-        <a href="#planlar"><span>Öneriler</span> ve rozetler</a>
+    <nav class="main-nav" id="mainNav" aria-label="Ana menü">
+      <div class="nav-inner">
+        <a href="#siniflar">Öğrenme</a>
+        <a href="#degerlendirme">Değerlendirme</a>
+        <a href="#analitik">Analitik</a>
+        <a href="#beceri-haritasi">Beceri Haritası</a>
+        <a href="#ilham">İlham</a>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <main id="icerik">
-    <section class="hero" aria-labelledby="hero-title">
+  <main id="main">
+    <section class="hero" id="hero">
+      <span class="floating-shape shape-1" aria-hidden="true">A+</span>
+      <span class="floating-shape shape-2" aria-hidden="true">π</span>
+      <span class="floating-shape shape-3" aria-hidden="true">✓</span>
       <div class="hero-inner">
-        <div>
-          <h1 id="hero-title">Kişisel <span>öğrenme</span> deneyimi</h1>
-          <p class="hero-copy">e-kurs.com; kapsamlı K-12 müfredatı, akıllı öneriler ve anlaşılır raporlarla her öğrencinin kendi hızında ilerlemesine yardımcı olur.</p>
-          <div class="hero-actions">
-            <button class="btn btn-primary" type="button" data-modal="signup">Hemen başla</button>
-            <a class="btn btn-secondary" href="#siniflar">Sınıfını seç</a>
-          </div>
-          <div class="questions-counter"><i aria-hidden="true"></i><span>2.137.510+ alıştırma tamamlandı</span></div>
-        </div>
+        <span class="eyebrow">🌟 Renkli, güven veren K12 öğrenme alanı</span>
+        <h1>K1 E-Kurs ile kişiye özel öğrenme</h1>
+        <p class="hero-copy">Türkiye K12 öğrencileri için ders, beceri, test, tekrar ve gelişim takibi bir arada.</p>
 
-        <div class="learning-board" id="ogrenme" aria-label="Öğrenme özellikleri">
-          <article class="subject-card" style="--tone:#12a84f">
-            <span class="subject-icon">✓</span>
-            <div>
-              <h2>Kapsamlı K-12 müfredatı</h2>
-              <p>Sınıf düzeyine uygun matematik, Türkçe, fen ve sosyal bilgiler becerileri.</p>
-              <div class="subject-links"><span>Beceriler</span><span>Dersler</span><span>Videolar</span></div>
-            </div>
+        <div class="cloud-grid" aria-label="Öne çıkan özellikler">
+          <article class="cloud-card">
+            <span class="cloud-icon" aria-hidden="true">📚</span>
+            <h3>MEB Uyumlu K12 Müfredatı</h3>
+            <p>Matematik, Türkçe, Fen Bilimleri, Sosyal Bilgiler ve daha fazlası.</p>
           </article>
-          <article class="subject-card" style="--tone:#168bd6">
-            <span class="subject-icon">★</span>
-            <div>
-              <h2>Öğrenciye özel öneriler</h2>
-              <p>Doğru, yanlış ve çalışma süresine göre sıradaki kazanım önerilir.</p>
-              <div class="subject-links"><span>Öneriler</span><span>Hedefler</span><span>Rozetler</span></div>
-            </div>
+          <article class="cloud-card">
+            <span class="cloud-icon" aria-hidden="true">🧭</span>
+            <h3>Öğrenciye Özel Dijital Öğretmen</h3>
+            <p>Her öğrenciye seviyesine göre hedef, tekrar ve çalışma planı.</p>
           </article>
-          <article class="subject-card" style="--tone:#f8a51b">
-            <span class="subject-icon">↗</span>
-            <div>
-              <h2>Canlı ölçme ve analiz</h2>
-              <p>Öğretmen ve veliler gelişimi net grafiklerle takip eder.</p>
-              <div class="subject-links"><span>Tanılama</span><span>Raporlar</span><span>Analitik</span></div>
-            </div>
-          </article>
-          <article class="subject-card" style="--tone:#7b5ce1">
-            <span class="subject-icon">∞</span>
-            <div>
-              <h2>Kalıcı pratik akışı</h2>
-              <p>Kısa sorular, ipuçları ve tekrarlar öğrenmeyi oyunda tutar.</p>
-              <div class="subject-links"><span>Pratik</span><span>İpucu</span><span>Tekrar</span></div>
-            </div>
+          <article class="cloud-card">
+            <span class="cloud-icon" aria-hidden="true">📈</span>
+            <h3>Anlık Analiz ve Raporlama</h3>
+            <p>Öğrenci, veli ve öğretmen için ilerleme takibi.</p>
           </article>
         </div>
+
+        <a class="btn btn-green" href="#siniflar">Hemen Başla</a>
       </div>
     </section>
 
-    <section class="section" id="siniflar" aria-labelledby="grades-title">
-      <div class="section-head">
-        <p class="eyebrow">Sınıf seviyeleri</p>
-        <h2 id="grades-title">Her yaş için doğru beceriye hızlıca ulaşın.</h2>
-        <p>Sınıf, ders veya konu arayın; uygun kazanım kartları anında filtrelensin.</p>
+    <section class="section" id="siniflar">
+      <div class="section-header">
+        <span class="section-kicker">Sınıfını seç ve öğrenmeye başla</span>
+        <h2>Okul öncesinden 12. sınıfa kadar güçlü ders kartları</h2>
+        <p>Her kartta dersler, beceri hedefleri, video destekleri ve öğrencinin seviyesine uygun başlangıç yolu bulunur.</p>
       </div>
-      <div class="search-panel" role="search">
-        <label class="search-field" for="global-search">
-          <input id="global-search" class="js-search" type="search" placeholder="Örn. 5. sınıf kesirler, Türkçe paragraf, LGS veya fonksiyonlar" autocomplete="off">
-        </label>
+
+      <div class="grades-grid" id="gradesGrid">
+        <article class="grade-card" data-search="okul öncesi okul oncesi erken öğrenme oyun sayı renk çizgi türkçe matematik hayat beceri">
+          <div class="grade-top"><span class="badge">OÖ</span><div><h3>Okul Öncesi</h3><p class="desc">Renkler, sayılar, dikkat, çizgi çalışmaları ve oyunla öğrenme etkinlikleri.</p></div></div>
+          <ul class="subjects"><li>Erken Türkçe</li><li>Matematik</li><li>Etkinlik</li></ul>
+          <div class="stats"><div class="stat"><strong>180+</strong><span>Beceri</span></div><div class="stat"><strong>65+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/okul-oncesi.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="anaokulu okul öncesi ana okul türkçe matematik fen dikkat beceri">
+          <div class="grade-top"><span class="badge">A</span><div><h3>Anaokulu</h3><p class="desc">Ses farkındalığı, sayı kavramı, şekiller, hikâyeler ve keşif çalışmaları.</p></div></div>
+          <ul class="subjects"><li>Türkçe</li><li>Matematik</li><li>Keşif</li></ul>
+          <div class="stats"><div class="stat"><strong>240+</strong><span>Beceri</span></div><div class="stat"><strong>90+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/anaokulu.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="1. sınıf 1 sınıf birinci sınıf türkçe matematik hayat bilgisi okuma yazma toplama çıkarma fen beceri">
+          <div class="grade-top"><span class="badge">1</span><div><h3>1. Sınıf</h3><p class="desc">Okuma yazma, toplama çıkarma, temel fen, hayat bilgisi ve eğlenceli etkinlikler.</p></div></div>
+          <ul class="subjects"><li>Türkçe</li><li>Matematik</li><li>Hayat Bilgisi</li></ul>
+          <div class="stats"><div class="stat"><strong>350+</strong><span>Beceri</span></div><div class="stat"><strong>120+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/1-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="2. sınıf 2 sınıf ikinci sınıf türkçe matematik hayat bilgisi fen okuma problem beceri">
+          <div class="grade-top"><span class="badge">2</span><div><h3>2. Sınıf</h3><p class="desc">Akıcı okuma, problem çözme, ritmik sayma ve günlük yaşam bağlantılı konular.</p></div></div>
+          <ul class="subjects"><li>Türkçe</li><li>Matematik</li><li>Hayat Bilgisi</li></ul>
+          <div class="stats"><div class="stat"><strong>390+</strong><span>Beceri</span></div><div class="stat"><strong>135+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/2-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="3. sınıf 3 sınıf üçüncü sınıf türkçe matematik fen bilimleri hayat bilgisi beceri">
+          <div class="grade-top"><span class="badge">3</span><div><h3>3. Sınıf</h3><p class="desc">Paragraf, dört işlem, ölçme, temel deneyler ve düzenli tekrar görevleri.</p></div></div>
+          <ul class="subjects"><li>Türkçe</li><li>Matematik</li><li>Fen Bilimleri</li></ul>
+          <div class="stats"><div class="stat"><strong>430+</strong><span>Beceri</span></div><div class="stat"><strong>150+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/3-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="4. sınıf 4 sınıf dördüncü sınıf türkçe matematik fen sosyal bilgiler beceri">
+          <div class="grade-top"><span class="badge">4</span><div><h3>4. Sınıf</h3><p class="desc">Kesirler, metin türleri, çevre, sosyal bilgiler ve sınava hazırlık alışkanlığı.</p></div></div>
+          <ul class="subjects"><li>Türkçe</li><li>Matematik</li><li>Sosyal Bilgiler</li></ul>
+          <div class="stats"><div class="stat"><strong>470+</strong><span>Beceri</span></div><div class="stat"><strong>165+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/4-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="5. sınıf 5 sınıf beşinci ortaokul türkçe matematik fen sosyal bilgiler ingilizce beceri">
+          <div class="grade-top"><span class="badge">5</span><div><h3>5. Sınıf</h3><p class="desc">Ortaokula geçiş, temel kavramları güçlendirme ve ders düzeni oluşturma.</p></div></div>
+          <ul class="subjects"><li>Türkçe</li><li>Matematik</li><li>Fen Bilimleri</li><li>İngilizce</li></ul>
+          <div class="stats"><div class="stat"><strong>520+</strong><span>Beceri</span></div><div class="stat"><strong>190+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/5-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="6. sınıf 6 sınıf altıncı ortaokul türkçe matematik fen sosyal bilgiler ingilizce beceri">
+          <div class="grade-top"><span class="badge">6</span><div><h3>6. Sınıf</h3><p class="desc">Oran, cebire hazırlık, okuduğunu anlama, deney ve araştırma görevleri.</p></div></div>
+          <ul class="subjects"><li>Türkçe</li><li>Matematik</li><li>Fen Bilimleri</li><li>Sosyal Bilgiler</li></ul>
+          <div class="stats"><div class="stat"><strong>560+</strong><span>Beceri</span></div><div class="stat"><strong>210+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/6-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="7. sınıf 7 sınıf yedinci ortaokul türkçe matematik fen sosyal bilgiler lgs beceri">
+          <div class="grade-top"><span class="badge">7</span><div><h3>7. Sınıf</h3><p class="desc">LGS temelini hazırlayan konu pekiştirme, yeni nesil sorular ve beceri takibi.</p></div></div>
+          <ul class="subjects"><li>Türkçe</li><li>Matematik</li><li>Fen Bilimleri</li><li>Sosyal Bilgiler</li></ul>
+          <div class="stats"><div class="stat"><strong>610+</strong><span>Beceri</span></div><div class="stat"><strong>230+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/7-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="8. sınıf 8 sınıf sekizinci ortaokul lgs türkçe matematik fen inkılap ingilizce beceri">
+          <div class="grade-top"><span class="badge">8</span><div><h3>8. Sınıf</h3><p class="desc">LGS odaklı beceriler, deneme takibi, konu eksikleri ve hedefli tekrarlar.</p></div></div>
+          <ul class="subjects"><li>Türkçe</li><li>Matematik</li><li>Fen Bilimleri</li><li>İnkılap</li></ul>
+          <div class="stats"><div class="stat"><strong>680+</strong><span>Beceri</span></div><div class="stat"><strong>260+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/8-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="9. sınıf 9 sınıf dokuzuncu lise türkçe edebiyat matematik fizik kimya biyoloji tarih coğrafya beceri">
+          <div class="grade-top"><span class="badge">9</span><div><h3>9. Sınıf</h3><p class="desc">Liseye güçlü başlangıç, temel derslerde kavram haritası ve düzenli çalışma.</p></div></div>
+          <ul class="subjects"><li>Matematik</li><li>Edebiyat</li><li>Fizik</li><li>Kimya</li></ul>
+          <div class="stats"><div class="stat"><strong>720+</strong><span>Beceri</span></div><div class="stat"><strong>280+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/9-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="10. sınıf 10 sınıf onuncu lise türkçe edebiyat matematik fizik kimya biyoloji tarih coğrafya beceri">
+          <div class="grade-top"><span class="badge">10</span><div><h3>10. Sınıf</h3><p class="desc">Fonksiyonlar, paragraf, bilim dersleri ve sınavlara hazırlık için konu düzeni.</p></div></div>
+          <ul class="subjects"><li>Matematik</li><li>Edebiyat</li><li>Fizik</li><li>Biyoloji</li></ul>
+          <div class="stats"><div class="stat"><strong>760+</strong><span>Beceri</span></div><div class="stat"><strong>300+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/10-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="11. sınıf 11 sınıf on birinci lise ayt tyt türkçe edebiyat matematik fizik kimya biyoloji tarih coğrafya beceri">
+          <div class="grade-top"><span class="badge">11</span><div><h3>11. Sınıf</h3><p class="desc">TYT-AYT temelini güçlendiren ders planları, konu testleri ve performans takibi.</p></div></div>
+          <ul class="subjects"><li>Matematik</li><li>Edebiyat</li><li>Fizik</li><li>Kimya</li></ul>
+          <div class="stats"><div class="stat"><strong>820+</strong><span>Beceri</span></div><div class="stat"><strong>330+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/11-sinif.html">Başla</a>
+        </article>
+        <article class="grade-card" data-search="12. sınıf 12 sınıf on ikinci lise yks tyt ayt türkçe edebiyat matematik fizik kimya biyoloji tarih coğrafya beceri">
+          <div class="grade-top"><span class="badge">12</span><div><h3>12. Sınıf</h3><p class="desc">YKS hedefleri için tekrar programı, deneme analizi ve eksik tamamlama yolu.</p></div></div>
+          <ul class="subjects"><li>Matematik</li><li>Edebiyat</li><li>Fizik</li><li>Biyoloji</li></ul>
+          <div class="stats"><div class="stat"><strong>900+</strong><span>Beceri</span></div><div class="stat"><strong>360+</strong><span>Video</span></div></div>
+          <a class="btn card-btn" href="/sinif/12-sinif.html">Başla</a>
+        </article>
       </div>
-      <div class="section" style="padding-bottom:0">
-        <div class="grade-list" id="grade-list" aria-live="polite"></div>
-        <p class="empty-message" id="grade-empty" hidden>Bu aramaya uygun sınıf bulunamadı.</p>
-      </div>
+      <div class="empty-state" id="emptyState">Aramanıza uygun sonuç bulunamadı.</div>
     </section>
 
-    <section class="section feature-band" id="raporlar" aria-labelledby="features-title">
-      <div class="section-head">
-        <p class="eyebrow">Başarı desteği</p>
-        <h2 id="features-title">Öğretmen, veli ve öğrenci için anlaşılır araçlar.</h2>
-      </div>
-      <div class="feature-grid">
-        <article class="feature-card">
-          <span class="subject-icon" style="--tone:#12a84f">1</span>
-          <h3>Kapsamlı içerik</h3>
-          <p>Derse hazırlık, konu tekrarı ve sınav pratiği için sınıflandırılmış beceriler.</p>
-          <a href="#siniflar">Becerilere bak →</a>
-        </article>
-        <article class="feature-card">
-          <span class="subject-icon" style="--tone:#168bd6">2</span>
-          <h3>Akıllı tanılama</h3>
-          <p>Öğrencinin güçlü ve destek gerektiren alanlarını sade bir yol haritasına dönüştürür.</p>
-          <a href="#planlar">Nasıl çalışır? →</a>
-        </article>
-        <article class="feature-card">
-          <span class="subject-icon" style="--tone:#f8a51b">3</span>
-          <h3>Motivasyon akışı</h3>
-          <p>Hedefler, rozetler ve ilerleme göstergeleri düzenli çalışmayı görünür kılar.</p>
-          <a href="#iletisim">Ücretsiz dene →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="planlar" aria-labelledby="plans-title">
-      <div class="plans-wrap">
-        <article class="plans-copy">
-          <p class="eyebrow">Beceri planları</p>
-          <h2 id="plans-title">Aradığınız kazanıma uygun çalışma planı oluşturun.</h2>
-          <p>Ders işlemek, sınava hazırlanmak veya eksik tamamlamak için becerileri hedefe göre gruplayın. Sistem, öğrencinin ilerlemesine göre sıradaki alıştırmayı önerir.</p>
-          <a class="btn btn-primary" href="#siniflar">Plan seç</a>
-        </article>
-        <div class="plans-list">
-          <article class="plan-row"><span class="mini-icon" style="--tone:#12a84f">M</span><div><h3>Matematik yol haritası</h3><p>Dört işlemden fonksiyonlara kadar adım adım kazanımlar.</p></div></article>
-          <article class="plan-row"><span class="mini-icon" style="--tone:#168bd6">T</span><div><h3>Türkçe ve okuma</h3><p>Okuma anlama, dil bilgisi, yazım ve paragraf pratiği.</p></div></article>
-          <article class="plan-row"><span class="mini-icon" style="--tone:#f8a51b">F</span><div><h3>Fen keşifleri</h3><p>Canlılar, madde, kuvvet, enerji ve deney odaklı tekrarlar.</p></div></article>
-          <article class="plan-row"><span class="mini-icon" style="--tone:#7b5ce1">S</span><div><h3>Sınav hazırlığı</h3><p>LGS, TYT ve AYT için konu takibi ve deneme analizi.</p></div></article>
+    <div class="feature-band">
+      <section class="section">
+        <div class="features-grid">
+          <article class="feature-card" id="degerlendirme" data-icon="📝">
+            <span class="feature-label" aria-hidden="true">📝</span>
+            <h2>Seviyeyi ölç, eksikleri gör</h2>
+            <p>Konu testleri, ünite sınavları, deneme sınavları ve günlük tekrarlarla öğrencinin gelişimi izlenir.</p>
+          </article>
+          <article class="feature-card" id="analitik" data-icon="📊">
+            <span class="feature-label" aria-hidden="true">📊</span>
+            <h2>Veli ve öğretmen için anlaşılır raporlar</h2>
+            <p>Çözülen soru sayısı, doğru-yanlış oranı, güçlü ve zayıf beceriler kolayca takip edilir.</p>
+          </article>
+          <article class="feature-card" id="beceri-haritasi" data-icon="🗺️">
+            <span class="feature-label" aria-hidden="true">🗺️</span>
+            <h2>Her ders için adım adım beceri yolu</h2>
+            <p>Öğrenci hangi konudan başlayacağını, hangi beceriyi tamamladığını ve sıradaki hedefini görür.</p>
+          </article>
+          <article class="feature-card" id="ilham" data-icon="🏅">
+            <span class="feature-label" aria-hidden="true">🏅</span>
+            <h2>Öğrenmeyi sevdiren küçük başarılar</h2>
+            <p>Rozetler, günlük hedefler, ödüller ve liderlik tablosu ile öğrenciler motive edilir.</p>
+          </article>
         </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="impact-title">
-      <div class="section-head">
-        <p class="eyebrow">Etkisi görünür</p>
-        <h2 id="impact-title">Çalışmayı ölçen, hedefi netleştiren bir deneyim.</h2>
-      </div>
-      <div class="impact">
-        <article class="impact-card" style="--tone:#12a84f"><strong>%84</strong><span>Haftalık hedefini tamamlayan demo öğrenciler</span></article>
-        <article class="impact-card" style="--tone:#168bd6"><strong>12+</strong><span>Sınıf düzeyi ve öğrenme yolu</span></article>
-        <article class="impact-card" style="--tone:#f8a51b"><strong>7/24</strong><span>Mobil uyumlu pratik ve rapor erişimi</span></article>
-      </div>
-    </section>
-
-    <section class="section" id="iletisim">
-      <div class="cta-card">
-        <div>
-          <h2>Bugün ücretsiz hesap oluşturun.</h2>
-          <p>Sınıfınızı seçin, ilk beceriyi başlatın ve kişiselleştirilmiş öğrenme akışını deneyin.</p>
-        </div>
-        <button class="btn btn-secondary" type="button" data-modal="signup">Üye ol</button>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <a class="brand" href="#anasayfa" aria-label="e-kurs.com ana sayfa"><span class="brand-mark">ek</span><strong>e-kurs</strong></a>
-        <p>Bu sayfa özgün bir e-kurs.com tasarımıdır; başka marka, logo veya telifli görsel kullanılmamıştır.</p>
-      </div>
-      <nav aria-label="Platform bağlantıları"><h3>Platform</h3><a href="#ogrenme">Öğrenme</a><a href="#siniflar">Sınıflar</a><a href="#planlar">Beceri Planları</a></nav>
-      <nav aria-label="Ders bağlantıları"><h3>Dersler</h3><a href="#siniflar">Matematik</a><a href="#siniflar">Türkçe</a><a href="#siniflar">Fen Bilimleri</a></nav>
-      <nav aria-label="Destek bağlantıları"><h3>Destek</h3><a href="#iletisim">İletişim</a><a href="#" data-modal="login">Giriş Yap</a><a href="#" data-modal="signup">Üyelik</a></nav>
-    </div>
+  <footer class="footer">
+    <p>© 2026 e-kurs.com · K12 öğrencileri için öğrenciye özel öğrenme deneyimi.</p>
   </footer>
 
-  <div class="modal-backdrop" id="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-title" hidden>
-    <div class="modal">
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <div class="modal-card">
       <div class="modal-head">
-        <div><h2 id="login-title">Giriş yap</h2><p>Öğrenci, öğretmen veya veli hesabınızla devam edin.</p></div>
-        <button class="close-modal" type="button" aria-label="Giriş penceresini kapat">×</button>
+        <div><h2 id="loginTitle">Giriş Yap</h2><p>Derslerine kaldığın yerden devam et.</p></div>
+        <button class="icon-close" type="button" data-close-modal aria-label="Kapat">×</button>
       </div>
-      <form class="form-grid" data-demo-form>
-        <label>E-posta<input type="email" placeholder="ornek@e-kurs.com" required></label>
-        <label>Şifre<input type="password" placeholder="Şifreniz" required></label>
-        <button class="btn btn-primary" type="submit">Panele git</button>
+      <form class="form-grid">
+        <div class="field"><label for="loginEmail">E-posta</label><input id="loginEmail" type="email" placeholder="ornek@eposta.com" required></div>
+        <div class="field"><label for="loginPassword">Şifre</label><input id="loginPassword" type="password" placeholder="Şifreniz" required></div>
+        <div class="modal-actions"><button class="btn btn-green" type="submit">Giriş Yap</button><button class="btn btn-close" type="button" data-close-modal>Kapat</button></div>
       </form>
-      <p class="modal-note">Demo: Form gönderildiğinde bilgilendirme gösterilir.</p>
     </div>
   </div>
 
-  <div class="modal-backdrop" id="signup-modal" role="dialog" aria-modal="true" aria-labelledby="signup-title" hidden>
-    <div class="modal">
+  <div class="modal" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupTitle">
+    <div class="modal-card">
       <div class="modal-head">
-        <div><h2 id="signup-title">Üye ol</h2><p>Çalışmaya başlamak için kısa bilgileri doldurun.</p></div>
-        <button class="close-modal" type="button" aria-label="Üyelik penceresini kapat">×</button>
+        <div><h2 id="signupTitle">Üyelik</h2><p>Öğrenciye uygun sınıfı seç ve başla.</p></div>
+        <button class="icon-close" type="button" data-close-modal aria-label="Kapat">×</button>
       </div>
-      <form class="form-grid" data-demo-form>
-        <label>Ad Soyad<input type="text" placeholder="Adınız Soyadınız" required></label>
-        <label>E-posta<input type="email" placeholder="ornek@e-kurs.com" required></label>
-        <label>Sınıf<select required><option value="">Sınıf seçin</option><option>1. sınıf</option><option>2. sınıf</option><option>3. sınıf</option><option>4. sınıf</option><option>5. sınıf</option><option>6. sınıf</option><option>7. sınıf</option><option>8. sınıf</option><option>9. sınıf</option><option>10. sınıf</option><option>11. sınıf</option><option>12. sınıf</option></select></label>
-        <button class="btn btn-secondary" type="submit">Üyeliği başlat</button>
+      <form class="form-grid">
+        <div class="field"><label for="studentName">Öğrenci adı</label><input id="studentName" type="text" placeholder="Öğrenci adı" required></div>
+        <div class="field"><label for="parentEmail">Veli e-posta</label><input id="parentEmail" type="email" placeholder="veli@eposta.com" required></div>
+        <div class="field"><label for="gradeSelect">Sınıf seçimi</label><select id="gradeSelect" required><option value="">Sınıf seçin</option><option>Okul Öncesi</option><option>Anaokulu</option><option>1. Sınıf</option><option>2. Sınıf</option><option>3. Sınıf</option><option>4. Sınıf</option><option>5. Sınıf</option><option>6. Sınıf</option><option>7. Sınıf</option><option>8. Sınıf</option><option>9. Sınıf</option><option>10. Sınıf</option><option>11. Sınıf</option><option>12. Sınıf</option></select></div>
+        <div class="modal-actions"><button class="btn btn-primary" type="submit">Üyeliği Başlat</button><button class="btn btn-close" type="button" data-close-modal>Kapat</button></div>
       </form>
-      <p class="modal-note">Demo: Üyelik akışı bağlantıya hazırdır.</p>
     </div>
   </div>
 
   <script>
-    const grades = [
-      { title: '1. sınıf', badge: '1', href: 'pages/sinif-1.html', accent: '#f8a51b', desc: 'Okuma yazma, toplama, çıkarma ve temel hayat bilgisi.', courses: ['Matematik', 'Türkçe', 'Hayat'], keywords: 'birinci ilkokul okuma yazma toplama çıkarma hayat bilgisi' },
-      { title: '2. sınıf', badge: '2', href: 'pages/sinif-2.html', accent: '#f2649b', desc: 'Akıcı okuma, problemler, ölçme ve çevremizi tanıma.', courses: ['Okuma', 'Problem', 'Ölçme'], keywords: 'ikinci ilkokul akıcı okuma problem ölçme çevre' },
-      { title: '3. sınıf', badge: '3', href: 'pages/sinif-3.html', accent: '#7b5ce1', desc: 'Çarpma, bölme, paragraf ve fen kavramlarına giriş.', courses: ['Çarpma', 'Paragraf', 'Fen'], keywords: 'üçüncü çarpma bölme paragraf fen canlılar' },
-      { title: '4. sınıf', badge: '4', href: 'pages/sinif-4.html', accent: '#168bd6', desc: 'Kesirler, doğal sayılar, metin türleri ve sosyal bilgiler.', courses: ['Kesirler', 'Metin', 'Sosyal'], keywords: 'dördüncü kesir doğal sayı metin sosyal bilgiler' },
-      { title: '5. sınıf', badge: '5', href: 'pages/sinif-5.html', accent: '#12a84f', desc: 'Ortaokula geçiş için temel matematik, Türkçe ve fen becerileri.', courses: ['Ortaokul', 'Fen', 'Türkçe'], keywords: 'beşinci ortaokul matematik Türkçe fen kesirler' },
-      { title: '6. sınıf', badge: '6', href: 'pages/sinif-6.html', accent: '#f8a51b', desc: 'Oran, yüzdeler, dil bilgisi, kuvvet ve hareket tekrarları.', courses: ['Oran', 'Yüzde', 'Kuvvet'], keywords: 'altıncı oran yüzde dil bilgisi kuvvet hareket' },
-      { title: '7. sınıf', badge: '7', href: 'pages/sinif-7.html', accent: '#f2649b', desc: 'Rasyonel sayılar, denklemler, paragraf ve ekosistemler.', courses: ['Denklem', 'Paragraf', 'Ekosistem'], keywords: 'yedinci rasyonel sayılar denklem paragraf ekosistem' },
-      { title: '8. sınıf', badge: '8', href: 'pages/sinif-8.html', accent: '#7b5ce1', desc: 'LGS odaklı yeni nesil soru, analiz ve konu pekiştirme.', courses: ['LGS', 'Analiz', 'Tekrar'], keywords: 'sekizinci LGS yeni nesil sınav analiz tekrar' },
-      { title: '9. sınıf', badge: '9', href: 'pages/sinif-9.html', accent: '#168bd6', desc: 'Lise matematik temelleri, edebiyat, fizik, kimya ve biyoloji.', courses: ['Lise', 'Fizik', 'Kimya'], keywords: 'dokuzuncu lise matematik edebiyat fizik kimya biyoloji' },
-      { title: '10. sınıf', badge: '10', href: 'pages/sinif-10.html', accent: '#12a84f', desc: 'Fonksiyon, geometri, anlatım, kimya ve tarih kazanımları.', courses: ['Fonksiyon', 'Geometri', 'Tarih'], keywords: 'onuncu fonksiyon geometri kimya tarih anlatım' },
-      { title: '11. sınıf', badge: '11', href: 'pages/sinif-11.html', accent: '#f8a51b', desc: 'Trigonometri, analitik düşünme ve üniversite hazırlık başlangıcı.', courses: ['Trigonometri', 'TYT', 'AYT'], keywords: 'on birinci trigonometri analitik TYT AYT hazırlık' },
-      { title: '12. sınıf', badge: '12', href: 'pages/sinif-12.html', accent: '#f2649b', desc: 'YKS deneme analizi, konu tamamlama ve kişisel tekrar planı.', courses: ['YKS', 'Deneme', 'Plan'], keywords: 'on ikinci YKS TYT AYT deneme analiz tekrar plan' }
-    ];
-
-    const gradeList = document.getElementById('grade-list');
-    const gradeEmpty = document.getElementById('grade-empty');
-    const searchInputs = document.querySelectorAll('.js-search');
-
-    function normalize(value) {
-      return value.toLocaleLowerCase('tr-TR').trim();
-    }
-
-    function renderGrades(query = '') {
-      const q = normalize(query);
-      const filtered = grades.filter((grade) => normalize([grade.title, grade.desc, grade.courses.join(' '), grade.keywords].join(' ')).includes(q));
-      gradeList.innerHTML = filtered.map((grade) => `
-        <a class="grade-card" href="${grade.href}" style="--accent:${grade.accent}" aria-label="${grade.title} sayfasına git">
-          <span class="grade-badge">${grade.badge}</span>
-          <div><h3>${grade.title}</h3><p>${grade.desc}</p></div>
-          <div class="course-pills">${grade.courses.map((course) => `<span>${course}</span>`).join('')}</div>
-          <span class="grade-cta">Becerileri aç →</span>
-        </a>
-      `).join('');
-      gradeEmpty.hidden = filtered.length > 0;
-    }
-
-    function syncSearch(value) {
-      searchInputs.forEach((input) => {
-        if (input.value !== value) input.value = value;
-      });
-      renderGrades(value);
-    }
-
-    searchInputs.forEach((input) => input.addEventListener('input', (event) => syncSearch(event.target.value)));
-
-    document.getElementById('focus-search').addEventListener('click', () => {
-      const input = document.getElementById('global-search');
-      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      window.setTimeout(() => input.focus(), 350);
-    });
-
+    const searchInput = document.getElementById('searchInput');
+    const gradeCards = Array.from(document.querySelectorAll('.grade-card'));
+    const emptyState = document.getElementById('emptyState');
     const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.getElementById('main-nav');
+    const mainNav = document.getElementById('mainNav');
+    const modalTriggers = document.querySelectorAll('[data-open-modal]');
+    const closeButtons = document.querySelectorAll('[data-close-modal]');
+    let activeModal = null;
+
+    const normalizeText = (value) => value
+      .toLocaleLowerCase('tr-TR')
+      .replace(/ı/g, 'i')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+
+    function filterCards() {
+      const query = normalizeText(searchInput.value.trim());
+      let visibleCount = 0;
+
+      gradeCards.forEach((card) => {
+        const haystack = normalizeText(`${card.textContent} ${card.dataset.search || ''}`);
+        const isVisible = !query || haystack.includes(query);
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      emptyState.classList.toggle('show', visibleCount === 0);
+      if (query) document.getElementById('siniflar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    searchInput.addEventListener('input', filterCards);
+
     menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!expanded));
-      mainNav.classList.toggle('open', !expanded);
+      const isOpen = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
-    mainNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-      menuToggle.setAttribute('aria-expanded', 'false');
-      mainNav.classList.remove('open');
-    }));
 
-    const modalMap = {
-      login: document.getElementById('login-modal'),
-      signup: document.getElementById('signup-modal')
-    };
+    mainNav.addEventListener('click', (event) => {
+      if (event.target.matches('a')) {
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
 
-    function openModal(name) {
-      const modal = modalMap[name];
-      if (!modal) return;
-      modal.hidden = false;
+    function openModal(modal) {
+      activeModal = modal;
+      modal.classList.add('open');
       document.body.classList.add('modal-open');
       const firstField = modal.querySelector('input, select, button');
-      window.setTimeout(() => firstField && firstField.focus(), 40);
+      if (firstField) firstField.focus();
     }
 
-    function closeModals() {
-      Object.values(modalMap).forEach((modal) => { modal.hidden = true; });
+    function closeModal() {
+      if (!activeModal) return;
+      activeModal.classList.remove('open');
       document.body.classList.remove('modal-open');
+      activeModal = null;
     }
 
-    document.querySelectorAll('[data-modal]').forEach((trigger) => trigger.addEventListener('click', (event) => {
-      event.preventDefault();
-      openModal(trigger.dataset.modal);
-    }));
-    document.querySelectorAll('.modal-backdrop').forEach((backdrop) => backdrop.addEventListener('click', (event) => {
-      if (event.target === backdrop) closeModals();
-    }));
-    document.querySelectorAll('.close-modal').forEach((button) => button.addEventListener('click', closeModals));
-    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModals(); });
-    document.querySelectorAll('[data-demo-form]').forEach((form) => form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      form.parentElement.querySelector('.modal-note').textContent = 'Bilgiler alındı. Demo akışı başarıyla çalıştı.';
-    }));
+    modalTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const modal = document.getElementById(trigger.dataset.openModal);
+        if (modal) openModal(modal);
+      });
+    });
 
-    renderGrades();
+    closeButtons.forEach((button) => button.addEventListener('click', closeModal));
+
+    document.querySelectorAll('.modal').forEach((modal) => {
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+      });
+      modal.querySelector('form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        closeModal();
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeModal();
+    });
   </script>
 </body>
 </html>
