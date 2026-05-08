@@ -3,176 +3,211 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="K1 E-Kurs; Türkiye K12 öğrencileri için kişiselleştirilmiş beceri arama, sınıf kartları, öğretmen takibi ve veli raporları sunan dijital öğrenme platformu.">
-  <title>K1 E-Kurs | Kişiselleştirilmiş K12 Öğrenme Platformu</title>
+  <meta name="description" content="K1 E-Kurs, Türkiye K12 öğrencileri için beceri bazlı öğrenme, sınıf kartları, öğretmen takibi ve veli raporları sunan dijital e-kurs platformudur.">
+  <title>K1 E-Kurs | Türkiye K12 Beceri Bazlı Öğrenme</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
   <header class="site-header">
-    <nav class="nav-shell" aria-label="Ana menü">
-      <a class="brand k1-brand" href="index.html" aria-label="K1 E-Kurs ana sayfa">
-        <span class="brand-mark">K1</span>
-        <span class="brand-copy">E-Kurs</span>
-      </a>
+    <div class="header-shell">
+      <div class="header-top">
+        <a class="brand" href="index.html" aria-label="K1 E-Kurs ana sayfa">
+          <span class="brand-mark">K1</span>
+          <span class="brand-text"><strong>E-Kurs</strong><small>K12 öğrenme</small></span>
+        </a>
 
-      <label class="nav-search" for="global-skill-search">
-        <span aria-hidden="true">🔎</span>
-        <input id="global-skill-search" type="search" placeholder="Konu, beceri veya sınıf ara" autocomplete="off">
-      </label>
+        <label class="header-search" for="global-skill-search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="global-skill-search" class="js-skill-search" type="search" placeholder="Konu, beceri veya sınıf ara" autocomplete="off">
+        </label>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span></span><span></span><span></span><em>Menü</em></button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+          <span></span><span></span><span></span><em>Menü</em>
+        </button>
 
-      <div class="nav-links" id="main-menu">
+        <div class="header-actions">
+          <a class="login-link" href="pages/ogrenci-panel.html">Giriş Yap</a>
+          <a class="membership-link" href="#uyelik">Üyelik</a>
+        </div>
+      </div>
+
+      <nav class="main-menu" id="main-menu" aria-label="Ana menü">
         <a href="#ogrenme">Öğrenme</a>
         <a href="#degerlendirme">Değerlendirme</a>
         <a href="#analitik">Analitik</a>
         <a href="#beceri-haritasi">Beceri Haritası</a>
-        <a href="#ogretmenler">Öğretmenler</a>
-        <a href="#veliler">Veliler</a>
-      </div>
-
-      <div class="nav-actions">
-        <a class="btn btn-light" href="pages/ogrenci-panel.html">Giriş Yap</a>
-        <a class="btn btn-orange" href="#uyelik">Ücretsiz Dene</a>
-      </div>
-    </nav>
+        <a href="#ilham">İlham</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero learning-scene" id="ogrenme">
-      <div class="scene-art" aria-hidden="true">
+    <section class="hero-scene" id="ogrenme" aria-labelledby="hero-title">
+      <div class="scene-layer" aria-hidden="true">
         <span class="sun"></span>
         <span class="cloud cloud-one"></span>
         <span class="cloud cloud-two"></span>
         <span class="cloud cloud-three"></span>
-        <span class="balloon"></span>
-        <span class="paper-plane">✈</span>
-        <span class="book-shape">▰</span>
-        <span class="ruler-shape"></span>
-        <span class="math-bubble bubble-a">123</span>
-        <span class="math-bubble bubble-b">A+</span>
+        <span class="balloon"><i></i></span>
+        <span class="paper-plane"></span>
+        <span class="book-object"><b></b></span>
+        <span class="ruler-object"></span>
+        <span class="chart-board"><b></b><b></b><b></b></span>
+        <span class="pencil-object"></span>
         <span class="hill hill-left"></span>
         <span class="hill hill-right"></span>
+        <span class="water-wave"></span>
       </div>
 
-      <div class="hero-inner">
+      <div class="hero-content">
         <p class="eyebrow">Türkiye K12 için beceri bazlı öğrenme</p>
-        <h1>K1 E-Kurs ile kişiselleştirilmiş öğrenme</h1>
-        <p class="hero-text">Matematik, Türkçe, Fen Bilimleri ve Sosyal Bilgiler için Türkiye odaklı beceri bazlı öğrenme platformu.</p>
+        <h1 id="hero-title">K1 E-Kurs ile kişiselleştirilmiş öğrenme</h1>
+        <p class="hero-copy">Matematik, Türkçe, Fen Bilimleri ve Sosyal Bilgiler için Türkiye odaklı beceri bazlı öğrenme platformu.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-large" href="#siniflar">Hemen Başla</a>
-          <a class="btn btn-secondary btn-large" href="#beceri-ara">Beceri Ara</a>
+          <a class="btn btn-primary" href="#siniflar">Hemen Başla</a>
+          <a class="btn btn-ghost" href="#beceri-ara">Beceri Ara</a>
         </div>
       </div>
+
+      <div class="hero-cloud-cards" aria-label="K1 E-Kurs özellikleri">
+        <article class="cloud-card">
+          <span class="card-icon">📚</span>
+          <h2>Kapsamlı MEB Müfredatı</h2>
+          <p>Matematik • Türkçe • Fen Bilimleri • Sosyal Bilgiler</p>
+          <a href="#siniflar" aria-label="MEB müfredatı sınıf kartlarına git">⌄</a>
+        </article>
+        <article class="cloud-card featured">
+          <span class="card-icon">🧭</span>
+          <h2>Öğrenciye Özel Beceri Planı</h2>
+          <p>Tanılama • Öneriler • Hedefler • Tekrar</p>
+          <a href="#beceri-haritasi" aria-label="Beceri planına git">⌄</a>
+        </article>
+        <article class="cloud-card">
+          <span class="card-icon">📊</span>
+          <h2>Anlık Analiz ve Raporlama</h2>
+          <p>Öğretmen paneli • Veli raporu • İlerleme takibi</p>
+          <a href="#analitik" aria-label="Analitik bölümüne git">⌄</a>
+        </article>
+      </div>
     </section>
 
-    <section class="cloud-card-row" aria-label="K1 E-Kurs ana öğrenme özellikleri">
-      <article class="cloud-card">
-        <span class="cloud-icon">📚</span>
-        <h2>Kapsamlı MEB Müfredatı</h2>
-        <p>Matematik • Türkçe • Fen Bilimleri • Sosyal Bilgiler</p>
-      </article>
-      <article class="cloud-card">
-        <span class="cloud-icon">🧭</span>
-        <h2>Öğrenciye Özel Beceri Planı</h2>
-        <p>Tanılama • Öneriler • Hedefler • Tekrar</p>
-      </article>
-      <article class="cloud-card">
-        <span class="cloud-icon">📊</span>
-        <h2>Anlık Analiz ve Raporlama</h2>
-        <p>Öğretmen paneli • Veli raporu • İlerleme takibi</p>
-      </article>
-    </section>
-
-    <section class="turkiye-band" id="uyelik">
-      <div>
-        <p class="eyebrow">Kazanım odaklı yol haritası</p>
+    <section class="info-band" id="uyelik" aria-label="Türkiye K12 müfredatı bilgisi">
+      <div class="info-icon" aria-hidden="true">🌐</div>
+      <div class="info-copy">
         <h2>Türkiye K12 müfredatını keşfedin</h2>
         <p>Sınıf, ders ve kazanım bazlı beceri planlarıyla öğrenciler adım adım ilerler.</p>
       </div>
-      <a class="btn btn-primary" href="#beceri-ara">Hemen deneyin</a>
+      <a class="btn btn-small" href="#beceri-ara">Hemen deneyin</a>
+      <button class="band-close" type="button" aria-label="Bilgi bandını kapat">×</button>
     </section>
 
-    <section class="section-pad skill-discovery" id="beceri-ara">
-      <div class="section-title center">
-        <p class="eyebrow">Beceri arama</p>
-        <h2>Konu, beceri veya sınıf yazın; öneriler anında filtrelensin.</h2>
-        <p>Toplama, çıkarma, kesirler, okuma anlama, paragraf, ses bilgisi, canlılar, maddenin halleri, Türkiye haritası, problemler, denklem veya geometri arayın.</p>
+    <section class="section grade-section" id="siniflar" aria-labelledby="grades-title">
+      <div class="section-heading">
+        <p class="eyebrow">Sınıf kartları</p>
+        <h2 id="grades-title">Okul öncesinden 12. sınıfa renkli beceri kataloğu</h2>
+        <p>Her kartta yaş düzeyine uygun açıklama, ders etiketleri ve hızlı beceri bağlantıları bulunur.</p>
       </div>
-      <div class="skill-finder" role="search">
-        <label class="search-box" for="skill-search"><span>🔎</span><input id="skill-search" type="search" placeholder="Konu, beceri veya sınıf ara" autocomplete="off"></label>
-        <button class="btn btn-primary" type="button" id="skill-search-button">Beceri Bul</button>
+      <div class="grade-grid" id="grade-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="section skill-section" id="beceri-ara" aria-labelledby="skill-title">
+      <div class="section-heading">
+        <p class="eyebrow">Beceri arama</p>
+        <h2 id="skill-title">Konu, beceri veya sınıf yazın; sonuçlar anında filtrelensin</h2>
+        <p>Toplama, çıkarma, kesirler, okuma anlama, paragraf, ses bilgisi, canlılar, Türkiye haritası, denklem ve geometri gibi becerileri deneyin.</p>
+      </div>
+      <div class="skill-search-panel" role="search">
+        <label class="section-search" for="skill-search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="skill-search" class="js-skill-search" type="search" placeholder="Toplama, 5. sınıf, geometri..." autocomplete="off">
+        </label>
       </div>
       <div class="skill-results" id="skill-results" aria-live="polite"></div>
+      <p class="empty-message" id="empty-message" hidden>Uygun beceri bulunamadı.</p>
     </section>
 
-    <section class="section-pad grades-section" id="siniflar">
-      <div class="section-title center">
-        <p class="eyebrow">Sınıf kartları</p>
-        <h2>Okul öncesinden 12. sınıfa renkli beceri kataloğu.</h2>
-        <p>Her sınıfta yaş düzeyine uygun açıklamalar, ders etiketleri ve hızlı beceri bağlantıları bulunur.</p>
+    <section class="section feature-section" id="beceri-haritasi">
+      <div class="section-heading">
+        <p class="eyebrow">Kişiselleştirilmiş yol</p>
+        <h2>Öğrenci, öğretmen ve veliler için tek öğrenme akışı</h2>
       </div>
-      <div class="grade-groups" id="grade-groups" aria-live="polite"></div>
-      <p class="empty-state" id="grade-empty" hidden>Uygun beceri bulunamadı.</p>
-    </section>
-
-    <section class="section-pad path-section soft-bg" id="beceri-haritasi">
-      <div class="section-title center">
-        <p class="eyebrow">Beceri Haritası</p>
-        <h2>Her öğrenci için adım adım öğrenme yolu.</h2>
-        <p>Tanılama sonuçları, sınıf seviyesi ve öğretmen hedefleri tek bir akıllı planda birleşir.</p>
-      </div>
-      <div class="plan-grid four-grid">
-        <article><span>🎒</span><h3>Öğrenciler için kişisel öğrenme yolu</h3><p>Günlük hedef, tekrar kartı ve kısa quizlerle eksikler düzenli olarak kapanır.</p></article>
-        <article id="ogretmenler"><span>🧑‍🏫</span><h3>Öğretmenler için sınıf takibi</h3><p>Ödev, kazanım performansı ve sınıf raporları anlaşılır panellerde izlenir.</p></article>
-        <article id="veliler"><span>👨‍👩‍👧</span><h3>Veliler için gelişim raporu</h3><p>Çalışma süresi, doğruluk oranı ve güçlü beceriler güvenli şekilde özetlenir.</p></article>
-        <article><span>🏁</span><h3>Sınav hazırlığı ve tekrar planı</h3><p>LGS, TYT ve AYT hedefleri için konu tekrarı ve deneme analizi planlanır.</p></article>
-      </div>
-    </section>
-
-    <section class="section-pad dashboard-section" id="degerlendirme">
-      <div class="dashboard-copy">
-        <p class="eyebrow">Değerlendirme</p>
-        <h2>Çocuk dostu testler, anında geri bildirim ve net hedefler.</h2>
-        <p>Kısa alıştırmalar öğrenciyi yormadan ölçer; doğru ve yanlış cevaplar açıklamalarla öğrenme fırsatına dönüşür.</p>
-        <a class="btn btn-secondary" href="pages/ogrenci-panel.html">Örnek paneli incele</a>
-      </div>
-      <div class="report-card" id="analitik" aria-label="Örnek analiz kartı">
-        <span class="status-pill">Bugünün planı hazır</span>
-        <h3>7. Sınıf · Kesirler ve paragraf</h3>
-        <div class="progress-track"><span style="width:76%"></span></div>
-        <p>Akıllı plan önce eksik kazanımı, sonra yeni beceriyi önerir.</p>
-        <div class="mini-stats">
-          <div><strong>18 dk</strong><span>Günlük çalışma</span></div>
-          <div><strong>%92</strong><span>Doğruluk</span></div>
-          <div><strong>4</strong><span>Tamamlanan hedef</span></div>
-        </div>
+      <div class="feature-grid">
+        <article id="degerlendirme">
+          <span>🎒</span>
+          <h3>Öğrenciler için kişisel öğrenme yolu</h3>
+          <p>Tanılama sonuçlarına göre önerilen beceriler, tekrarlar ve hedefler otomatik sıralanır.</p>
+        </article>
+        <article>
+          <span>🧑‍🏫</span>
+          <h3>Öğretmenler için sınıf takibi</h3>
+          <p>Sınıf performansı, eksik kazanımlar ve ödev durumları anlaşılır panellerle izlenir.</p>
+        </article>
+        <article id="analitik">
+          <span>👨‍👩‍👧</span>
+          <h3>Veliler için gelişim raporu</h3>
+          <p>Günlük çalışma, ilerleme ve güçlü alanlar sade veli raporlarında özetlenir.</p>
+        </article>
+        <article>
+          <span>🏁</span>
+          <h3>Sınav hazırlığı ve tekrar planı</h3>
+          <p>Deneme, konu tekrarı ve zorlanılan beceriler için haftalık çalışma akışı oluşturulur.</p>
+        </article>
       </div>
     </section>
 
-    <section class="stats-strip" aria-label="K1 E-Kurs istatistikleri">
+    <section class="stats-section" aria-label="K1 E-Kurs istatistikleri">
       <div><strong>10.000+</strong><span>öğrenci</span></div>
       <div><strong>500+</strong><span>beceri</span></div>
       <div><strong>7/24</strong><span>erişim</span></div>
       <div><strong>Anında</strong><span>geri bildirim</span></div>
     </section>
+
+    <section class="section inspiration-section" id="ilham">
+      <div class="inspiration-card">
+        <div>
+          <p class="eyebrow">İlham</p>
+          <h2>Bugün küçük bir beceri, yarın büyük bir başarı.</h2>
+          <p>K1 E-Kurs; renkli deneyimi, anlaşılır hedefleri ve ölçülebilir gelişimi bir araya getirir.</p>
+        </div>
+        <a class="btn btn-primary" href="#beceri-ara">Beceri keşfet</a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <a class="brand footer-brand" href="index.html"><span class="brand-mark">K1</span><span class="brand-copy">E-Kurs</span></a>
-        <p>K1 E-Kurs, Türkiye K12 öğrencileri için beceri bazlı dijital öğrenme platformudur.</p>
-      </div>
-      <div><h3>Platform</h3><a href="#ogrenme">Öğrenme</a><a href="#degerlendirme">Değerlendirme</a><a href="#analitik">Analitik</a><a href="#beceri-haritasi">Beceri Haritası</a></div>
-      <div><h3>Dersler</h3><a href="#siniflar">Matematik</a><a href="#siniflar">Türkçe</a><a href="#siniflar">Fen Bilimleri</a><a href="#siniflar">Sosyal Bilgiler</a></div>
-      <div><h3>Destek</h3><a href="pages/ogrenci-panel.html">Öğrenci Paneli</a><a href="pages/ogretmen-panel.html">Öğretmen Paneli</a><a href="pages/veli-panel.html">Veli Paneli</a><a href="pages/admin-panel.html">Admin Paneli</a></div>
-      <div><h3>Yasal</h3><a href="#">Gizlilik</a><a href="#">Kullanım Koşulları</a><a href="#">Çerez Politikası</a><a href="#">İletişim</a></div>
+    <div class="footer-brand">
+      <a class="brand footer-logo" href="index.html" aria-label="K1 E-Kurs ana sayfa">
+        <span class="brand-mark">K1</span>
+        <span class="brand-text"><strong>E-Kurs</strong><small>K12 öğrenme</small></span>
+      </a>
+      <p>K1 E-Kurs, Türkiye K12 öğrencileri için beceri bazlı dijital öğrenme platformudur.</p>
     </div>
-    <p class="footer-bottom">© 2026 K1 E-Kurs. Tüm hakları saklıdır.</p>
+    <div>
+      <h3>Platform</h3>
+      <a href="#ogrenme">Öğrenme</a>
+      <a href="#beceri-haritasi">Beceri Haritası</a>
+      <a href="#analitik">Analitik</a>
+    </div>
+    <div>
+      <h3>Dersler</h3>
+      <a href="#siniflar">Matematik</a>
+      <a href="#siniflar">Türkçe</a>
+      <a href="#siniflar">Fen Bilimleri</a>
+    </div>
+    <div>
+      <h3>Destek</h3>
+      <a href="#uyelik">Yardım Merkezi</a>
+      <a href="#uyelik">Üyelik</a>
+      <a href="#beceri-ara">Beceri Ara</a>
+    </div>
+    <div>
+      <h3>Yasal</h3>
+      <a href="#">Gizlilik</a>
+      <a href="#">Kullanım Koşulları</a>
+      <a href="#">Çerezler</a>
+    </div>
   </footer>
 
-  <div class="toast" role="status" aria-live="polite"></div>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
