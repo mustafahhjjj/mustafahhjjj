@@ -10,61 +10,59 @@
 <body data-page="home">
   <header class="site-header">
     <nav class="nav-shell" aria-label="Ana menü">
-      <a class="brand" href="index.html" aria-label="e-kurs.com ana sayfa">
-        <span class="brand-mark">e</span>
-        <span class="brand-copy"><strong>e-kurs</strong><small>.com</small></span>
+      <a class="brand ixl-brand" href="index.html" aria-label="e-kurs.com ana sayfa">
+        <span class="brand-letter blue">e</span><span class="brand-letter green">-</span><span class="brand-letter orange">k</span><span class="brand-letter purple">u</span><span class="brand-letter red">r</span><span class="brand-letter teal">s</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span></span><span></span><span></span><em>Menü</em></button>
       <div class="nav-links" id="main-menu">
+        <a href="#dersler">Öğrenme</a>
+        <a href="#beceri-ara">Beceri Ara</a>
+        <a href="#beceri-planlari">Planlar</a>
         <a href="#siniflar">Sınıflar</a>
-        <a href="#dersler">Dersler</a>
-        <a href="#beceri-planlari">Beceri Planları</a>
-        <a href="#quizler">Quizler</a>
-        <a href="pages/ogrenci-panel.html">Öğrenci</a>
-        <a href="pages/veli-panel.html">Veli</a>
-        <a href="pages/ogretmen-panel.html">Öğretmen</a>
-        <a href="pages/admin-panel.html">Admin</a>
+        <a href="#paneller">Analitik</a>
+        <a href="#yorumlar">Başarı</a>
       </div>
       <div class="nav-actions">
         <a class="btn btn-light" href="pages/ogrenci-panel.html">Giriş Yap</a>
-        <a class="btn btn-primary" href="#siniflar">Hemen Başla</a>
+        <a class="btn btn-primary" href="#siniflar">Üye Ol</a>
       </div>
     </nav>
   </header>
 
   <main>
     <section class="hero section-pad" id="hero">
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
+      <div class="hero-sky" aria-hidden="true">
+        <span class="cloud cloud-one"></span>
+        <span class="cloud cloud-two"></span>
+        <span class="kite kite-one">◆</span>
+        <span class="kite kite-two">✦</span>
+      </div>
       <div class="hero-content">
-        <p class="eyebrow">Türkiye için kişiselleştirilmiş öğrenme</p>
-        <h1>Her öğrenciye doğru beceri, doğru soru, anında geri bildirim.</h1>
-        <p class="hero-text">1. sınıftan 12. sınıfa kadar Türkiye müfredatına uyarlanmış beceri haritaları, kısa alıştırmalar, teşhis ekranı, öneriler ve gelişim analitiği tek platformda.</p>
+        <p class="eyebrow">Kişiselleştirilmiş öğrenme</p>
+        <h1>e-kurs, her öğrenci için kişisel öğrenme yoludur.</h1>
+        <p class="hero-text">Kapsamlı K12 müfredatı, akıllı beceri önerileri ve gerçek zamanlı analitikle öğrenciler eksiklerini görür, çalışır ve gelişimini takip eder.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-large" href="#siniflar">Sınıfını Seç</a>
+          <a class="btn btn-primary btn-large" href="#siniflar">Ücretsiz Başla</a>
           <a class="btn btn-secondary btn-large" href="#beceri-ara">Beceri Ara</a>
         </div>
-        <div class="trust-row" aria-label="Platform öne çıkanları">
-          <span>Akıllı beceri önerileri</span>
-          <span>Türkiye müfredatı</span>
-          <span>Rozet, puan ve analitik</span>
-        </div>
       </div>
-      <aside class="progress-card" aria-label="Örnek ilerleme kartı">
-        <div class="card-topline"><span>Akıllı teşhis</span><strong>32/45 beceri</strong></div>
-        <h2>Öğrenme yolun hazır</h2>
-        <div class="hero-stats">
-          <div><strong>32</strong><span>Çözülen soru</span></div>
-          <div><strong>128</strong><span>Kazanılan puan</span></div>
-          <div><strong>%86</strong><span>Başarı yüzdesi</span></div>
-        </div>
-        <div class="progress-track" aria-label="Başarı yüzdesi"><span style="width:86%"></span></div>
-        <div class="traffic-status" aria-label="Trafik ışığı ilerleme göstergesi">
-          <span class="light red"></span><p><strong>Kırmızı</strong> tekrar et</p>
-          <span class="light yellow"></span><p><strong>Sarı</strong> gelişiyor</p>
-          <span class="light green active"></span><p><strong>Yeşil</strong> çok iyi</p>
-        </div>
-      </aside>
+      <div class="ixl-feature-row" aria-label="Ana öğrenme özellikleri">
+        <a class="ixl-feature-card curriculum" href="#dersler">
+          <span class="feature-illustration">📚</span>
+          <h2>Kapsamlı K–12 müfredatı</h2>
+          <p>Matematik · Türkçe · Fen · Sosyal · İngilizce</p>
+        </a>
+        <a class="ixl-feature-card trusted" href="#yorumlar">
+          <span class="feature-illustration">🏅</span>
+          <h2>Öğrenci, veli ve öğretmenler için güvenilir</h2>
+          <p>Günlük hedefler, rozetler ve anlaşılır raporlar</p>
+        </a>
+        <a class="ixl-feature-card immersive" href="#paneller">
+          <span class="feature-illustration">📊</span>
+          <h2>Sürükleyici öğrenme deneyimi</h2>
+          <p>Analitik · Öneriler · Teşhis · Ödüller</p>
+        </a>
+      </div>
     </section>
 
     <section class="section-pad skill-discovery" id="beceri-ara">
@@ -86,7 +84,25 @@
     </section>
 
     <section class="section-pad" id="siniflar">
-      <div class="section-title">
+      <div class="offerings-strip">
+        <article>
+          <span>🎓</span>
+          <div>
+            <strong>Lise</strong>
+            <p>TYT, AYT ve okul dersleri için başarı yolu.</p>
+          </div>
+          <a href="pages/sinif-9.html">İncele →</a>
+        </article>
+        <article>
+          <span>🧑‍🎓</span>
+          <div>
+            <strong>Bağımsız öğrenenler</strong>
+            <p>Her yaş için kendi hızında çalışma.</p>
+          </div>
+          <a href="#beceri-ara">Başla →</a>
+        </article>
+      </div>
+      <div class="section-title center">
         <p class="eyebrow">Sınıf seçimi</p>
         <h2>İlkokuldan liseye sınıf sınıf beceri kataloğu.</h2>
         <p>Sınıf kartına tıkla; ders, beceri, kolay/orta/zor quiz, deneme ve çalışma önerilerine ulaş.</p>
@@ -169,7 +185,7 @@
 
   <footer class="site-footer">
     <div>
-      <a class="brand footer-brand" href="index.html"><span class="brand-mark">e</span><span class="brand-copy"><strong>e-kurs</strong><small>.com</small></span></a>
+      <a class="brand footer-brand ixl-brand" href="index.html"><span class="brand-letter blue">e</span><span class="brand-letter green">-</span><span class="brand-letter orange">k</span><span class="brand-letter purple">u</span><span class="brand-letter red">r</span><span class="brand-letter teal">s</span></a>
       <p>Güvenli, quiz odaklı ve Türkiye K12 sistemine uyumlu statik eğitim platformu.</p>
     </div>
     <nav aria-label="Alt menü">
