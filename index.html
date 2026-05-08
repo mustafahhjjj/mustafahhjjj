@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="e-kurs.com K12 öğrencileri için sınıf, ders, ünite, test, panel ve ödül odaklı modern eğitim platformu.">
+  <title>e-kurs.com | K12 Dijital Eğitim Platformu</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Ana menü">
+      <a class="brand" href="index.html" aria-label="e-kurs.com ana sayfa">
+        <span class="brand-mark">e</span>
+        <span><strong>e-kurs</strong><small>.com</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menü</button>
+      <div class="nav-links" id="main-menu">
+        <a href="#siniflar">Sınıflar</a>
+        <a href="#cozumler">Bölümler</a>
+        <a href="pages/ogrenci-panel.html">Öğrenci</a>
+        <a href="pages/veli-panel.html">Veli</a>
+        <a href="pages/ogretmen-panel.html">Öğretmen</a>
+        <a class="nav-cta" href="pages/admin-panel.html">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad">
+      <div class="hero-content">
+        <p class="eyebrow">K12 için mobil öncelikli öğrenme</p>
+        <h1>Her sınıfa uygun renkli, güvenli ve ölçülebilir eğitim deneyimi.</h1>
+        <p class="hero-text">İlkokuldan liseye kadar dersler, üniteler, testler, deneme sınavları, ödev yardımı ve kişiye özel öğretmen desteği tek yerde.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#siniflar">Sınıfını Seç</a>
+          <a class="btn secondary" href="pages/ogrenci-panel.html">Puan Panelini Gör</a>
+        </div>
+        <div class="trust-row" aria-label="Platform özellikleri">
+          <span>Admin onaylı mesajlaşma</span>
+          <span>Günlük ödül sistemi</span>
+          <span>Kolay-Orta-Zor testler</span>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Örnek öğrenci özeti">
+        <div class="mascot">📚</div>
+        <h2>Bugünkü Hedef</h2>
+        <p>45 soru çöz, 90 puan kazan ve liderlikte yüksel.</p>
+        <div class="progress"><span style="width:72%"></span></div>
+        <ul class="mini-list">
+          <li><strong>24</strong> konu anlatımı</li>
+          <li><strong>12</strong> ünite sınavı</li>
+          <li><strong>6</strong> deneme sınavı</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-pad" id="siniflar">
+      <div class="section-title">
+        <p class="eyebrow">Sınıflar</p>
+        <h2>Sınıfını seç, derslerine hemen başla.</h2>
+      </div>
+      <div class="grade-groups" id="grade-groups"></div>
+    </section>
+
+    <section class="section-pad soft-bg" id="cozumler">
+      <div class="section-title">
+        <p class="eyebrow">Eğitim bölümleri</p>
+        <h2>İhtiyacına göre öğren, çöz, ölç ve geliş.</h2>
+      </div>
+      <div class="feature-grid" id="feature-grid"></div>
+    </section>
+
+    <section class="section-pad two-col">
+      <div class="card-panel">
+        <p class="eyebrow">Güvenli iletişim</p>
+        <h2>Konum bazlı mesajlaşma altyapısı hazır.</h2>
+        <p>Öğrenciler aynı bölgedeki çalışma gruplarına ancak admin onayıyla dahil olur. Veli ve öğretmen bilgilendirme adımları PHP/MySQL entegrasyonuna hazır şekilde tasarlanmıştır.</p>
+        <button class="btn primary" data-toast="Mesajlaşma modülü statik sürümde tanıtım modundadır. Admin onayı ile aktifleşecek.">Altyapıyı İncele</button>
+      </div>
+      <div class="leaderboard-preview">
+        <h3>Haftalık Liderlik</h3>
+        <ol id="leaderboard-mini"></ol>
+        <a class="text-link" href="pages/ogrenci-panel.html">Tüm sıralamayı gör</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark">e</span><span><strong>e-kurs</strong><small>.com</small></span></a>
+    <p>© 2026 e-kurs.com — Statik K12 eğitim platformu. PHP/MySQL entegrasyonu için hazır dosya yapısı.</p>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
