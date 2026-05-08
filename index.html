@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="e-kurs.com; Türkiye K12 için quiz odaklı dersler, sınıflar, üniteler, deneme sınavları ve güvenli öğrenme platformu.">
-  <title>e-kurs.com | Quiz Odaklı K12 Eğitim Platformu</title>
+  <meta name="description" content="e-kurs.com; Türkiye K12 için beceri haritası, sınıflar, dersler, quizler, teşhis ve gelişim analitiği sunan eğitim platformu.">
+  <title>e-kurs.com | Türkiye için Beceri Odaklı K12 Platformu</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
@@ -18,6 +18,7 @@
       <div class="nav-links" id="main-menu">
         <a href="#siniflar">Sınıflar</a>
         <a href="#dersler">Dersler</a>
+        <a href="#beceri-planlari">Beceri Planları</a>
         <a href="#quizler">Quizler</a>
         <a href="pages/ogrenci-panel.html">Öğrenci</a>
         <a href="pages/veli-panel.html">Veli</a>
@@ -36,22 +37,22 @@
       <div class="hero-glow hero-glow-one"></div>
       <div class="hero-glow hero-glow-two"></div>
       <div class="hero-content">
-        <p class="eyebrow">Türkiye K12 için quiz merkezli öğrenme</p>
-        <h1>Dersleri quizlerle öğren, ilerlemeni anında gör.</h1>
-        <p class="hero-text">1. sınıftan 12. sınıfa kadar dersler, üniteler, kısa testler, deneme sınavları ve kişiye özel dijital öğretmen desteği tek platformda.</p>
+        <p class="eyebrow">Türkiye için kişiselleştirilmiş öğrenme</p>
+        <h1>Her öğrenciye doğru beceri, doğru soru, anında geri bildirim.</h1>
+        <p class="hero-text">1. sınıftan 12. sınıfa kadar Türkiye müfredatına uyarlanmış beceri haritaları, kısa alıştırmalar, teşhis ekranı, öneriler ve gelişim analitiği tek platformda.</p>
         <div class="hero-actions">
           <a class="btn btn-primary btn-large" href="#siniflar">Sınıfını Seç</a>
-          <a class="btn btn-secondary btn-large" href="#quizler">Quiz Çözmeye Başla</a>
+          <a class="btn btn-secondary btn-large" href="#beceri-ara">Beceri Ara</a>
         </div>
         <div class="trust-row" aria-label="Platform öne çıkanları">
-          <span>2-4 dakikalık quizler</span>
-          <span>Güvenli öğrenme</span>
-          <span>Rozet ve puan sistemi</span>
+          <span>Akıllı beceri önerileri</span>
+          <span>Türkiye müfredatı</span>
+          <span>Rozet, puan ve analitik</span>
         </div>
       </div>
       <aside class="progress-card" aria-label="Örnek ilerleme kartı">
-        <div class="card-topline"><span>Bugünkü hedef</span><strong>32/45 soru</strong></div>
-        <h2>Günlük öğrenme ritmin hazır</h2>
+        <div class="card-topline"><span>Akıllı teşhis</span><strong>32/45 beceri</strong></div>
+        <h2>Öğrenme yolun hazır</h2>
         <div class="hero-stats">
           <div><strong>32</strong><span>Çözülen soru</span></div>
           <div><strong>128</strong><span>Kazanılan puan</span></div>
@@ -66,11 +67,29 @@
       </aside>
     </section>
 
+    <section class="section-pad skill-discovery" id="beceri-ara">
+      <div class="section-title center">
+        <p class="eyebrow">Beceri arama</p>
+        <h2>Konunu yaz, sınıfına uygun beceri ve quizleri bul.</h2>
+        <p>Türkiye odaklı bu sürümde arama kutusu, ders seçimi ve öneri kartları tek ekranda çalışır.</p>
+      </div>
+      <div class="skill-finder" role="search">
+        <label class="search-box" for="skill-search"><span>🔎</span><input id="skill-search" type="search" placeholder="Örn. kesirler, okuma anlama, LGS problem" autocomplete="off"></label>
+        <button class="btn btn-primary" type="button" id="skill-search-button">Beceri Bul</button>
+      </div>
+      <div class="skill-results" id="skill-results" aria-live="polite"></div>
+      <div class="learning-pillars" aria-label="Platform ana özellikleri">
+        <article><span>📚</span><h3>Kapsamlı K12 müfredatı</h3><p>Matematik, Türkçe, Fen, Sosyal, İngilizce ve sınav hazırlık alanları sınıf düzeyine göre ayrılır.</p></article>
+        <article><span>🧭</span><h3>Kişisel öneriler</h3><p>Yanlış cevaplardan sonra öğrenciye tekrar etmesi gereken beceri ve çalışma kartları önerilir.</p></article>
+        <article><span>📊</span><h3>Gerçek zamanlı analitik</h3><p>Öğrenci, veli ve öğretmen panellerinde hedef, başarı, puan ve eksik kazanım özetleri görünür.</p></article>
+      </div>
+    </section>
+
     <section class="section-pad" id="siniflar">
       <div class="section-title">
         <p class="eyebrow">Sınıf seçimi</p>
-        <h2>İlkokuldan liseye Türkiye müfredatına uygun akış.</h2>
-        <p>Sınıf kartına tıkla; ders, ünite, kolay/orta/zor quiz ve deneme alanlarına ulaş.</p>
+        <h2>İlkokuldan liseye sınıf sınıf beceri kataloğu.</h2>
+        <p>Sınıf kartına tıkla; ders, beceri, kolay/orta/zor quiz, deneme ve çalışma önerilerine ulaş.</p>
       </div>
       <div class="grade-groups" id="grade-groups"></div>
     </section>
@@ -83,10 +102,23 @@
       <div class="feature-grid" id="feature-grid"></div>
     </section>
 
+    <section class="section-pad skill-plans" id="beceri-planlari">
+      <div class="section-title">
+        <p class="eyebrow">Beceri planları</p>
+        <h2>Türkiye kazanımlarına, sınavlara ve ders kitaplarına göre akış.</h2>
+        <p>Öğretmenler plan seçebilir; öğrenciler eksik kazanımlarını plan üzerinden tamamlayabilir.</p>
+      </div>
+      <div class="plan-grid">
+        <article><span>🇹🇷</span><h3>MEB kazanımları</h3><p>Sınıf ve ders kazanımlarına göre beceri listesi, kısa test ve tekrar kartı.</p><a class="btn btn-ghost" href="#siniflar">Kazanımları Gör</a></article>
+        <article><span>📝</span><h3>LGS · TYT · AYT</h3><p>Sınav hazırlığı için konu analizi, deneme, hedef puan ve gelişim çizelgesi.</p><a class="btn btn-ghost" href="pages/sinif-8.html">Sınav Planı</a></article>
+        <article><span>📘</span><h3>Ders kitabı eşleştirme</h3><p>Ünite başlıkları ders kartlarıyla eşleşir; öğretmen ödevi kolayca planlar.</p><a class="btn btn-ghost" href="pages/ogretmen-panel.html">Öğretmen Paneli</a></article>
+      </div>
+    </section>
+
     <section class="section-pad" id="dersler">
       <div class="section-title">
         <p class="eyebrow">Ders keşfet</p>
-        <h2>Popüler ders ve hazırlık kartları.</h2>
+        <h2>Popüler ders, beceri ve hazırlık kartları.</h2>
       </div>
       <div class="course-grid" id="course-grid"></div>
     </section>
