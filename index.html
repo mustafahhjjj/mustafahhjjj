@@ -3,211 +3,1277 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="K1 E-Kurs, Türkiye K12 öğrencileri için beceri bazlı öğrenme, sınıf kartları, öğretmen takibi ve veli raporları sunan dijital e-kurs platformudur.">
-  <title>K1 E-Kurs | Türkiye K12 Beceri Bazlı Öğrenme</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="description" content="e-kurs.com; okul öncesinden 12. sınıfa kadar öğrenciler için renkli, çocuk dostu, kişiye özel öğretmen destekli K12 öğrenme platformudur.">
+  <title>e-kurs.com | K12 Öğrenme Platformu</title>
+  <style>
+    :root {
+      --green-900: #0f6b3f;
+      --green-800: #12804b;
+      --green-700: #16a05d;
+      --green-500: #39c979;
+      --green-100: #e9fff2;
+      --blue-700: #2563eb;
+      --blue-500: #4aa3ff;
+      --blue-100: #eaf7ff;
+      --yellow-400: #ffd65a;
+      --orange-400: #ff9f43;
+      --pink-400: #fb6ea8;
+      --purple-500: #8b5cf6;
+      --ink: #14324a;
+      --muted: #5d7184;
+      --line: rgba(20, 50, 74, .12);
+      --white: #fff;
+      --shadow: 0 22px 60px rgba(16, 82, 63, .16);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 136px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(57, 201, 121, .18), transparent 30rem),
+        linear-gradient(180deg, #f7fffb 0%, #f4faff 43%, #fff 100%);
+      line-height: 1.55;
+    }
+
+    body.modal-open { overflow: hidden; }
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 1000;
+      padding: .8rem 1rem;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--green-900);
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(135deg, var(--green-900), var(--green-700));
+      color: var(--white);
+      box-shadow: 0 12px 30px rgba(15, 107, 63, .22);
+    }
+
+    .top-ribbon {
+      background: rgba(255, 255, 255, .13);
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .ribbon-inner,
+    .header-inner,
+    .nav-inner,
+    .section,
+    .hero-inner,
+    .footer-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .ribbon-inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
+    .ribbon-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .ribbon-links a { opacity: .92; }
+    .ribbon-links a:hover { opacity: 1; text-decoration: underline; }
+
+    .header-inner {
+      min-height: 82px;
+      display: grid;
+      grid-template-columns: auto minmax(220px, 1fr) auto auto;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      color: var(--green-900);
+      background: var(--white);
+      border-radius: 18px 18px 26px 18px;
+      box-shadow: inset 0 -5px 0 rgba(57, 201, 121, .2), 0 8px 18px rgba(0, 0, 0, .13);
+      font-size: 1.35rem;
+    }
+
+    .brand-text { display: grid; line-height: 1.05; }
+    .brand-text strong { font-size: 1.5rem; }
+    .brand-text small { font-size: .82rem; opacity: .9; font-weight: 800; letter-spacing: .04em; }
+
+    .header-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .search-symbol {
+      position: absolute;
+      left: 18px;
+      width: 19px;
+      height: 19px;
+      border: 3px solid var(--green-700);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .search-symbol::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 3px;
+      right: -8px;
+      bottom: -4px;
+      border-radius: 999px;
+      background: var(--green-700);
+      transform: rotate(45deg);
+    }
+
+    .header-search input,
+    .section-search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--white);
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .55), 0 10px 22px rgba(0, 0, 0, .12);
+    }
+
+    .header-search input {
+      height: 52px;
+      padding: 0 1.2rem 0 3.25rem;
+      font-weight: 750;
+    }
+
+    .header-search input:focus,
+    .section-search input:focus {
+      box-shadow: 0 0 0 4px rgba(255, 214, 90, .55), 0 10px 22px rgba(0, 0, 0, .12);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      min-height: 48px;
+      padding: .85rem 1.2rem;
+      border: 0;
+      border-radius: 999px;
+      font-weight: 900;
+      text-align: center;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      color: #0f4730;
+      background: var(--yellow-400);
+      box-shadow: 0 12px 0 rgba(205, 143, 20, .25), 0 18px 34px rgba(255, 159, 67, .25);
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      background: var(--blue-700);
+      box-shadow: 0 10px 0 rgba(37, 99, 235, .16), 0 16px 30px rgba(37, 99, 235, .24);
+    }
+
+    .btn-white {
+      color: var(--green-900);
+      background: var(--white);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .14);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      background: rgba(255, 255, 255, .14);
+      border: 2px solid rgba(255, 255, 255, .58);
+    }
+
+    .btn-soft {
+      color: var(--green-900);
+      background: var(--green-100);
+      box-shadow: inset 0 0 0 2px rgba(22, 160, 93, .12);
+    }
+
+    .mobile-auth { display: none; }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .18);
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin: 5px auto;
+      border-radius: 999px;
+      background: var(--white);
+    }
+
+    .nav-row {
+      border-top: 1px solid rgba(255, 255, 255, .16);
+      background: rgba(9, 83, 47, .18);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .35rem;
+      min-height: 52px;
+      overflow-x: auto;
+    }
+
+    .nav-inner a {
+      flex: 0 0 auto;
+      padding: .7rem 1rem;
+      border-radius: 999px;
+      font-weight: 850;
+      opacity: .94;
+    }
+
+    .nav-inner a:hover,
+    .nav-inner a:focus {
+      background: rgba(255, 255, 255, .15);
+      opacity: 1;
+    }
+
+    main { overflow: hidden; }
+
+    .hero {
+      position: relative;
+      padding: 52px 0 44px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 214, 90, .45) 0 90px, transparent 92px),
+        radial-gradient(circle at 90% 12%, rgba(74, 163, 255, .25) 0 150px, transparent 152px),
+        linear-gradient(135deg, #e8fff2 0%, #e7f8ff 50%, #f7fbff 100%);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .86);
+      filter: drop-shadow(0 14px 18px rgba(74, 163, 255, .12));
+    }
+
+    .hero::before { width: 210px; height: 64px; left: -50px; top: 130px; }
+    .hero::after { width: 260px; height: 78px; right: -70px; bottom: 86px; }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin: 0 0 .9rem;
+      color: var(--green-800);
+      font-size: .88rem;
+      font-weight: 950;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--yellow-400), var(--green-500));
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 1rem;
+      font-size: clamp(2.7rem, 7vw, 5.8rem);
+      line-height: .94;
+      letter-spacing: -.07em;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin-bottom: 1.5rem;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      font-weight: 650;
+    }
+
+    .hero-actions { display: flex; gap: .9rem; flex-wrap: wrap; margin-bottom: 1.3rem; }
+
+    .trust-row {
+      display: flex;
+      gap: .7rem;
+      flex-wrap: wrap;
+      color: var(--green-900);
+      font-weight: 850;
+    }
+
+    .trust-row span {
+      padding: .55rem .75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .75);
+      box-shadow: inset 0 0 0 1px rgba(22, 160, 93, .12);
+    }
+
+    .cloud-stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .cloud-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      min-height: 128px;
+      padding: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, .72);
+      border-radius: 42px;
+      background: rgba(255, 255, 255, .88);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .cloud-card:nth-child(2) { margin-left: 34px; }
+    .cloud-card:nth-child(3) { margin-left: 10px; }
+
+    .icon-box {
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      color: var(--white);
+      background: var(--blue-500);
+      box-shadow: inset 0 -8px 0 rgba(0, 0, 0, .08);
+    }
+
+    .icon-box::before {
+      content: "";
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, .95);
+      box-shadow: 14px 10px 0 rgba(255, 255, 255, .56);
+    }
+
+    .icon-box.green { background: var(--green-500); }
+    .icon-box.purple { background: var(--purple-500); }
+    .icon-box.orange { background: var(--orange-400); }
+
+    .cloud-card h2 {
+      margin-bottom: .25rem;
+      font-size: 1.22rem;
+      letter-spacing: -.02em;
+    }
+
+    .cloud-card p { margin: 0; color: var(--muted); font-weight: 650; }
+
+    .section { padding: 76px 0; }
+
+    .section-heading {
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin-bottom: .7rem;
+      font-size: clamp(2rem, 4vw, 3.55rem);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+    }
+
+    .section-heading p:not(.eyebrow) {
+      color: var(--muted);
+      font-size: 1.08rem;
+      font-weight: 650;
+    }
+
+    .section-heading .eyebrow { justify-content: center; }
+
+    .quick-panel {
+      margin-top: -10px;
+      padding-top: 0;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .quick-card {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: 0 14px 35px rgba(20, 50, 74, .08);
+    }
+
+    .quick-card strong {
+      display: block;
+      margin-bottom: .35rem;
+      font-size: 1.05rem;
+    }
+
+    .quick-card span { color: var(--muted); font-weight: 650; }
+
+    .grades-wrap {
+      border-radius: 42px;
+      padding: 1.25rem;
+      background: linear-gradient(135deg, rgba(57, 201, 121, .16), rgba(74, 163, 255, .14));
+    }
+
+    .grade-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .grade-card {
+      position: relative;
+      min-height: 238px;
+      display: flex;
+      flex-direction: column;
+      padding: 1.35rem;
+      border: 1px solid rgba(255, 255, 255, .74);
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 18px 42px rgba(20, 50, 74, .1);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .grade-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(20, 50, 74, .15);
+    }
+
+    .grade-card::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      right: -42px;
+      top: -42px;
+      border-radius: 999px;
+      background: var(--accent, var(--green-500));
+      opacity: .17;
+    }
+
+    .grade-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      margin-bottom: 1rem;
+    }
+
+    .grade-badge {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: var(--white);
+      background: var(--accent, var(--green-500));
+      font-weight: 950;
+      font-size: 1.1rem;
+      box-shadow: inset 0 -8px 0 rgba(0, 0, 0, .08);
+    }
+
+    .grade-level {
+      padding: .35rem .65rem;
+      border-radius: 999px;
+      color: var(--green-900);
+      background: var(--green-100);
+      font-size: .78rem;
+      font-weight: 900;
+    }
+
+    .grade-card h3 {
+      margin-bottom: .45rem;
+      font-size: 1.35rem;
+      letter-spacing: -.035em;
+    }
+
+    .grade-card p {
+      color: var(--muted);
+      font-weight: 650;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      gap: .45rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .tags span {
+      padding: .35rem .55rem;
+      border-radius: 999px;
+      background: #f1f7fb;
+      color: #3f5669;
+      font-size: .78rem;
+      font-weight: 850;
+    }
+
+    .grade-link {
+      margin-top: 1rem;
+      color: var(--blue-700);
+      font-weight: 950;
+    }
+
+    .search-section {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #f5fbff 50%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .search-board {
+      max-width: 920px;
+      margin: 0 auto 1.25rem;
+      padding: 1rem;
+      border-radius: 34px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .section-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-search input {
+      min-height: 66px;
+      padding: 0 1.4rem 0 3.6rem;
+      font-size: 1.08rem;
+      font-weight: 800;
+      background: #f8fcff;
+      box-shadow: inset 0 0 0 2px var(--line);
+    }
+
+    .skill-results {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .skill-card {
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: 0 14px 36px rgba(20, 50, 74, .08);
+    }
+
+    .skill-card strong {
+      display: block;
+      margin-bottom: .35rem;
+      font-size: 1.08rem;
+    }
+
+    .skill-card span { color: var(--muted); font-weight: 700; }
+
+    .empty-message {
+      max-width: 680px;
+      margin: 1.2rem auto 0;
+      padding: 1rem;
+      border-radius: 18px;
+      text-align: center;
+      color: #8a4b00;
+      background: #fff5d6;
+      font-weight: 850;
+    }
+
+    .teacher-section { padding-top: 44px; }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .teacher-card,
+    .feature-list {
+      border: 1px solid var(--line);
+      border-radius: 38px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .teacher-card {
+      padding: 2rem;
+      background:
+        radial-gradient(circle at 88% 15%, rgba(255, 214, 90, .36), transparent 145px),
+        linear-gradient(135deg, #ffffff, #effff5);
+    }
+
+    .teacher-card h2 {
+      margin-bottom: .75rem;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.04;
+      letter-spacing: -.055em;
+    }
+
+    .teacher-card p { color: var(--muted); font-size: 1.08rem; font-weight: 650; }
+
+    .progress-demo {
+      display: grid;
+      gap: .9rem;
+      margin-top: 1.5rem;
+    }
+
+    .progress-row {
+      padding: 1rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .85);
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: .5rem;
+      font-weight: 900;
+    }
+
+    .bar { height: 12px; border-radius: 999px; background: #d9ecf6; overflow: hidden; }
+    .bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--green-500), var(--blue-500)); }
+
+    .feature-list {
+      display: grid;
+      gap: .2rem;
+      padding: 1rem;
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      padding: 1.05rem;
+      border-radius: 26px;
+    }
+
+    .feature-item:hover { background: #f6fbff; }
+    .feature-item .icon-box { width: 52px; height: 52px; border-radius: 17px; }
+    .feature-item .icon-box::before { width: 20px; height: 20px; box-shadow: 10px 7px 0 rgba(255, 255, 255, .55); }
+    .feature-item h3 { margin-bottom: .25rem; }
+    .feature-item p { margin-bottom: 0; color: var(--muted); font-weight: 650; }
+
+    .cta-section { padding-top: 30px; }
+
+    .cta-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 2rem;
+      border-radius: 38px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 12% 20%, rgba(255, 214, 90, .38), transparent 135px),
+        linear-gradient(135deg, var(--green-900), var(--blue-700));
+      box-shadow: var(--shadow);
+    }
+
+    .cta-card h2 {
+      margin-bottom: .4rem;
+      font-size: clamp(1.9rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -.05em;
+    }
+
+    .cta-card p { margin-bottom: 0; max-width: 680px; opacity: .9; font-weight: 650; }
+
+    .site-footer {
+      margin-top: 44px;
+      color: #d9fff0;
+      background: #0b3f2c;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 42px 0;
+    }
+
+    .footer-inner p { max-width: 380px; opacity: .86; }
+    .footer-inner h3 { color: var(--white); }
+    .footer-inner nav { display: grid; gap: .55rem; }
+    .footer-inner a:hover { text-decoration: underline; }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(7, 22, 38, .62);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-backdrop.active { display: flex; }
+
+    .modal {
+      width: min(520px, 100%);
+      padding: 1.4rem;
+      border-radius: 30px;
+      background: var(--white);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .28);
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal h2 { margin-bottom: .2rem; font-size: 2rem; letter-spacing: -.04em; }
+    .modal p { color: var(--muted); font-weight: 650; }
+
+    .close-modal {
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 14px;
+      color: var(--ink);
+      background: #eef6fb;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .form-grid { display: grid; gap: .85rem; }
+    .form-grid label { display: grid; gap: .35rem; font-weight: 900; }
+    .form-grid input,
+    .form-grid select {
+      width: 100%;
+      min-height: 50px;
+      padding: 0 .95rem;
+      border: 2px solid var(--line);
+      border-radius: 16px;
+      outline: 0;
+      color: var(--ink);
+      background: #fbfdff;
+    }
+
+    .form-grid input:focus,
+    .form-grid select:focus { border-color: var(--green-500); box-shadow: 0 0 0 4px rgba(57, 201, 121, .14); }
+
+    .modal-note {
+      margin: .9rem 0 0;
+      padding: .8rem;
+      border-radius: 16px;
+      color: #315a25;
+      background: #efffe9;
+      font-weight: 750;
+    }
+
+    @media (max-width: 980px) {
+      .header-inner { grid-template-columns: auto 1fr auto; }
+      .header-actions { display: none; }
+      .menu-toggle { display: block; }
+      .nav-row { display: none; }
+      .nav-row.open { display: block; }
+      .nav-inner { flex-wrap: wrap; justify-content: flex-start; padding: .7rem 0; }
+      .mobile-auth { display: inline-flex; }
+      .hero-inner, .feature-grid, .cta-card { grid-template-columns: 1fr; }
+      .quick-grid, .grade-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .skill-results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 96px; }
+      .top-ribbon { display: none; }
+      .header-inner {
+        width: min(100% - 22px, var(--max));
+        grid-template-columns: 1fr auto;
+        gap: .7rem;
+        min-height: 72px;
+      }
+      .brand-mark { width: 46px; height: 46px; border-radius: 16px 16px 22px 16px; }
+      .brand-text strong { font-size: 1.25rem; }
+      .brand-text small { display: none; }
+      .header-search { grid-column: 1 / -1; order: 3; margin-bottom: .8rem; }
+      .header-search input { height: 46px; }
+      .hero { padding-top: 34px; }
+      .hero-inner { width: min(100% - 22px, var(--max)); }
+      .hero-actions .btn { width: 100%; }
+      .cloud-card, .cloud-card:nth-child(2), .cloud-card:nth-child(3) { margin-left: 0; border-radius: 28px; }
+      .quick-grid, .grade-grid, .skill-results, .footer-inner { grid-template-columns: 1fr; }
+      .section { width: min(100% - 22px, var(--max)); padding: 54px 0; }
+      .grades-wrap { padding: .7rem; border-radius: 30px; }
+      .cta-card { padding: 1.4rem; border-radius: 28px; }
+      .ribbon-inner, .header-inner, .nav-inner, .section, .hero-inner, .footer-inner { width: min(var(--max), calc(100% - 22px)); }
+    }
+  </style>
 </head>
-<body data-page="home">
+<body>
+  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+
   <header class="site-header">
-    <div class="header-shell">
-      <div class="header-top">
-        <a class="brand" href="index.html" aria-label="K1 E-Kurs ana sayfa">
-          <span class="brand-mark">K1</span>
-          <span class="brand-text"><strong>E-Kurs</strong><small>K12 öğrenme</small></span>
-        </a>
-
-        <label class="header-search" for="global-skill-search">
-          <span class="search-icon" aria-hidden="true">⌕</span>
-          <input id="global-skill-search" class="js-skill-search" type="search" placeholder="Konu, beceri veya sınıf ara" autocomplete="off">
-        </label>
-
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
-          <span></span><span></span><span></span><em>Menü</em>
-        </button>
-
-        <div class="header-actions">
-          <a class="login-link" href="pages/ogrenci-panel.html">Giriş Yap</a>
-          <a class="membership-link" href="#uyelik">Üyelik</a>
+    <div class="top-ribbon">
+      <div class="ribbon-inner">
+        <span>Okul öncesinden 12. sınıfa kadar renkli öğrenme</span>
+        <div class="ribbon-links" aria-label="Hızlı bağlantılar">
+          <a href="#siniflar">Sınıflar</a>
+          <a href="#beceri-ara">Beceri ara</a>
+          <a href="#akilli-ogretmen">Dijital öğretmen</a>
         </div>
       </div>
+    </div>
 
-      <nav class="main-menu" id="main-menu" aria-label="Ana menü">
-        <a href="#ogrenme">Öğrenme</a>
-        <a href="#degerlendirme">Değerlendirme</a>
-        <a href="#analitik">Analitik</a>
-        <a href="#beceri-haritasi">Beceri Haritası</a>
-        <a href="#ilham">İlham</a>
+    <div class="header-inner">
+      <a class="brand" href="#anasayfa" aria-label="e-kurs.com ana sayfa">
+        <span class="brand-mark">ek</span>
+        <span class="brand-text"><strong>e-kurs.com</strong><small>K12 öğrenme</small></span>
+      </a>
+
+      <label class="header-search" for="global-search">
+        <span class="search-symbol" aria-hidden="true"></span>
+        <input id="global-search" class="js-search" type="search" placeholder="Konu, ders veya sınıf ara" autocomplete="off">
+      </label>
+
+      <div class="header-actions">
+        <button class="btn btn-outline" type="button" data-modal="login">Giriş Yap</button>
+        <button class="btn btn-primary" type="button" data-modal="signup">Üyelik</button>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-label="Menüyü aç veya kapat" aria-controls="main-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-row" id="main-nav">
+      <nav class="nav-inner" aria-label="Ana menü">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#siniflar">Sınıflar</a>
+        <a href="#beceri-ara">Beceri Ara</a>
+        <a href="#akilli-ogretmen">Akıllı Öğretmen</a>
+        <a href="#raporlar">Raporlar</a>
+        <a href="#iletisim">İletişim</a>
+        <button class="btn btn-white mobile-auth" type="button" data-modal="login">Giriş Yap</button>
+        <button class="btn btn-primary mobile-auth" type="button" data-modal="signup">Üyelik</button>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero-scene" id="ogrenme" aria-labelledby="hero-title">
-      <div class="scene-layer" aria-hidden="true">
-        <span class="sun"></span>
-        <span class="cloud cloud-one"></span>
-        <span class="cloud cloud-two"></span>
-        <span class="cloud cloud-three"></span>
-        <span class="balloon"><i></i></span>
-        <span class="paper-plane"></span>
-        <span class="book-object"><b></b></span>
-        <span class="ruler-object"></span>
-        <span class="chart-board"><b></b><b></b><b></b></span>
-        <span class="pencil-object"></span>
-        <span class="hill hill-left"></span>
-        <span class="hill hill-right"></span>
-        <span class="water-wave"></span>
-      </div>
+  <main id="icerik">
+    <section class="hero" id="anasayfa" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Çocuk dostu K12 öğrenme platformu</p>
+          <h1 id="hero-title">Her öğrenci için renkli, eğlenceli ve hedefli öğrenme.</h1>
+          <p class="hero-copy">e-kurs.com; dersleri, kazanımları ve alıştırmaları öğrencinin seviyesine göre düzenleyen kişiye özel öğretmen deneyimi sunar.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#siniflar" id="start-button">Hemen Başla</a>
+            <button class="btn btn-secondary" type="button" id="focus-search">Beceri Ara</button>
+          </div>
+          <div class="trust-row" aria-label="Platform özellikleri">
+            <span>Türkçe içerik</span>
+            <span>Mobil uyumlu</span>
+            <span>Anında geri bildirim</span>
+          </div>
+        </div>
 
-      <div class="hero-content">
-        <p class="eyebrow">Türkiye K12 için beceri bazlı öğrenme</p>
-        <h1 id="hero-title">K1 E-Kurs ile kişiselleştirilmiş öğrenme</h1>
-        <p class="hero-copy">Matematik, Türkçe, Fen Bilimleri ve Sosyal Bilgiler için Türkiye odaklı beceri bazlı öğrenme platformu.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#siniflar">Hemen Başla</a>
-          <a class="btn btn-ghost" href="#beceri-ara">Beceri Ara</a>
+        <div class="cloud-stack" aria-label="Öne çıkan bilgiler">
+          <article class="cloud-card">
+            <span class="icon-box green" aria-hidden="true"></span>
+            <div>
+              <h2>Kişiye özel öğretmen</h2>
+              <p>Öğrencinin hızına göre yeni hedefler, tekrarlar ve çalışma önerileri hazırlanır.</p>
+            </div>
+          </article>
+          <article class="cloud-card">
+            <span class="icon-box purple" aria-hidden="true"></span>
+            <div>
+              <h2>Beceri bazlı öğrenme</h2>
+              <p>Matematik, Türkçe, Fen Bilimleri ve Sosyal Bilgiler kazanımları net adımlara ayrılır.</p>
+            </div>
+          </article>
+          <article class="cloud-card">
+            <span class="icon-box orange" aria-hidden="true"></span>
+            <div>
+              <h2>Veli ve öğretmen raporları</h2>
+              <p>Gelişim, güçlü alanlar ve destek gerektiren konular anlaşılır panellerde izlenir.</p>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="hero-cloud-cards" aria-label="K1 E-Kurs özellikleri">
-        <article class="cloud-card">
-          <span class="card-icon">📚</span>
-          <h2>Kapsamlı MEB Müfredatı</h2>
-          <p>Matematik • Türkçe • Fen Bilimleri • Sosyal Bilgiler</p>
-          <a href="#siniflar" aria-label="MEB müfredatı sınıf kartlarına git">⌄</a>
-        </article>
-        <article class="cloud-card featured">
-          <span class="card-icon">🧭</span>
-          <h2>Öğrenciye Özel Beceri Planı</h2>
-          <p>Tanılama • Öneriler • Hedefler • Tekrar</p>
-          <a href="#beceri-haritasi" aria-label="Beceri planına git">⌄</a>
-        </article>
-        <article class="cloud-card">
-          <span class="card-icon">📊</span>
-          <h2>Anlık Analiz ve Raporlama</h2>
-          <p>Öğretmen paneli • Veli raporu • İlerleme takibi</p>
-          <a href="#analitik" aria-label="Analitik bölümüne git">⌄</a>
-        </article>
+    <section class="section quick-panel" aria-labelledby="quick-title">
+      <div class="section-heading">
+        <p class="eyebrow">Neden e-kurs.com?</p>
+        <h2 id="quick-title">Modern, sade ve öğrenciyi oyunda tutan öğrenme akışı.</h2>
+      </div>
+      <div class="quick-grid">
+        <article class="quick-card"><strong>Seviye uyumu</strong><span>Her sınıf için yaşa uygun anlatım ve etkinlikler.</span></article>
+        <article class="quick-card"><strong>Akıllı öğretmen</strong><span>Eksik kazanımları görür, sıradaki beceriyi önerir.</span></article>
+        <article class="quick-card"><strong>Canlı ilerleme</strong><span>Çalışma süresi, doğruluk ve hedefler kolayca takip edilir.</span></article>
+        <article class="quick-card"><strong>Güvenli deneyim</strong><span>Çocuklara uygun, dikkat dağıtmayan ve temiz arayüz.</span></article>
       </div>
     </section>
 
-    <section class="info-band" id="uyelik" aria-label="Türkiye K12 müfredatı bilgisi">
-      <div class="info-icon" aria-hidden="true">🌐</div>
-      <div class="info-copy">
-        <h2>Türkiye K12 müfredatını keşfedin</h2>
-        <p>Sınıf, ders ve kazanım bazlı beceri planlarıyla öğrenciler adım adım ilerler.</p>
-      </div>
-      <a class="btn btn-small" href="#beceri-ara">Hemen deneyin</a>
-      <button class="band-close" type="button" aria-label="Bilgi bandını kapat">×</button>
-    </section>
-
-    <section class="section grade-section" id="siniflar" aria-labelledby="grades-title">
+    <section class="section" id="siniflar" aria-labelledby="grades-title">
       <div class="section-heading">
         <p class="eyebrow">Sınıf kartları</p>
-        <h2 id="grades-title">Okul öncesinden 12. sınıfa renkli beceri kataloğu</h2>
-        <p>Her kartta yaş düzeyine uygun açıklama, ders etiketleri ve hızlı beceri bağlantıları bulunur.</p>
+        <h2 id="grades-title">Sınıfını seç, kendi öğrenme yoluna başla.</h2>
+        <p>Arama kutusuna ders, konu veya sınıf yazdığınızda kartlar anında filtrelenir. Kartlara tıklayınca ilgili sınıf sayfası bağlantısı açılır.</p>
       </div>
-      <div class="grade-grid" id="grade-grid" aria-live="polite"></div>
+      <div class="grades-wrap">
+        <div class="grade-grid" id="grade-grid" aria-live="polite"></div>
+      </div>
+      <p class="empty-message" id="grade-empty" hidden>Bu aramaya uygun sınıf kartı bulunamadı.</p>
     </section>
 
-    <section class="section skill-section" id="beceri-ara" aria-labelledby="skill-title">
+    <section class="section search-section" id="beceri-ara" aria-labelledby="search-title">
       <div class="section-heading">
-        <p class="eyebrow">Beceri arama</p>
-        <h2 id="skill-title">Konu, beceri veya sınıf yazın; sonuçlar anında filtrelensin</h2>
-        <p>Toplama, çıkarma, kesirler, okuma anlama, paragraf, ses bilgisi, canlılar, Türkiye haritası, denklem ve geometri gibi becerileri deneyin.</p>
+        <p class="eyebrow">Beceri ara</p>
+        <h2 id="search-title">Konu, ders veya sınıf yaz; becerileri hemen keşfet.</h2>
+        <p>Örnek aramalar: toplama, kesirler, okuma anlama, geometri, canlılar, 7. sınıf, lise matematik.</p>
       </div>
-      <div class="skill-search-panel" role="search">
+      <div class="search-board" role="search">
         <label class="section-search" for="skill-search">
-          <span class="search-icon" aria-hidden="true">⌕</span>
-          <input id="skill-search" class="js-skill-search" type="search" placeholder="Toplama, 5. sınıf, geometri..." autocomplete="off">
+          <span class="search-symbol" aria-hidden="true"></span>
+          <input id="skill-search" class="js-search" type="search" placeholder="Örn. 5. sınıf kesirler veya Türkçe paragraf" autocomplete="off">
         </label>
       </div>
       <div class="skill-results" id="skill-results" aria-live="polite"></div>
-      <p class="empty-message" id="empty-message" hidden>Uygun beceri bulunamadı.</p>
+      <p class="empty-message" id="skill-empty" hidden>Bu aramaya uygun beceri bulunamadı.</p>
     </section>
 
-    <section class="section feature-section" id="beceri-haritasi">
-      <div class="section-heading">
-        <p class="eyebrow">Kişiselleştirilmiş yol</p>
-        <h2>Öğrenci, öğretmen ve veliler için tek öğrenme akışı</h2>
-      </div>
+    <section class="section teacher-section" id="akilli-ogretmen" aria-labelledby="teacher-title">
       <div class="feature-grid">
-        <article id="degerlendirme">
-          <span>🎒</span>
-          <h3>Öğrenciler için kişisel öğrenme yolu</h3>
-          <p>Tanılama sonuçlarına göre önerilen beceriler, tekrarlar ve hedefler otomatik sıralanır.</p>
+        <article class="teacher-card">
+          <p class="eyebrow">Dijital öğretmen desteği</p>
+          <h2 id="teacher-title">Her öğrencinin yanında yol gösteren akıllı öğretmen.</h2>
+          <p>Öğrenci konuyu çalışır, kısa alıştırmalar yapar ve sistem doğru sıradaki beceriyi önerir. Böylece öğrenme planı net, ölçülebilir ve motive edici kalır.</p>
+          <div class="progress-demo" aria-label="Örnek ilerleme çubukları">
+            <div class="progress-row"><div class="progress-label"><span>Matematik hedefi</span><span>%82</span></div><div class="bar"><i style="width:82%"></i></div></div>
+            <div class="progress-row"><div class="progress-label"><span>Okuma anlama</span><span>%68</span></div><div class="bar"><i style="width:68%"></i></div></div>
+            <div class="progress-row"><div class="progress-label"><span>Fen tekrarı</span><span>%74</span></div><div class="bar"><i style="width:74%"></i></div></div>
+          </div>
         </article>
-        <article>
-          <span>🧑‍🏫</span>
-          <h3>Öğretmenler için sınıf takibi</h3>
-          <p>Sınıf performansı, eksik kazanımlar ve ödev durumları anlaşılır panellerle izlenir.</p>
-        </article>
-        <article id="analitik">
-          <span>👨‍👩‍👧</span>
-          <h3>Veliler için gelişim raporu</h3>
-          <p>Günlük çalışma, ilerleme ve güçlü alanlar sade veli raporlarında özetlenir.</p>
-        </article>
-        <article>
-          <span>🏁</span>
-          <h3>Sınav hazırlığı ve tekrar planı</h3>
-          <p>Deneme, konu tekrarı ve zorlanılan beceriler için haftalık çalışma akışı oluşturulur.</p>
-        </article>
+
+        <div class="feature-list" id="raporlar">
+          <article class="feature-item">
+            <span class="icon-box green" aria-hidden="true"></span>
+            <div><h3>Öğrenci paneli</h3><p>Günlük hedefler, tamamlanan beceriler ve rozetler tek ekranda görünür.</p></div>
+          </article>
+          <article class="feature-item">
+            <span class="icon-box purple" aria-hidden="true"></span>
+            <div><h3>Öğretmen takibi</h3><p>Sınıf başarı dağılımı ve eksik kazanımlar hızlıca incelenir.</p></div>
+          </article>
+          <article class="feature-item">
+            <span class="icon-box orange" aria-hidden="true"></span>
+            <div><h3>Veli özeti</h3><p>Haftalık çalışma düzeni ve gelişim alanları sade dille paylaşılır.</p></div>
+          </article>
+          <article class="feature-item">
+            <span class="icon-box" aria-hidden="true"></span>
+            <div><h3>Sınav hazırlığı</h3><p>Tekrar listeleri, deneme takibi ve konu pekiştirme planı oluşturulur.</p></div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="stats-section" aria-label="K1 E-Kurs istatistikleri">
-      <div><strong>10.000+</strong><span>öğrenci</span></div>
-      <div><strong>500+</strong><span>beceri</span></div>
-      <div><strong>7/24</strong><span>erişim</span></div>
-      <div><strong>Anında</strong><span>geri bildirim</span></div>
-    </section>
-
-    <section class="section inspiration-section" id="ilham">
-      <div class="inspiration-card">
+    <section class="section cta-section" id="iletisim">
+      <div class="cta-card">
         <div>
-          <p class="eyebrow">İlham</p>
-          <h2>Bugün küçük bir beceri, yarın büyük bir başarı.</h2>
-          <p>K1 E-Kurs; renkli deneyimi, anlaşılır hedefleri ve ölçülebilir gelişimi bir araya getirir.</p>
+          <p class="eyebrow">Bugün başla</p>
+          <h2>Çocuğunuzun sınıfına uygun öğrenme yolunu hemen keşfedin.</h2>
+          <p>Ücretsiz hesap oluşturun, sınıf seçin ve dijital öğretmen desteğiyle ilk beceri çalışmasını başlatın.</p>
         </div>
-        <a class="btn btn-primary" href="#beceri-ara">Beceri keşfet</a>
+        <button class="btn btn-primary" type="button" data-modal="signup">Üyelik Oluştur</button>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-brand">
-      <a class="brand footer-logo" href="index.html" aria-label="K1 E-Kurs ana sayfa">
-        <span class="brand-mark">K1</span>
-        <span class="brand-text"><strong>E-Kurs</strong><small>K12 öğrenme</small></span>
-      </a>
-      <p>K1 E-Kurs, Türkiye K12 öğrencileri için beceri bazlı dijital öğrenme platformudur.</p>
-    </div>
-    <div>
-      <h3>Platform</h3>
-      <a href="#ogrenme">Öğrenme</a>
-      <a href="#beceri-haritasi">Beceri Haritası</a>
-      <a href="#analitik">Analitik</a>
-    </div>
-    <div>
-      <h3>Dersler</h3>
-      <a href="#siniflar">Matematik</a>
-      <a href="#siniflar">Türkçe</a>
-      <a href="#siniflar">Fen Bilimleri</a>
-    </div>
-    <div>
-      <h3>Destek</h3>
-      <a href="#uyelik">Yardım Merkezi</a>
-      <a href="#uyelik">Üyelik</a>
-      <a href="#beceri-ara">Beceri Ara</a>
-    </div>
-    <div>
-      <h3>Yasal</h3>
-      <a href="#">Gizlilik</a>
-      <a href="#">Kullanım Koşulları</a>
-      <a href="#">Çerezler</a>
+    <div class="footer-inner">
+      <div>
+        <a class="brand" href="#anasayfa" aria-label="e-kurs.com ana sayfa">
+          <span class="brand-mark">ek</span>
+          <span class="brand-text"><strong>e-kurs.com</strong><small>K12 öğrenme</small></span>
+        </a>
+        <p>Türkiye'deki öğrenciler için çocuk dostu, renkli ve hedef odaklı K12 öğrenme platformu.</p>
+      </div>
+      <nav aria-label="Platform bağlantıları">
+        <h3>Platform</h3>
+        <a href="#siniflar">Sınıflar</a>
+        <a href="#beceri-ara">Beceri Ara</a>
+        <a href="#akilli-ogretmen">Akıllı Öğretmen</a>
+      </nav>
+      <nav aria-label="Ders bağlantıları">
+        <h3>Dersler</h3>
+        <a href="#siniflar">Matematik</a>
+        <a href="#siniflar">Türkçe</a>
+        <a href="#siniflar">Fen Bilimleri</a>
+      </nav>
+      <nav aria-label="Yardım bağlantıları">
+        <h3>Destek</h3>
+        <a href="#iletisim">İletişim</a>
+        <a href="#" data-modal="login">Giriş Yap</a>
+        <a href="#" data-modal="signup">Üyelik</a>
+      </nav>
     </div>
   </footer>
 
-  <script src="assets/js/app.js"></script>
+  <div class="modal-backdrop" id="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-title" hidden>
+    <div class="modal">
+      <div class="modal-head">
+        <div><h2 id="login-title">Giriş Yap</h2><p>Öğrenci, öğretmen veya veli hesabınızla devam edin.</p></div>
+        <button class="close-modal" type="button" aria-label="Giriş penceresini kapat">×</button>
+      </div>
+      <form class="form-grid" data-demo-form>
+        <label>E-posta<input type="email" placeholder="ornek@e-kurs.com" required></label>
+        <label>Şifre<input type="password" placeholder="Şifreniz" required></label>
+        <button class="btn btn-secondary" type="submit">Panele Git</button>
+      </form>
+      <p class="modal-note">Demo: Form gönderildiğinde örnek bilgilendirme gösterilir.</p>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="signup-modal" role="dialog" aria-modal="true" aria-labelledby="signup-title" hidden>
+    <div class="modal">
+      <div class="modal-head">
+        <div><h2 id="signup-title">Üyelik Oluştur</h2><p>Çalışmaya başlamak için kısa bilgileri doldurun.</p></div>
+        <button class="close-modal" type="button" aria-label="Üyelik penceresini kapat">×</button>
+      </div>
+      <form class="form-grid" data-demo-form>
+        <label>Ad Soyad<input type="text" placeholder="Adınız Soyadınız" required></label>
+        <label>E-posta<input type="email" placeholder="ornek@e-kurs.com" required></label>
+        <label>Sınıf<select required><option value="">Sınıf seçin</option><option>Okul Öncesi</option><option>Anaokulu</option><option>1. sınıf</option><option>2. sınıf</option><option>3. sınıf</option><option>4. sınıf</option><option>5. sınıf</option><option>6. sınıf</option><option>7. sınıf</option><option>8. sınıf</option><option>9. sınıf</option><option>10. sınıf</option><option>11. sınıf</option><option>12. sınıf</option></select></label>
+        <button class="btn btn-primary" type="submit">Üyeliği Başlat</button>
+      </form>
+      <p class="modal-note">Demo: Üyelik akışı bağlantıya hazırdır.</p>
+    </div>
+  </div>
+
+  <script>
+    const grades = [
+      { title: 'Okul Öncesi', badge: 'OÖ', level: 'Erken öğrenme', href: '/sinif/okul-oncesi.html', accent: '#39c979', desc: 'Renkler, şekiller, dikkat, eşleştirme ve temel kavramlar.', tags: ['Kavramlar', 'Dikkat', 'Oyun'] },
+      { title: 'Anaokulu', badge: 'A', level: 'Hazırlık', href: '/sinif/anaokulu.html', accent: '#4aa3ff', desc: 'Sayı farkındalığı, ses çalışmaları ve okul hazırlığı.', tags: ['Sayılar', 'Sesler', 'Çizgi'] },
+      { title: '1. sınıf', badge: '1', level: 'İlkokul', href: '/sinif/1-sinif.html', accent: '#ff9f43', desc: 'Okuma yazma, toplama, çıkarma ve temel hayat bilgisi.', tags: ['Türkçe', 'Matematik', 'Hayat'] },
+      { title: '2. sınıf', badge: '2', level: 'İlkokul', href: '/sinif/2-sinif.html', accent: '#fb6ea8', desc: 'Akıcı okuma, problemler, ölçme ve çevremizi tanıma.', tags: ['Okuma', 'Problem', 'Ölçme'] },
+      { title: '3. sınıf', badge: '3', level: 'İlkokul', href: '/sinif/3-sinif.html', accent: '#8b5cf6', desc: 'Çarpma, bölme, paragraf ve fen kavramlarına giriş.', tags: ['Çarpma', 'Paragraf', 'Fen'] },
+      { title: '4. sınıf', badge: '4', level: 'İlkokul', href: '/sinif/4-sinif.html', accent: '#16a05d', desc: 'Kesirler, geometri, metin türleri ve sosyal bilgiler.', tags: ['Kesirler', 'Geometri', 'Sosyal'] },
+      { title: '5. sınıf', badge: '5', level: 'Ortaokul', href: '/sinif/5-sinif.html', accent: '#2563eb', desc: 'Doğal sayılar, okuma anlama, canlılar ve harita bilgisi.', tags: ['Doğal sayılar', 'Canlılar', 'Harita'] },
+      { title: '6. sınıf', badge: '6', level: 'Ortaokul', href: '/sinif/6-sinif.html', accent: '#f59e0b', desc: 'Oran, kesir işlemleri, sözcükte anlam ve madde konuları.', tags: ['Oran', 'Madde', 'Anlam'] },
+      { title: '7. sınıf', badge: '7', level: 'Ortaokul', href: '/sinif/7-sinif.html', accent: '#06b6d4', desc: 'Tam sayılar, denklem, paragraf ve kuvvet-enerji becerileri.', tags: ['Denklem', 'Paragraf', 'Enerji'] },
+      { title: '8. sınıf', badge: '8', level: 'LGS', href: '/sinif/8-sinif.html', accent: '#ef4444', desc: 'LGS odaklı tekrar, yeni nesil sorular ve deneme takibi.', tags: ['LGS', 'Yeni nesil', 'Tekrar'] },
+      { title: '9. sınıf', badge: '9', level: 'Lise', href: '/sinif/9-sinif.html', accent: '#14b8a6', desc: 'Lise matematik temeli, edebiyat, fizik, kimya ve biyoloji.', tags: ['Lise', 'Fizik', 'Kimya'] },
+      { title: '10. sınıf', badge: '10', level: 'Lise', href: '/sinif/10-sinif.html', accent: '#6366f1', desc: 'Fonksiyonlar, geometri, edebiyat ve fen bilimlerinde pekiştirme.', tags: ['Fonksiyon', 'Geometri', 'Edebiyat'] },
+      { title: '11. sınıf', badge: '11', level: 'Lise', href: '/sinif/11-sinif.html', accent: '#ec4899', desc: 'TYT-AYT temeli, analitik düşünme ve konu eksiği kapatma.', tags: ['TYT', 'AYT', 'Analitik'] },
+      { title: '12. sınıf', badge: '12', level: 'YKS', href: '/sinif/12-sinif.html', accent: '#0ea5e9', desc: 'YKS hazırlığı, deneme analizi ve kişiye özel tekrar planı.', tags: ['YKS', 'Deneme', 'Plan'] }
+    ];
+
+    const skills = [
+      { title: 'Toplama ve çıkarma', meta: '1. sınıf • 2. sınıf • Matematik' },
+      { title: 'Çarpma ve bölme problemleri', meta: '3. sınıf • 4. sınıf • Matematik' },
+      { title: 'Kesirler ve ondalık gösterim', meta: '4. sınıf • 5. sınıf • 6. sınıf' },
+      { title: 'Okuma anlama ve paragraf', meta: 'Türkçe • İlkokul • Ortaokul' },
+      { title: 'Ses bilgisi ve yazım kuralları', meta: 'Türkçe • 5. sınıf • 8. sınıf' },
+      { title: 'Canlılar ve yaşam', meta: 'Fen Bilimleri • 3. sınıf • 5. sınıf' },
+      { title: 'Türkiye haritası ve bölgeler', meta: 'Sosyal Bilgiler • 4. sınıf • 5. sınıf' },
+      { title: 'Denklemler ve eşitsizlikler', meta: '7. sınıf • 8. sınıf • Lise matematik' },
+      { title: 'Geometri ve ölçme', meta: 'Matematik • 4. sınıf • 10. sınıf' },
+      { title: 'LGS yeni nesil soru pratiği', meta: '8. sınıf • Sınav hazırlığı' },
+      { title: 'Fonksiyonlar ve grafikler', meta: '10. sınıf • 11. sınıf • Matematik' },
+      { title: 'YKS deneme analizi', meta: '12. sınıf • TYT • AYT' }
+    ];
+
+    const gradeGrid = document.getElementById('grade-grid');
+    const skillResults = document.getElementById('skill-results');
+    const gradeEmpty = document.getElementById('grade-empty');
+    const skillEmpty = document.getElementById('skill-empty');
+    const searchInputs = document.querySelectorAll('.js-search');
+
+    function normalize(value) {
+      return value.toLocaleLowerCase('tr-TR').trim();
+    }
+
+    function renderGrades(query = '') {
+      const q = normalize(query);
+      const filtered = grades.filter((grade) => normalize([grade.title, grade.level, grade.desc, grade.tags.join(' ')].join(' ')).includes(q));
+      gradeGrid.innerHTML = filtered.map((grade) => `
+        <a class="grade-card" href="${grade.href}" style="--accent:${grade.accent}" aria-label="${grade.title} sayfasına git">
+          <div class="grade-top"><span class="grade-badge">${grade.badge}</span><span class="grade-level">${grade.level}</span></div>
+          <h3>${grade.title}</h3>
+          <p>${grade.desc}</p>
+          <div class="tags">${grade.tags.map((tag) => `<span>${tag}</span>`).join('')}</div>
+          <span class="grade-link">Sınıfı aç</span>
+        </a>
+      `).join('');
+      gradeEmpty.hidden = filtered.length > 0;
+    }
+
+    function renderSkills(query = '') {
+      const q = normalize(query);
+      const filtered = skills.filter((skill) => normalize(`${skill.title} ${skill.meta}`).includes(q));
+      skillResults.innerHTML = filtered.map((skill) => `
+        <article class="skill-card">
+          <strong>${skill.title}</strong>
+          <span>${skill.meta}</span>
+        </article>
+      `).join('');
+      skillEmpty.hidden = filtered.length > 0;
+    }
+
+    function syncSearch(value) {
+      searchInputs.forEach((input) => {
+        if (input.value !== value) input.value = value;
+      });
+      renderGrades(value);
+      renderSkills(value);
+    }
+
+    searchInputs.forEach((input) => {
+      input.addEventListener('input', (event) => syncSearch(event.target.value));
+    });
+
+    document.getElementById('focus-search').addEventListener('click', () => {
+      const input = document.getElementById('global-search');
+      input.focus();
+      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navRow = document.getElementById('main-nav');
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+      navRow.classList.toggle('open', !expanded);
+    });
+
+    document.querySelectorAll('.nav-inner a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        navRow.classList.remove('open');
+      });
+    });
+
+    const modalMap = {
+      login: document.getElementById('login-modal'),
+      signup: document.getElementById('signup-modal')
+    };
+
+    function openModal(name) {
+      const modal = modalMap[name];
+      if (!modal) return;
+      modal.hidden = false;
+      modal.classList.add('active');
+      document.body.classList.add('modal-open');
+      const firstField = modal.querySelector('input, select, button');
+      window.setTimeout(() => firstField && firstField.focus(), 50);
+    }
+
+    function closeModals() {
+      Object.values(modalMap).forEach((modal) => {
+        modal.classList.remove('active');
+        modal.hidden = true;
+      });
+      document.body.classList.remove('modal-open');
+    }
+
+    document.querySelectorAll('[data-modal]').forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        openModal(trigger.dataset.modal);
+      });
+    });
+
+    document.querySelectorAll('.modal-backdrop').forEach((backdrop) => {
+      backdrop.addEventListener('click', (event) => {
+        if (event.target === backdrop) closeModals();
+      });
+    });
+
+    document.querySelectorAll('.close-modal').forEach((button) => button.addEventListener('click', closeModals));
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModals(); });
+
+    document.querySelectorAll('[data-demo-form]').forEach((form) => {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const note = form.parentElement.querySelector('.modal-note');
+        note.textContent = 'Bilgiler alındı. Demo bağlantı akışı başarıyla çalıştı.';
+      });
+    });
+
+    renderGrades();
+    renderSkills();
+  </script>
 </body>
 </html>
