@@ -3,199 +3,153 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="e-kurs.com; Türkiye K12 için beceri haritası, sınıflar, dersler, quizler, teşhis ve gelişim analitiği sunan eğitim platformu.">
-  <title>e-kurs.com | Türkiye için Beceri Odaklı K12 Platformu</title>
+  <meta name="description" content="K1 E-Kurs; Türkiye odaklı ilk, orta ve lise öğrencileri için kişiselleştirilmiş beceri haritası, ders arama, sınıf kartları ve K12 e-kurs platformu.">
+  <title>K1 E-Kurs | Kişiselleştirilmiş K12 Öğrenme Platformu</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
   <header class="site-header">
     <nav class="nav-shell" aria-label="Ana menü">
-      <a class="brand ixl-brand" href="index.html" aria-label="e-kurs.com ana sayfa">
-        <span class="brand-letter blue">e</span><span class="brand-letter green">-</span><span class="brand-letter orange">k</span><span class="brand-letter purple">u</span><span class="brand-letter red">r</span><span class="brand-letter teal">s</span>
+      <a class="brand k1-brand" href="index.html" aria-label="K1 E-Kurs ana sayfa">
+        <span class="brand-mark">K1</span>
+        <span class="brand-copy">E-Kurs</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span></span><span></span><span></span><em>Menü</em></button>
       <div class="nav-links" id="main-menu">
-        <a href="#dersler">Öğrenme</a>
-        <a href="#beceri-ara">Beceri Ara</a>
-        <a href="#beceri-planlari">Planlar</a>
+        <a href="#ogrenme">Öğrenme</a>
         <a href="#siniflar">Sınıflar</a>
-        <a href="#paneller">Analitik</a>
-        <a href="#yorumlar">Başarı</a>
+        <a href="#beceri-haritasi">Beceri Haritası</a>
+        <a href="#ogretmenler">Öğretmenler</a>
+        <a href="#veliler">Veliler</a>
+        <a href="#uyelik">Üyelik</a>
       </div>
       <div class="nav-actions">
         <a class="btn btn-light" href="pages/ogrenci-panel.html">Giriş Yap</a>
-        <a class="btn btn-primary" href="#siniflar">Üye Ol</a>
+        <a class="btn btn-primary" href="#uyelik">Ücretsiz Dene</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero section-pad" id="hero">
-      <div class="hero-sky" aria-hidden="true">
-        <span class="cloud cloud-one"></span>
-        <span class="cloud cloud-two"></span>
-        <span class="kite kite-one">◆</span>
-        <span class="kite kite-two">✦</span>
-      </div>
+    <section class="hero section-pad" id="ogrenme">
       <div class="hero-content">
-        <p class="eyebrow">Kişiselleştirilmiş öğrenme</p>
-        <h1>e-kurs, her öğrenci için kişisel öğrenme yoludur.</h1>
-        <p class="hero-text">Kapsamlı K12 müfredatı, akıllı beceri önerileri ve gerçek zamanlı analitikle öğrenciler eksiklerini görür, çalışır ve gelişimini takip eder.</p>
+        <p class="eyebrow">İlk · Orta · Lise dijital öğrenme platformu</p>
+        <h1>Kişiselleştirilmiş öğrenme deneyimi</h1>
+        <p class="hero-text">Matematik, Türkçe, Fen Bilimleri, Sosyal Bilgiler ve sınav hazırlığı için beceri bazlı akıllı e-kurs platformu.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-large" href="#siniflar">Ücretsiz Başla</a>
+          <a class="btn btn-primary btn-large" href="#siniflar">Hemen Başla</a>
           <a class="btn btn-secondary btn-large" href="#beceri-ara">Beceri Ara</a>
         </div>
+        <div class="hero-feature-grid" aria-label="Ana öğrenme özellikleri">
+          <article><span>📚</span><h2>Kapsamlı MEB Müfredatı</h2><p>Sınıf, ders ve kazanım başlıkları Türkiye K12 akışına göre düzenlenir.</p></article>
+          <article><span>🧭</span><h2>Öğrenciye Özel Beceri Planı</h2><p>Yanıtlar, hedefler ve eksikler kişisel çalışma rotasına dönüşür.</p></article>
+          <article><span>📊</span><h2>Anlık Analiz ve Raporlama</h2><p>Öğrenci, veli ve öğretmen ilerlemeyi canlı raporlarla takip eder.</p></article>
+        </div>
       </div>
-      <div class="ixl-feature-row" aria-label="Ana öğrenme özellikleri">
-        <a class="ixl-feature-card curriculum" href="#dersler">
-          <span class="feature-illustration">📚</span>
-          <h2>Kapsamlı K–12 müfredatı</h2>
-          <p>Matematik · Türkçe · Fen · Sosyal · İngilizce</p>
-        </a>
-        <a class="ixl-feature-card trusted" href="#yorumlar">
-          <span class="feature-illustration">🏅</span>
-          <h2>Öğrenci, veli ve öğretmenler için güvenilir</h2>
-          <p>Günlük hedefler, rozetler ve anlaşılır raporlar</p>
-        </a>
-        <a class="ixl-feature-card immersive" href="#paneller">
-          <span class="feature-illustration">📊</span>
-          <h2>Sürükleyici öğrenme deneyimi</h2>
-          <p>Analitik · Öneriler · Teşhis · Ödüller</p>
-        </a>
-      </div>
+      <aside class="hero-dashboard" aria-label="E-Kurs örnek öğrenci paneli">
+        <div class="dash-card main-dash">
+          <span class="status-pill">Bugünün planı hazır</span>
+          <h2>7. Sınıf · Kesirler ve paragraf</h2>
+          <div class="progress-track"><span style="width:76%"></span></div>
+          <p>Akıllı plan, önce eksik kazanımı sonra yeni beceriyi önerir.</p>
+        </div>
+        <div class="dash-row">
+          <div><strong>18 dk</strong><span>Günlük çalışma</span></div>
+          <div><strong>%92</strong><span>Doğruluk</span></div>
+        </div>
+      </aside>
     </section>
 
     <section class="section-pad skill-discovery" id="beceri-ara">
       <div class="section-title center">
         <p class="eyebrow">Beceri arama</p>
-        <h2>Konunu yaz, sınıfına uygun beceri ve quizleri bul.</h2>
-        <p>Türkiye odaklı bu sürümde arama kutusu, ders seçimi ve öneri kartları tek ekranda çalışır.</p>
+        <h2>Ders, sınıf veya kazanım ara.</h2>
+        <p>“kesirler”, “toplama”, “okuma”, “fen” veya “7. sınıf” yaz; sınıf kartları ve beceri önerileri anında filtrelensin.</p>
       </div>
       <div class="skill-finder" role="search">
-        <label class="search-box" for="skill-search"><span>🔎</span><input id="skill-search" type="search" placeholder="Örn. kesirler, okuma anlama, LGS problem" autocomplete="off"></label>
+        <label class="search-box" for="skill-search"><span>🔎</span><input id="skill-search" type="search" placeholder="Kesirler, toplama, okuma, fen, 7. sınıf..." autocomplete="off"></label>
         <button class="btn btn-primary" type="button" id="skill-search-button">Beceri Bul</button>
       </div>
       <div class="skill-results" id="skill-results" aria-live="polite"></div>
-      <div class="learning-pillars" aria-label="Platform ana özellikleri">
-        <article><span>📚</span><h3>Kapsamlı K12 müfredatı</h3><p>Matematik, Türkçe, Fen, Sosyal, İngilizce ve sınav hazırlık alanları sınıf düzeyine göre ayrılır.</p></article>
-        <article><span>🧭</span><h3>Kişisel öneriler</h3><p>Yanlış cevaplardan sonra öğrenciye tekrar etmesi gereken beceri ve çalışma kartları önerilir.</p></article>
-        <article><span>📊</span><h3>Gerçek zamanlı analitik</h3><p>Öğrenci, veli ve öğretmen panellerinde hedef, başarı, puan ve eksik kazanım özetleri görünür.</p></article>
-      </div>
     </section>
 
     <section class="section-pad" id="siniflar">
-      <div class="offerings-strip">
-        <article>
-          <span>🎓</span>
-          <div>
-            <strong>Lise</strong>
-            <p>TYT, AYT ve okul dersleri için başarı yolu.</p>
-          </div>
-          <a href="pages/sinif-9.html">İncele →</a>
-        </article>
-        <article>
-          <span>🧑‍🎓</span>
-          <div>
-            <strong>Bağımsız öğrenenler</strong>
-            <p>Her yaş için kendi hızında çalışma.</p>
-          </div>
-          <a href="#beceri-ara">Başla →</a>
-        </article>
-      </div>
       <div class="section-title center">
-        <p class="eyebrow">Sınıf seçimi</p>
-        <h2>İlkokuldan liseye sınıf sınıf beceri kataloğu.</h2>
-        <p>Sınıf kartına tıkla; ders, beceri, kolay/orta/zor quiz, deneme ve çalışma önerilerine ulaş.</p>
+        <p class="eyebrow">K12 sınıf seçimi</p>
+        <h2>Pre-K’den 12. sınıfa modern beceri kataloğu.</h2>
+        <p>Her sınıf kartında temel konular, ders beceri sayıları ve ilgili sınıf sayfasına hızlı geçiş bulunur.</p>
       </div>
-      <div class="grade-groups" id="grade-groups"></div>
+      <div class="grade-groups" id="grade-groups" aria-live="polite"></div>
+      <p class="empty-state" id="grade-empty" hidden>Uygun beceri bulunamadı</p>
     </section>
 
-    <section class="section-pad soft-bg" id="neden">
-      <div class="section-title">
-        <p class="eyebrow">Neden e-kurs?</p>
-        <h2>Kısa quizler, net geri bildirimler ve güvenli takip.</h2>
+    <section class="section-pad skill-plans soft-bg" id="beceri-haritasi">
+      <div class="section-title center">
+        <p class="eyebrow">Beceri planı</p>
+        <h2>Tam ihtiyacın olan beceriler</h2>
+        <p>Öğrencinin sınıfına, hedef sınavına ve öğretmen atamalarına göre akıllı çalışma yolu oluştur.</p>
       </div>
-      <div class="feature-grid" id="feature-grid"></div>
-    </section>
-
-    <section class="section-pad skill-plans" id="beceri-planlari">
-      <div class="section-title">
-        <p class="eyebrow">Beceri planları</p>
-        <h2>Türkiye kazanımlarına, sınavlara ve ders kitaplarına göre akış.</h2>
-        <p>Öğretmenler plan seçebilir; öğrenciler eksik kazanımlarını plan üzerinden tamamlayabilir.</p>
-      </div>
-      <div class="plan-grid">
-        <article><span>🇹🇷</span><h3>MEB kazanımları</h3><p>Sınıf ve ders kazanımlarına göre beceri listesi, kısa test ve tekrar kartı.</p><a class="btn btn-ghost" href="#siniflar">Kazanımları Gör</a></article>
-        <article><span>📝</span><h3>LGS · TYT · AYT</h3><p>Sınav hazırlığı için konu analizi, deneme, hedef puan ve gelişim çizelgesi.</p><a class="btn btn-ghost" href="pages/sinif-8.html">Sınav Planı</a></article>
-        <article><span>📘</span><h3>Ders kitabı eşleştirme</h3><p>Ünite başlıkları ders kartlarıyla eşleşir; öğretmen ödevi kolayca planlar.</p><a class="btn btn-ghost" href="pages/ogretmen-panel.html">Öğretmen Paneli</a></article>
+      <div class="plan-grid four-grid">
+        <article><span>🇹🇷</span><h3>MEB Kazanımları</h3><p>Kazanım kodu, konu başlığı ve kısa alıştırma akışıyla sınıf sınıf ilerle.</p></article>
+        <article><span>🎯</span><h3>Sınav Hazırlığı</h3><p>LGS, TYT ve AYT için deneme analizi, hedef takibi ve beceri temelli sorular.</p></article>
+        <article><span>🔁</span><h3>Konu Tekrar Planı</h3><p>Eksik öğrenmeleri otomatik sırala; tekrar kartları ve mini quizlerle pekiştir.</p></article>
+        <article><span>🧑‍🏫</span><h3>Öğretmen Atamaları</h3><p>Ödev, ünite sınavı ve sınıf hedeflerini öğretmen panelinden kolayca yönet.</p></article>
       </div>
     </section>
 
-    <section class="section-pad" id="dersler">
-      <div class="section-title">
-        <p class="eyebrow">Ders keşfet</p>
-        <h2>Popüler ders, beceri ve hazırlık kartları.</h2>
+    <section class="section-pad" id="ogretmenler">
+      <div class="section-title center">
+        <p class="eyebrow">Öğretmen · Veli · Öğrenci</p>
+        <h2>Her öğrenci için başarıyı destekleyen sistem</h2>
       </div>
-      <div class="course-grid" id="course-grid"></div>
-    </section>
-
-    <section class="section-pad quiz-showcase" id="quizler">
-      <div class="quiz-copy">
-        <p class="eyebrow">Quiz sistemi</p>
-        <h2>2-4 dakikada çöz, cevabını öğren, eksiklerini tamamla.</h2>
-        <p>Her test kısa tutulur, her cevapta açıklama verilir ve tekrar ettikçe başarı göstergen renk değiştirir.</p>
-        <a class="btn btn-primary" href="pages/sinif-1.html">Örnek Sınıfı Aç</a>
-      </div>
-      <div class="quiz-steps">
-        <article><span>01</span><h3>Kısa quizler</h3><p>Ünite kazanımlarına göre 2-4 dakikalık etkili testler.</p></article>
-        <article><span>02</span><h3>Anında açıklama</h3><p>Doğru/yanlış sonucuyla birlikte anlaşılır çözüm ipucu.</p></article>
-        <article><span>03</span><h3>Çalışma kartları</h3><p>Eksik konuları gösteren kişiye özel çalışma önerileri.</p></article>
-        <article><span>04</span><h3>Renkli başarı</h3><p>Tekrar ettikçe kırmızıdan yeşile dönen ilerleme göstergesi.</p></article>
+      <div class="feature-grid support-grid" id="feature-grid">
+        <article class="feature-card"><span class="icon">📚</span><h3>Kapsamlı Müfredat</h3><p>İlkokul, ortaokul ve lise dersleri beceri bazlı parçalara ayrılır.</p></article>
+        <article class="feature-card"><span class="icon">🧠</span><h3>Akıllı Tanılama</h3><p>Doğru-yanlış cevaplar eksik kazanımları belirler ve yeni hedef önerir.</p></article>
+        <article class="feature-card"><span class="icon">✨</span><h3>Kişisel Öneriler</h3><p>Öğrenciye günlük çalışma listesi, tekrar konusu ve rozet hedefi sunulur.</p></article>
+        <article class="feature-card"><span class="icon">📈</span><h3>Canlı Analitik</h3><p>Veli ve öğretmen panelleri başarı, süre, ödev ve sınav sonuçlarını gösterir.</p></article>
       </div>
     </section>
 
-    <section class="section-pad" id="paneller">
-      <div class="section-title">
-        <p class="eyebrow">Paneller</p>
-        <h2>Öğrenci, veli, öğretmen ve admin için ayrı deneyim.</h2>
+    <section class="section-pad trust-section" id="veliler">
+      <div class="stats-grid">
+        <article><strong>10.000+</strong><span>öğrenci</span></article>
+        <article><strong>500+</strong><span>beceri</span></article>
+        <article><strong>7/24</strong><span>erişim</span></article>
+        <article><strong>Anında</strong><span>geri bildirim</span></article>
       </div>
-      <div class="panel-grid" id="panel-grid"></div>
-    </section>
-
-    <section class="section-pad testimonials" id="yorumlar">
-      <div class="section-title">
-        <p class="eyebrow">Yorumlar</p>
-        <h2>Kullanıcıların e-kurs deneyimi.</h2>
-      </div>
-      <div class="testimonial-grid">
-        <article><p>“Kızım her gün kısa quiz çözerek konuları tekrar ediyor. Veli ekranından gelişimini rahatça takip ediyorum.”</p><strong>Elif A. · Veli</strong></article>
-        <article><p>“Puan ve rozetler beni motive ediyor. Yanlış yaptığım soruda açıklama çıkması çok işime yarıyor.”</p><strong>Deniz K. · Öğrenci</strong></article>
-        <article><p>“Sınıfın hangi konuda zorlandığını hızlı görüyorum, ödevi ve ünite sınavını buna göre planlıyorum.”</p><strong>Murat T. · Öğretmen</strong></article>
+      <div class="audience-grid">
+        <article><h3>Öğrenciler</h3><p>Kendi hızında öğren, puan topla ve eksiklerini net gör.</p><a href="pages/ogrenci-panel.html">Öğrenci paneli →</a></article>
+        <article><h3>Veliler</h3><p>Günlük hedef, çalışma süresi ve başarı raporunu kolayca takip et.</p><a href="pages/veli-panel.html">Veli paneli →</a></article>
+        <article><h3>Öğretmenler</h3><p>Sınıf performansını analiz et, ödev ve kazanım atamalarını planla.</p><a href="pages/ogretmen-panel.html">Öğretmen paneli →</a></article>
       </div>
     </section>
 
-    <section class="section-pad faq-section" id="sss">
-      <div class="section-title">
-        <p class="eyebrow">SSS</p>
-        <h2>Sık sorulan sorular.</h2>
+    <section class="section-pad membership" id="uyelik">
+      <div>
+        <p class="eyebrow">Üyelik</p>
+        <h2>Bugün öğrenmeye başla</h2>
+        <p>Ücretsiz deneme ile sınıfını seç, beceri haritanı gör ve kişisel öğrenme planını başlat.</p>
       </div>
-      <div class="faq-list" id="faq-list"></div>
+      <div class="membership-actions">
+        <a class="btn btn-primary btn-large" href="pages/ogrenci-panel.html">Ücretsiz deneme başlat</a>
+        <a class="btn btn-secondary btn-large" href="#siniflar">Üyelik paketlerini gör</a>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div>
-      <a class="brand footer-brand ixl-brand" href="index.html"><span class="brand-letter blue">e</span><span class="brand-letter green">-</span><span class="brand-letter orange">k</span><span class="brand-letter purple">u</span><span class="brand-letter red">r</span><span class="brand-letter teal">s</span></a>
-      <p>Güvenli, quiz odaklı ve Türkiye K12 sistemine uyumlu statik eğitim platformu.</p>
+      <a class="brand footer-brand k1-brand" href="index.html"><span class="brand-mark">K1</span><span class="brand-copy">E-Kurs</span></a>
+      <p>K1 E-Kurs; Türkiye’de ilk, orta ve lise öğrencileri için beceri bazlı, kişiselleştirilmiş ve raporlanabilir dijital öğrenme platformudur.</p>
     </div>
     <nav aria-label="Alt menü">
-      <a href="#siniflar">Sınıflar</a>
-      <a href="#dersler">Dersler</a>
-      <a href="#paneller">Paneller</a>
-      <a href="mailto:iletisim@e-kurs.com">İletişim</a>
-      <a href="#neden">Güvenli öğrenme</a>
+      <a href="#ogrenme">Platform</a>
+      <a href="#siniflar">Dersler</a>
+      <a href="pages/ogrenci-panel.html">Destek</a>
+      <a href="#uyelik">Üyelik</a>
+      <a href="mailto:iletisim@e-kurs.com">Yasal</a>
     </nav>
-    <p class="copyright">© 2026 e-kurs.com. Tüm hakları saklıdır. Statik HTML/CSS/JavaScript yapı; PHP/MySQL entegrasyonuna hazırdır.</p>
+    <p class="copyright">© 2026 K1 E-Kurs. Tüm hakları saklıdır. cPanel uyumlu statik HTML/CSS/JavaScript yapı.</p>
   </footer>
 
   <div class="toast" role="status" aria-live="polite"></div>

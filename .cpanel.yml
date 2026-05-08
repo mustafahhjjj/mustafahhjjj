@@ -4,3 +4,4 @@ deployment:
     - export DEPLOYPATH=/home/u1878454/public_html/
     - /bin/cp -R index.html $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R pages $DEPLOYPATH
