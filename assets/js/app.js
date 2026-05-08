@@ -36,6 +36,16 @@ const courses = [
   ['🎓', '12. Sınıf TYT/AYT', 'Sınav stratejisi, alan testleri ve hedefe yönelik tekrar.', 156, 'pages/sinif-12.html']
 ];
 
+
+const skillSuggestions = [
+  { icon: '🧮', title: 'Kesirleri karşılaştırma', grade: '4. Sınıf', lesson: 'Matematik', href: 'pages/sinif-4.html', tags: ['kesirler', 'matematik', 'payda'] },
+  { icon: '📖', title: 'Paragrafta ana fikir', grade: '5. Sınıf', lesson: 'Türkçe', href: 'pages/sinif-5.html', tags: ['okuma', 'ana fikir', 'paragraf'] },
+  { icon: '🚀', title: 'LGS problem çözme', grade: '8. Sınıf', lesson: 'LGS Hazırlık', href: 'pages/sinif-8.html', tags: ['lgs', 'problem', 'beceri'] },
+  { icon: '🔬', title: 'Kuvvet ve hareket', grade: '6. Sınıf', lesson: 'Fen Bilimleri', href: 'pages/sinif-6.html', tags: ['fen', 'kuvvet', 'hareket'] },
+  { icon: '🎓', title: 'TYT temel kavramlar', grade: '12. Sınıf', lesson: 'TYT/AYT', href: 'pages/sinif-12.html', tags: ['tyt', 'ayt', 'matematik'] },
+  { icon: '🌍', title: 'Harita okuryazarlığı', grade: '7. Sınıf', lesson: 'Sosyal Bilgiler', href: 'pages/sinif-7.html', tags: ['harita', 'sosyal', 'coğrafya'] }
+];
+
 const panels = [
   ['🎒', 'Öğrenci Paneli', 'Günlük hedef, quiz geçmişi, puan, rozet ve dijital öğretmen önerilerini takip et.', 'pages/ogrenci-panel.html'],
   ['👨‍👩‍👧‍👦', 'Veli Paneli', 'Öğrencinin gelişimini, ödev durumunu ve güvenli iletişim izinlerini izle.', 'pages/veli-panel.html'],
@@ -107,6 +117,7 @@ function renderHome() {
             <div class="grade-meta">
               <span>Ders sayısı <b>${getLessons(grade).length}</b></span>
               <span>Ünite sayısı <b>${grade <= 4 ? 28 : grade <= 8 ? 42 : 54}</b></span>
+              <span>Beceri sayısı <b>${grade <= 4 ? 120 : grade <= 8 ? 180 : 220}</b></span>
               <span>Quiz sayısı <b>${grade <= 4 ? 96 : grade <= 8 ? 132 : 168}</b></span>
               <span>Günlük hedef <b>${grade <= 4 ? 20 : grade <= 8 ? 30 : 45} soru</b></span>
             </div>
@@ -138,6 +149,42 @@ function renderHome() {
   faqRoot.querySelectorAll('.faq-question').forEach((button) => {
     button.addEventListener('click', () => button.closest('.faq-item').classList.toggle('open'));
   });
+}
+
+
+function renderSkillSearch() {
+  const input = document.querySelector('#skill-search');
+  const button = document.querySelector('#skill-search-button');
+  const root = document.querySelector('#skill-results');
+  if (!input || !button || !root) return;
+
+  function draw(query = '') {
+    const normalized = query.trim().toLocaleLowerCase('tr-TR');
+    const matches = skillSuggestions.filter((skill) => {
+      const haystack = [skill.title, skill.grade, skill.lesson, ...skill.tags].join(' ').toLocaleLowerCase('tr-TR');
+      return !normalized || haystack.includes(normalized);
+    });
+    const list = matches.length ? matches : skillSuggestions.slice(0, 3);
+    root.innerHTML = list.map((skill) => `
+      <a class="skill-result-card" href="${skill.href}">
+        <span class="icon">${skill.icon}</span>
+        <strong>${skill.title}</strong>
+        <small>${skill.grade} · ${skill.lesson}</small>
+        <em>Başla →</em>
+      </a>
+    `).join('');
+    if (normalized && !matches.length) showToast('Aramana yakın öneriler gösteriliyor.');
+  }
+
+  input.addEventListener('input', () => draw(input.value));
+  button.addEventListener('click', () => draw(input.value));
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      draw(input.value);
+    }
+  });
+  draw();
 }
 
 function getLessons(grade) {
@@ -266,6 +313,7 @@ function init() {
   initMenu();
   initToastButtons();
   renderHome();
+  renderSkillSearch();
   renderGradePage();
   renderPanel();
 }
