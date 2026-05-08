@@ -12,14 +12,28 @@ const lessonsByBand = {
 
 const unitNames = ['Konuya Hazırlık', 'Temel Kazanımlar', 'Yeni Nesil Sorular', 'Ünite Değerlendirme'];
 const features = [
-  ['🧭', 'Ödev Yardımı', 'Planlı ipuçları, örnek adımlar ve öğretmen kontrolüne uygun açıklamalar.'],
-  ['🎬', 'Konu Anlatımı', 'Kısa konu kartları, tekrar notları ve akıllı öğretmen önerileri.'],
-  ['✍️', 'Soru Çözümü', 'Kolay, orta ve zor düzeylerde anında geri bildirimli test alanı.'],
-  ['⏱️', 'Deneme Sınavı', 'Süreli deneme ekranı, puan hesaplama ve gelişim takibi.'],
-  ['🏁', 'Ünite Sınavı', 'Her ünitenin sonunda ölçme, sonuç ve tekrar yönlendirmesi.'],
-  ['🏆', 'Liderlik', 'Günlük soru sayısına göre puan, rozet ve sıralama sistemi.']
+  ['🧭', 'Akıllı Çalışma Yolu', 'Tanılama sonucu her öğrenciye farklı beceri sırası ve günlük hedef önerir.'],
+  ['🎬', 'Mikro Konu Anlatımı', 'Kısa konu kartları, tekrar notları ve örnek çözümlerle hızlı öğrenme sağlar.'],
+  ['✍️', 'Adaptif Soru Çözümü', 'Kolay, orta ve zor düzeylerde anında geri bildirimli kişisel test alanı.'],
+  ['📊', 'SmartScore Takibi', 'Doğruluk, hız ve süre verisini tek puanda özetleyen gelişim göstergesi.'],
+  ['🏁', 'Ünite ve Deneme Sınavı', 'Her ünitenin sonunda ölçme, sonuç ve tekrar yönlendirmesi.'],
+  ['🏆', 'Rozet ve Liderlik', 'Günlük soru sayısına göre puan, rozet ve motivasyon sıralaması.']
 ];
-const leaderboard = ['Zeynep K. — 1280 puan', 'Emir A. — 1190 puan', 'Elif D. — 1110 puan', 'Mert S. — 1040 puan'];
+const leaderboard = ['Zeynep K. — SmartScore 96', 'Emir A. — SmartScore 92', 'Elif D. — SmartScore 89', 'Mert S. — SmartScore 85'];
+const skillSamples = [
+  { icon: '➗', title: 'Kesirleri karşılaştır', subject: 'Matematik', score: 86, level: 'Orta' },
+  { icon: '📖', title: 'Ana fikri bul', subject: 'Türkçe', score: 74, level: 'Kolay' },
+  { icon: '🧪', title: 'Maddeyi tanı', subject: 'Fen', score: 91, level: 'Zor' },
+  { icon: '🌍', title: 'Harita okuryazarlığı', subject: 'Sosyal', score: 68, level: 'Orta' },
+  { icon: '💬', title: 'Daily routines', subject: 'İngilizce', score: 82, level: 'Orta' },
+  { icon: '🧠', title: 'Mantıksal akıl yürüt', subject: 'Rehberlik', score: 79, level: 'Kolay' }
+];
+const diagnosticStates = [
+  ['4. sınıf · Temel', '10 soru / gün', 'Toplama ve çıkarma problemleri', '48%'],
+  ['5. sınıf · Orta', '15 soru / gün', 'Paragrafta ana fikir', '64%'],
+  ['6. sınıf · Güçleniyor', '18 soru / gün', 'Kesirleri karşılaştırma', '78%'],
+  ['7. sınıf · İleri', '22 soru / gün', 'Oran-orantı problemleri', '88%']
+];
 const levelScores = { kolay: 5, orta: 10, zor: 15 };
 
 function getBand(grade) {
@@ -57,6 +71,43 @@ function initToastButtons() {
   });
 }
 
+function renderSkillBoard() {
+  const root = document.querySelector('#skill-board');
+  if (!root) return;
+  root.innerHTML = skillSamples.map((skill) => `
+    <article class="skill-card">
+      <div class="skill-icon">${skill.icon}</div>
+      <div>
+        <p class="eyebrow">${skill.subject} · ${skill.level}</p>
+        <h3>${skill.title}</h3>
+      </div>
+      <div class="skill-score" aria-label="SmartScore ${skill.score}"><span style="width:${skill.score}%"></span></div>
+      <strong>SmartScore ${skill.score}</strong>
+      <button class="btn ghost" type="button" data-toast="${skill.title} becerisi adaptif pratik için açıldı.">Pratiğe Başla</button>
+    </article>
+  `).join('');
+  initToastButtons();
+}
+
+function initDiagnosticDemo() {
+  const start = document.querySelector('#diagnostic-start');
+  if (!start) return;
+  const level = document.querySelector('#diagnostic-level');
+  const goal = document.querySelector('#diagnostic-goal');
+  const skill = document.querySelector('#diagnostic-skill');
+  const progress = document.querySelector('#diagnostic-progress');
+  let index = 1;
+  start.addEventListener('click', () => {
+    index = (index + 1) % diagnosticStates.length;
+    const [nextLevel, nextGoal, nextSkill, nextProgress] = diagnosticStates[index];
+    level.textContent = nextLevel;
+    goal.textContent = nextGoal;
+    skill.textContent = nextSkill;
+    progress.style.width = nextProgress;
+    showToast('Tanılama simülasyonu güncellendi: yeni beceri yolu hazır.');
+  });
+}
+
 function renderHome() {
   const gradeRoot = document.querySelector('#grade-groups');
   if (gradeRoot) {
@@ -77,6 +128,8 @@ function renderHome() {
     `).join('');
     initToastButtons();
   }
+  renderSkillBoard();
+  initDiagnosticDemo();
   renderLeaderboard('#leaderboard-mini');
 }
 
@@ -89,7 +142,7 @@ function renderLeaderboard(selector) {
 function buildQuestion(lesson, unit, level) {
   const points = levelScores[level];
   return {
-    text: `${lesson} dersi ${unit.toLowerCase()} için ${level} seviye örnek sorusu: Doğru çalışma adımı hangisidir?`,
+    text: `${lesson} dersi ${unit.toLowerCase()} için ${level} seviye adaptif örnek soru: SmartScore yükseltmek için doğru çalışma adımı hangisidir?`,
     answers: ['Kazanımı oku, örneği incele, testi çöz', 'Soruyu okumadan işaretle', 'Sadece sonucu ezberle', 'Geri bildirimi kapat'],
     correct: 0,
     points
@@ -104,7 +157,7 @@ function renderGradePage() {
   const title = document.querySelector('#grade-title');
   const desc = document.querySelector('#grade-desc');
   if (title) title.textContent = `${grade}. Sınıf Dersleri`;
-  if (desc) desc.textContent = `${grade}. sınıf için tüm dersler, üniteler, konu anlatımı, soru çözümü ve seviye bazlı test alanları.`;
+  if (desc) desc.textContent = `${grade}. sınıf için tüm dersler, beceri haritaları, konu anlatımı, soru çözümü ve SmartScore odaklı seviye testleri.`;
 
   const lessonRoot = document.querySelector('#lesson-grid');
   const unitRoot = document.querySelector('#units-wrap');
@@ -115,8 +168,8 @@ function renderGradePage() {
     unitRoot.innerHTML = unitNames.map((unit, unitIndex) => `
       <article class="unit-card ${unitIndex === 0 ? 'open' : ''}">
         <div class="unit-head">
-          <div><h3>${lesson}: ${unit}</h3><p>Konu anlatımı, ödev yardımı, soru çözümü, deneme ve ünite sınavı kısayolları.</p></div>
-          <button class="btn secondary unit-toggle" type="button">Üniteyi Aç</button>
+          <div><h3>${lesson}: ${unit}</h3><p>Adaptif pratik, konu anlatımı, ödev yardımı, deneme ve ünite sınavı kısayolları.</p></div>
+          <button class="btn secondary unit-toggle" type="button">Beceri Yolunu Aç</button>
         </div>
         <div class="unit-content">
           <div class="action-row">

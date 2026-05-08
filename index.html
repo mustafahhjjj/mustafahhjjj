@@ -3,64 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="e-kurs.com K12 öğrencileri için sınıf, ders, ünite, test, panel ve ödül odaklı modern eğitim platformu.">
-  <title>e-kurs.com | K12 Dijital Eğitim Platformu</title>
+  <meta name="description" content="e-kurs Adaptive, K12 öğrencileri için IXL tarzı kişiselleştirilmiş pratik, tanılama, beceri takibi ve aile-öğretmen raporlama deneyimi sunar.">
+  <title>e-kurs Adaptive | Kişiselleştirilmiş K12 Öğrenme</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
   <header class="site-header">
     <nav class="nav-shell" aria-label="Ana menü">
-      <a class="brand" href="index.html" aria-label="e-kurs.com ana sayfa">
+      <a class="brand" href="index.html" aria-label="e-kurs Adaptive ana sayfa">
         <span class="brand-mark">e</span>
-        <span><strong>e-kurs</strong><small>.com</small></span>
+        <span><strong>e-kurs</strong><small> Adaptive</small></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menü</button>
       <div class="nav-links" id="main-menu">
         <a href="#siniflar">Sınıflar</a>
-        <a href="#cozumler">Bölümler</a>
+        <a href="#beceriler">Beceriler</a>
+        <a href="#diagnostic">Tanılama</a>
         <a href="pages/ogrenci-panel.html">Öğrenci</a>
-        <a href="pages/veli-panel.html">Veli</a>
         <a href="pages/ogretmen-panel.html">Öğretmen</a>
-        <a class="nav-cta" href="pages/admin-panel.html">Admin</a>
+        <a class="nav-cta" href="pages/admin-panel.html">Ücretsiz Dene</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero section-pad">
+    <section class="hero hero-adaptive section-pad">
       <div class="hero-content">
-        <p class="eyebrow">K12 için mobil öncelikli öğrenme</p>
-        <h1>Her sınıfa uygun renkli, güvenli ve ölçülebilir eğitim deneyimi.</h1>
-        <p class="hero-text">İlkokuldan liseye kadar dersler, üniteler, testler, deneme sınavları, ödev yardımı ve kişiye özel öğretmen desteği tek yerde.</p>
+        <p class="eyebrow">IXL tarzı adaptif öğrenme deneyimi</p>
+        <h1>Her öğrenci için doğru soruyu, doğru anda sunan pratik platformu.</h1>
+        <p class="hero-text">Matematik, Türkçe, fen, sosyal ve İngilizce becerilerini akıllı tanılama, canlı puanlama ve anında geri bildirimle kişiselleştir.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#siniflar">Sınıfını Seç</a>
-          <a class="btn secondary" href="pages/ogrenci-panel.html">Puan Panelini Gör</a>
+          <a class="btn primary" href="#diagnostic">Tanılamayı Başlat</a>
+          <a class="btn secondary" href="#siniflar">Sınıf Becerilerini Gör</a>
         </div>
         <div class="trust-row" aria-label="Platform özellikleri">
-          <span>Admin onaylı mesajlaşma</span>
-          <span>Günlük ödül sistemi</span>
-          <span>Kolay-Orta-Zor testler</span>
+          <span>Adaptif soru akışı</span>
+          <span>Akıllı skor takibi</span>
+          <span>Veli & öğretmen raporu</span>
         </div>
       </div>
-      <div class="hero-card" aria-label="Örnek öğrenci özeti">
-        <div class="mascot">📚</div>
-        <h2>Bugünkü Hedef</h2>
-        <p>45 soru çöz, 90 puan kazan ve liderlikte yüksel.</p>
-        <div class="progress"><span style="width:72%"></span></div>
-        <ul class="mini-list">
-          <li><strong>24</strong> konu anlatımı</li>
-          <li><strong>12</strong> ünite sınavı</li>
-          <li><strong>6</strong> deneme sınavı</li>
-        </ul>
+      <div class="adaptive-dashboard" aria-label="Örnek adaptif öğrenme paneli">
+        <div class="dashboard-topline">
+          <span>Canlı öneri motoru</span>
+          <strong>SmartScore 86</strong>
+        </div>
+        <div class="skill-meter" aria-hidden="true"><span style="width:86%"></span></div>
+        <div class="question-card">
+          <p class="eyebrow">Sıradaki en iyi beceri</p>
+          <h2>Kesirleri karşılaştırma</h2>
+          <p>Öğrenci son 5 yanıtta hızlandı. Sistem orta zorlukta görsel problem öneriyor.</p>
+          <div class="answer-chips"><span>Kolay</span><span class="active">Orta</span><span>Zor</span></div>
+        </div>
+        <div class="mini-insights">
+          <div><strong>12 dk</strong><span>odak süresi</span></div>
+          <div><strong>94%</strong><span>doğruluk</span></div>
+          <div><strong>+18</strong><span>puan artışı</span></div>
+        </div>
       </div>
     </section>
 
+    <section class="section-pad logo-strip" aria-label="Ders kategorileri">
+      <span>Matematik</span>
+      <span>Türkçe</span>
+      <span>Fen Bilimleri</span>
+      <span>Sosyal Bilgiler</span>
+      <span>İngilizce</span>
+    </section>
+
     <section class="section-pad" id="siniflar">
-      <div class="section-title">
-        <p class="eyebrow">Sınıflar</p>
-        <h2>Sınıfını seç, derslerine hemen başla.</h2>
+      <div class="section-title split-title">
+        <div>
+          <p class="eyebrow">Sınıflar</p>
+          <h2>1’den 12’ye tüm sınıflar için beceri haritası.</h2>
+        </div>
+        <p>Her sınıf sayfası; konu anlatımı, ödev yardımı, deneme, ünite sınavı ve kolay-orta-zor test akışını tek ekranda toplar.</p>
       </div>
       <div class="grade-groups" id="grade-groups"></div>
+    </section>
+
+    <section class="section-pad skill-showcase" id="beceriler">
+      <div class="section-title">
+        <p class="eyebrow">Beceri pratiği</p>
+        <h2>IXL benzeri renkli kartlar, özgün içerik ve ölçülebilir gelişim.</h2>
+      </div>
+      <div class="skill-board" id="skill-board"></div>
     </section>
 
     <section class="section-pad soft-bg" id="cozumler">
@@ -71,15 +97,33 @@
       <div class="feature-grid" id="feature-grid"></div>
     </section>
 
+    <section class="section-pad diagnostic-section" id="diagnostic">
+      <div class="diagnostic-copy">
+        <p class="eyebrow">Adaptif tanılama</p>
+        <h2>Başlangıç seviyesini bul, kişisel çalışma yolunu otomatik oluştur.</h2>
+        <p>Tanılama simülasyonu öğrencinin doğru-yanlış, hız ve konu geçmişine göre beceri önerilerini yeniden sıralar. Statik sürümde ön yüz akışı hazırdır; gerçek veri için PHP/MySQL veya API katmanı eklenebilir.</p>
+        <div class="hero-actions">
+          <button class="btn primary" type="button" id="diagnostic-start">Örnek Tanılama Çalıştır</button>
+          <a class="btn secondary" href="pages/ogretmen-panel.html">Rapor Paneli</a>
+        </div>
+      </div>
+      <div class="diagnostic-card">
+        <div class="diagnostic-row"><span>Seviye tahmini</span><strong id="diagnostic-level">5. sınıf · Orta</strong></div>
+        <div class="diagnostic-row"><span>Önerilen hedef</span><strong id="diagnostic-goal">15 soru / gün</strong></div>
+        <div class="diagnostic-row"><span>Sıradaki beceri</span><strong id="diagnostic-skill">Paragrafta ana fikir</strong></div>
+        <div class="progress"><span id="diagnostic-progress" style="width:64%"></span></div>
+      </div>
+    </section>
+
     <section class="section-pad two-col">
       <div class="card-panel">
-        <p class="eyebrow">Güvenli iletişim</p>
-        <h2>Konum bazlı mesajlaşma altyapısı hazır.</h2>
-        <p>Öğrenciler aynı bölgedeki çalışma gruplarına ancak admin onayıyla dahil olur. Veli ve öğretmen bilgilendirme adımları PHP/MySQL entegrasyonuna hazır şekilde tasarlanmıştır.</p>
+        <p class="eyebrow">Güvenli okul ağı</p>
+        <h2>Öğrenci, veli, öğretmen ve admin aynı gelişim verisine bakar.</h2>
+        <p>Konum bazlı mesajlaşma, grup isteği ve öğretmen geri bildirimi admin onayıyla ilerler. Böylece adaptif çalışma planı güvenli bir iletişim katmanıyla desteklenir.</p>
         <button class="btn primary" data-toast="Mesajlaşma modülü statik sürümde tanıtım modundadır. Admin onayı ile aktifleşecek.">Altyapıyı İncele</button>
       </div>
       <div class="leaderboard-preview">
-        <h3>Haftalık Liderlik</h3>
+        <h3>Haftalık Gelişim Liderliği</h3>
         <ol id="leaderboard-mini"></ol>
         <a class="text-link" href="pages/ogrenci-panel.html">Tüm sıralamayı gör</a>
       </div>
@@ -87,8 +131,8 @@
   </main>
 
   <footer class="site-footer">
-    <a class="brand footer-brand" href="index.html"><span class="brand-mark">e</span><span><strong>e-kurs</strong><small>.com</small></span></a>
-    <p>© 2026 e-kurs.com — Statik K12 eğitim platformu. PHP/MySQL entegrasyonu için hazır dosya yapısı.</p>
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark">e</span><span><strong>e-kurs</strong><small> Adaptive</small></span></a>
+    <p>© 2026 e-kurs Adaptive — IXL tarzı, özgün statik K12 öğrenme arayüzü. PHP/MySQL entegrasyonu için hazır dosya yapısı.</p>
   </footer>
 
   <div class="toast" role="status" aria-live="polite"></div>

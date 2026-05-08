@@ -181,3 +181,166 @@ h3 { font-size: 1.35rem; }
   h1 { font-size: 2.45rem; }
   .unit-head, .task-list li, .admin-list li { flex-direction: column; align-items: flex-start; }
 }
+
+/* Adaptive-learning landing enhancements */
+.hero-adaptive {
+  position: relative;
+  isolation: isolate;
+}
+.hero-adaptive::before {
+  content: "";
+  position: absolute;
+  inset: 28px -6vw auto auto;
+  width: min(52vw, 620px);
+  height: min(52vw, 620px);
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 35%, rgba(56, 189, 248, .34), transparent 58%), radial-gradient(circle at 70% 70%, rgba(244, 114, 182, .22), transparent 60%);
+  z-index: -1;
+  filter: blur(2px);
+}
+.adaptive-dashboard {
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.86));
+  border: 1px solid rgba(230, 232, 242, .95);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+  transform: rotate(1.5deg);
+}
+.dashboard-topline, .diagnostic-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  color: var(--muted);
+  font-weight: 900;
+}
+.dashboard-topline strong, .diagnostic-row strong { color: var(--primary); }
+.skill-meter, .skill-score {
+  height: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eef1f8;
+}
+.skill-meter span, .skill-score span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--mint), var(--sky), var(--primary));
+}
+.question-card {
+  background: #f8fbff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 20px;
+}
+.answer-chips, .logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.answer-chips span, .logo-strip span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-weight: 900;
+}
+.answer-chips .active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.mini-insights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.mini-insights div {
+  background: #fff7ed;
+  border-radius: 18px;
+  padding: 12px;
+}
+.mini-insights strong { display: block; font-size: 1.35rem; color: var(--ink); }
+.mini-insights span { color: var(--muted); font-size: .85rem; font-weight: 800; }
+.logo-strip {
+  justify-content: center;
+  padding-top: 0;
+}
+.logo-strip span {
+  min-width: 150px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(31, 41, 85, .08);
+}
+.split-title {
+  display: grid;
+  grid-template-columns: 1fr .7fr;
+  gap: 24px;
+  align-items: end;
+  max-width: none;
+}
+.split-title > p {
+  color: var(--muted);
+  margin: 0;
+  font-weight: 700;
+}
+.skill-showcase {
+  background:
+    linear-gradient(#f7f8ff, #f7f8ff) padding-box,
+    linear-gradient(135deg, rgba(79,70,229,.12), rgba(255,183,3,.22)) border-box;
+  border: 1px solid transparent;
+  border-radius: 36px;
+}
+.skill-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.skill-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 20px;
+  box-shadow: 0 16px 36px rgba(31, 41, 85, .09);
+  display: grid;
+  gap: 14px;
+}
+.skill-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #eef2ff, #fff7ed);
+  font-size: 1.7rem;
+}
+.skill-card h3 { margin-bottom: 0; }
+.skill-card .eyebrow { margin-bottom: 6px; }
+.diagnostic-section {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  gap: 24px;
+  align-items: center;
+}
+.diagnostic-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+}
+.diagnostic-copy p:not(.eyebrow) { color: var(--muted); font-weight: 700; }
+
+@media (max-width: 900px) {
+  .adaptive-dashboard { transform: none; }
+  .split-title, .diagnostic-section { grid-template-columns: 1fr; }
+  .skill-board { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .mini-insights, .skill-board { grid-template-columns: 1fr; }
+  .dashboard-topline, .diagnostic-row { flex-direction: column; align-items: flex-start; }
+}
