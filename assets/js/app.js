@@ -1,7 +1,19 @@
-const gradeBands = [
-  { title: 'İlkokul 1-4', desc: 'Temel okuryazarlık, matematik, hayat bilgisi ve eğlenceli tekrar quizleri.', grades: [1, 2, 3, 4], color: '#ff8a3d' },
-  { title: 'Ortaokul 5-8', desc: 'Ders temelleri, yazılı hazırlık, LGS becerileri ve düzenli kazanım takibi.', grades: [5, 6, 7, 8], color: '#06b6d4' },
-  { title: 'Lise 9-12', desc: 'Alan dersleri, deneme sınavları, TYT/AYT hazırlık ve hedef odaklı çalışma.', grades: [9, 10, 11, 12], color: '#8b5cf6' }
+
+const gradeProfiles = [
+  { id: 'pre-k', label: 'Pre-K', stage: 'Okul öncesi', color: '#f97316', href: '#beceri-ara', topics: 'Renkler, şekiller, sayı farkındalığı, dikkat oyunları', counts: { Matematik: 36, Türkçe: 28, Fen: 16 }, tags: ['pre-k', 'okul öncesi', 'renkler', 'şekiller', 'sayılar'] },
+  { id: 'anaokulu', label: 'Anaokulu', stage: 'Okul öncesi', color: '#f59e0b', href: '#beceri-ara', topics: 'Ses farkındalığı, örüntüler, temel sayma, çevremiz', counts: { Matematik: 48, Türkçe: 42, Fen: 20 }, tags: ['anaokulu', 'okul öncesi', 'ses', 'örüntü', 'çevremiz'] },
+  { id: '1', label: '1. Sınıf', stage: 'İlkokul', color: '#22c55e', href: 'pages/sinif-1.html', topics: 'Toplama, çıkarma, okuma-anlama, ses bilgisi, çevremiz', counts: { Matematik: 120, Türkçe: 95, Fen: 40 }, tags: ['1. sınıf', 'birinci sınıf', 'toplama', 'çıkarma', 'okuma', 'ses bilgisi', 'çevremiz'] },
+  { id: '2', label: '2. Sınıf', stage: 'İlkokul', color: '#14b8a6', href: 'pages/sinif-2.html', topics: 'Ritmik sayma, problemler, akıcı okuma, yazım kuralları', counts: { Matematik: 132, Türkçe: 104, Fen: 46 }, tags: ['2. sınıf', 'ikinci sınıf', 'ritmik sayma', 'problemler', 'okuma', 'yazım'] },
+  { id: '3', label: '3. Sınıf', stage: 'İlkokul', color: '#06b6d4', href: 'pages/sinif-3.html', topics: 'Çarpma, bölme, metin türleri, canlılar ve kuvvet', counts: { Matematik: 145, Türkçe: 112, Fen: 58 }, tags: ['3. sınıf', 'üçüncü sınıf', 'çarpma', 'bölme', 'metin', 'canlılar', 'fen'] },
+  { id: '4', label: '4. Sınıf', stage: 'İlkokul', color: '#3b82f6', href: 'pages/sinif-4.html', topics: 'Kesirler, grafikler, paragraf, madde ve harita okuma', counts: { Matematik: 158, Türkçe: 124, Fen: 64 }, tags: ['4. sınıf', 'dördüncü sınıf', 'kesirler', 'grafikler', 'paragraf', 'madde', 'harita'] },
+  { id: '5', label: '5. Sınıf', stage: 'Ortaokul', color: '#6366f1', href: 'pages/sinif-5.html', topics: 'Doğal sayılar, kesirler, paragraf, güneş ve dünya', counts: { Matematik: 170, Türkçe: 138, Fen: 82 }, tags: ['5. sınıf', 'beşinci sınıf', 'doğal sayılar', 'kesirler', 'paragraf', 'fen'] },
+  { id: '6', label: '6. Sınıf', stage: 'Ortaokul', color: '#8b5cf6', href: 'pages/sinif-6.html', topics: 'Oran, cebir, sözcükte anlam, kuvvet ve hareket', counts: { Matematik: 188, Türkçe: 146, Fen: 96 }, tags: ['6. sınıf', 'altıncı sınıf', 'oran', 'cebir', 'sözcükte anlam', 'kuvvet', 'hareket'] },
+  { id: '7', label: '7. Sınıf', stage: 'Ortaokul', color: '#a855f7', href: 'pages/sinif-7.html', topics: 'Rasyonel sayılar, denklemler, fiiller, enerji dönüşümleri', counts: { Matematik: 205, Türkçe: 158, Fen: 108 }, tags: ['7. sınıf', 'yedinci sınıf', 'rasyonel', 'denklemler', 'fiiller', 'enerji', 'fen'] },
+  { id: '8', label: '8. Sınıf', stage: 'LGS', color: '#ec4899', href: 'pages/sinif-8.html', topics: 'LGS problem, çarpanlar, paragraf, DNA ve kalıtım', counts: { Matematik: 230, Türkçe: 176, Fen: 126 }, tags: ['8. sınıf', 'sekizinci sınıf', 'lgs', 'problem', 'çarpanlar', 'paragraf', 'dna'] },
+  { id: '9', label: '9. Sınıf', stage: 'Lise', color: '#ef4444', href: 'pages/sinif-9.html', topics: 'Kümeler, denklemler, edebiyat, fizik ve kimya temelleri', counts: { Matematik: 214, Türkçe: 140, Fen: 150 }, tags: ['9. sınıf', 'dokuzuncu sınıf', 'kümeler', 'denklemler', 'edebiyat', 'fizik', 'kimya'] },
+  { id: '10', label: '10. Sınıf', stage: 'Lise', color: '#f97316', href: 'pages/sinif-10.html', topics: 'Fonksiyonlar, polinomlar, roman, basınç ve ekosistem', counts: { Matematik: 226, Türkçe: 152, Fen: 162 }, tags: ['10. sınıf', 'onuncu sınıf', 'fonksiyonlar', 'polinomlar', 'roman', 'basınç', 'ekosistem'] },
+  { id: '11', label: '11. Sınıf', stage: 'Lise', color: '#eab308', href: 'pages/sinif-11.html', topics: 'Trigonometri, analitik, şiir, elektrik ve modern atom', counts: { Matematik: 248, Türkçe: 164, Fen: 174 }, tags: ['11. sınıf', 'on birinci sınıf', 'trigonometri', 'analitik', 'şiir', 'elektrik', 'atom'] },
+  { id: '12', label: '12. Sınıf', stage: 'TYT/AYT', color: '#84cc16', href: 'pages/sinif-12.html', topics: 'Türev, integral, TYT/AYT tekrar, deneme analizi', counts: { Matematik: 272, Türkçe: 184, Fen: 192 }, tags: ['12. sınıf', 'on ikinci sınıf', 'türev', 'integral', 'tyt', 'ayt', 'deneme'] }
 ];
 
 const lessonsByLevel = {
@@ -100,55 +112,39 @@ function initToastButtons(scope = document) {
   });
 }
 
+function normalizeText(value) {
+  return String(value || '').trim().toLocaleLowerCase('tr-TR');
+}
+
+function gradeMatches(profile, query) {
+  if (!query) return true;
+  const haystack = [profile.label, profile.stage, profile.topics, ...Object.keys(profile.counts), ...profile.tags].join(' ');
+  return normalizeText(haystack).includes(query);
+}
+
+function renderGradeCards(query = '') {
+  const gradeRoot = document.querySelector('#grade-groups');
+  const empty = document.querySelector('#grade-empty');
+  if (!gradeRoot) return [];
+  const normalized = normalizeText(query);
+  const matches = gradeProfiles.filter((profile) => gradeMatches(profile, normalized));
+  gradeRoot.innerHTML = matches.map((profile) => `
+    <a class="grade-card k12-grade-card" href="${profile.href}" style="--grade-color:${profile.color}" data-search="${[profile.label, profile.stage, profile.topics, ...Object.keys(profile.counts), ...profile.tags].join(' ')}">
+      <span class="grade-stage">${profile.stage}</span>
+      <strong>${profile.label}</strong>
+      <p>${profile.topics}</p>
+      <div class="grade-meta">
+        ${Object.entries(profile.counts).map(([lesson, count]) => `<span>${lesson}: <b>${count} beceri</b></span>`).join('')}
+      </div>
+    </a>
+  `).join('');
+  if (empty) empty.hidden = matches.length > 0;
+  return matches;
+}
+
 function renderHome() {
   if (document.body.dataset.page !== 'home') return;
-  const gradeRoot = document.querySelector('#grade-groups');
-  gradeRoot.innerHTML = gradeBands.map((band) => `
-    <article class="grade-band">
-      <div class="grade-band-head">
-        <div><h3>${band.title}</h3><p>${band.desc}</p></div>
-        <span class="status-pill">${band.grades.length} sınıf seviyesi</span>
-      </div>
-      <div class="grade-cards">
-        ${band.grades.map((grade) => `
-          <a class="grade-card" href="pages/sinif-${grade}.html" style="--grade-color:${band.color}">
-            <strong>${grade}. Sınıf</strong>
-            <p>${grade <= 4 ? 'Temel kazanımlar' : grade <= 8 ? 'Kazanım ve sınav hazırlığı' : 'Lise ve sınav odaklı çalışma'}</p>
-            <div class="grade-meta">
-              <span>Ders sayısı <b>${getLessons(grade).length}</b></span>
-              <span>Ünite sayısı <b>${grade <= 4 ? 28 : grade <= 8 ? 42 : 54}</b></span>
-              <span>Beceri sayısı <b>${grade <= 4 ? 120 : grade <= 8 ? 180 : 220}</b></span>
-              <span>Quiz sayısı <b>${grade <= 4 ? 96 : grade <= 8 ? 132 : 168}</b></span>
-              <span>Günlük hedef <b>${grade <= 4 ? 20 : grade <= 8 ? 30 : 45} soru</b></span>
-            </div>
-          </a>
-        `).join('')}
-      </div>
-    </article>
-  `).join('');
-
-  document.querySelector('#feature-grid').innerHTML = features.map(([icon, title, text]) => `
-    <article class="feature-card"><span class="icon">${icon}</span><h3>${title}</h3><p>${text}</p></article>
-  `).join('');
-
-  document.querySelector('#course-grid').innerHTML = courses.map(([icon, title, text, count, href]) => `
-    <article class="course-card"><span class="icon">${icon}</span><h3>${title}</h3><p>${text}</p><p class="meta">${count} quiz</p><a class="btn btn-ghost" href="${href}">Derse Git</a></article>
-  `).join('');
-
-  document.querySelector('#panel-grid').innerHTML = panels.map(([icon, title, text, href]) => `
-    <a class="panel-link" href="${href}"><span class="icon">${icon}</span><h3>${title}</h3><p>${text}</p><span class="btn btn-secondary">Panele Git</span></a>
-  `).join('');
-
-  const faqRoot = document.querySelector('#faq-list');
-  faqRoot.innerHTML = faqs.map(([question, answer], index) => `
-    <article class="faq-item ${index === 0 ? 'open' : ''}">
-      <button class="faq-question" type="button"><span>${question}</span><b>+</b></button>
-      <div class="faq-answer"><p>${answer}</p></div>
-    </article>
-  `).join('');
-  faqRoot.querySelectorAll('.faq-question').forEach((button) => {
-    button.addEventListener('click', () => button.closest('.faq-item').classList.toggle('open'));
-  });
+  renderGradeCards();
 }
 
 
@@ -159,12 +155,17 @@ function renderSkillSearch() {
   if (!input || !button || !root) return;
 
   function draw(query = '') {
-    const normalized = query.trim().toLocaleLowerCase('tr-TR');
+    const normalized = normalizeText(query);
     const matches = skillSuggestions.filter((skill) => {
-      const haystack = [skill.title, skill.grade, skill.lesson, ...skill.tags].join(' ').toLocaleLowerCase('tr-TR');
-      return !normalized || haystack.includes(normalized);
+      const haystack = [skill.title, skill.grade, skill.lesson, ...skill.tags].join(' ');
+      return !normalized || normalizeText(haystack).includes(normalized);
     });
-    const list = matches.length ? matches : skillSuggestions.slice(0, 3);
+    const gradeMatches = renderGradeCards(query);
+    if (normalized && !matches.length && !gradeMatches.length) {
+      root.innerHTML = '<p class="empty-state">Uygun beceri bulunamadı</p>';
+      return;
+    }
+    const list = matches.length ? matches : skillSuggestions.slice(0, 6);
     root.innerHTML = list.map((skill) => `
       <a class="skill-result-card" href="${skill.href}">
         <span class="icon">${skill.icon}</span>
@@ -173,11 +174,13 @@ function renderSkillSearch() {
         <em>Başla →</em>
       </a>
     `).join('');
-    if (normalized && !matches.length) showToast('Aramana yakın öneriler gösteriliyor.');
   }
 
   input.addEventListener('input', () => draw(input.value));
-  button.addEventListener('click', () => draw(input.value));
+  button.addEventListener('click', () => {
+    draw(input.value);
+    document.querySelector('#siniflar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
@@ -186,6 +189,7 @@ function renderSkillSearch() {
   });
   draw();
 }
+
 
 function getLessons(grade) {
   return lessonsByLevel[getLevel(Number(grade))];
