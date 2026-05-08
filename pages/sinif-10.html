@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="e-kurs.com 10. sınıf ders, ünite ve test sayfası.">
-  <title>e-kurs.com | 10. Sınıf</title>
+  <meta name="description" content="e-kurs.com 10. sınıf ders, ünite, quiz, deneme ve ödev yardımı sayfası.">
+  <title>e-kurs.com | 10. Sınıf Quiz Merkezi</title>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body data-page="grade" data-grade="10">
   <header class="site-header">
     <nav class="nav-shell" aria-label="Ana menü">
-      <a class="brand" href="../index.html" aria-label="e-kurs.com ana sayfa">
-        <span class="brand-mark">e</span><span><strong>e-kurs</strong><small>.com</small></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menü</button>
+      <a class="brand" href="../index.html" aria-label="e-kurs.com ana sayfa"><span class="brand-mark">e</span><span class="brand-copy"><strong>e-kurs</strong><small>.com</small></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span></span><span></span><span></span><em>Menü</em></button>
       <div class="nav-links" id="main-menu">
         <a href="../index.html#siniflar">Sınıflar</a>
-        <a href="../index.html#cozumler">Bölümler</a>
+        <a href="../index.html#dersler">Dersler</a>
+        <a href="../index.html#quizler">Quizler</a>
         <a href="ogrenci-panel.html">Öğrenci</a>
         <a href="veli-panel.html">Veli</a>
         <a href="ogretmen-panel.html">Öğretmen</a>
-        <a class="nav-cta" href="admin-panel.html">Admin</a>
+        <a href="admin-panel.html">Admin</a>
       </div>
+      <div class="nav-actions"><a class="btn btn-light" href="ogrenci-panel.html">Giriş Yap</a><a class="btn btn-primary" href="#quiz-alani">Hemen Başla</a></div>
     </nav>
   </header>
   <main>
@@ -29,22 +29,51 @@
       <div class="section-pad">
         <p class="breadcrumb"><a href="../index.html">Ana Sayfa</a> / 10. Sınıf</p>
         <p class="eyebrow">Sınıf sayfası</p>
-        <h1 id="grade-title">10. Sınıf Dersleri</h1>
+        <h1 id="grade-title">10. Sınıf Quiz ve Ders Merkezi</h1>
         <p class="hero-text" id="grade-desc"></p>
       </div>
     </section>
-    <section class="section-pad">
-      <div class="section-title">
-        <p class="eyebrow">Dersler</p>
-        <h2>Ders seç, üniteleri ve test alanını aç.</h2>
+    <section class="section-pad grade-dashboard" id="quiz-alani">
+      <div>
+        <div class="section-title">
+          <p class="eyebrow">Ders kartları</p>
+          <h2>Dersi seç, üniteyi aç, seviyene uygun quiz çöz.</h2>
+          <p>Kolay, orta ve zor seçenekleri; deneme sınavı, ünite sınavı ve ödev yardımıyla birlikte çalışır.</p>
+        </div>
+        <div class="lesson-grid" id="lesson-grid"></div>
+        <div class="units-wrap" id="units-wrap"></div>
       </div>
-      <div class="lesson-grid" id="lesson-grid"></div>
-      <div class="units-wrap" id="units-wrap"></div>
+      <aside class="side-stack" aria-label="Sınıf gelişim özeti">
+        <article class="teacher-box">
+          <p class="eyebrow">Günlük hedef</p>
+          <h3>Bugün 30 soru çöz</h3>
+          <p>Kısa quizleri tamamla, rozet kazan ve haftalık liderlikte yüksel.</p>
+          <div class="progress-track"><span id="grade-progress-bar" style="width:24%"></span></div>
+          <div class="hero-stats">
+            <div><strong id="live-score">0</strong><span>Puan</span></div>
+            <div><strong id="live-progress">%24</strong><span>Başarı</span></div>
+            <div><strong>5</strong><span>Rozet</span></div>
+          </div>
+          <span class="status-pill">Yeşil hedef: çok iyi</span>
+        </article>
+        <article class="teacher-box">
+          <p class="eyebrow">Kişiye özel dijital öğretmen</p>
+          <h3>Eksiklerini çalışma kartına çevir.</h3>
+          <p>Yanlış cevapların ders, ünite ve zorluk seviyesine göre tekrar önerisine dönüşür.</p>
+          <button class="btn btn-secondary" type="button" data-toast="Dijital öğretmen çalışma önerilerini hazırlıyor.">Önerileri Gör</button>
+        </article>
+        <article class="sample-question">
+          <p class="eyebrow">Örnek soru çözme</p>
+          <h3>Quiz alanında cevap seçince sonuç, açıklama, puan ve ilerleme çubuğu güncellenir.</h3>
+          <p>Bu statik sayfa cPanel public_html içinde doğrudan çalışır; veri tabanı entegrasyonu sonra eklenebilir.</p>
+        </article>
+      </aside>
     </section>
   </main>
   <footer class="site-footer">
-    <a class="brand footer-brand" href="../index.html"><span class="brand-mark">e</span><span><strong>e-kurs</strong><small>.com</small></span></a>
-    <p>© 2026 e-kurs.com — 10. sınıf statik ders ve test sayfası.</p>
+    <div><a class="brand footer-brand" href="../index.html"><span class="brand-mark">e</span><span class="brand-copy"><strong>e-kurs</strong><small>.com</small></span></a><p>10. sınıf için quiz, ünite, deneme, ödev yardımı ve güvenli öğrenme deneyimi.</p></div>
+    <nav aria-label="Alt menü"><a href="../index.html#siniflar">Sınıflar</a><a href="../index.html#dersler">Dersler</a><a href="ogrenci-panel.html">Paneller</a><a href="mailto:iletisim@e-kurs.com">İletişim</a></nav>
+    <p class="copyright">© 2026 e-kurs.com. Tüm hakları saklıdır.</p>
   </footer>
   <div class="toast" role="status" aria-live="polite"></div>
   <script src="../assets/js/app.js"></script>

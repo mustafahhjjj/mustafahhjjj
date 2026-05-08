@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="e-kurs.com K12 öğrencileri için sınıf, ders, ünite, test, panel ve ödül odaklı modern eğitim platformu.">
-  <title>e-kurs.com | K12 Dijital Eğitim Platformu</title>
+  <meta name="description" content="e-kurs.com; Türkiye K12 için quiz odaklı dersler, sınıflar, üniteler, deneme sınavları ve güvenli öğrenme platformu.">
+  <title>e-kurs.com | Quiz Odaklı K12 Eğitim Platformu</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="home">
@@ -12,83 +12,142 @@
     <nav class="nav-shell" aria-label="Ana menü">
       <a class="brand" href="index.html" aria-label="e-kurs.com ana sayfa">
         <span class="brand-mark">e</span>
-        <span><strong>e-kurs</strong><small>.com</small></span>
+        <span class="brand-copy"><strong>e-kurs</strong><small>.com</small></span>
       </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menü</button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span></span><span></span><span></span><em>Menü</em></button>
       <div class="nav-links" id="main-menu">
         <a href="#siniflar">Sınıflar</a>
-        <a href="#cozumler">Bölümler</a>
+        <a href="#dersler">Dersler</a>
+        <a href="#quizler">Quizler</a>
         <a href="pages/ogrenci-panel.html">Öğrenci</a>
         <a href="pages/veli-panel.html">Veli</a>
         <a href="pages/ogretmen-panel.html">Öğretmen</a>
-        <a class="nav-cta" href="pages/admin-panel.html">Admin</a>
+        <a href="pages/admin-panel.html">Admin</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-light" href="pages/ogrenci-panel.html">Giriş Yap</a>
+        <a class="btn btn-primary" href="#siniflar">Hemen Başla</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero section-pad">
+    <section class="hero section-pad" id="hero">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
       <div class="hero-content">
-        <p class="eyebrow">K12 için mobil öncelikli öğrenme</p>
-        <h1>Her sınıfa uygun renkli, güvenli ve ölçülebilir eğitim deneyimi.</h1>
-        <p class="hero-text">İlkokuldan liseye kadar dersler, üniteler, testler, deneme sınavları, ödev yardımı ve kişiye özel öğretmen desteği tek yerde.</p>
+        <p class="eyebrow">Türkiye K12 için quiz merkezli öğrenme</p>
+        <h1>Dersleri quizlerle öğren, ilerlemeni anında gör.</h1>
+        <p class="hero-text">1. sınıftan 12. sınıfa kadar dersler, üniteler, kısa testler, deneme sınavları ve kişiye özel dijital öğretmen desteği tek platformda.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#siniflar">Sınıfını Seç</a>
-          <a class="btn secondary" href="pages/ogrenci-panel.html">Puan Panelini Gör</a>
+          <a class="btn btn-primary btn-large" href="#siniflar">Sınıfını Seç</a>
+          <a class="btn btn-secondary btn-large" href="#quizler">Quiz Çözmeye Başla</a>
         </div>
-        <div class="trust-row" aria-label="Platform özellikleri">
-          <span>Admin onaylı mesajlaşma</span>
-          <span>Günlük ödül sistemi</span>
-          <span>Kolay-Orta-Zor testler</span>
+        <div class="trust-row" aria-label="Platform öne çıkanları">
+          <span>2-4 dakikalık quizler</span>
+          <span>Güvenli öğrenme</span>
+          <span>Rozet ve puan sistemi</span>
         </div>
       </div>
-      <div class="hero-card" aria-label="Örnek öğrenci özeti">
-        <div class="mascot">📚</div>
-        <h2>Bugünkü Hedef</h2>
-        <p>45 soru çöz, 90 puan kazan ve liderlikte yüksel.</p>
-        <div class="progress"><span style="width:72%"></span></div>
-        <ul class="mini-list">
-          <li><strong>24</strong> konu anlatımı</li>
-          <li><strong>12</strong> ünite sınavı</li>
-          <li><strong>6</strong> deneme sınavı</li>
-        </ul>
-      </div>
+      <aside class="progress-card" aria-label="Örnek ilerleme kartı">
+        <div class="card-topline"><span>Bugünkü hedef</span><strong>32/45 soru</strong></div>
+        <h2>Günlük öğrenme ritmin hazır</h2>
+        <div class="hero-stats">
+          <div><strong>32</strong><span>Çözülen soru</span></div>
+          <div><strong>128</strong><span>Kazanılan puan</span></div>
+          <div><strong>%86</strong><span>Başarı yüzdesi</span></div>
+        </div>
+        <div class="progress-track" aria-label="Başarı yüzdesi"><span style="width:86%"></span></div>
+        <div class="traffic-status" aria-label="Trafik ışığı ilerleme göstergesi">
+          <span class="light red"></span><p><strong>Kırmızı</strong> tekrar et</p>
+          <span class="light yellow"></span><p><strong>Sarı</strong> gelişiyor</p>
+          <span class="light green active"></span><p><strong>Yeşil</strong> çok iyi</p>
+        </div>
+      </aside>
     </section>
 
     <section class="section-pad" id="siniflar">
       <div class="section-title">
-        <p class="eyebrow">Sınıflar</p>
-        <h2>Sınıfını seç, derslerine hemen başla.</h2>
+        <p class="eyebrow">Sınıf seçimi</p>
+        <h2>İlkokuldan liseye Türkiye müfredatına uygun akış.</h2>
+        <p>Sınıf kartına tıkla; ders, ünite, kolay/orta/zor quiz ve deneme alanlarına ulaş.</p>
       </div>
       <div class="grade-groups" id="grade-groups"></div>
     </section>
 
-    <section class="section-pad soft-bg" id="cozumler">
+    <section class="section-pad soft-bg" id="neden">
       <div class="section-title">
-        <p class="eyebrow">Eğitim bölümleri</p>
-        <h2>İhtiyacına göre öğren, çöz, ölç ve geliş.</h2>
+        <p class="eyebrow">Neden e-kurs?</p>
+        <h2>Kısa quizler, net geri bildirimler ve güvenli takip.</h2>
       </div>
       <div class="feature-grid" id="feature-grid"></div>
     </section>
 
-    <section class="section-pad two-col">
-      <div class="card-panel">
-        <p class="eyebrow">Güvenli iletişim</p>
-        <h2>Konum bazlı mesajlaşma altyapısı hazır.</h2>
-        <p>Öğrenciler aynı bölgedeki çalışma gruplarına ancak admin onayıyla dahil olur. Veli ve öğretmen bilgilendirme adımları PHP/MySQL entegrasyonuna hazır şekilde tasarlanmıştır.</p>
-        <button class="btn primary" data-toast="Mesajlaşma modülü statik sürümde tanıtım modundadır. Admin onayı ile aktifleşecek.">Altyapıyı İncele</button>
+    <section class="section-pad" id="dersler">
+      <div class="section-title">
+        <p class="eyebrow">Ders keşfet</p>
+        <h2>Popüler ders ve hazırlık kartları.</h2>
       </div>
-      <div class="leaderboard-preview">
-        <h3>Haftalık Liderlik</h3>
-        <ol id="leaderboard-mini"></ol>
-        <a class="text-link" href="pages/ogrenci-panel.html">Tüm sıralamayı gör</a>
+      <div class="course-grid" id="course-grid"></div>
+    </section>
+
+    <section class="section-pad quiz-showcase" id="quizler">
+      <div class="quiz-copy">
+        <p class="eyebrow">Quiz sistemi</p>
+        <h2>2-4 dakikada çöz, cevabını öğren, eksiklerini tamamla.</h2>
+        <p>Her test kısa tutulur, her cevapta açıklama verilir ve tekrar ettikçe başarı göstergen renk değiştirir.</p>
+        <a class="btn btn-primary" href="pages/sinif-1.html">Örnek Sınıfı Aç</a>
       </div>
+      <div class="quiz-steps">
+        <article><span>01</span><h3>Kısa quizler</h3><p>Ünite kazanımlarına göre 2-4 dakikalık etkili testler.</p></article>
+        <article><span>02</span><h3>Anında açıklama</h3><p>Doğru/yanlış sonucuyla birlikte anlaşılır çözüm ipucu.</p></article>
+        <article><span>03</span><h3>Çalışma kartları</h3><p>Eksik konuları gösteren kişiye özel çalışma önerileri.</p></article>
+        <article><span>04</span><h3>Renkli başarı</h3><p>Tekrar ettikçe kırmızıdan yeşile dönen ilerleme göstergesi.</p></article>
+      </div>
+    </section>
+
+    <section class="section-pad" id="paneller">
+      <div class="section-title">
+        <p class="eyebrow">Paneller</p>
+        <h2>Öğrenci, veli, öğretmen ve admin için ayrı deneyim.</h2>
+      </div>
+      <div class="panel-grid" id="panel-grid"></div>
+    </section>
+
+    <section class="section-pad testimonials" id="yorumlar">
+      <div class="section-title">
+        <p class="eyebrow">Yorumlar</p>
+        <h2>Kullanıcıların e-kurs deneyimi.</h2>
+      </div>
+      <div class="testimonial-grid">
+        <article><p>“Kızım her gün kısa quiz çözerek konuları tekrar ediyor. Veli ekranından gelişimini rahatça takip ediyorum.”</p><strong>Elif A. · Veli</strong></article>
+        <article><p>“Puan ve rozetler beni motive ediyor. Yanlış yaptığım soruda açıklama çıkması çok işime yarıyor.”</p><strong>Deniz K. · Öğrenci</strong></article>
+        <article><p>“Sınıfın hangi konuda zorlandığını hızlı görüyorum, ödevi ve ünite sınavını buna göre planlıyorum.”</p><strong>Murat T. · Öğretmen</strong></article>
+      </div>
+    </section>
+
+    <section class="section-pad faq-section" id="sss">
+      <div class="section-title">
+        <p class="eyebrow">SSS</p>
+        <h2>Sık sorulan sorular.</h2>
+      </div>
+      <div class="faq-list" id="faq-list"></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <a class="brand footer-brand" href="index.html"><span class="brand-mark">e</span><span><strong>e-kurs</strong><small>.com</small></span></a>
-    <p>© 2026 e-kurs.com — Statik K12 eğitim platformu. PHP/MySQL entegrasyonu için hazır dosya yapısı.</p>
+    <div>
+      <a class="brand footer-brand" href="index.html"><span class="brand-mark">e</span><span class="brand-copy"><strong>e-kurs</strong><small>.com</small></span></a>
+      <p>Güvenli, quiz odaklı ve Türkiye K12 sistemine uyumlu statik eğitim platformu.</p>
+    </div>
+    <nav aria-label="Alt menü">
+      <a href="#siniflar">Sınıflar</a>
+      <a href="#dersler">Dersler</a>
+      <a href="#paneller">Paneller</a>
+      <a href="mailto:iletisim@e-kurs.com">İletişim</a>
+      <a href="#neden">Güvenli öğrenme</a>
+    </nav>
+    <p class="copyright">© 2026 e-kurs.com. Tüm hakları saklıdır. Statik HTML/CSS/JavaScript yapı; PHP/MySQL entegrasyonuna hazırdır.</p>
   </footer>
 
   <div class="toast" role="status" aria-live="polite"></div>
