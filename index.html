@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="e-kurs; 1. sınıftan 12. sınıfa kadar seviyeye göre öğrenme, akıllı öneriler ve öğrenciye özel çalışma planı sunan K–12 eğitim platformudur.">
-  <title>e-kurs | Yapay Zeka Destekli K-12 Öğrenme Platformu</title>
+  <meta name="description" content="e-kurs; 1. sınıftan 12. sınıfa kadar seviyeye göre konu anlatımı, soru çözümü, ödev desteği, deneme sınavı ve gelişim takibi sunan akıllı öğrenme platformudur.">
+  <title>e-kurs | Kişiye Özel Dijital Öğretmen</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
@@ -15,13 +15,15 @@
   <header class="site-header" id="top">
     <nav class="nav-shell" aria-label="Ana menü">
       <a class="brand" href="#top" aria-label="e-kurs ana sayfa">
-        <span class="brand-mark">e</span>
-        <span>e-kurs</span>
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-text">e-kurs</span>
       </a>
+
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
         <span></span><span></span><span></span>
         <span class="sr-only">Menüyü aç veya kapat</span>
       </button>
+
       <div class="nav-menu" id="main-menu">
         <a href="#ogrenme">Öğrenme</a>
         <a href="#siniflar">Sınıflar</a>
@@ -30,6 +32,7 @@
         <a href="#veli">Veli</a>
         <a href="#analiz">Analiz</a>
       </div>
+
       <div class="nav-actions">
         <a class="btn btn-ghost" href="pages/ogrenci-panel.html">Giriş yap</a>
         <a class="btn btn-primary" href="#basla">Ücretsiz başla</a>
@@ -38,77 +41,73 @@
   </header>
 
   <main id="icerik">
-    <section class="hero section-pattern" aria-labelledby="hero-title">
-      <div class="hero-shapes" aria-hidden="true">
-        <span class="shape shape-book">📘</span>
-        <span class="shape shape-pencil">✏️</span>
-        <span class="shape shape-star">✦</span>
-        <span class="shape shape-chart">📈</span>
-        <span class="shape shape-bubble">?</span>
-      </div>
+    <section class="hero" id="ogrenme" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">1. sınıftan 12. sınıfa Türkiye’ye uygun öğrenme</span>
-          <h1 id="hero-title">Öğrenmeyi Yapay Zeka ile Keşfet</h1>
-          <p class="hero-lead">e-kurs; 1. sınıftan 12. sınıfa kadar öğrencilerin seviyesine göre beceri pratiği, müfredat akışı, ödev desteği ve gelişim takibi sunan akıllı öğrenme platformudur.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary btn-large" href="#siniflar">Sınıfını Seç, Pratiğe Başla</a>
-            <a class="btn btn-secondary btn-large" href="#dersler">Dersleri keşfet</a>
-            <a class="btn btn-soft btn-large" href="#ogrenme">Becerileri keşfet</a>
+          <h1 id="hero-title">Her öğrenci için kişiye özel dijital öğretmen</h1>
+          <p class="hero-lead">e-kurs; 1. sınıftan 12. sınıfa kadar öğrencilerin seviyesine göre konu anlatımı, soru çözümü, ödev desteği, deneme sınavı ve gelişim takibi sunan akıllı öğrenme platformudur.</p>
+          <div class="hero-actions" aria-label="Hızlı başlangıç bağlantıları">
+            <a class="btn btn-primary btn-large" href="#basla">Ücretsiz başla</a>
+            <a class="btn btn-secondary btn-large" href="#siniflar">Sınıfını seç</a>
+            <a class="btn btn-soft btn-large" href="#dersler">Dersleri keşfet</a>
           </div>
           <div class="hero-note" aria-label="Platform avantajları">
-            <span>✓ Seviyeye göre öğrenme</span>
-            <span>✓ Öğrenciye özel çalışma planı</span>
-            <span>✓ Veli ve öğretmen raporları</span>
+            <span>Seviyeye göre öğrenme</span>
+            <span>Öğrenciye özel çalışma planı</span>
+            <span>Dijital öğretmen desteği</span>
           </div>
         </div>
 
-        <div class="learning-visual" aria-label="Öğrenci çalışma paneli önizlemesi">
-          <div class="visual-orbit badge-award">🏅</div>
-          <div class="visual-orbit badge-question">?</div>
-          <div class="student-panel">
-            <div class="panel-top">
-              <div class="student-card">
-                <span class="avatar">E</span>
-                <div>
-                  <p>Öğrenci kartı</p>
-                  <strong>Ece • 5. Sınıf</strong>
-                </div>
-              </div>
-              <span class="streak">7 gün seri</span>
-            </div>
-            <div class="goal-card">
+        <aside class="student-panel" aria-label="Öğrenci çalışma paneli önizlemesi">
+          <div class="panel-glow" aria-hidden="true"></div>
+          <div class="panel-top">
+            <div class="student-card">
+              <span class="avatar-mark" aria-hidden="true"></span>
               <div>
-                <p>Bugünkü hedef</p>
-                <h2>Kesirleri karşılaştırma</h2>
+                <p>Öğrenci kartı</p>
+                <strong>Ece • 5. Sınıf</strong>
               </div>
-              <span>🎯</span>
             </div>
+            <span class="streak">7 gün seri</span>
+          </div>
+
+          <div class="goal-card">
+            <p>Bugünkü hedef</p>
+            <strong>20 soru</strong>
+            <span>Kısa konu anlatımı, ölçme ve anında geri bildirim ile tamamlanır.</span>
+          </div>
+
+          <div class="progress-list">
             <div class="progress-card">
-              <div class="progress-head"><strong>Seviye ilerleme</strong><span>%78</span></div>
-              <div class="progress-bar"><span></span></div>
+              <div class="progress-head"><strong>Matematik</strong><span>%78</span></div>
+              <div class="progress-bar"><span style="width: 78%"></span></div>
             </div>
-            <div class="panel-metrics">
-              <article><span>🧩</span><strong>42</strong><p>Çözülen soru</p></article>
-              <article><span>⭐</span><strong>3</strong><p>Yeni rozet</p></article>
-              <article><span>📚</span><strong>5</strong><p>Ders önerisi</p></article>
-            </div>
-            <div class="recommendation-card">
-              <span class="mini-icon">💡</span>
-              <div><strong>Sıradaki çalışma</strong><p>Akıllı öneriler ile Türkçe paragraf tekrarı hazır.</p></div>
-              <a href="#dersler" aria-label="Ders önerilerine git">Git</a>
+            <div class="progress-card progress-card-purple">
+              <div class="progress-head"><strong>Türkçe</strong><span>%64</span></div>
+              <div class="progress-bar"><span style="width: 64%"></span></div>
             </div>
           </div>
-        </div>
+
+          <div class="panel-metrics">
+            <article><strong>42</strong><p>Çözülen soru</p></article>
+            <article><strong>5</strong><p>Ders önerisi</p></article>
+          </div>
+
+          <div class="award-card">
+            <span class="award-icon" aria-hidden="true"></span>
+            <div><strong>Haftanın yıldızı</strong><p>Rozet, düzenli çalışma serisiyle kazanıldı.</p></div>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section class="stats-band" aria-label="e-kurs istatistikleri">
       <div class="container stats-grid">
-        <article><span>🧠</span><strong>12.000+</strong><p>beceri</p></article>
-        <article><span>✅</span><strong>8M+</strong><p>çözülen soru</p></article>
-        <article><span>🎒</span><strong>1–12.</strong><p>sınıf içerik</p></article>
-        <article><span>📊</span><strong>3 panel</strong><p>öğrenci, veli ve öğretmen</p></article>
+        <article><strong>12.000+</strong><p>beceri</p></article>
+        <article><strong>8M+</strong><p>çözülen soru</p></article>
+        <article><strong>1–12.</strong><p>sınıf içerik</p></article>
+        <article><strong>3 panel</strong><p>öğrenci, veli ve öğretmen paneli</p></article>
       </div>
     </section>
 
@@ -117,127 +116,125 @@
         <div class="section-head">
           <span class="kicker">Sınıf seçimi</span>
           <h2 id="grades-title">Her sınıf için hazır beceriler</h2>
-          <p>Sınıfını seç, dersleri gör, seviyene uygun çalışmaya başla.</p>
+          <p>Sınıfını seç, seviyene uygun konu anlatımı, soru çözümü ve öğrenciye özel çalışma planı ile ilerle.</p>
         </div>
-        <div class="grade-grid">
-          <article class="grade-card primary"><span>1</span><h3>1. Sınıf</h3><p>Okuma yazma ve temel işlemler.</p><div><b>Matematik</b><b>Türkçe</b><b>Hayat Bilgisi</b></div><a href="pages/sinif-1.html">Becerileri keşfet</a></article>
-          <article class="grade-card primary"><span>2</span><h3>2. Sınıf</h3><p>Akıcı okuma, problemler ve çevremiz.</p><div><b>Matematik</b><b>Türkçe</b><b>Hayat Bilgisi</b></div><a href="pages/sinif-2.html">Becerileri keşfet</a></article>
-          <article class="grade-card primary"><span>3</span><h3>3. Sınıf</h3><p>Çarpma, bölme ve metin anlama.</p><div><b>Matematik</b><b>Türkçe</b><b>Fen</b></div><a href="pages/sinif-3.html">Becerileri keşfet</a></article>
-          <article class="grade-card primary"><span>4</span><h3>4. Sınıf</h3><p>Kesirler, paragraf ve temel fen.</p><div><b>Matematik</b><b>Türkçe</b><b>Fen</b></div><a href="pages/sinif-4.html">Becerileri keşfet</a></article>
-          <article class="grade-card middle"><span>5</span><h3>5. Sınıf</h3><p>Ortaokula güçlü ve düzenli başlangıç.</p><div><b>Matematik</b><b>Türkçe</b><b>Fen Bilimleri</b><b>Sosyal Bilgiler</b><b>İngilizce</b></div><a href="pages/sinif-5.html">Becerileri keşfet</a></article>
-          <article class="grade-card middle"><span>6</span><h3>6. Sınıf</h3><p>Oran, cümlede anlam ve sistemler.</p><div><b>Matematik</b><b>Türkçe</b><b>Fen</b><b>Sosyal</b><b>İngilizce</b></div><a href="pages/sinif-6.html">Becerileri keşfet</a></article>
-          <article class="grade-card middle"><span>7</span><h3>7. Sınıf</h3><p>Denklemler, paragraf ve kuvvet-enerji.</p><div><b>Matematik</b><b>Türkçe</b><b>Fen</b><b>İngilizce</b></div><a href="pages/sinif-7.html">Becerileri keşfet</a></article>
-          <article class="grade-card middle featured"><span>8</span><h3>8. Sınıf</h3><p>LGS odaklı deneme ve kazanım takibi.</p><div><b>LGS hazırlık</b><b>Matematik</b><b>Türkçe</b><b>Fen</b><b>İnkılap</b><b>İngilizce</b><b>Din Kültürü</b></div><a href="pages/sinif-8.html">Becerileri keşfet</a></article>
-          <article class="grade-card high"><span>9</span><h3>9. Sınıf</h3><p>Lise temeli ve düzenli tekrar planı.</p><div><b>Matematik</b><b>Edebiyat</b><b>Fizik</b><b>Kimya</b><b>Biyoloji</b></div><a href="pages/sinif-9.html">Becerileri keşfet</a></article>
-          <article class="grade-card high"><span>10</span><h3>10. Sınıf</h3><p>Fonksiyonlar, anlatım ve fen temelleri.</p><div><b>Matematik</b><b>Edebiyat</b><b>Fizik</b><b>Kimya</b><b>Biyoloji</b></div><a href="pages/sinif-10.html">Becerileri keşfet</a></article>
-          <article class="grade-card high"><span>11</span><h3>11. Sınıf</h3><p>Alan dersleri ve sınav hazırlığı.</p><div><b>Matematik</b><b>Edebiyat</b><b>Fizik</b><b>Kimya</b><b>Biyoloji</b></div><a href="pages/sinif-11.html">Becerileri keşfet</a></article>
-          <article class="grade-card high featured"><span>12</span><h3>12. Sınıf</h3><p>TYT-AYT hedef takibi ve denemeler.</p><div><b>TYT</b><b>AYT</b><b>Matematik</b><b>Edebiyat</b><b>Fizik</b><b>Kimya</b><b>Biyoloji</b><b>Tarih</b><b>Coğrafya</b></div><a href="pages/sinif-12.html">Becerileri keşfet</a></article>
+        <div class="grade-groups">
+          <div class="grade-group">
+            <h3>İlkokul</h3>
+            <div class="grade-grid">
+              <a href="pages/sinif-1.html">1. sınıf</a>
+              <a href="pages/sinif-2.html">2. sınıf</a>
+              <a href="pages/sinif-3.html">3. sınıf</a>
+              <a href="pages/sinif-4.html">4. sınıf</a>
+            </div>
+          </div>
+          <div class="grade-group">
+            <h3>Ortaokul</h3>
+            <div class="grade-grid">
+              <a href="pages/sinif-5.html">5. sınıf</a>
+              <a href="pages/sinif-6.html">6. sınıf</a>
+              <a href="pages/sinif-7.html">7. sınıf</a>
+              <a href="pages/sinif-8.html">8. sınıf</a>
+            </div>
+          </div>
+          <div class="grade-group">
+            <h3>Lise</h3>
+            <div class="grade-grid">
+              <a href="pages/sinif-9.html">9. sınıf</a>
+              <a href="pages/sinif-10.html">10. sınıf</a>
+              <a href="pages/sinif-11.html">11. sınıf</a>
+              <a href="pages/sinif-12.html">12. sınıf</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section subjects-section" id="dersler" aria-labelledby="subjects-title">
+    <section class="section section-soft" id="dersler" aria-labelledby="subjects-title">
       <div class="container">
         <div class="section-head">
           <span class="kicker">Dersler</span>
           <h2 id="subjects-title">Tek platformda tüm temel dersler</h2>
-          <p>İlkokuldan lise son sınıfa kadar konu anlatımı, soru çözümü ve deneme desteği tek yerde.</p>
+          <p>Türkiye’ye uygun kazanım akışı, deneme sınavı hazırlığı ve dijital öğretmen desteği tek yerde.</p>
         </div>
         <div class="subject-grid">
-          <article><span>➗</span><h3>Matematik</h3><p>Problem, işlem becerisi, geometri ve sınav hazırlığı.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>📖</span><h3>Türkçe</h3><p>Okuma anlama, dil bilgisi, paragraf ve yazım.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>🔬</span><h3>Fen Bilimleri</h3><p>Canlılar, madde, kuvvet, enerji ve deneysel düşünme.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>🌍</span><h3>Sosyal Bilgiler</h3><p>Tarih, coğrafya, vatandaşlık ve kültür çalışmaları.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>🏡</span><h3>Hayat Bilgisi</h3><p>Okul, aile, çevre ve günlük yaşam becerileri.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>💬</span><h3>İngilizce</h3><p>Kelime, okuma, dinleme ve sınıf seviyesine uygun tekrar.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>🕌</span><h3>Din Kültürü</h3><p>Kazanım odaklı konu tekrarları ve soru pratiği.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>🇹🇷</span><h3>T.C. İnkılap Tarihi</h3><p>LGS odaklı kronoloji, kavram ve yorum soruları.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>⚙️</span><h3>Fizik</h3><p>Hareket, kuvvet, elektrik ve modern fizik temelleri.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>🧪</span><h3>Kimya</h3><p>Atom, periyodik sistem, tepkimeler ve hesaplamalar.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>🧬</span><h3>Biyoloji</h3><p>Hücre, kalıtım, ekosistem ve sistemler.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>🏛️</span><h3>Tarih</h3><p>Dönemler, olaylar, kavramlar ve yorum becerisi.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>🗺️</span><h3>Coğrafya</h3><p>Harita okuma, iklim, nüfus ve Türkiye coğrafyası.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>✍️</span><h3>Edebiyat</h3><p>Türler, dönemler, eserler ve metin çözümleme.</p><a href="pages/dersler.html">Derse başla</a></article>
-          <article><span>📐</span><h3>Geometri</h3><p>Açı, üçgen, çember, analitik düşünme ve ispat.</p><a href="pages/dersler.html">Derse başla</a></article>
+          <article>Matematik</article>
+          <article>Türkçe</article>
+          <article>Fen Bilimleri</article>
+          <article>Sosyal Bilgiler</article>
+          <article>Hayat Bilgisi</article>
+          <article>İngilizce</article>
+          <article>Din Kültürü</article>
+          <article>İnkılap Tarihi</article>
+          <article>Fizik</article>
+          <article>Kimya</article>
+          <article>Biyoloji</article>
+          <article>Tarih</article>
+          <article>Coğrafya</article>
+          <article>Edebiyat</article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="ogrenme" aria-labelledby="features-title">
+    <section class="section" id="analiz" aria-labelledby="features-title">
       <div class="container">
         <div class="section-head">
-          <span class="kicker">Öğrenme özellikleri</span>
-          <h2 id="features-title">Seviyeye göre öğrenme her gün daha net</h2>
-          <p>e-kurs; konu akışı, akıllı öneriler, analiz ve ödül sistemiyle öğrenciyi düzenli çalışmaya yönlendirir.</p>
+          <span class="kicker">Akıllı öğrenme akışı</span>
+          <h2 id="features-title">Dolu, anlaşılır ve güven veren öğrenme deneyimi</h2>
+          <p>Öğrencinin seviyesine göre öğrenme, eksik tamamlama ve gelişim takibi net bir akışta birleşir.</p>
         </div>
         <div class="feature-grid">
-          <article><span>🗓️</span><h3>Kişiye özel çalışma planı</h3><p>Öğrencinin seviyesine göre sıradaki en doğru konuyu önerir.</p></article>
-          <article><span>🧩</span><h3>Akıllı soru çözümü</h3><p>Kolay, orta ve zor sorularla adım adım gelişim sağlar.</p></article>
-          <article id="analiz"><span>📈</span><h3>Anlık gelişim takibi</h3><p>Öğrenci, veli ve öğretmen ilerlemeyi grafiklerle görür.</p></article>
-          <article><span>🏆</span><h3>Rozet ve ödül sistemi</h3><p>Her gün çözülen soru kadar puan, rozet ve başarı serisi verir.</p></article>
+          <article><h3>Konu anlatımı</h3><p>Kısa, anlaşılır ve sınıf seviyesine uygun anlatımlarla yeni beceriler öğrenilir.</p></article>
+          <article><h3>Soru çözümü</h3><p>Adım adım çözüm yaklaşımıyla öğrencinin hatası görünür ve sonraki çalışma netleşir.</p></article>
+          <article><h3>Deneme sınavı</h3><p>Süreli denemeler, kazanım analizi ve gelişim raporu ile sınav hazırlığı desteklenir.</p></article>
+          <article><h3>Gelişim takibi</h3><p>Öğrenci, veli ve öğretmen panelleri ilerlemeyi düzenli ve anlaşılır şekilde gösterir.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section audience-section" id="basla" aria-labelledby="audience-title">
+    <section class="section section-soft" id="basla" aria-labelledby="audience-title">
       <div class="container">
         <div class="section-head">
-          <span class="kicker">Herkes için net panel</span>
-          <h2 id="audience-title">Öğrenci, veli ve öğretmen aynı hedefte buluşur</h2>
-          <p>Günlük çalışma, eksik konu takibi, ödev ve raporlar tek sade deneyimde bir araya gelir.</p>
+          <span class="kicker">Paneller</span>
+          <h2 id="audience-title">Öğrenci, veli ve öğretmen için ayrı deneyim</h2>
+          <p>Her kullanıcı kendi ihtiyacına göre hazırlanmış sade, hızlı ve güven veren panelle ilerler.</p>
         </div>
         <div class="audience-grid">
-          <article id="ogrenci"><span>🎒</span><h3>Öğrenci için</h3><p>Günlük hedef, soru çözümü, rozet, konu anlatımı ve deneme sınavı.</p><a class="btn btn-primary" href="pages/ogrenci-panel.html">Öğrenci girişi</a></article>
-          <article id="veli"><span>👨‍👩‍👧</span><h3>Veli için</h3><p>Çocuğunun gelişimini görme, eksik konuları takip etme ve çalışma düzenini izleme.</p><a class="btn btn-secondary" href="pages/veli-panel.html">Veli girişi</a></article>
-          <article id="ogretmen"><span>👩‍🏫</span><h3>Öğretmen için</h3><p>Sınıf analizi, ödev verme, kazanım takibi ve anlaşılır raporlar.</p><a class="btn btn-soft" href="pages/ogretmen-panel.html">Öğretmen girişi</a></article>
+          <article>
+            <h3>Öğrenci için</h3>
+            <p>Günlük hedefler, seviyeye göre öğrenme, soru çözümü ve rozetlerle düzenli çalışma alışkanlığı.</p>
+            <a href="pages/ogrenci.html">Öğrenci panelini incele</a>
+          </article>
+          <article id="veli">
+            <h3>Veli için</h3>
+            <p>Çözülen soru, eksik konular, ödev durumu ve haftalık gelişim raporları tek ekranda.</p>
+            <a href="pages/veli.html">Veli panelini incele</a>
+          </article>
+          <article id="ogretmen">
+            <h3>Öğretmen için</h3>
+            <p>Sınıf takibi, ödev planlama, kazanım raporu ve öğrenciye özel çalışma planı yönetimi.</p>
+            <a href="pages/ogretmen.html">Öğretmen panelini incele</a>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-
-  <section class="ai-assistant" aria-label="AI Öğretmen Asistanı">
-    <button class="ai-fab" type="button" aria-expanded="false" aria-controls="ai-chatbox">
-      <span class="ai-fab-icon">🤖</span>
-      <span class="ai-fab-text">AI Öğretmen</span>
-    </button>
-    <div class="ai-chatbox" id="ai-chatbox" aria-live="polite">
-      <div class="ai-chat-head">
-        <div>
-          <span>AI Öğretmen Asistanı</span>
-          <strong>Çalışma hedefini birlikte seçelim</strong>
-        </div>
-        <button class="ai-close" type="button" aria-label="AI sohbet penceresini kapat">×</button>
-      </div>
-      <div class="ai-messages">
-        <div class="chat-bubble assistant">Merhaba! Sınıfını ve zorlandığın dersi yaz, sana 10 dakikalık çalışma planı çıkarayım.</div>
-        <div class="chat-bubble user">5. sınıf matematikte kesirler.</div>
-        <div class="chat-bubble assistant">Harika. Önce kesir karşılaştırma becerisinden başlayıp 5 örnek, ardından kısa bir mini test öneriyorum.</div>
-      </div>
-      <form class="ai-input" action="#" aria-label="AI öğretmen mesaj formu">
-        <input type="text" placeholder="Örn. 7. sınıf fen, kuvvet konusu" aria-label="AI asistana mesaj yaz">
-        <button type="submit">Gönder</button>
-      </form>
-    </div>
-  </section>
-
   <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand footer-brand" href="#top"><span class="brand-mark">e</span><span>e-kurs</span></a>
-        <p>e-kurs, öğrencilerin kendi hızında gelişmesini sağlayan kişiye özel öğrenme platformudur.</p>
-      </div>
+    <div class="container footer-inner">
+      <a class="brand" href="#top" aria-label="e-kurs ana sayfa">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-text">e-kurs</span>
+      </a>
       <nav aria-label="Alt menü">
         <a href="#siniflar">Sınıflar</a>
         <a href="#dersler">Dersler</a>
-        <a href="#ogrenci">Öğrenci</a>
-        <a href="#veli">Veli</a>
-        <a href="#ogretmen">Öğretmen</a>
+        <a href="pages/gizlilik-politikasi.html">Gizlilik</a>
         <a href="pages/iletisim.html">İletişim</a>
       </nav>
-      <p class="copyright">© 2026 e-kurs. Tüm hakları saklıdır.</p>
     </div>
   </footer>
-  <script src="assets/js/app.js"></script>
+
+  <script src="assets/js/app.js" defer></script>
 </body>
 </html>

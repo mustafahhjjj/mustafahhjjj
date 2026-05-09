@@ -29,43 +29,19 @@ function initMenu() {
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
-      const target = document.querySelector(link.getAttribute('href'));
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
       if (!target) return;
+
       event.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 }
 
-function initAiAssistant() {
-  const fab = document.querySelector('.ai-fab');
-  const chatbox = document.querySelector('#ai-chatbox');
-  const close = document.querySelector('.ai-close');
-  const form = document.querySelector('.ai-input');
-  if (!fab || !chatbox || !close) return;
-
-  const setOpen = (isOpen) => {
-    chatbox.classList.toggle('open', isOpen);
-    fab.setAttribute('aria-expanded', String(isOpen));
-  };
-
-  fab.addEventListener('click', () => setOpen(!chatbox.classList.contains('open')));
-  close.addEventListener('click', () => setOpen(false));
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setOpen(false);
-  });
-
-  if (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      setOpen(true);
-    });
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   initMenu();
   initSmoothScroll();
-  initAiAssistant();
 });
