@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="e-kurs; 1. sınıftan 12. sınıfa kadar seviyeye göre öğrenme, akıllı öneriler ve öğrenciye özel çalışma planı sunan K–12 eğitim platformudur.">
-  <title>e-kurs | Kişiye Özel Dijital Öğretmen</title>
+  <title>e-kurs | Yapay Zeka Destekli K-12 Öğrenme Platformu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
@@ -49,11 +49,11 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">1. sınıftan 12. sınıfa Türkiye’ye uygun öğrenme</span>
-          <h1 id="hero-title">Her öğrenci için kişiye özel dijital öğretmen</h1>
-          <p class="hero-lead">e-kurs; 1. sınıftan 12. sınıfa kadar öğrencilerin seviyesine göre soru, konu anlatımı, ödev desteği, deneme sınavı ve gelişim takibi sunan akıllı öğrenme platformudur.</p>
+          <h1 id="hero-title">Öğrenmeyi Yapay Zeka ile Keşfet</h1>
+          <p class="hero-lead">e-kurs; 1. sınıftan 12. sınıfa kadar öğrencilerin seviyesine göre beceri pratiği, müfredat akışı, ödev desteği ve gelişim takibi sunan akıllı öğrenme platformudur.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary btn-large" href="#basla">Ücretsiz başla</a>
-            <a class="btn btn-secondary btn-large" href="#siniflar">Sınıfını seç</a>
+            <a class="btn btn-primary btn-large" href="#siniflar">Sınıfını Seç, Pratiğe Başla</a>
+            <a class="btn btn-secondary btn-large" href="#dersler">Dersleri keşfet</a>
             <a class="btn btn-soft btn-large" href="#ogrenme">Becerileri keşfet</a>
           </div>
           <div class="hero-note" aria-label="Platform avantajları">
@@ -194,6 +194,32 @@
       </div>
     </section>
   </main>
+
+
+  <section class="ai-assistant" aria-label="AI Öğretmen Asistanı">
+    <button class="ai-fab" type="button" aria-expanded="false" aria-controls="ai-chatbox">
+      <span class="ai-fab-icon">🤖</span>
+      <span class="ai-fab-text">AI Öğretmen</span>
+    </button>
+    <div class="ai-chatbox" id="ai-chatbox" aria-live="polite">
+      <div class="ai-chat-head">
+        <div>
+          <span>AI Öğretmen Asistanı</span>
+          <strong>Çalışma hedefini birlikte seçelim</strong>
+        </div>
+        <button class="ai-close" type="button" aria-label="AI sohbet penceresini kapat">×</button>
+      </div>
+      <div class="ai-messages">
+        <div class="chat-bubble assistant">Merhaba! Sınıfını ve zorlandığın dersi yaz, sana 10 dakikalık çalışma planı çıkarayım.</div>
+        <div class="chat-bubble user">5. sınıf matematikte kesirler.</div>
+        <div class="chat-bubble assistant">Harika. Önce kesir karşılaştırma becerisinden başlayıp 5 örnek, ardından kısa bir mini test öneriyorum.</div>
+      </div>
+      <form class="ai-input" action="#" aria-label="AI öğretmen mesaj formu">
+        <input type="text" placeholder="Örn. 7. sınıf fen, kuvvet konusu" aria-label="AI asistana mesaj yaz">
+        <button type="submit">Gönder</button>
+      </form>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container footer-grid">
