@@ -27,7 +27,7 @@ export function Hero() {
             Her öğrenci için doğru seviyede öğrenme
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            SkillNova; matematikten Türkçeye, fen bilimlerinden sosyal bilgilere kadar öğrencilerin
+            e-kurs; matematikten Türkçeye, fen bilimlerinden sosyal bilgilere kadar öğrencilerin
             seviyesine uyum sağlayan alıştırmalar, öneriler ve analizler sunar.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
