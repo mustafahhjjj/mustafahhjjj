@@ -1,5 +1,18 @@
 import { features } from "@/data/home";
 
 export function FeatureCards() {
-  return <section className="section-pad bg-white" id="öğrenme"><div className="container-nova grid gap-5 md:grid-cols-3">{features.map((f) => <article key={f.title} className="card-hover rounded-3xl border border-slate-100 bg-gradient-to-br from-white to-emerald-50/50 p-7 shadow-lg shadow-slate-200/50"><div className="mb-6 h-24 rounded-3xl bg-white p-4 shadow-inner">{f.variant === "analytics" ? <div className="flex h-full items-end gap-2">{[45,70,55,90].map((h) => <span key={h} className="flex-1 rounded-t-xl bg-cyan-300" style={{height:`${h}%`}} />)}</div> : <div className="space-y-2">{f.tags.slice(0,3).map((t) => <div key={t} className="h-4 rounded-full bg-emerald-100" />)}</div>}</div><h2 className="text-2xl font-black text-slate-950">{f.title}</h2><p className="mt-3 text-slate-600">{f.description}</p><div className="mt-5 flex flex-wrap gap-2">{f.tags.map((t) => <span key={t} className="rounded-full bg-white px-3 py-1 text-xs font-bold text-emerald-700 shadow-sm">{t}</span>)}</div></article>)}</div></section>;
+  return (
+    <section className="section-pad bg-white" id="guven-istatistikleri">
+      <div className="container-nova grid gap-5 md:grid-cols-3">
+        {features.map((feature) => (
+          <article key={feature.title} className="card-hover rounded-[2rem] border border-slate-100 bg-gradient-to-br from-white to-emerald-50/60 p-7 shadow-lg shadow-slate-200/50">
+            <div className="grid size-16 place-items-center rounded-3xl bg-white text-3xl shadow-inner" aria-hidden="true">{feature.icon}</div>
+            <h2 className="mt-6 text-2xl font-black text-slate-950">{feature.title}</h2>
+            <p className="mt-3 text-slate-600">{feature.description}</p>
+            <a href={feature.href} className="focus-nova mt-5 inline-flex font-black text-emerald-700 hover:text-emerald-900">Detayları keşfet →</a>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 }
