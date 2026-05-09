@@ -15,13 +15,13 @@ export function Hero() {
       <div className="container-nova grid gap-10 lg:grid-cols-[1.02fr_.98fr] lg:items-center">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-4 py-2 text-sm font-black text-emerald-700 shadow-sm">
-            <span aria-hidden="true">✨</span> Türkiye K12 için sınıf, ders ve beceri odaklı öğrenme
+            <span aria-hidden="true">✨</span> 1. sınıftan 12. sınıfa kadar kişiselleştirilmiş e-kurs platformu
           </div>
           <h1 className="mt-6 max-w-4xl text-[2.75rem] font-black leading-[1.05] tracking-tight text-slate-950 sm:text-5xl lg:text-[3.5rem]">
             Her öğrenciye kişiye özel dijital öğretmen
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-            1. sınıftan 12. sınıfa kadar dersler, konu anlatımı, testler, ödev yardımı, deneme sınavları ve günlük başarı takibi tek platformda.
+            1. sınıftan 12. sınıfa kadar konu anlatımı, test çözme, ödev yardımı, deneme sınavı, akıllı öneriler ve günlük başarı takibi tek platformda.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={route.student} className="focus-nova rounded-full bg-emerald-500 px-7 py-4 text-center font-black text-white shadow-xl shadow-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-600 motion-reduce:transition-none">Ücretsiz Başla</a>
