@@ -1,5 +1,5 @@
+import { AnalyticsReports } from "@/components/AnalyticsReports";
 import { Awards } from "@/components/Awards";
-import { FeatureCards } from "@/components/FeatureCards";
 import { FinalCta } from "@/components/FinalCta";
 import { Footer } from "@/components/Footer";
 import { GradeExplorer } from "@/components/GradeExplorer";
@@ -10,6 +10,7 @@ import { SkillPlans } from "@/components/SkillPlans";
 import { SocialProof } from "@/components/SocialProof";
 import { SubjectGrid } from "@/components/SubjectGrid";
 import { TeacherAnalytics } from "@/components/TeacherAnalytics";
+import { TrustStats } from "@/components/TrustStats";
 
 export default function Home() {
   return (
@@ -17,13 +18,14 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <FeatureCards />
+        <TrustStats />
         <GradeExplorer />
         <SubjectGrid />
         <SkillPlans />
         <Recommendations />
         <TeacherAnalytics />
         <Awards />
+        <AnalyticsReports />
         <SocialProof />
         <FinalCta />
       </main>
