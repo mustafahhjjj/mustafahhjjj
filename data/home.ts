@@ -1,82 +1,133 @@
-export type GradeGroup = "Okul öncesi" | "İlkokul" | "Ortaokul" | "Lise";
+export type GradeGroup = "İlkokul" | "Ortaokul" | "Lise";
 
-export const navLinks = ["Matematik", "Türkçe", "Fen Bilimleri", "Sosyal Bilgiler", "İngilizce", "Planlar", "Analiz", "Kaynaklar"];
+export const route = {
+  home: "/",
+  learning: "#ogrenme",
+  grades: "#siniflar",
+  subjects: "/pages/dersler.html",
+  skills: "/pages/beceriler.html",
+  questionBank: "/pages/soru-bankasi.html",
+  exams: "/pages/deneme-sinavlari.html",
+  homework: "/pages/odev-yardimi.html",
+  recommendations: "/pages/akilli-oneriler.html",
+  awards: "/pages/oduller.html",
+  analytics: "/pages/analiz.html",
+  parent: "/pages/veli.html",
+  teacher: "/pages/ogretmen.html",
+  student: "/pages/ogrenci.html",
+  plans: "/pages/kazanim-planlari.html",
+};
+
+export const navLinks = [
+  { label: "Öğrenme", href: "#ogrenme" },
+  { label: "Sınıflar", href: "#siniflar" },
+  { label: "Dersler", href: route.subjects },
+  { label: "Beceriler", href: route.skills },
+  { label: "Soru Bankası", href: route.questionBank },
+  { label: "Deneme Sınavları", href: route.exams },
+  { label: "Ödev Yardımı", href: route.homework },
+  { label: "Akıllı Öneriler", href: route.recommendations },
+  { label: "Ödüller", href: route.awards },
+  { label: "Analiz", href: route.analytics },
+  { label: "Veli", href: route.parent },
+  { label: "Öğretmen", href: route.teacher },
+];
 
 export const megaMenu = [
-  { title: "Dersler", items: ["Matematik", "Türkçe", "Fen Bilimleri", "Sosyal Bilgiler", "İngilizce"] },
-  { title: "Öğrenme araçları", items: ["Öneriler", "Beceri planları", "Video dersler", "Oyunlar", "Ödüller"] },
-  { title: "Öğretmenler için", items: ["Sınıf analizi", "Seviye tespiti", "Standartlara göre plan", "Ödev takibi"] },
+  { title: "Sınıf-ders-beceri", items: ["1-4 ilkokul becerileri", "5-8 ortaokul kazanımları", "9-12 lise hazırlığı", "Video dersler"] },
+  { title: "Çalışma araçları", items: ["Test çöz", "Ödev yardımı", "Günlük tekrar", "Çıkmış sorular"] },
+  { title: "Panel ve rapor", items: ["Öğrenci hedefleri", "Veli raporu", "Öğretmen analizi", "Ödül sistemi"] },
+];
+
+export const trustStats = [
+  { value: "12", label: "sınıf seviyesi" },
+  { value: "18K+", label: "beceri ve kazanım" },
+  { value: "120K+", label: "test sorusu" },
+  { value: "7/24", label: "dijital öğrenme asistanı" },
 ];
 
 export const features = [
-  {
-    title: "Kapsamlı K–12 müfredat",
-    description: "İlkokuldan liseye kadar temel derslerde binlerce beceri.",
-    tags: ["Matematik", "Türkçe", "Fen", "Sosyal", "İngilizce"],
-    variant: "curriculum",
-  },
-  {
-    title: "Her öğrenciye özel yol",
-    description: "Öğrencinin performansına göre önerilen beceriler ve çalışma hedefleri.",
-    tags: ["Öneriler", "Hedefler", "Uyarlanır"],
-    variant: "path",
-  },
-  {
-    title: "Öğretmenler için güçlü analiz",
-    description: "Sınıf, öğrenci ve konu bazında anlaşılır ilerleme raporları.",
-    tags: ["Rapor", "Sınıf", "Ödev"],
-    variant: "analytics",
-  },
+  { title: "Türkiye K12 yol haritası", description: "1. sınıftan 12. sınıfa kadar sınıf, ders, konu ve beceri akışı net biçimde görünür.", icon: "🧭", href: "#siniflar" },
+  { title: "Kişiselleştirilmiş öğrenme", description: "Öğrencinin seviyesine uyum sağlayan sistem, sıradaki doğru çalışmayı önerir.", icon: "🎯", href: route.recommendations },
+  { title: "Veli ve öğretmen içgörüleri", description: "Günlük başarı takibi, eksik kazanımlar, ödev durumu ve sınıf analizi tek ekrandadır.", icon: "📊", href: route.analytics },
 ] as const;
 
-export const gradeTabs: GradeGroup[] = ["Okul öncesi", "İlkokul", "Ortaokul", "Lise"];
+export const gradeTabs: GradeGroup[] = ["İlkokul", "Ortaokul", "Lise"];
 
-export const grades = [
-  { group: "Okul öncesi", name: "Okul öncesi", description: "Renkler, sayılar, şekiller, dinleme ve erken okuryazarlık.", skills: { Matematik: 120, Türkçe: 90, Fen: 35, Sosyal: 25 } },
-  { group: "İlkokul", name: "1. sınıf", description: "Toplama, çıkarma, ses bilgisi, canlılar ve çevremiz.", skills: { Matematik: 320, Türkçe: 180, Fen: 60, Sosyal: 45 } },
-  { group: "İlkokul", name: "2. sınıf", description: "Basamak değeri, akıcı okuma, maddeyi tanıma ve güvenli yaşam.", skills: { Matematik: 340, Türkçe: 195, Fen: 80, Sosyal: 60 } },
-  { group: "İlkokul", name: "3. sınıf", description: "Çarpma, bölme, metin türleri, kuvvet ve toplumsal kurallar.", skills: { Matematik: 365, Türkçe: 205, Fen: 105, Sosyal: 85 } },
-  { group: "İlkokul", name: "4. sınıf", description: "Kesirler, problem çözme, yazım, dolaşım sistemi ve harita okuma.", skills: { Matematik: 380, Türkçe: 215, Fen: 125, Sosyal: 110 } },
-  { group: "Ortaokul", name: "5. sınıf", description: "Doğal sayılar, noktalama, güneş sistemi ve kültürel miras.", skills: { Matematik: 375, Türkçe: 205, Fen: 145, Sosyal: 130 } },
-  { group: "Ortaokul", name: "6. sınıf", description: "Oran, yüzdeler, sözcük türleri, hücreler ve dünya tarihi.", skills: { Matematik: 390, Türkçe: 210, Fen: 160, Sosyal: 150 } },
-  { group: "Ortaokul", name: "7. sınıf", description: "Rasyonel sayılar, fiiller, kuvvet, enerji ve demokrasi.", skills: { Matematik: 405, Türkçe: 220, Fen: 175, Sosyal: 155 } },
-  { group: "Ortaokul", name: "8. sınıf", description: "LGS odaklı cebir, paragraf, DNA, basınç ve inkılap tarihi.", skills: { Matematik: 430, Türkçe: 230, Fen: 190, Sosyal: 170 } },
-  { group: "Lise", name: "9. sınıf", description: "Cebir, fonksiyonlar, edebi türler, biyoloji ve tarih.", skills: { Matematik: 360, Türkçe: 150, Biyoloji: 70, Tarih: 80 } },
-  { group: "Lise", name: "10. sınıf", description: "Polinomlar, anlatım, kimya temelleri, coğrafya ve modern tarih.", skills: { Matematik: 345, Türkçe: 145, Kimya: 90, Coğrafya: 75 } },
-  { group: "Lise", name: "11. sınıf", description: "Trigonometri, deneme, fizik hareketi, felsefe ve ekoloji.", skills: { Matematik: 370, Türkçe: 135, Fizik: 95, Felsefe: 60 } },
-  { group: "Lise", name: "12. sınıf", description: "Limit, türev, sınav stratejisi, organik kimya ve çağdaş tarih.", skills: { Matematik: 390, Türkçe: 140, Kimya: 100, Tarih: 85 } },
-] satisfies Array<{ group: GradeGroup; name: string; description: string; skills: Record<string, number> }>;
+export const grades = Array.from({ length: 12 }, (_, i) => {
+  const grade = i + 1;
+  const group: GradeGroup = grade <= 4 ? "İlkokul" : grade <= 8 ? "Ortaokul" : "Lise";
+  const lessons = grade <= 4 ? 7 : grade <= 8 ? 7 : 11;
+  return {
+    group,
+    grade,
+    name: `${grade}. sınıf`,
+    href: `/pages/sinif-${grade}.html`,
+    description:
+      group === "İlkokul"
+        ? "Temel okuryazarlık, matematik, hayat bilgisi ve günlük tekrarlarla sağlam başlangıç."
+        : group === "Ortaokul"
+          ? "Kazanım odaklı konu anlatımı, testler, LGS temeli ve düzenli beceri pratiği."
+          : "Yazılı, TYT-AYT hazırlığı, ders bazlı ilerleme ve sınav stratejisi.",
+    lessons,
+    skills: 260 + grade * 34,
+    tests: 520 + grade * 115,
+    videos: 120 + grade * 24,
+  };
+});
 
-export const subjects = [
-  { name: "Matematik", icon: "∑", topics: ["Sayılar", "Kesirler", "Cebir"], count: "3.800+ beceri", color: "from-emerald-400 to-teal-500" },
-  { name: "Türkçe", icon: "Aa", topics: ["Okuduğunu anlama", "Dil bilgisi", "Yazım kuralları"], count: "2.100+ beceri", color: "from-sky-400 to-blue-500" },
-  { name: "Fen Bilimleri", icon: "✦", topics: ["Canlılar", "Kuvvet ve hareket", "Dünya ve evren"], count: "1.400+ beceri", color: "from-violet-400 to-purple-500" },
-  { name: "Sosyal Bilgiler", icon: "◎", topics: ["Tarih", "Coğrafya", "Vatandaşlık"], count: "1.100+ beceri", color: "from-amber-300 to-orange-500" },
-  { name: "İngilizce", icon: "Hi", topics: ["Kelime", "Dinleme", "Dil yapıları"], count: "900+ beceri", color: "from-pink-400 to-rose-500" },
+export const subjectGroups = [
+  { level: "İlkokul", subjects: ["Türkçe", "Matematik", "Hayat Bilgisi", "Fen Bilimleri", "Sosyal Bilgiler", "İngilizce", "Din Kültürü"] },
+  { level: "Ortaokul", subjects: ["Türkçe", "Matematik", "Fen Bilimleri", "Sosyal Bilgiler", "İngilizce", "Din Kültürü", "T.C. İnkılap Tarihi"] },
+  { level: "Lise", subjects: ["Türk Dili ve Edebiyatı", "Matematik", "Geometri", "Fizik", "Kimya", "Biyoloji", "Tarih", "Coğrafya", "Felsefe", "İngilizce", "Din Kültürü"] },
+];
+
+export const learningModules = ["Konu anlatımı", "Beceri çalışması", "Test çöz", "Video ders", "Kolay / orta / zor sorular", "Ünite sınavı", "Deneme sınavı", "Çıkmış sorular", "Günlük tekrar", "Ödev yardımı"];
+
+export const skillSamples = [
+  { title: "1. Sınıf Matematik", skills: "350+ beceri", videos: "300+ video", questions: "1200+ soru" },
+  { title: "1. Sınıf Türkçe", skills: "220+ beceri", videos: "150+ video", questions: "900+ soru" },
+  { title: "5. Sınıf Matematik", skills: "500+ beceri", videos: "350+ video", questions: "2000+ soru" },
+  { title: "8. Sınıf Fen Bilimleri", skills: "420+ beceri", videos: "250+ video", questions: "1500+ soru" },
+  { title: "12. Sınıf Matematik", skills: "600+ beceri", videos: "400+ video", questions: "2500+ soru" },
 ];
 
 export const planCards = [
-  { title: "Kazanım planları", description: "MEB kazanımlarına göre düzenlenmiş konu akışları.", cta: "Kazanım seç" },
-  { title: "Kitap eşleştirme", description: "Ders kitabındaki üniteye uygun becerileri hızlıca bul.", cta: "Kitap ara" },
-  { title: "Sınav hazırlığı", description: "LGS, okul sınavları ve yazılılar için hedefli pratik.", cta: "Sınava hazırlan" },
+  { title: "MEB kazanımları", description: "Sınıf ve ünite bazında kazanım listeleriyle çalışmayı planla.", cta: "Kazanım planlarını aç", href: route.plans },
+  { title: "Ünite planları", description: "Haftalık akış, konu anlatımı, video ve test adımlarını birlikte gör.", cta: "Ünite planı seç", href: route.plans },
+  { title: "Yazılı hazırlık", description: "Okul sınavları için kolaydan zora hazırlanmış çalışma setleri.", cta: "Yazılıya hazırlan", href: route.exams },
 ];
 
-export const awards = [
-  { title: "5 gün seri", detail: "Düzenli çalışma", color: "bg-emerald-100 text-emerald-700" },
-  { title: "Kesir ustası", detail: "72 doğru cevap", color: "bg-amber-100 text-amber-700" },
-  { title: "Okuma yıldızı", detail: "12 metin tamamlandı", color: "bg-sky-100 text-sky-700" },
-  { title: "Fen kaşifi", detail: "Deney konuları", color: "bg-fuchsia-100 text-fuchsia-700" },
+export const recommendationBullets = ["Eksik konuyu bulur", "Uygun zorlukta soru önerir", "Günlük hedef verir", "Zayıf kazanımları tekrar ettirir", "Öğrenciye özel çalışma planı oluşturur"];
+
+export const panelCards = [
+  { id: "ogrenci-paneli", eyebrow: "Öğrenci paneli", title: "Bugün ne çalışacağını bilen öğrenci", href: route.student, items: ["Günlük hedef", "Çözülen soru", "Doğru oranı", "Eksik konu", "Rozet", "Puan", "Liderlik sırası"] },
+  { id: "veli-paneli", eyebrow: "Veli paneli", title: "Evde gelişimi anlaşılır raporlarla izle", href: route.parent, items: ["Günlük çözülen soru", "Haftalık başarı grafiği", "Eksik konular", "Ödev takibi", "Bildirim", "Gelişim raporu"] },
+  { id: "ogretmen-paneli", eyebrow: "Öğretmen paneli", title: "Sınıfın güçlü ve eksik yönlerini gör", href: route.teacher, items: ["Sınıf listesi", "Başarı oranı", "Ödev verme", "Test oluşturma", "Kazanım takibi", "Eksik konu raporu", "Sınıf analizi"] },
 ];
+
+export const awards = ["Günlük rozet", "Haftalık liderlik", "Okul sıralaması", "Puan sistemi", "Başarı kupası", "Seri takibi", "Arkadaşlarla yarışma"];
+
+export const analyticsCards = ["Başarı yüzdesi", "Ders bazlı ilerleme", "Soru çözme grafiği", "Eksik kazanımlar", "Haftalık gelişim", "Veli raporu", "Öğretmen raporu", "Sınıf karşılaştırması"];
+
+export const examPrep = ["MEB kazanımları", "Ünite planları", "Yazılı hazırlık", "LGS", "TYT", "AYT", "Deneme sınavları", "Çıkmış sorular", "Performans raporu"];
 
 export const testimonials = [
-  { quote: "Öğrencilerimin hangi konuda zorlandığını artık çok daha hızlı görüyorum.", name: "Ayşe K.", role: "Matematik öğretmeni", initials: "AK" },
-  { quote: "Kızım her gün kendi hedefini seçip çalışmaya başladı.", name: "Murat D.", role: "Veli", initials: "MD" },
-  { quote: "Konu tekrarları ve ödüller öğrenciler için çok motive edici.", name: "Elif S.", role: "Sınıf öğretmeni", initials: "ES" },
+  { quote: "Kızım her gün hedefini görüp kendi hızında ilerliyor; eksik konuları takip etmek çok kolaylaştı.", name: "Murat D.", role: "Veli", initials: "MD" },
+  { quote: "Sınıf listesinde hangi kazanımın tekrar edilmesi gerektiğini hızlıca görüyorum.", name: "Ayşe K.", role: "Matematik öğretmeni", initials: "AK" },
+  { quote: "Rozetler ve seri takibi ders çalışmayı oyun gibi hissettiriyor.", name: "Ece", role: "7. sınıf öğrencisi", initials: "EC" },
+];
+
+export const faqs = [
+  { q: "İçerikler Türkiye müfredatına uygun mu?", a: "Evet. Sınıf, ders, ünite ve kazanım yapısı Türkiye K12 programına göre düzenlenir." },
+  { q: "Veli çocuğunun ilerlemesini görebilir mi?", a: "Veli panelinde günlük çözülen soru, eksik konular, ödev takibi ve gelişim raporu yer alır." },
+  { q: "Öğretmen sınıfına ödev verebilir mi?", a: "Öğretmen panelinde test oluşturma, ödev verme, kazanım takibi ve sınıf analizi bulunur." },
+  { q: "Mobilde kullanılabilir mi?", a: "Ana sayfa ve çalışma akışları telefon, tablet ve masaüstü ekranlara uyumlu tasarlanmıştır." },
 ];
 
 export const footerColumns = [
-  { title: "Ürün", links: ["Matematik", "Türkçe", "Fen Bilimleri", "Sosyal Bilgiler", "İngilizce", "Öneriler", "Analiz"] },
-  { title: "Kullanıcılar", links: ["Aileler", "Öğretmenler", "Okullar", "Öğrenciler", "Bağımsız öğrenenler"] },
-  { title: "Kaynaklar", links: ["Yardım merkezi", "Blog", "Başarı hikayeleri", "Araştırmalar", "İletişim"] },
-  { title: "Şirket", links: ["Hakkımızda", "Kariyer", "Gizlilik", "Kullanım şartları"] },
+  { title: "Keşfet", links: [{ label: "Sınıflar", href: "#siniflar" }, { label: "Dersler", href: route.subjects }, { label: "Soru Bankası", href: route.questionBank }, { label: "Deneme Sınavları", href: route.exams }] },
+  { title: "Öğrenme", links: [{ label: "Ödev Yardımı", href: route.homework }, { label: "Akıllı Öneriler", href: route.recommendations }, { label: "Ödüller", href: route.awards }, { label: "Analiz", href: route.analytics }] },
+  { title: "Paneller", links: [{ label: "Veli Paneli", href: route.parent }, { label: "Öğretmen Paneli", href: route.teacher }, { label: "Hakkımızda", href: "/pages/hakkimizda.html" }, { label: "İletişim", href: "/pages/iletisim.html" }] },
+  { title: "Yasal", links: [{ label: "Gizlilik Politikası", href: "/pages/gizlilik-politikasi.html" }, { label: "Kullanım Şartları", href: "/pages/kullanim-sartlari.html" }] },
 ];
