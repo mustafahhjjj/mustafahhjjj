@@ -12,5 +12,22 @@ import { SubjectGrid } from "@/components/SubjectGrid";
 import { TeacherAnalytics } from "@/components/TeacherAnalytics";
 
 export default function Home() {
-  return <><Navbar /><main><Hero /><FeatureCards /><GradeExplorer /><SubjectGrid /><SkillPlans /><Recommendations /><TeacherAnalytics /><Awards /><SocialProof /><FinalCta /></main><Footer /></>;
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <FeatureCards />
+        <GradeExplorer />
+        <SubjectGrid />
+        <SkillPlans />
+        <Recommendations />
+        <TeacherAnalytics />
+        <Awards />
+        <SocialProof />
+        <FinalCta />
+      </main>
+      <Footer />
+    </>
+  );
 }
