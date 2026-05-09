@@ -1,5 +1,12 @@
-import { awards } from "@/data/home";
+import { awards, route } from "@/data/home";
 
 export function Awards() {
-  return <section className="section-pad bg-amber-50/60" id="oduller"><div className="container-nova"><div className="text-center"><p className="font-black text-emerald-700">Ödül ve liderlik sistemi</p><h2 className="mt-2 text-3xl font-black text-slate-950 sm:text-4xl">Düzenli çalışmayı motive eden oyunlaştırma</h2><p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">Günlük rozetler, liderlik sıraları ve arkadaşlarla yarışma öğrencinin çalışma alışkanlığını güçlendirir.</p></div><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{awards.map((award) => <a href="/pages/oduller.html" key={award} className="card-hover focus-nova rounded-3xl border border-white bg-white p-6 text-center shadow-lg hover:shadow-amber-200/70"><div className="mx-auto grid size-20 place-items-center rounded-full bg-amber-100 text-4xl" aria-hidden="true">🏅</div><h3 className="mt-5 text-xl font-black text-slate-950">{award}</h3><p className="mt-2 text-slate-600">Puan, seri ve kupa hedefleriyle çalışmayı sürdür.</p></a>)}</div></div></section>;
+  return (
+    <section className="section-pad bg-amber-50/60" id="oduller">
+      <div className="container-nova">
+        <div className="text-center"><p className="font-black text-emerald-700">Ödül ve liderlik sistemi</p><h2 className="mt-2 text-3xl font-black text-slate-950 sm:text-4xl">Çözdükçe puan kazan, başarı rozetleri topla</h2><p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">Günlük rozetler, haftalık liderlik, okul sıralaması ve seri takibi öğrencinin motivasyonunu canlı tutar.</p></div>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{awards.map((award) => <a href={route.awards} key={award} className="card-hover focus-nova rounded-3xl border border-white bg-white p-6 text-center shadow-lg hover:shadow-amber-200/70"><div className="mx-auto grid size-20 place-items-center rounded-full bg-amber-100 text-4xl" aria-hidden="true">🏅</div><h3 className="mt-5 text-xl font-black text-slate-950">{award}</h3><p className="mt-2 text-slate-600">Puan, seri ve kupa hedefleriyle çalışmayı sürdür.</p></a>)}</div>
+      </div>
+    </section>
+  );
 }
