@@ -4,6 +4,7 @@ export const route = {
   home: "/",
   learning: "#ogrenme",
   grades: "#siniflar",
+  test: "/pages/soru-bankasi.html",
   subjects: "/pages/dersler.html",
   skills: "/pages/beceriler.html",
   questionBank: "/pages/soru-bankasi.html",
@@ -19,10 +20,10 @@ export const route = {
 };
 
 export const navLinks = [
-  { label: "Öğrenme", href: "#ogrenme" },
   { label: "Sınıflar", href: "#siniflar" },
   { label: "Dersler", href: route.subjects },
   { label: "Beceriler", href: route.skills },
+  { label: "Test Çöz", href: route.test },
   { label: "Soru Bankası", href: route.questionBank },
   { label: "Deneme Sınavları", href: route.exams },
   { label: "Ödev Yardımı", href: route.homework },
