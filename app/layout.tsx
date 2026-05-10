@@ -3,11 +3,11 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "e-kurs | Kişiye Özel Dijital Öğretmen ve K12 Öğrenme Platformu",
+  title: "e-kurs.com | Kişiye Özel K–12 Öğrenme Platformu",
   description:
-    "1. sınıftan 12. sınıfa kadar dersler, konu anlatımı, testler, ödev yardımı, deneme sınavları, akıllı öneriler ve günlük başarı takibi.",
+    "1. sınıftan 12. sınıfa kadar dersler, konu anlatımı, testler, ödev yardımı, deneme sınavları, akıllı pratikler ve günlük başarı takibi.",
   openGraph: {
-    title: "e-kurs | Kişiye Özel Dijital Öğretmen",
+    title: "e-kurs.com | Kişiye Özel Dijital Öğretmen",
     description:
       "Türkiye K12 sistemi için sınıf, ders, beceri, analiz, ödül, veli ve öğretmen panelleri sunan modern eğitim platformu.",
     type: "website",
