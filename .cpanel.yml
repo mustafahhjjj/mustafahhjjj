@@ -2,11 +2,11 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/u1878454/public_html/
-    - /bin/rm -f $DEPLOYPATH/index.html
-    - /bin/cp -f index.html $DEPLOYPATH/index.html
     - npm install
     - npm run build
+    - /bin/mkdir -p $DEPLOYPATH
+    - if [ -d out ]; then /bin/cp -R out/* $DEPLOYPATH; fi
+    - if [ -d assets ]; then /bin/cp -R assets $DEPLOYPATH; fi
+    - if [ -d pages ]; then /bin/cp -R pages $DEPLOYPATH; fi
     - /bin/rm -f $DEPLOYPATH/index.html
-    - /bin/cp -R out/* $DEPLOYPATH
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R pages $DEPLOYPATH
+    - /bin/cp -f index.html $DEPLOYPATH/index.html
