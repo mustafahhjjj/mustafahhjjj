@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ödev Yardımı | e-kurs.com</title>
+  <meta name="description" content="e-kurs.com ile Türkiye K12 öğrencileri için sınıf, ders, test, ödev yardımı ve güvenli panel deneyimi.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="e-kurs.com ana sayfa">
+        <span class="brand-mark">e</span>
+        <span>e-kurs.com</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menüyü aç veya kapat" aria-controls="primary-menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="primary-menu" aria-label="Ana menü" data-mobile-menu>
+        <a href="siniflar.html" class="">Sınıflar</a>
+        <a href="dersler.html" class="">Dersler</a>
+        <a href="testler.html" class="">Testler</a>
+        <a href="odev-yardimi.html" class="active">Ödev Yardımı</a>
+        <a href="ogrenci-paneli.html" class="">Öğrenci Paneli</a>
+        <a href="veli-paneli.html" class="">Veli Paneli</a>
+        <a href="ogretmen-paneli.html" class="">Öğretmen Paneli</a>
+        <a href="mesaj-gonder.html" class="">Mesaj Gönder</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="ogrenci-paneli.html">Giriş Yap</a>
+        <a class="btn btn-primary" href="siniflar.html">Ücretsiz Başla</a>
+      </div>
+    </div>
+  </header>
+  <main id="main-content">
+
+    <section class="page-hero"><div class="container"><span class="eyebrow">Ödev Yardımı</span><h1>Mustafa Hoca’ya sor</h1><p>Sorunu yaz, istersen fotoğraf demo alanına dosya ekle ve örnek çözüm cevabını gör.</p></div></section>
+    <section class="section"><div class="container form-card">
+      <label for="homework-question">Sorunu yaz</label>
+      <textarea id="homework-question" rows="6" placeholder="Örneğin: 8 + 3 işlemini nasıl yaparım?"></textarea>
+      <label for="homework-photo">Fotoğraf yükleme demo alanı</label>
+      <input id="homework-photo" type="file" accept="image/*">
+      <button class="btn btn-success btn-large" type="button" data-homework-submit>Mustafa Hoca’ya Sor</button>
+      <div class="demo-response" data-homework-response aria-live="polite">Mustafa Hoca: Sorunu adım adım inceleyelim. Önce verilenleri ayır, sonra işlem sırasını uygula. Bu demo cevap çalışma mantığını göstermek için açıldı.</div>
+    </div></section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark">e</span><span>e-kurs.com</span></a>
+        <p>1. sınıftan 12. sınıfa temiz, güvenli ve takip edilebilir dijital öğrenme.</p>
+      </div>
+      <div class="footer-links">
+        <a href="siniflar.html">Sınıflar</a>
+        <a href="dersler.html">Dersler</a>
+        <a href="testler.html">Testler</a>
+        <a href="mesaj-gonder.html">Mesaj Gönder</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

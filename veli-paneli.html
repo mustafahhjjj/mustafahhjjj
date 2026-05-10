@@ -1,49 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="e-kurs.com K12 eğitim platformu">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Veli Paneli | e-kurs.com</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <meta name="description" content="e-kurs.com ile Türkiye K12 öğrencileri için sınıf, ders, test, ödev yardımı ve güvenli panel deneyimi.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a class="skip-link" href="#main">İçeriğe geç</a>
-<header class="site-header">
-  <div class="container nav-shell">
-    <a class="brand" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="brand-mark">e</span><span>e-kurs.com</span></a>
-    <button class="mobile-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
-    <nav class="main-nav" aria-label="Ana menü">
-      <a href="/index.html#dersler">Dersler</a>
-      <a href="/index.html#siniflar">Sınıflar</a>
-      <a href="/ogretmen-paneli.html">Öğretmen</a>
-      <a href="/veli-paneli.html">Veli</a>
-      <a href="/giris.html">Giriş</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="btn btn-ghost" href="/giris.html">Giriş Yap</a>
-      <a class="btn btn-primary" href="/kayit.html">Ücretsiz Başla</a>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="e-kurs.com ana sayfa">
+        <span class="brand-mark">e</span>
+        <span>e-kurs.com</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menüyü aç veya kapat" aria-controls="primary-menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="primary-menu" aria-label="Ana menü" data-mobile-menu>
+        <a href="siniflar.html" class="">Sınıflar</a>
+        <a href="dersler.html" class="">Dersler</a>
+        <a href="testler.html" class="">Testler</a>
+        <a href="odev-yardimi.html" class="">Ödev Yardımı</a>
+        <a href="ogrenci-paneli.html" class="">Öğrenci Paneli</a>
+        <a href="veli-paneli.html" class="active">Veli Paneli</a>
+        <a href="ogretmen-paneli.html" class="">Öğretmen Paneli</a>
+        <a href="mesaj-gonder.html" class="">Mesaj Gönder</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="ogrenci-paneli.html">Giriş Yap</a>
+        <a class="btn btn-primary" href="siniflar.html">Ücretsiz Başla</a>
+      </div>
     </div>
-  </div>
-</header>
-<main id="main">
-<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="/index.html">Ana sayfa</a><span>›</span><span>Veli Paneli</span></div><h1>Veli Paneli</h1><p>Çocuğunuzun öğrenme yolculuğunu güvenle takip edin.</p><div class="hero-actions"><a class="btn btn-primary" href="/giris.html">Giriş Yap</a><a class="btn btn-ghost" href="/kayit.html">Hesap Oluştur</a></div></div></section><section class="page-layout"><div class="container"><div class="grid card-grid"><a class="panel-card" style="--accent:#2563eb" href="/veli-paneli.html#panel"><div class="icon">📈</div><strong>Çocuğumun ilerlemesi</strong><span>%72 tamamlandı</span></a><a class="panel-card" style="--accent:#22c55e" href="/veli-paneli.html#panel"><div class="icon">🧩</div><strong>Günlük çözülen soru</strong><span>Bugün 18 soru</span></a><a class="panel-card" style="--accent:#f97316" href="/veli-paneli.html#panel"><div class="icon">💡</div><strong>Eksik konular</strong><span>Doğal sayılarda tekrar önerilir</span></a><a class="panel-card" style="--accent:#8b5cf6" href="/veli-paneli.html#panel"><div class="icon">📝</div><strong>Ödevler</strong><span>2 aktif ödev</span></a><a class="panel-card" style="--accent:#facc15" href="/veli-paneli.html#panel"><div class="icon">💬</div><strong>Öğretmen mesajları</strong><span>1 yeni mesaj</span></a></div></div></section>
-</main>
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <a class="brand footer-brand" href="/index.html"><span class="brand-mark">e</span><span>e-kurs.com</span></a>
-      <p>1. sınıftan 12. sınıfa kadar kişiye özel hedef, açıklamalı soru ve güvenli takip deneyimi.</p>
+  </header>
+  <main id="main-content">
+
+    <section class="page-hero"><div class="container"><span class="eyebrow">Veli Paneli</span><h1>Çocuğunuzun gelişimini net görün</h1><p>Çalışma durumu, eksik konular, öğretmen mesajları ve gelişim takibi tek ekranda.</p></div></section>
+    <section class="section"><div class="container dashboard-grid"><article class="stat-card"><span>Çocuğun çalışma durumu</span><strong>42 dk</strong><p>Bugün düzenli çalışma yaptı.</p></article><article class="stat-card"><span>Eksik konular</span><strong>3 konu</strong><p>Kesirler ve okuduğunu anlama önerildi.</p></article><article class="stat-card"><span>Öğretmen mesajları</span><strong>2</strong><p>Güvenli mesaj alanından kontrol edin.</p></article><article class="stat-card"><span>Gelişim takibi</span><strong>+12%</strong><p>Son 30 günde belirgin ilerleme.</p></article></div><div class="container center-cta"><a class="btn btn-primary btn-large" href="ogrenci-paneli.html">Öğrenci Paneline Git</a></div></section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark">e</span><span>e-kurs.com</span></a>
+        <p>1. sınıftan 12. sınıfa temiz, güvenli ve takip edilebilir dijital öğrenme.</p>
+      </div>
+      <div class="footer-links">
+        <a href="siniflar.html">Sınıflar</a>
+        <a href="dersler.html">Dersler</a>
+        <a href="testler.html">Testler</a>
+        <a href="mesaj-gonder.html">Mesaj Gönder</a>
+      </div>
     </div>
-    <div><h3>Öğrenme</h3><a href="/index.html#siniflar">Sınıflar</a><a href="/index.html#dersler">Dersler</a><a href="/sinif-1-matematik-dogal-sayilar.html">Test Çöz</a></div>
-    <div><h3>Paneller</h3><a href="/veli-paneli.html">Veli Paneli</a><a href="/ogretmen-paneli.html">Öğretmen Paneli</a><a href="/giris.html">Giriş Yap</a></div>
-    <div><h3>Başla</h3><a href="/kayit.html">Ücretsiz Başla</a><a href="/sinif-1.html">1. Sınıf</a><a href="/index.html#neden">Neden e-kurs?</a></div>
-  </div>
-  <div class="container footer-bottom">© 2026 e-kurs.com • Güvenli, renkli ve öğrenci odaklı K12 öğrenme.</div>
-</footer>
-<script src="/app.js"></script>
+  </footer>
+  <script src="app.js"></script>
 </body>
 </html>
