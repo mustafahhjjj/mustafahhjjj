@@ -840,3 +840,15 @@ h1 {
     justify-content: flex-start;
   }
 }
+
+.subject-blue { color: #2563eb; }
+.subject-orange { color: #f97316; }
+.subject-green { color: #16a34a; }
+.subject-cyan { color: #0891b2; }
+.subject-purple { color: #7c3aed; }
+.role-blue { background: #dbeafe; color: #1d4ed8; }
+.role-green { background: #dcfce7; color: #15803d; }
+.role-orange { background: #ffedd5; color: #c2410c; }
+@media (max-width: 360px) {
+  html { font-size: 15px; }
+}
