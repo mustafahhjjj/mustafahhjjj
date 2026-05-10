@@ -1,240 +1,112 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="e-kurs; 1. sınıftan 12. sınıfa kadar seviyeye göre konu anlatımı, soru çözümü, ödev desteği, deneme sınavı ve gelişim takibi sunan akıllı öğrenme platformudur.">
-  <title>e-kurs | Kişiye Özel Dijital Öğretmen</title>
+  <meta name="description" content="e-kurs.com; K-12 öğrencileri için yapay zeka destekli öğrenim yönetim sistemi, beceri pratikleri, değerlendirme ve öğretmen analitikleri sunar.">
+  <title>e-kurs.com | Yapay Zeka Destekli K-12 LMS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: { ixlg: '#8cc63f', navy: '#1e293b', soft: '#f9f9f9' }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <a class="skip-link" href="#icerik">İçeriğe geç</a>
-  <header class="site-header" id="top">
-    <nav class="nav-shell" aria-label="Ana menü">
-      <a class="brand" href="#top" aria-label="e-kurs ana sayfa">
-        <span class="brand-mark" aria-hidden="true"><span></span></span>
-        <span class="brand-text">e-kurs</span>
+<body class="bg-white font-sans text-slate-800 antialiased">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:px-8" aria-label="Ana menü">
+      <a href="#" class="flex items-center gap-2 text-3xl font-black tracking-tight text-navy" aria-label="e-kurs.com ana sayfa">
+        <span class="grid h-10 w-10 place-items-center rounded-full bg-ixlg text-white shadow-md">e</span>
+        <span>e-kurs.com</span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
-        <span></span><span></span><span></span>
-        <span class="sr-only">Menüyü aç veya kapat</span>
-      </button>
-
-      <div class="nav-menu" id="main-menu">
-        <a href="#ogrenme">Öğrenme</a>
-        <a href="#siniflar">Sınıflar</a>
-        <a href="#dersler">Dersler</a>
-        <a href="#ogretmen">Öğretmen</a>
-        <a href="#veli">Veli</a>
-        <a href="#analiz">Analiz</a>
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-2 text-sm font-bold text-slate-700 lg:justify-center">
+        <a class="transition hover:text-ixlg" href="#mufredat">Müfredat</a>
+        <a class="transition hover:text-ixlg" href="#degerlendirme">Değerlendirme</a>
+        <a class="transition hover:text-ixlg" href="#analitik">Analitik</a>
+        <a class="transition hover:text-ixlg" href="#okullar">Okullar/Öğretmenler</a>
       </div>
 
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="pages/ogrenci-panel.html">Giriş yap</a>
-        <a class="btn btn-primary" href="#basla">Ücretsiz başla</a>
-      </div>
+      <form class="grid gap-2 sm:grid-cols-[1fr_1fr_auto] lg:w-[430px]" aria-label="Kullanıcı girişi">
+        <input class="h-10 rounded-md border border-slate-300 px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-ixlg focus:ring-2 focus:ring-ixlg/25" type="text" placeholder="Kullanıcı adı" aria-label="Kullanıcı adı">
+        <input class="h-10 rounded-md border border-slate-300 px-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-ixlg focus:ring-2 focus:ring-ixlg/25" type="password" placeholder="Şifre" aria-label="Şifre">
+        <button class="h-10 rounded-md bg-ixlg px-5 text-sm font-extrabold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#7bb432] hover:shadow-md" type="submit">Giriş Yap</button>
+      </form>
     </nav>
   </header>
 
-  <main id="icerik">
-    <section class="hero" id="ogrenme" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">1. sınıftan 12. sınıfa Türkiye’ye uygun öğrenme</span>
-          <h1 id="hero-title">Her öğrenci için kişiye özel dijital öğretmen</h1>
-          <p class="hero-lead">e-kurs; 1. sınıftan 12. sınıfa kadar öğrencilerin seviyesine göre konu anlatımı, soru çözümü, ödev desteği, deneme sınavı ve gelişim takibi sunan akıllı öğrenme platformudur.</p>
-          <div class="hero-actions" aria-label="Hızlı başlangıç bağlantıları">
-            <a class="btn btn-primary btn-large" href="#basla">Ücretsiz başla</a>
-            <a class="btn btn-secondary btn-large" href="#siniflar">Sınıfını seç</a>
-            <a class="btn btn-outline btn-large" href="#dersler">Dersleri keşfet</a>
-          </div>
-          <div class="hero-note" aria-label="Platform avantajları">
-            <span>Seviyeye göre öğrenme</span>
-            <span>Öğrenciye özel çalışma planı</span>
-            <span>Dijital öğretmen desteği</span>
-          </div>
-        </div>
+  <main>
+    <section class="bg-soft px-4 py-16 text-center sm:py-20 lg:py-24" id="mufredat">
+      <div class="mx-auto max-w-5xl">
+        <p class="mb-4 text-sm font-extrabold uppercase tracking-[0.28em] text-ixlg">Akıllı pratik • Kişiselleştirilmiş öğrenme • K-12</p>
+        <h1 class="text-4xl font-black leading-tight tracking-tight text-navy sm:text-5xl lg:text-6xl">Yapay Zeka Destekli K-12 Öğrenim Sistemi</h1>
+        <p class="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">e-kurs.com, her öğrencinin seviyesine göre uyarlanan beceri pratikleri, ölçme araçları ve öğretmen analitikleriyle güven veren modern LMS deneyimi sunar.</p>
+        <form class="mx-auto mt-9 flex max-w-3xl flex-col overflow-hidden rounded-full border border-slate-200 bg-white p-2 shadow-xl shadow-slate-200/70 sm:flex-row" aria-label="Beceri arama">
+          <input class="min-h-14 flex-1 rounded-full px-6 text-base outline-none placeholder:text-slate-400" type="search" placeholder="Öğrenmek istediğiniz beceriyi arayın..." aria-label="Öğrenmek istediğiniz beceriyi arayın">
+          <button class="min-h-14 rounded-full bg-ixlg px-8 font-extrabold text-white transition hover:bg-[#7bb432]" type="submit">Ara</button>
+        </form>
+      </div>
+    </section>
 
-        <aside class="student-panel" aria-label="Öğrenci çalışma paneli önizlemesi">
-          <div class="panel-glow" aria-hidden="true"></div>
-          <div class="panel-top">
-            <div class="student-card">
-              <span class="avatar-mark" aria-hidden="true"></span>
+    <section class="px-4 py-12 sm:py-16" id="degerlendirme">
+      <div class="mx-auto max-w-7xl rounded-3xl border border-slate-200 bg-white p-4 shadow-xl shadow-slate-100 lg:p-8">
+        <div class="grid gap-8 lg:grid-cols-[250px_1fr]">
+          <aside aria-label="Branş sekmeleri" class="rounded-2xl bg-soft p-3">
+            <h2 class="px-4 py-3 text-xl font-black text-navy">Branşlar</h2>
+            <div class="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
+              <a href="#siniflar" class="min-w-max rounded-xl bg-ixlg px-4 py-3 text-left text-sm font-extrabold text-white shadow-md">Matematik</a>
+              <a href="#siniflar" class="min-w-max rounded-xl bg-white px-4 py-3 text-left text-sm font-extrabold text-slate-700 transition hover:bg-ixlg/10 hover:text-navy">Türkçe</a>
+              <a href="#siniflar" class="min-w-max rounded-xl bg-white px-4 py-3 text-left text-sm font-extrabold text-slate-700 transition hover:bg-ixlg/10 hover:text-navy">Fen Bilimleri</a>
+              <a href="#siniflar" class="min-w-max rounded-xl bg-white px-4 py-3 text-left text-sm font-extrabold text-slate-700 transition hover:bg-ixlg/10 hover:text-navy">Sosyal Bilgiler</a>
+              <a href="#siniflar" class="min-w-max rounded-xl bg-white px-4 py-3 text-left text-sm font-extrabold text-slate-700 transition hover:bg-ixlg/10 hover:text-navy">İngilizce</a>
+            </div>
+          </aside>
+
+          <div id="siniflar">
+            <div class="mb-6 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
               <div>
-                <p>Öğrenci kartı</p>
-                <strong>Ece • 5. Sınıf</strong>
+                <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-ixlg">Sınıflar ve beceriler</p>
+                <h2 class="mt-2 text-3xl font-black text-navy">Okul Öncesi’nden 12. Sınıf’a kadar</h2>
               </div>
+              <p class="max-w-md text-sm leading-6 text-slate-500">Kartlardan sınıf seçerek konu anlatımı, beceri pratikleri, değerlendirme ve yapay zeka destekli önerilere ulaşın.</p>
             </div>
-            <span class="streak">7 gün seri</span>
-          </div>
 
-          <div class="goal-card">
-            <p>Bugünkü hedef</p>
-            <strong>20 soru</strong>
-            <span>Kısa konu anlatımı, ölçme ve anında geri bildirim ile tamamlanır.</span>
-          </div>
-
-          <div class="progress-list">
-            <div class="progress-card">
-              <div class="progress-head"><strong>Matematik</strong><span>%78</span></div>
-              <div class="progress-bar"><span style="width: 78%"></span></div>
-            </div>
-            <div class="progress-card progress-card-purple">
-              <div class="progress-head"><strong>Türkçe</strong><span>%64</span></div>
-              <div class="progress-bar"><span style="width: 64%"></span></div>
-            </div>
-          </div>
-
-          <div class="panel-metrics">
-            <article><strong>42</strong><p>Çözülen soru</p></article>
-            <article><strong>5</strong><p>Ders önerisi</p></article>
-          </div>
-
-          <div class="award-card">
-            <span class="award-icon" aria-hidden="true"></span>
-            <div><strong>Haftanın yıldızı</strong><p>Rozet, düzenli çalışma serisiyle kazanıldı.</p></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="stats-band" aria-label="e-kurs istatistikleri">
-      <div class="container stats-grid">
-        <article><strong>12.000+</strong><p>beceri</p></article>
-        <article><strong>8M+</strong><p>çözülen soru</p></article>
-        <article><strong>1–12.</strong><p>sınıf içerik</p></article>
-        <article><strong>3 panel</strong><p>öğrenci, veli ve öğretmen paneli</p></article>
-      </div>
-    </section>
-
-    <section class="section" id="siniflar" aria-labelledby="grades-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Sınıf seçimi</span>
-          <h2 id="grades-title">Her sınıf için hazır beceriler</h2>
-          <p>Sınıfını seç, seviyene uygun konu anlatımı, soru çözümü ve öğrenciye özel çalışma planı ile ilerle.</p>
-        </div>
-        <div class="grade-groups">
-          <div class="grade-group">
-            <h3>İlkokul</h3>
-            <div class="grade-grid">
-              <a href="pages/sinif-1.html">1. sınıf</a>
-              <a href="pages/sinif-2.html">2. sınıf</a>
-              <a href="pages/sinif-3.html">3. sınıf</a>
-              <a href="pages/sinif-4.html">4. sınıf</a>
-            </div>
-          </div>
-          <div class="grade-group">
-            <h3>Ortaokul</h3>
-            <div class="grade-grid">
-              <a href="pages/sinif-5.html">5. sınıf</a>
-              <a href="pages/sinif-6.html">6. sınıf</a>
-              <a href="pages/sinif-7.html">7. sınıf</a>
-              <a href="pages/sinif-8.html">8. sınıf</a>
-            </div>
-          </div>
-          <div class="grade-group">
-            <h3>Lise</h3>
-            <div class="grade-grid">
-              <a href="pages/sinif-9.html">9. sınıf</a>
-              <a href="pages/sinif-10.html">10. sınıf</a>
-              <a href="pages/sinif-11.html">11. sınıf</a>
-              <a href="pages/sinif-12.html">12. sınıf</a>
+            <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">Okul Öncesi</h3><p class="mt-2 text-base font-bold text-ixlg">220 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">Anaokulu</h3><p class="mt-2 text-base font-bold text-ixlg">310 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">1. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">350 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">2. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">410 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">3. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">455 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">4. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">520 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">5. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">585 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">6. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">640 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">7. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">690 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">8. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">745 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">9. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">610 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">10. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">575 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">11. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">540 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
+              <a href="#" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-ixlg hover:shadow-xl hover:shadow-ixlg/15"><div class="mb-5 flex items-center justify-between"><span class="grid h-11 w-11 place-items-center rounded-full bg-ixlg/15 text-lg font-black text-[#6da324] transition group-hover:bg-ixlg group-hover:text-white">✓</span><span class="rounded-full bg-soft px-3 py-1 text-xs font-bold text-slate-500">AI uyumlu</span></div><h3 class="text-2xl font-black text-navy">12. Sınıf</h3><p class="mt-2 text-base font-bold text-ixlg">505 Beceriler</p><p class="mt-4 text-sm leading-6 text-slate-500">Seviyeye göre alıştırmalar, anında geri bildirim ve gelişim takibi.</p></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="dersler" aria-labelledby="subjects-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Dersler</span>
-          <h2 id="subjects-title">Tek platformda tüm temel dersler</h2>
-          <p>Türkiye’ye uygun kazanım akışı, deneme sınavı hazırlığı ve dijital öğretmen desteği tek yerde.</p>
-        </div>
-        <div class="subject-grid">
-          <article>Matematik</article>
-          <article>Türkçe</article>
-          <article>Fen Bilimleri</article>
-          <article>Sosyal Bilgiler</article>
-          <article>Hayat Bilgisi</article>
-          <article>İngilizce</article>
-          <article>Din Kültürü</article>
-          <article>İnkılap Tarihi</article>
-          <article>Fizik</article>
-          <article>Kimya</article>
-          <article>Biyoloji</article>
-          <article>Tarih</article>
-          <article>Coğrafya</article>
-          <article>Edebiyat</article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="analiz" aria-labelledby="features-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Akıllı öğrenme akışı</span>
-          <h2 id="features-title">Dolu, anlaşılır ve güven veren öğrenme deneyimi</h2>
-          <p>Öğrencinin seviyesine göre öğrenme, eksik tamamlama ve gelişim takibi net bir akışta birleşir.</p>
-        </div>
-        <div class="feature-grid">
-          <article><h3>Konu anlatımı</h3><p>Kısa, anlaşılır ve sınıf seviyesine uygun anlatımlarla yeni beceriler öğrenilir.</p></article>
-          <article><h3>Soru çözümü</h3><p>Adım adım çözüm yaklaşımıyla öğrencinin hatası görünür ve sonraki çalışma netleşir.</p></article>
-          <article><h3>Deneme sınavı</h3><p>Süreli denemeler, kazanım analizi ve gelişim raporu ile sınav hazırlığı desteklenir.</p></article>
-          <article><h3>Gelişim takibi</h3><p>Öğrenci, veli ve öğretmen panelleri ilerlemeyi düzenli ve anlaşılır şekilde gösterir.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="basla" aria-labelledby="audience-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="kicker">Paneller</span>
-          <h2 id="audience-title">Öğrenci, veli ve öğretmen için ayrı deneyim</h2>
-          <p>Her kullanıcı kendi ihtiyacına göre hazırlanmış sade, hızlı ve güven veren panelle ilerler.</p>
-        </div>
-        <div class="audience-grid">
-          <article>
-            <h3>Öğrenci için</h3>
-            <p>Günlük hedefler, seviyeye göre öğrenme, soru çözümü ve rozetlerle düzenli çalışma alışkanlığı.</p>
-            <a href="pages/ogrenci.html">Öğrenci panelini incele</a>
-          </article>
-          <article id="veli">
-            <h3>Veli için</h3>
-            <p>Çözülen soru, eksik konular, ödev durumu ve haftalık gelişim raporları tek ekranda.</p>
-            <a href="pages/veli.html">Veli panelini incele</a>
-          </article>
-          <article id="ogretmen">
-            <h3>Öğretmen için</h3>
-            <p>Sınıf takibi, ödev planlama, kazanım raporu ve öğrenciye özel çalışma planı yönetimi.</p>
-            <a href="pages/ogretmen.html">Öğretmen panelini incele</a>
-          </article>
-        </div>
+    <section class="bg-soft px-4 py-14" id="analitik">
+      <div class="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
+        <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"><h3 class="text-xl font-black text-navy">Uyarlanabilir öğrenme</h3><p class="mt-3 leading-7 text-slate-600">Yapay zeka, öğrencinin doğru-yanlış örüntüsüne göre sıradaki beceriyi önerir.</p></article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"><h3 class="text-xl font-black text-navy">Güvenilir değerlendirme</h3><p class="mt-3 leading-7 text-slate-600">Kısa sınavlar, kazanım bazlı eksikleri görünür ve uygulanabilir hale getirir.</p></article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm" id="okullar"><h3 class="text-xl font-black text-navy">Öğretmen analitikleri</h3><p class="mt-3 leading-7 text-slate-600">Sınıf ilerlemesi, ödev durumu ve beceri performansı tek panelde izlenir.</p></article>
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <a class="brand" href="#top" aria-label="e-kurs ana sayfa">
-        <span class="brand-mark" aria-hidden="true"><span></span></span>
-        <span class="brand-text">e-kurs</span>
-      </a>
-      <nav aria-label="Alt menü">
-        <a href="#siniflar">Sınıflar</a>
-        <a href="#dersler">Dersler</a>
-        <a href="pages/gizlilik-politikasi.html">Gizlilik</a>
-        <a href="pages/iletisim.html">İletişim</a>
-      </nav>
-    </div>
-  </footer>
-
-  <script src="assets/js/app.js" defer></script>
 </body>
 </html>
