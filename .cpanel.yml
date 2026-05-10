@@ -3,5 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/u1878454/public_html/
     - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp -f index.html style.css app.js siniflar.html dersler.html testler.html odev-yardimi.html ogrenci-paneli.html veli-paneli.html ogretmen-paneli.html mesaj-gonder.html $DEPLOYPATH
-    - /bin/cp -f 1-sinif.html 2-sinif.html 3-sinif.html 4-sinif.html 5-sinif.html 6-sinif.html 7-sinif.html 8-sinif.html 9-sinif.html 10-sinif.html 11-sinif.html 12-sinif.html $DEPLOYPATH
+    - /bin/cp -Rf public_html/* $DEPLOYPATH
+    - /bin/cp -f style.css app.js script.js $DEPLOYPATH
