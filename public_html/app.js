@@ -1,117 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".site-header");
-  const toggle = document.querySelector(".mobile-toggle");
-
-  if (toggle && header) {
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const menu = document.querySelector("[data-mobile-menu]");
+  if (toggle && menu) {
     toggle.addEventListener("click", () => {
-      const open = header.classList.toggle("nav-open");
-      toggle.setAttribute("aria-expanded", String(open));
+      const isOpen = menu.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
-  document.querySelectorAll("[data-scroll-target]").forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      const target = document.querySelector(btn.dataset.scrollTarget);
-      if (target) {
-        event.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
+  document.querySelectorAll("a").forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    if (!href.trim() || href === "#" || href.toLowerCase().startsWith("javascript:")) {
+      console.warn("Boş veya geçersiz bağlantı bulundu:", link);
+    }
   });
 
   const quiz = document.querySelector("[data-quiz]");
   if (quiz) {
-    const questions = [
-      {
-        text: "Soru 1: Aşağıdakilerden hangisi 5 sayısını gösterir?",
-        options: ["3", "4", "5", "6"],
-        answer: 2,
-        explanation:
-          "5 sayısını bulmak için beş nesneyi ya da rakamla yazılmış 5’i ararız. Doğru cevap C seçeneğidir.",
-      },
-      {
-        text: "Soru 2: 7 sayısından hemen önce hangi sayı gelir?",
-        options: ["5", "6", "8", "9"],
-        answer: 1,
-        explanation:
-          "Sayıları sırayla sayınca 5, 6, 7 şeklinde ilerleriz. 7’den hemen önce 6 gelir.",
-      },
-      {
-        text: "Soru 3: 2 onluk ve 3 birlik hangi sayıdır?",
-        options: ["23", "32", "203", "5"],
-        answer: 0,
-        explanation: "2 onluk 20 eder. 3 birlik eklenince 23 olur.",
-      },
-    ];
+    const correctAnswer = "11";
+    const explanation = quiz.querySelector("[data-explanation]");
+    const progressBar = quiz.querySelector("[data-progress-bar]");
+    const buttons = Array.from(quiz.querySelectorAll("[data-answer]"));
+    const nextButton = quiz.querySelector("[data-next-question]");
 
-    let index = 0;
-    let selected = null;
-    const title = quiz.querySelector("[data-question-title]");
-    const answers = quiz.querySelector("[data-answers]");
-    const explain = quiz.querySelector("[data-explanation]");
-    const check = quiz.querySelector("[data-check]");
-    const next = quiz.querySelector("[data-next]");
+    const resetQuiz = () => {
+      buttons.forEach((button) => {
+        button.classList.remove("correct", "wrong");
+        button.disabled = false;
+      });
+      if (explanation) explanation.classList.remove("show");
+      if (progressBar) progressBar.style.width = "35%";
+    };
 
-    function renderQuestion() {
-      selected = null;
-      const question = questions[index];
-      title.textContent = question.text;
-      answers.innerHTML = "";
-      explain.classList.remove("show");
-      explain.textContent = "";
-
-      question.options.forEach((option, optionIndex) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "answer";
-        button.textContent = `${String.fromCharCode(65 + optionIndex)}) ${option}`;
-        button.addEventListener("click", () => {
-          selected = optionIndex;
-          answers
-            .querySelectorAll(".answer")
-            .forEach((item) => item.classList.remove("selected", "correct", "wrong"));
-          button.classList.add("selected");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selected = button.dataset.answer;
+        buttons.forEach((item) => {
+          item.classList.remove("correct", "wrong");
+          item.disabled = true;
+          if (item.dataset.answer === correctAnswer) item.classList.add("correct");
         });
-        answers.appendChild(button);
+        if (selected !== correctAnswer) button.classList.add("wrong");
+        if (explanation) explanation.classList.add("show");
+        if (progressBar) progressBar.style.width = "100%";
       });
-    }
-
-    check?.addEventListener("click", () => {
-      if (selected === null) {
-        explain.textContent = "Önce bir cevap seç, sonra kontrol edelim.";
-        explain.classList.add("show");
-        return;
-      }
-
-      const question = questions[index];
-      answers.querySelectorAll(".answer").forEach((button, optionIndex) => {
-        button.classList.remove("selected");
-        if (optionIndex === question.answer) button.classList.add("correct");
-        if (optionIndex === selected && optionIndex !== question.answer) {
-          button.classList.add("wrong");
-        }
-      });
-      explain.textContent = question.explanation;
-      explain.classList.add("show");
     });
 
-    next?.addEventListener("click", () => {
-      index = (index + 1) % questions.length;
-      renderQuestion();
-    });
-
-    renderQuestion();
+    if (nextButton) nextButton.addEventListener("click", resetQuiz);
   }
 
-  document.querySelectorAll("form[data-demo-form]").forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const message = form.querySelector("[data-form-message]");
-      if (message) {
-        message.textContent =
-          "Bilgiler alındı. Bu demo arayüz PHP/MySQL bağlantısı için hazır yapıdadır.";
-        message.classList.add("show");
-      }
-    });
-  });
+  const homeworkButton = document.querySelector("[data-homework-submit]");
+  const homeworkResponse = document.querySelector("[data-homework-response]");
+  if (homeworkButton && homeworkResponse) {
+    homeworkButton.addEventListener("click", () => homeworkResponse.classList.add("show"));
+  }
+
+  const messageButton = document.querySelector("[data-message-submit]");
+  const messageResponse = document.querySelector("[data-message-response]");
+  if (messageButton && messageResponse) {
+    messageButton.addEventListener("click", () => messageResponse.classList.add("show"));
+  }
 });
