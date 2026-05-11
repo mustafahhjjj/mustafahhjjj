@@ -1,7 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/u1878454/public_html/
-    - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp -Rf public_html/* $DEPLOYPATH
-    - /bin/cp -f style.css app.js script.js $DEPLOYPATH
