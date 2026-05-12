@@ -10,74 +10,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <style>
-    :root{--home-bg:#f7fbff;--home-card:#ffffff;--home-text:#1f2937;--home-strong:#12203a;--home-muted:#667085;--home-border:#e5e7eb;--home-green:#15b77a;--home-green-dark:#0d9464;--home-blue:#2563eb;--home-sky:#38bdf8;--home-orange:#ff9800;--home-soft-green:#ecfdf5;--home-soft-blue:#eff6ff;--home-shadow:0 12px 32px rgba(15,23,42,.08);--home-shadow-strong:0 20px 48px rgba(15,23,42,.12)}
+    :root{--home-bg:#f7fbff;--home-card:#ffffff;--home-text:#1f2937;--home-strong:#12203a;--home-muted:#667085;--home-border:#e5e7eb;--home-green:#15b77a;--home-green-dark:#0d9464;--home-blue:#2563eb;--home-sky:#38bdf8;--home-orange:#ff9800;--home-soft-green:#ecfdf5;--home-soft-blue:#eff6ff;--home-soft-orange:#fff7ed;--home-shadow:0 12px 32px rgba(15,23,42,.08);--home-shadow-strong:0 20px 48px rgba(15,23,42,.12)}
     body.home-modern{margin:0;background:linear-gradient(180deg,#fff 0%,var(--home-bg) 44%,#fff 100%);color:var(--home-text);font-family:Nunito,Inter,Arial,sans-serif;line-height:1.55}
-    .home-modern *{box-sizing:border-box}
-    .home-modern a{text-decoration:none;color:inherit}
-    .home-modern .container,.home-modern .nav{width:min(1180px,calc(100% - 32px));margin:0 auto}
+    .home-modern *{box-sizing:border-box}.home-modern a{text-decoration:none;color:inherit}.home-modern .container,.home-modern .nav{width:min(1180px,calc(100% - 32px));margin:0 auto}
     .home-modern .site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);border-bottom:1px solid var(--home-border);box-shadow:0 6px 18px rgba(15,23,42,.04);backdrop-filter:saturate(1.15) blur(10px)}
-    .home-modern .nav{min-height:72px;display:flex;align-items:center;gap:24px}
-    .home-modern .logo{display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;color:#111827;font-size:1.12rem;font-weight:900}
-    .home-modern .logo-mark{display:grid;width:36px;height:36px;place-items:center;border-radius:12px;background:var(--home-green);color:#fff;font-weight:900;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 10px 22px rgba(21,183,122,.22)}
-    .home-modern .nav-links{display:flex;align-items:center;gap:20px;margin-left:auto;color:#344054;font-weight:900;overflow-x:auto;scrollbar-width:thin}
-    .home-modern .nav-links a{display:inline-flex;min-height:44px;align-items:center;white-space:nowrap;transition:color .18s ease,transform .18s ease}
-    .home-modern .nav-links a:hover{color:var(--home-green-dark);transform:translateY(-1px)}
-    .home-modern .nav-actions{display:flex;gap:10px}
-    .home-modern .menu-toggle{display:none;width:44px;height:44px;margin-left:auto;border:1px solid var(--home-border);background:#fff;border-radius:12px;align-items:center;justify-content:center;flex-direction:column;gap:5px}
-    .home-modern .menu-toggle span{width:20px;height:2px;background:var(--home-strong);border-radius:2px}
-    .home-modern .btn{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:0 20px;border:1px solid transparent;border-radius:999px;font-weight:900;text-align:center;white-space:nowrap;transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,color .18s ease}
-    .home-modern .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(15,23,42,.11)}
-    .home-modern .btn-primary{color:#fff;background:var(--home-green);border-color:var(--home-green)}
-    .home-modern .btn-primary:hover{background:var(--home-green-dark);border-color:var(--home-green-dark)}
-    .home-modern .btn-light{background:#fff;border-color:var(--home-green);color:var(--home-green-dark)}
-    .home-modern .btn-blue{background:var(--home-blue);border-color:var(--home-blue);color:#fff}
-    .home-modern .home-hero{position:relative;overflow:hidden;padding:62px 0 58px;background:radial-gradient(circle at 8% 18%,rgba(255,247,191,.78),transparent 24%),radial-gradient(circle at 86% 12%,rgba(219,234,254,.95),transparent 27%),linear-gradient(135deg,#fff 0%,#effcf5 48%,#eff6ff 100%);border-bottom:1px solid var(--home-border)}
-    .home-modern .home-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--home-green),var(--home-sky),var(--home-orange))}
-    .home-modern .hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) 380px;gap:42px;align-items:center;min-height:auto;padding:0}
-    .home-modern .hero-copy,.home-modern .hero-panel,.home-modern .card{border:1px solid var(--home-border);background:#fff;box-shadow:var(--home-shadow);animation:none;overflow:visible}
-    .home-modern .hero-copy::before,.home-modern .hero-panel::before,.home-modern .card::before,.home-modern .hero-grid>div:first-child::before{display:none}
-    .home-modern .hero-copy{padding:0;border:0;background:transparent;box-shadow:none}
-    .home-modern .eyebrow{display:inline-flex;min-height:36px;align-items:center;margin-bottom:16px;padding:0 14px;border:1px solid #bbf7d0;border-radius:999px;background:var(--home-soft-green);color:var(--home-green-dark);font-size:.88rem;font-weight:900}
-    .home-modern h1{margin:0 0 16px;color:var(--home-strong);font-size:clamp(2.6rem,5vw,4.8rem);line-height:1.02;font-weight:900;letter-spacing:0}
-    .home-modern h2{margin:0 0 10px;color:var(--home-strong);font-size:clamp(1.65rem,3vw,2.45rem);line-height:1.12;font-weight:900;letter-spacing:0}
-    .home-modern h3{margin:0 0 8px;color:var(--home-strong);font-size:1.18rem;font-weight:900}
-    .home-modern .lead{max-width:720px;margin:0;color:var(--home-muted);font-size:1.14rem;font-weight:700}
-    .home-modern .hero-actions,.home-modern .card-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .home-modern .trust-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:22px}
-    .home-modern .trust-row span{display:grid;min-height:68px;align-content:center;padding:10px 12px;border:1px solid var(--home-border);border-radius:18px;background:#fff;color:#334155;font-size:.92rem;font-weight:900;text-align:center;box-shadow:0 6px 16px rgba(15,23,42,.05)}
-    .home-modern .hero-panel{display:grid;gap:12px;padding:24px;border-radius:28px;background:linear-gradient(180deg,#fff,#f8fbff);box-shadow:var(--home-shadow-strong)}
-    .home-modern .hero-panel a{display:flex;min-height:58px;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid #dbeafe;border-radius:18px;background:#fff;color:#1e3a8a;font-weight:900;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-    .home-modern .hero-panel a:hover{transform:translateX(4px);border-color:#93c5fd;box-shadow:0 10px 22px rgba(37,99,235,.12)}
-    .home-modern .today-box{padding:16px;border:1px solid #bbf7d0;border-radius:20px;background:linear-gradient(135deg,#fff,#ecfdf5)}
-    .home-modern .today-box span{display:block;color:var(--home-green-dark);font-size:.8rem;font-weight:900;text-transform:uppercase}
-    .home-modern .today-box strong{display:block;margin-top:4px;color:var(--home-strong);font-size:1.12rem}
-    .home-modern .section{padding:58px 0;background:transparent}
-    .home-modern .section.soft{background:#fff;border-block:1px solid var(--home-border)}
-    .home-modern .section-head{max-width:780px;margin:0 0 24px;text-align:left}
-    .home-modern .section-head.center{text-align:center;margin-inline:auto}
-    .home-modern .section-head p,.home-modern .card p,.home-modern .muted{color:var(--home-muted);font-weight:700}
-    .home-modern .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .home-modern .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-    .home-modern .class-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
-    .home-modern .class-pill{display:grid;min-height:58px;place-items:center;border:1px solid var(--home-border);border-radius:18px;background:#fff;color:#344054;font-weight:900;box-shadow:0 5px 14px rgba(15,23,42,.04);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease}
-    .home-modern .class-pill:hover,.home-modern .class-pill.active{transform:translateY(-2px);border-color:var(--home-green);background:var(--home-soft-green);color:var(--home-green-dark);box-shadow:0 12px 24px rgba(21,183,122,.12)}
-    .home-modern .card{display:grid;gap:10px;padding:22px;border-radius:24px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-    .home-modern .card:hover{transform:translateY(-3px);border-color:rgba(21,183,122,.45);box-shadow:var(--home-shadow-strong)}
-    .home-modern .card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .home-modern .badge{display:inline-flex;min-height:30px;align-items:center;padding:0 10px;border-radius:999px;background:var(--home-soft-green);color:var(--home-green-dark);font-size:.78rem;font-weight:900}
-    .home-modern .badge.blue{background:var(--home-soft-blue);color:#1d4ed8}
-    .home-modern .feature-card{border-top:5px solid var(--home-green)}
-    .home-modern .feature-card:nth-child(2){border-top-color:var(--home-blue)}
-    .home-modern .feature-card:nth-child(3){border-top-color:var(--home-orange)}
-    .home-modern .flow-card{position:relative;padding-left:64px}
-    .home-modern .flow-number{position:absolute;left:18px;top:22px;display:grid;width:34px;height:34px;place-items:center;border-radius:12px;background:var(--home-green);color:#fff;font-weight:900}
-    .home-modern .footer{padding:38px 0;background:#101828;color:#fff}
-    .home-modern .footer-grid{display:grid;grid-template-columns:1fr 2fr;gap:28px}
-    .home-modern .footer p{max-width:430px;color:#cbd5e1}
-    .home-modern .footer-links{display:flex;flex-wrap:wrap;gap:12px 18px}
-    .home-modern .footer a{color:#f8fafc;font-weight:800}
-    @media(max-width:960px){.home-modern .menu-toggle{display:flex}.home-modern .nav{flex-wrap:wrap}.home-modern .nav-links,.home-modern .nav-actions{display:none;width:100%;margin-left:0}.home-modern .nav.open .nav-links,.home-modern .nav.open .nav-actions{display:flex;flex-direction:column;align-items:stretch}.home-modern .hero-grid,.home-modern .footer-grid{grid-template-columns:1fr}.home-modern .grid-3,.home-modern .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.home-modern .class-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.home-modern .trust-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:640px){.home-modern .container,.home-modern .nav{width:min(100% - 24px,1180px)}.home-modern .home-hero{padding:38px 0}.home-modern h1{font-size:2.35rem}.home-modern .section{padding:44px 0}.home-modern .grid-3,.home-modern .grid-4,.home-modern .class-grid{grid-template-columns:1fr}.home-modern .hero-actions,.home-modern .card-actions{display:grid}.home-modern .btn{width:100%}.home-modern .trust-row{grid-template-columns:1fr}}
+    .home-modern .nav{min-height:72px;display:flex;align-items:center;gap:24px}.home-modern .logo{display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;color:#111827;font-size:1.12rem;font-weight:900}.home-modern .logo-mark{display:grid;width:36px;height:36px;place-items:center;border-radius:12px;background:var(--home-green);color:#fff;font-weight:900;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 10px 22px rgba(21,183,122,.22)}
+    .home-modern .nav-links{display:flex;align-items:center;gap:20px;margin-left:auto;color:#344054;font-weight:900;overflow-x:auto;scrollbar-width:thin}.home-modern .nav-links a{display:inline-flex;min-height:44px;align-items:center;white-space:nowrap;transition:color .18s ease,transform .18s ease}.home-modern .nav-links a:hover{color:var(--home-green-dark);transform:translateY(-1px)}.home-modern .nav-actions{display:flex;gap:10px}.home-modern .menu-toggle{display:none;width:44px;height:44px;margin-left:auto;border:1px solid var(--home-border);background:#fff;border-radius:12px;align-items:center;justify-content:center;flex-direction:column;gap:5px}.home-modern .menu-toggle span{width:20px;height:2px;background:var(--home-strong);border-radius:2px}
+    .home-modern .btn{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:0 20px;border:1px solid transparent;border-radius:999px;font-weight:900;text-align:center;white-space:nowrap;transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,color .18s ease}.home-modern .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(15,23,42,.11)}.home-modern .btn-primary{color:#fff;background:var(--home-green);border-color:var(--home-green)}.home-modern .btn-primary:hover{background:var(--home-green-dark);border-color:var(--home-green-dark)}.home-modern .btn-light{background:#fff;border-color:var(--home-green);color:var(--home-green-dark)}.home-modern .btn-blue{background:var(--home-blue);border-color:var(--home-blue);color:#fff}
+    .home-modern .home-hero{position:relative;overflow:hidden;padding:58px 0 52px;background:radial-gradient(circle at 8% 18%,rgba(255,247,191,.78),transparent 24%),radial-gradient(circle at 86% 12%,rgba(219,234,254,.95),transparent 27%),linear-gradient(135deg,#fff 0%,#effcf5 48%,#eff6ff 100%);border-bottom:1px solid var(--home-border)}.home-modern .home-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--home-green),var(--home-sky),var(--home-orange))}
+    .home-modern .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:34px;align-items:start;min-height:auto;padding:0}.home-modern .hero-copy,.home-modern .hero-panel,.home-modern .card{border:1px solid var(--home-border);background:#fff;box-shadow:var(--home-shadow);animation:none;overflow:visible}.home-modern .hero-copy::before,.home-modern .hero-panel::before,.home-modern .card::before,.home-modern .hero-grid>div:first-child::before{display:none}.home-modern .hero-copy{padding:0;border:0;background:transparent;box-shadow:none}
+    .home-modern .eyebrow{display:inline-flex;min-height:36px;align-items:center;margin-bottom:16px;padding:0 14px;border:1px solid #bbf7d0;border-radius:999px;background:var(--home-soft-green);color:var(--home-green-dark);font-size:.88rem;font-weight:900}.home-modern h1{margin:0 0 16px;color:var(--home-strong);font-size:clamp(2.45rem,4.7vw,4.45rem);line-height:1.02;font-weight:900;letter-spacing:0}.home-modern h2{margin:0 0 10px;color:var(--home-strong);font-size:clamp(1.55rem,2.6vw,2.25rem);line-height:1.12;font-weight:900;letter-spacing:0}.home-modern h3{margin:0 0 8px;color:var(--home-strong);font-size:1.18rem;font-weight:900}.home-modern .lead{max-width:720px;margin:0;color:var(--home-muted);font-size:1.12rem;font-weight:700}
+    .smart-start{margin-top:22px;padding:18px;border:1px solid rgba(21,183,122,.28);border-radius:26px;background:#fff;box-shadow:var(--home-shadow-strong)}.smart-start-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.smart-start-title span{color:var(--home-green-dark);font-size:.82rem;font-weight:900;text-transform:uppercase}.smart-start-title b{color:var(--home-strong)}.smart-form{display:grid;grid-template-columns:1fr 1fr 1.35fr auto;gap:10px}.smart-form label{display:grid;gap:6px;color:var(--home-muted);font-size:.78rem;font-weight:900}.smart-form select{min-height:48px;width:100%;border:1px solid #cbd5e1;border-radius:16px;background:#fff;padding:0 12px;color:var(--home-strong);font:inherit;font-weight:900;outline:none}.smart-form select:focus{border-color:var(--home-green);box-shadow:0 0 0 4px rgba(21,183,122,.14)}.free-note{margin:10px 0 0;color:#475569;font-size:.9rem;font-weight:800}
+    .home-modern .trust-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}.home-modern .trust-row span{display:grid;min-height:64px;align-content:center;padding:10px 12px;border:1px solid var(--home-border);border-radius:18px;background:#fff;color:#334155;font-size:.92rem;font-weight:900;text-align:center;box-shadow:0 6px 16px rgba(15,23,42,.05)}
+    .home-modern .hero-panel{display:grid;gap:12px;padding:22px;border-radius:28px;background:linear-gradient(180deg,#fff,#f8fbff);box-shadow:var(--home-shadow-strong)}.home-modern .today-box{padding:16px;border:1px solid #bbf7d0;border-radius:20px;background:linear-gradient(135deg,#fff,#ecfdf5)}.home-modern .today-box span{display:block;color:var(--home-green-dark);font-size:.8rem;font-weight:900;text-transform:uppercase}.home-modern .today-box strong{display:block;margin-top:4px;color:var(--home-strong);font-size:1.08rem}
+    .stepper{display:grid;gap:8px}.step-button{display:flex;min-height:52px;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid #dbeafe;border-radius:16px;background:#fff;color:#1e3a8a;font:inherit;font-weight:900;text-align:left;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.step-button:hover,.step-button.active{transform:translateX(3px);border-color:#93c5fd;background:var(--home-soft-blue);box-shadow:0 10px 22px rgba(37,99,235,.12)}.step-panel{display:none;padding:12px;border:1px dashed #bfdbfe;border-radius:16px;background:#fff}.step-panel.active{display:grid;gap:8px}.step-panel a{display:flex;justify-content:space-between;align-items:center;min-height:40px;padding:8px 10px;border-radius:12px;background:#f8fafc;color:#334155;font-weight:900}.step-panel a:hover{background:var(--home-soft-green);color:var(--home-green-dark)}
+    .home-modern .section{padding:56px 0;background:transparent}.home-modern .section.soft{background:#fff;border-block:1px solid var(--home-border)}.home-modern .section-head{max-width:800px;margin:0 0 24px;text-align:left}.home-modern .section-head.center{text-align:center;margin-inline:auto}.home-modern .section-head p,.home-modern .card p,.home-modern .muted{color:var(--home-muted);font-weight:700}.home-modern .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.home-modern .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .stage-wrap{display:grid;gap:18px}.stage-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.stage-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 8px}.stage-title span{display:inline-flex;min-height:28px;align-items:center;padding:0 10px;border-radius:999px;font-size:.78rem;font-weight:900}.stage-primary .stage-title span{background:var(--home-soft-green);color:var(--home-green-dark)}.stage-middle .stage-title span{background:var(--home-soft-blue);color:#1d4ed8}.stage-high .stage-title span{background:var(--home-soft-orange);color:#c2410c}.class-pill{position:relative;display:grid;min-height:60px;place-items:center;border:1px solid var(--home-border);border-radius:18px;background:#fff;color:#344054;font-weight:900;box-shadow:0 5px 14px rgba(15,23,42,.04);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease}.stage-primary .class-pill{background:linear-gradient(180deg,#fff,#f5fff9)}.stage-middle .class-pill{background:linear-gradient(180deg,#fff,#f7fbff)}.stage-high .class-pill{background:linear-gradient(180deg,#fff,#fffaf2)}.class-pill:hover,.class-pill.active{transform:translateY(-2px);border-color:var(--home-green);background:var(--home-soft-green);color:var(--home-green-dark);box-shadow:0 12px 24px rgba(21,183,122,.12)}.class-pill::after{content:attr(data-info);position:absolute;left:50%;bottom:calc(100% + 10px);z-index:5;width:220px;max-width:80vw;transform:translate(-50%,8px);padding:10px 12px;border:1px solid #bfdbfe;border-radius:14px;background:#fff;color:#334155;box-shadow:0 14px 32px rgba(15,23,42,.16);font-size:.82rem;font-weight:900;line-height:1.4;text-align:left;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility .18s ease}.class-pill:hover::after{opacity:1;visibility:visible;transform:translate(-50%,0)}
+    .home-modern .card{display:grid;gap:10px;padding:22px;border-radius:24px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.home-modern .card:hover{transform:translateY(-3px);border-color:rgba(21,183,122,.45);box-shadow:var(--home-shadow-strong)}.home-modern .card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.home-modern .badge{display:inline-flex;min-height:30px;align-items:center;padding:0 10px;border-radius:999px;background:var(--home-soft-green);color:var(--home-green-dark);font-size:.78rem;font-weight:900}.home-modern .badge.blue{background:var(--home-soft-blue);color:#1d4ed8}.feature-card{border-top:5px solid var(--home-green)}.feature-card:nth-child(2){border-top-color:var(--home-blue)}.feature-card:nth-child(3){border-top-color:var(--home-orange)}.skill-links{display:grid;gap:8px;margin:4px 0;padding:0;list-style:none}.skill-links a{display:flex;justify-content:space-between;gap:10px;min-height:38px;align-items:center;padding:8px 10px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;color:#334155;font-weight:900}.skill-links a:hover{border-color:var(--home-green);background:var(--home-soft-green);color:var(--home-green-dark)}.meb-seal{justify-self:start;display:inline-flex;min-height:34px;align-items:center;padding:0 12px;border-radius:999px;background:var(--home-soft-green);border:1px solid #bbf7d0;color:var(--home-green-dark);font-weight:900}
+    .ai-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.ai-card{padding:18px;border:1px solid var(--home-border);border-radius:22px;background:#fff;box-shadow:var(--home-shadow)}.ai-icon{display:grid;width:38px;height:38px;place-items:center;margin-bottom:10px;border-radius:14px;background:var(--home-soft-blue);color:#1d4ed8;font-weight:900}.dashboard-demo{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch;margin-top:18px}.report-card{padding:22px;border:1px solid var(--home-border);border-radius:26px;background:#fff;box-shadow:var(--home-shadow-strong)}.report-list{display:grid;gap:12px;margin-top:14px}.report-row{display:grid;gap:6px}.report-row strong{display:flex;justify-content:space-between;color:#334155}.bar{height:10px;overflow:hidden;border-radius:999px;background:#e5e7eb}.bar span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--home-green),var(--home-sky))}.advisor-card{padding:22px;border:1px solid #bbf7d0;border-radius:26px;background:linear-gradient(135deg,#fff,#ecfdf5);box-shadow:var(--home-shadow)}.advisor-card b{color:var(--home-green-dark)}
+    .flow-card{position:relative;padding-left:64px}.flow-number{position:absolute;left:18px;top:22px;display:grid;width:34px;height:34px;place-items:center;border-radius:12px;background:var(--home-green);color:#fff;font-weight:900}.footer{padding:38px 0;background:#101828;color:#fff}.footer-grid{display:grid;grid-template-columns:1fr 2fr;gap:28px}.footer p{max-width:430px;color:#cbd5e1}.footer-links{display:flex;flex-wrap:wrap;gap:12px 18px}.footer a{color:#f8fafc;font-weight:800}
+    @media(max-width:1040px){.smart-form{grid-template-columns:1fr 1fr}.smart-form .btn{width:100%}.hero-grid,.dashboard-demo{grid-template-columns:1fr}.stage-row{grid-template-columns:repeat(3,minmax(0,1fr))}.ai-strip{grid-template-columns:1fr}}
+    @media(max-width:960px){.menu-toggle{display:flex}.nav{flex-wrap:wrap}.nav-links,.nav-actions{display:none;width:100%;margin-left:0}.nav.open .nav-links,.nav.open .nav-actions{display:flex;flex-direction:column;align-items:stretch}.grid-3,.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.trust-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:640px){.container,.nav{width:min(100% - 24px,1180px)}.home-hero{padding:36px 0}h1{font-size:2.3rem}.section{padding:42px 0}.grid-3,.grid-4,.smart-form,.stage-row{grid-template-columns:1fr}.hero-actions,.card-actions{display:grid}.btn{width:100%}.trust-row{grid-template-columns:1fr}.class-pill::after{display:none}.flow-card{padding-left:22px}.flow-number{position:static;margin-bottom:8px}}
   </style>
 </head>
 <body class="home-modern">
@@ -85,133 +39,102 @@
   <nav class="nav" aria-label="Ana menü">
     <a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="logo-mark">e</span><span>e-kurs.com</span></a>
     <button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button>
-    <div class="nav-links">
-      <a href="/siniflar/index.html">Sınıflar</a>
-      <a href="/dersler/index.html">Dersler</a>
-      <a href="/testler/index.html">Testler</a>
-      <a href="/oduller.html">Ödüller</a>
-    </div>
-    <div class="nav-actions">
-      <a class="btn btn-light" href="/giris.html">Giriş Yap</a>
-      <a class="btn btn-primary" href="/kayit.html">Üye Ol</a>
-    </div>
+    <div class="nav-links"><a href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a><a href="/oduller.html">Ödüller</a></div>
+    <div class="nav-actions"><a class="btn btn-light" href="/giris.html">Giriş Yap</a><a class="btn btn-primary" href="/kayit.html">Üye Ol</a></div>
   </nav>
 </header>
 <main>
   <section class="home-hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow">MEB uyumlu yeni nesil K12 öğrenme platformu</span>
-        <h1>e-kurs.com ile konuyu seç, beceriyi çalış, başarıyı takip et.</h1>
-        <p class="lead">Sınıfına uygun dersleri aç, tema tema ilerle, soru bankalarıyla pekiştir, yazılı ve deneme sınavlarına tek yerden hazırlan.</p>
-        <div class="hero-actions" aria-label="Hızlı başlangıç">
-          <a class="btn btn-primary" href="/siniflar/index.html">Sınıfını Seç</a>
-          <a class="btn btn-blue" href="/siniflar/2-sinif/matematik.html">2. Sınıf Matematik</a>
-          <a class="btn btn-light" href="/testler/index.html">Testlere Git</a>
-        </div>
-        <div class="trust-row" aria-label="Platform özeti">
-          <span>1-12 sınıf</span>
-          <span>MEB uyumlu</span>
-          <span>Soru bankası</span>
-          <span>Yazılı hazırlığı</span>
-        </div>
+        <span class="eyebrow">MEB uyumlu yeni nesil K12 çalışma masası</span>
+        <h1>Hemen bir beceri seç, ilk sorunu çözmeye başla.</h1>
+        <p class="lead">e-kurs.com ana sayfası artık doğrudan çalışma başlatır: sınıfını, dersini ve konunu seç; soru bankasına üye olmadan hızlıca geç.</p>
+        <form class="smart-start" id="smartStart" aria-label="Hemen bir beceri test et">
+          <div class="smart-start-title"><span>Hemen bir beceri test et</span><b>5-10 soru ücretsiz dene</b></div>
+          <div class="smart-form">
+            <label>Sınıf<select id="gradeSelect"><option value="2">2. sınıf</option><option value="1">1. sınıf</option><option value="3">3. sınıf</option><option value="4">4. sınıf</option><option value="5">5. sınıf</option><option value="6">6. sınıf</option><option value="7">7. sınıf</option><option value="8">8. sınıf</option></select></label>
+            <label>Ders<select id="lessonSelect"><option value="matematik">Matematik</option><option value="turkce">Türkçe</option><option value="hayat-bilgisi">Hayat Bilgisi</option></select></label>
+            <label>Konu<select id="topicSelect"><option value="tema1">Geometrik Cisimler</option><option value="tema2">Sayılar ve Ritmik Sayma</option><option value="tema3">Toplama ve Çıkarma</option><option value="yazili">1. Dönem Yazılı Soruları</option><option value="deneme">2. Sınıf Deneme Sınavı</option></select></label>
+            <button class="btn btn-primary" type="submit">Başla</button>
+          </div>
+          <p class="free-note">Kayıt olmadan dene; ilerlemeni saklamak için sonra üye ol.</p>
+        </form>
+        <div class="trust-row" aria-label="Platform özeti"><span>1-12 sınıf</span><span>MEB uyumlu</span><span>Akıllı ipucu</span><span>Yazılı hazırlığı</span></div>
       </div>
-      <aside class="hero-panel" aria-label="Öğrenme akışı">
+      <aside class="hero-panel" aria-label="Etkileşimli öğrenme akışı">
         <div class="today-box"><span>Bugünkü öneri</span><strong>2. sınıf matematikte Geometrik Cisimler ile başla.</strong></div>
         <h2>Öğrenme akışı</h2>
-        <a href="/siniflar/index.html">1. Sınıfını seç <b>→</b></a>
-        <a href="/dersler/index.html">2. Ders ve temayı aç <b>→</b></a>
-        <a href="/testler/index.html">3. Soru bankası çöz <b>→</b></a>
-        <a href="/basarilarim.html">4. Gelişimini takip et <b>→</b></a>
+        <div class="stepper">
+          <button class="step-button active" type="button" data-step="classes">1. Sınıfını seç <b>+</b></button>
+          <div class="step-panel active" id="classes"><a href="/siniflar/2-sinif/index.html">2. sınıf çalışma alanı <b>→</b></a><a href="/siniflar/index.html">Tüm sınıflar <b>→</b></a></div>
+          <button class="step-button" type="button" data-step="lessons">2. Ders ve temayı aç <b>+</b></button>
+          <div class="step-panel" id="lessons"><a href="/siniflar/2-sinif/matematik.html">2. sınıf matematik <b>→</b></a><a href="/dersler/turkce/index.html">Türkçe çalışmaları <b>→</b></a></div>
+          <button class="step-button" type="button" data-step="tests">3. Soru bankası çöz <b>+</b></button>
+          <div class="step-panel" id="tests"><a href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html">1. tema soru bankası <b>→</b></a><a href="/testler/2-sinif-deneme-sinavi.html">Deneme sınavı <b>→</b></a></div>
+        </div>
       </aside>
     </div>
   </section>
 
   <section class="section soft">
-    <div class="container">
-      <div class="section-head center">
-        <h2>Sınıfını seçerek hızlı başla</h2>
-        <p>Her sınıf kendi ders, konu, tema ve test düzenine bağlanır. Aktif çalışmalar gerçek sayfalara gider.</p>
-      </div>
-      <div class="class-grid" aria-label="Sınıf seçimi">
-        <a class="class-pill" href="/siniflar/1-sinif/index.html">1. sınıf</a>
-        <a class="class-pill active" href="/siniflar/2-sinif/index.html">2. sınıf</a>
-        <a class="class-pill" href="/siniflar/3-sinif/index.html">3. sınıf</a>
-        <a class="class-pill" href="/siniflar/4-sinif/index.html">4. sınıf</a>
-        <a class="class-pill" href="/siniflar/5-sinif/index.html">5. sınıf</a>
-        <a class="class-pill" href="/siniflar/6-sinif/index.html">6. sınıf</a>
-        <a class="class-pill" href="/siniflar/7-sinif/index.html">7. sınıf</a>
-        <a class="class-pill" href="/siniflar/8-sinif/index.html">8. sınıf</a>
-        <a class="class-pill" href="/siniflar/9-sinif/index.html">9. sınıf</a>
-        <a class="class-pill" href="/siniflar/10-sinif/index.html">10. sınıf</a>
-        <a class="class-pill" href="/siniflar/11-sinif/index.html">11. sınıf</a>
-        <a class="class-pill" href="/siniflar/12-sinif/index.html">12. sınıf</a>
-      </div>
+    <div class="container stage-wrap">
+      <div class="section-head center"><h2>Sınıfını seçerek hızlı başla</h2><p>Kademeler renklerle ayrıldı. Üzerine gelince içerik ipucu görünür.</p></div>
+      <div class="stage-primary"><div class="stage-title"><h3>İlkokul</h3><span>Pastel yeşil</span></div><div class="stage-row"><a class="class-pill" data-info="1. sınıf: okuma, temel sayılar ve kısa görevler." href="/siniflar/1-sinif/index.html">1. sınıf</a><a class="class-pill active" data-info="2. sınıf: 6 matematik teması, 27 beceri, yazılı ve deneme." href="/siniflar/2-sinif/index.html">2. sınıf</a><a class="class-pill" data-info="3. sınıf: işlem, problem ve okuduğunu anlama çalışmaları." href="/siniflar/3-sinif/index.html">3. sınıf</a><a class="class-pill" data-info="4. sınıf: yeni nesil sorular ve konu tekrarları." href="/siniflar/4-sinif/index.html">4. sınıf</a></div></div>
+      <div class="stage-middle"><div class="stage-title"><h3>Ortaokul</h3><span>Pastel mavi</span></div><div class="stage-row"><a class="class-pill" data-info="5. sınıf: temel kavramlardan ortaokula geçiş." href="/siniflar/5-sinif/index.html">5. sınıf</a><a class="class-pill" data-info="6. sınıf: beceri temelli konu çalışmaları." href="/siniflar/6-sinif/index.html">6. sınıf</a><a class="class-pill" data-info="7. sınıf: LGS altyapısı ve düzenli tekrar." href="/siniflar/7-sinif/index.html">7. sınıf</a><a class="class-pill" data-info="8. sınıf: LGS odaklı test ve deneme düzeni." href="/siniflar/8-sinif/index.html">8. sınıf</a></div></div>
+      <div class="stage-high"><div class="stage-title"><h3>Lise</h3><span>Pastel turuncu</span></div><div class="stage-row"><a class="class-pill" data-info="9. sınıf: lise temel kazanımları." href="/siniflar/9-sinif/index.html">9. sınıf</a><a class="class-pill" data-info="10. sınıf: konu pekiştirme ve test akışı." href="/siniflar/10-sinif/index.html">10. sınıf</a><a class="class-pill" data-info="11. sınıf: alan dersleri ve sınav hazırlığı." href="/siniflar/11-sinif/index.html">11. sınıf</a><a class="class-pill" data-info="12. sınıf: üniversite sınavı ön hazırlık akışı." href="/siniflar/12-sinif/index.html">12. sınıf</a></div></div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-head">
-        <h2>e-kurs çalışma alanları</h2>
-        <p>Öğrenci, veli ve öğretmen için aynı sade tasarım diliyle çalışan bağlantılar.</p>
-      </div>
+      <div class="section-head"><h2>Popüler çalışma alanları</h2><p>Kartların altında doğrudan beceri ve kazanım linkleri var. Veli ve öğrenci içerik derinliğini ilk bakışta görür.</p></div>
       <div class="grid-3">
-        <article class="card feature-card">
-          <div class="card-top"><span class="badge">Öne çıkan</span><span class="badge blue">MEB uyumlu</span></div>
-          <h3>2. Sınıf Matematik</h3>
-          <p>6 tema, 27 beceri, 6 soru bankası, yazılı soruları ve deneme sınavı.</p>
-          <div class="card-actions"><a class="btn btn-primary" href="/siniflar/2-sinif/matematik.html">Matematiği Aç</a></div>
-        </article>
-        <article class="card feature-card">
-          <div class="card-top"><span class="badge blue">Dersler</span></div>
-          <h3>Türkçe ve Hayat Bilgisi</h3>
-          <p>2. sınıf ders alanları ve yakında eklenecek konu etkinlikleri.</p>
-          <div class="card-actions"><a class="btn btn-light" href="/siniflar/2-sinif/index.html">2. Sınıfa Git</a></div>
-        </article>
-        <article class="card feature-card">
-          <div class="card-top"><span class="badge">Hazırlık</span></div>
-          <h3>Testler ve yazılılar</h3>
-          <p>Soru bankaları, yazılı çalışmaları ve deneme sınavlarına hızlı geçiş.</p>
-          <div class="card-actions"><a class="btn btn-blue" href="/testler/index.html">Testleri Aç</a></div>
-        </article>
+        <article class="card feature-card"><div class="card-top"><span class="badge">Öne çıkan</span><span class="badge blue">MEB uyumlu</span></div><h3>2. Sınıf Matematik</h3><p>6 tema, 27 beceri, 6 soru bankası, yazılı ve deneme sınavı.</p><span class="meb-seal">MEB tema düzeni</span><ul class="skill-links"><li><a href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html">Geometrik Cisimler <b>→</b></a></li><li><a href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html">Sayılar ve Ritmik Sayma <b>→</b></a></li><li><a href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html">Toplama ve Çıkarma <b>→</b></a></li><li><a href="/testler/2-sinif-1-donem-matematik-yazili-sorulari.html">1. Dönem Yazılı <b>→</b></a></li><li><a href="/testler/2-sinif-deneme-sinavi.html">Deneme Sınavı <b>→</b></a></li></ul><div class="card-actions"><a class="btn btn-primary" href="/siniflar/2-sinif/matematik.html">Matematiği Aç</a></div></article>
+        <article class="card feature-card"><div class="card-top"><span class="badge blue">Dersler</span></div><h3>Türkçe ve Hayat Bilgisi</h3><p>Okuduğunu anlama, kısa metin, günlük yaşam ve çevre çalışmaları.</p><span class="meb-seal">Kademeli içerik</span><ul class="skill-links"><li><a href="/dersler/turkce/index.html">Okuduğunu Anlama <b>→</b></a></li><li><a href="/dersler/turkce/index.html">Kısa Metin Çalışması <b>→</b></a></li><li><a href="/dersler/turkce/index.html">Sözcük Bilgisi <b>→</b></a></li><li><a href="/dersler/hayat-bilgisi/index.html">Okul ve Aile <b>→</b></a></li><li><a href="/dersler/hayat-bilgisi/index.html">Sağlıklı Yaşam <b>→</b></a></li></ul><div class="card-actions"><a class="btn btn-light" href="/siniflar/2-sinif/index.html">2. Sınıfa Git</a></div></article>
+        <article class="card feature-card"><div class="card-top"><span class="badge">Hazırlık</span></div><h3>Yazılı ve deneme</h3><p>Soru bankaları, yazılı çalışmaları ve deneme sınavlarına hızlı geçiş.</p><span class="meb-seal">Sınav odaklı</span><ul class="skill-links"><li><a href="/testler/2-sinif-1-donem-matematik-yazili-sorulari.html">1. Dönem Matematik Yazılı <b>→</b></a></li><li><a href="/testler/2-sinif-2-donem-matematik-yazili-sorulari.html">2. Dönem Matematik Yazılı <b>→</b></a></li><li><a href="/testler/2-sinif-deneme-sinavi.html">2. Sınıf Deneme <b>→</b></a></li><li><a href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html">Ölçme ve Para <b>→</b></a></li><li><a href="/testler/2-sinif-matematik-6-tema-soru-bankasi.html">Veri ve Grafik <b>→</b></a></li></ul><div class="card-actions"><a class="btn btn-blue" href="/testler/index.html">Testleri Aç</a></div></article>
       </div>
     </div>
   </section>
 
   <section class="section soft">
     <div class="container">
-      <div class="section-head center">
-        <h2>IXL kadar sade, e-kurs kadar sıcak</h2>
-        <p>Uzun listeler yerine kartlar, mikro beceriler, rozetler, ipuçları ve yazılı hazırlığı tek sayfada birleşir.</p>
-      </div>
-      <div class="grid-4">
-        <article class="card flow-card"><span class="flow-number">1</span><h3>Mikro beceri</h3><p>Konu küçük ve çalışılabilir görevlere ayrılır.</p></article>
-        <article class="card flow-card"><span class="flow-number">2</span><h3>İpucu ve tekrar</h3><p>Zorlanınca öğrenciye kısa yönlendirme verilir.</p></article>
-        <article class="card flow-card"><span class="flow-number">3</span><h3>Rozet hissi</h3><p>Tema ilerlemesi ve yıldız sistemi motivasyon sağlar.</p></article>
-        <article class="card flow-card"><span class="flow-number">4</span><h3>Sınav hazırlığı</h3><p>Yazılı ve deneme sayfaları aynı akışta görünür.</p></article>
-      </div>
+      <div class="section-head center"><h2>Yapay zeka destekli çalışma akışı</h2><p>Yanlışta cesaretlendiren, doğruda hızlandıran, veliye gelişimi anlaşılır gösteren öğrenme sistemi.</p></div>
+      <div class="ai-strip"><article class="ai-card"><span class="ai-icon">1</span><h3>Hata yakalanır</h3><p>Öğrenci aynı kazanımda zorlanırsa sistem bunu fark eder.</p></article><article class="ai-card"><span class="ai-icon">2</span><h3>İpucu açılır</h3><p>Çocuk yargılanmadan daha basit anlatım ve tekrar önerisi görür.</p></article><article class="ai-card"><span class="ai-icon">3</span><h3>Seviye uyarlanır</h3><p>Doğru seri artarsa daha güçlü sorulara geçiş yapılır.</p></article></div>
+      <div class="dashboard-demo"><article class="report-card"><h3>Mini gelişim raporu</h3><p>Velinin göreceği sade ilerleme özeti.</p><div class="report-list"><div class="report-row"><strong>Geometrik Cisimler <span>82%</span></strong><div class="bar"><span style="width:82%"></span></div></div><div class="report-row"><strong>Ritmik Sayma <span>64%</span></strong><div class="bar"><span style="width:64%"></span></div></div><div class="report-row"><strong>Toplama ve Çıkarma <span>48%</span></strong><div class="bar"><span style="width:48%"></span></div></div></div></article><aside class="advisor-card"><b>AI çalışma önerisi</b><h3>Bugün 10 dakika Geometrik Cisimler çöz.</h3><p>Son denemede şekil-cisim eşleştirme güçlü, kenar-köşe sayma tekrar istiyor.</p><a class="btn btn-primary" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html">Önerilen teste başla</a></aside></div>
     </div>
   </section>
+
+  <section class="section"><div class="container"><div class="section-head center"><h2>IXL kadar sade, e-kurs kadar sıcak</h2><p>Uzun listeler yerine kartlar, mikro beceriler, rozetler, ipuçları ve yazılı hazırlığı tek sayfada birleşir.</p></div><div class="grid-4"><article class="card flow-card"><span class="flow-number">1</span><h3>Mikro beceri</h3><p>Konu küçük ve çalışılabilir görevlere ayrılır.</p></article><article class="card flow-card"><span class="flow-number">2</span><h3>İpucu ve tekrar</h3><p>Zorlanınca öğrenciye kısa yönlendirme verilir.</p></article><article class="card flow-card"><span class="flow-number">3</span><h3>Rozet hissi</h3><p>Tema ilerlemesi ve yıldız sistemi motivasyon sağlar.</p></article><article class="card flow-card"><span class="flow-number">4</span><h3>Ücretsiz deneme</h3><p>Kayıt olmadan ilk sorularla kalite hissedilir.</p></article></div></div></section>
 </main>
-<footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <a class="logo" href="/index.html"><span class="logo-mark">e</span><span>e-kurs.com</span></a>
-      <p>Türkiye K12 öğrencileri için sınıf, ders, tema, soru bankası, yazılı ve takip odaklı öğrenme platformu.</p>
-    </div>
-    <div class="footer-links">
-      <a href="/siniflar/index.html">Sınıflar</a>
-      <a href="/dersler/index.html">Dersler</a>
-      <a href="/testler/index.html">Testler</a>
-      <a href="/siniflar/2-sinif/matematik.html">2. Sınıf Matematik</a>
-      <a href="/veli-paneli.html">Veli Paneli</a>
-      <a href="/ogretmen-paneli.html">Öğretmen Paneli</a>
-      <a href="/mesaj.html">Mesaj Gönder</a>
-      <a href="/basarilarim.html">Başarılarım</a>
-    </div>
-  </div>
-</footer>
+<footer class="footer"><div class="container footer-grid"><div><a class="logo" href="/index.html"><span class="logo-mark">e</span><span>e-kurs.com</span></a><p>Türkiye K12 öğrencileri için sınıf, ders, tema, soru bankası, yazılı ve takip odaklı öğrenme platformu.</p></div><div class="footer-links"><a href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a><a href="/siniflar/2-sinif/matematik.html">2. Sınıf Matematik</a><a href="/veli-paneli.html">Veli Paneli</a><a href="/ogretmen-paneli.html">Öğretmen Paneli</a><a href="/mesaj.html">Mesaj Gönder</a><a href="/basarilarim.html">Başarılarım</a></div></div></footer>
 <script src="/js/main.js"></script>
+<script>
+  const startMap={
+    '2-matematik-tema1':'/testler/2-sinif-matematik-1-tema-soru-bankasi.html',
+    '2-matematik-tema2':'/testler/2-sinif-matematik-2-tema-soru-bankasi.html',
+    '2-matematik-tema3':'/testler/2-sinif-matematik-3-tema-soru-bankasi.html',
+    '2-matematik-yazili':'/testler/2-sinif-1-donem-matematik-yazili-sorulari.html',
+    '2-matematik-deneme':'/testler/2-sinif-deneme-sinavi.html',
+    '2-turkce-tema1':'/dersler/turkce/index.html',
+    '2-hayat-bilgisi-tema1':'/dersler/hayat-bilgisi/index.html'
+  };
+  document.getElementById('smartStart')?.addEventListener('submit',event=>{
+    event.preventDefault();
+    const grade=document.getElementById('gradeSelect').value;
+    const lesson=document.getElementById('lessonSelect').value;
+    const topic=document.getElementById('topicSelect').value;
+    const target=startMap[`${grade}-${lesson}-${topic}`]||`/siniflar/${grade}-sinif/${lesson}.html`;
+    window.location.href=target;
+  });
+  document.querySelectorAll('.step-button').forEach(button=>{
+    button.addEventListener('click',()=>{
+      document.querySelectorAll('.step-button').forEach(item=>item.classList.remove('active'));
+      document.querySelectorAll('.step-panel').forEach(panel=>panel.classList.remove('active'));
+      button.classList.add('active');
+      document.getElementById(button.dataset.step)?.classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>
