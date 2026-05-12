@@ -1,4 +1,10 @@
 ---
 deployment:
   tasks:
-    - /bin/echo "cPanel deploy step completed. Use Update from Remote to pull repository files."
+    - export DEPLOYPATH=/home/u1878454/public_html
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -Rf index.html $DEPLOYPATH/
+    - /bin/cp -Rf siniflar $DEPLOYPATH/
+    - /bin/cp -Rf dersler $DEPLOYPATH/
+    - /bin/cp -Rf testler $DEPLOYPATH/
+    - /bin/echo "cPanel deployment copied repository files to public_html."
