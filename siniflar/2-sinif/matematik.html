@@ -15,6 +15,7 @@
           <a class="active" href="/siniflar/index.html">Sınıflar</a>
           <a href="/dersler/index.html">Dersler</a>
           <a href="/testler/index.html">Testler</a>
+          <a href="/oduller.html">Ödüller</a>
           <a class="btn btn-light" href="/giris.html">Giriş Yap</a>
           <a class="btn btn-primary" href="/kayit.html">Üye Ol</a>
         </div>
@@ -27,7 +28,7 @@
           <div>
             <p class="breadcrumb">Sınıflar / 2. Sınıf / Matematik</p>
             <h1>2. sınıf matematik becerileri</h1>
-            <p class="lead">Konuyu seç, alt becerileri tara, tema soru bankasına ya da yazılı çalışmalarına hızlıca geç.</p>
+            <p class="lead">Konuyu seç, becerileri sırayla çalış, tema soru bankasına ya da yazılı hazırlığına tek tıkla geç.</p>
             <div class="grade-tabs" aria-label="Sınıf seçimi">
               <a href="/siniflar/1-sinif/index.html">1. sınıf</a>
               <a class="active" href="/siniflar/2-sinif/index.html">2. sınıf</a>
@@ -40,10 +41,15 @@
               <a href="#sinavlar">Yazılılar</a>
               <a href="#sinavlar">Deneme</a>
             </div>
+            <div class="hero-actions" aria-label="Hızlı başlangıç">
+              <a class="btn btn-primary" href="#a">Çalışmaya Başla</a>
+              <a class="btn btn-light" href="#sinavlar">Yazılı Soruları</a>
+            </div>
           </div>
           <aside class="progress-panel" aria-label="Sayfa özeti">
+            <span class="panel-kicker">Bugünkü çalışma</span>
             <strong>2. sınıf matematik</strong>
-            <p>IXL benzeri beceri listesi, müfredata uygun tema sırası ve hızlı sınav bağlantıları.</p>
+            <p>Modern beceri listesi, müfredata uygun tema sırası ve hızlı sınav bağlantıları.</p>
             <div class="progress-row"><span>6<small>Tema</small></span><span>27<small>Beceri</small></span><span>6<small>Banka</small></span><span>3<small>Sınav</small></span></div>
           </aside>
         </div>
@@ -61,9 +67,16 @@
             </div>
           </div>
 
+          <div class="recommend-strip" aria-label="Önerilen çalışmalar">
+            <a href="#a"><span>Önerilen</span><strong>Geometrik cisimlerle başla</strong><small>1. Tema</small></a>
+            <a href="#soru-bankalari"><span>Soru bankası</span><strong>Tema sonu tekrar yap</strong><small>6 banka</small></a>
+            <a href="#sinavlar"><span>Hazırlık</span><strong>Yazılı ve deneme çöz</strong><small>3 sınav</small></a>
+          </div>
+
           <div class="skills-layout">
             <aside class="topic-sidebar" aria-label="Konu başlıkları">
-              <strong>Konu başlıkları</strong>
+              <span class="sidebar-kicker">Matematik</span>
+              <strong>2. sınıf konuları</strong>
               <a href="#a">1. Tema: Nesnelerin Geometrisi (1)</a>
               <a href="#b">2. Tema: Sayılar ve Nicelikler (1)</a>
               <a href="#c">3. Tema: İşlemlerden Cebirsel Düşünmeye</a>
@@ -178,7 +191,7 @@
         }
       };
 
-      document.querySelectorAll('.topic-sidebar a[href^="#"], .toolbar-links a[href^="#"]').forEach((link) => {
+      document.querySelectorAll('.topic-sidebar a[href^="#"], .toolbar-links a[href^="#"], .recommend-strip a[href^="#"]').forEach((link) => {
         link.addEventListener("click", () => {
           const id = link.getAttribute("href").slice(1);
           const target = document.getElementById(id);
