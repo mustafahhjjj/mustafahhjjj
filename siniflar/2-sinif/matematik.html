@@ -24,32 +24,23 @@
 
     <main class="skills-shell">
       <section class="math-hero">
-        <div class="container skills-intro">
+        <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="breadcrumb">Sınıflar / 2. Sınıf / Matematik</p>
-            <h1>2. sınıf matematik becerileri</h1>
-            <p class="lead">Konuyu seç, becerileri sırayla çalış, tema soru bankasına ya da yazılı hazırlığına tek tıkla geç.</p>
-            <div class="grade-tabs" aria-label="Sınıf seçimi">
-              <a href="/siniflar/1-sinif/index.html">1. sınıf</a>
-              <a class="active" href="/siniflar/2-sinif/index.html">2. sınıf</a>
-              <a href="/siniflar/3-sinif/index.html">3. sınıf</a>
-              <a href="/siniflar/4-sinif/index.html">4. sınıf</a>
-            </div>
-            <div class="learning-tabs" aria-label="Matematik çalışma türleri">
-              <a class="active" href="#konular">Beceriler</a>
-              <a href="#soru-bankalari">Soru bankaları</a>
-              <a href="#sinavlar">Yazılılar</a>
-              <a href="#sinavlar">Deneme</a>
-            </div>
+            <nav class="breadcrumb" aria-label="Sayfa yolu">
+              <a href="/index.html">Ana sayfa</a><span>/</span><a href="/siniflar/index.html">Sınıflar</a><span>/</span><a href="/siniflar/2-sinif/index.html">2. Sınıf</a><span>/</span><strong>Matematik</strong>
+            </nav>
+            <h1>2. sınıf matematik</h1>
+            <p class="lead">Konuyu seç, becerileri sırayla çalış, soru bankası ve yazılı hazırlığına tek tıkla geç.</p>
             <div class="hero-actions" aria-label="Hızlı başlangıç">
-              <a class="btn btn-primary" href="#a">Çalışmaya Başla</a>
-              <a class="btn btn-light" href="#sinavlar">Yazılı Soruları</a>
+              <a class="btn btn-primary" href="#tema-1">Çalışmaya Başla</a>
+              <a class="btn btn-light" href="/testler/2-sinif-1-donem-matematik-yazili-sorulari.html">Yazılı Soruları</a>
+              <a class="btn btn-soft" href="/testler/2-sinif-deneme-sinavi.html">Deneme Sınavı</a>
             </div>
           </div>
-          <aside class="progress-panel visual-panel" aria-label="Sayfa özeti">
+          <aside class="math-visual" aria-label="Matematik çalışma özeti">
             <span class="panel-kicker">Bugünkü çalışma</span>
             <strong>Matematik görev panosu</strong>
-            <p>Öğrenci beceri seçer, soru bankasına geçer ve sınav hazırlığını aynı ekranda görür.</p>
+            <p>Öğrenci beceri seçer, tekrar yapar ve sınav hazırlığını aynı ekranda görür.</p>
             <div class="math-board" aria-hidden="true">
               <span class="tile tile-green">12</span>
               <span class="tile tile-blue">+8</span>
@@ -62,25 +53,60 @@
               <div><span>Bugünkü hedef</span><strong>5 beceri</strong></div>
               <div class="mastery-meter"><span></span></div>
             </div>
-            <div class="progress-row"><span>6<small>Tema</small></span><span>27<small>Beceri</small></span><span>6<small>Banka</small></span><span>3<small>Sınav</small></span></div>
           </aside>
+        </div>
+      </section>
+
+      <section class="summary-band" aria-label="Sayfa özeti">
+        <div class="container stat-grid">
+          <span><strong>6</strong><small>Tema</small></span>
+          <span><strong>27</strong><small>Beceri</small></span>
+          <span><strong>6</strong><small>Soru Bankası</small></span>
+          <span><strong>3</strong><small>Sınav</small></span>
+        </div>
+      </section>
+
+      <section class="class-band" aria-label="Sınıf seçimi">
+        <div class="container grade-strip">
+          <a href="/siniflar/1-sinif/matematik.html">1. sınıf</a>
+          <a class="active" href="/siniflar/2-sinif/matematik.html">2. sınıf</a>
+          <a href="/siniflar/3-sinif/matematik.html">3. sınıf</a>
+          <a href="/siniflar/4-sinif/matematik.html">4. sınıf</a>
+          <a href="/siniflar/5-sinif/matematik.html">5. sınıf</a>
+          <a href="/siniflar/6-sinif/matematik.html">6. sınıf</a>
+          <a href="/siniflar/7-sinif/matematik.html">7. sınıf</a>
+          <a href="/siniflar/8-sinif/matematik.html">8. sınıf</a>
+          <a href="/siniflar/9-sinif/matematik.html">9. sınıf</a>
+          <a href="/siniflar/10-sinif/matematik.html">10. sınıf</a>
+          <a href="/siniflar/11-sinif/matematik.html">11. sınıf</a>
+          <a href="/siniflar/12-sinif/matematik.html">12. sınıf</a>
         </div>
       </section>
 
       <section id="konular" class="section">
         <div class="container">
-          <div class="skills-toolbar" aria-label="Konu arama ve sayfa araçları">
-            <label class="search-box" for="skillSearch"><span>Konu ara</span><input id="skillSearch" type="search" placeholder="Örnek: çarpma, zaman, simetri" autocomplete="off"></label>
-            <div class="toolbar-links" aria-label="Hızlı geçişler">
-              <a href="#a">1. Tema</a>
-              <a href="#b">2. Tema</a>
-              <a href="#c">3. Tema</a>
+          <div class="learning-tabs" aria-label="Matematik çalışma türleri">
+            <a class="active" href="#konular">Beceriler</a>
+            <a href="#soru-bankalari">Soru Bankaları</a>
+            <a href="#sinavlar">Yazılılar</a>
+            <a href="/testler/2-sinif-deneme-sinavi.html">Deneme</a>
+          </div>
+
+          <div class="skills-toolbar" aria-label="Konu arama ve hızlı geçişler">
+            <label class="search-box" for="skillSearch"><span>Konu ara</span><input id="skillSearch" type="search" placeholder="Konu, beceri veya tema ara..." autocomplete="off"></label>
+            <div class="toolbar-links" aria-label="Tema geçişleri">
+              <a href="#tema-1">1. Tema</a>
+              <a href="#tema-2">2. Tema</a>
+              <a href="#tema-3">3. Tema</a>
+              <a href="#tema-4">4. Tema</a>
+              <a href="#tema-5">5. Tema</a>
+              <a href="#tema-6">6. Tema</a>
               <a href="#sinavlar">Sınavlar</a>
             </div>
           </div>
 
           <div class="recommend-strip" aria-label="Önerilen çalışmalar">
-            <a href="#a"><span>Önerilen</span><strong>Geometrik cisimlerle başla</strong><small>1. Tema</small></a>
+            <a href="#tema-1"><span>Önerilen</span><strong>Geometrik cisimlerle başla</strong><small>1. Tema</small></a>
             <a href="#soru-bankalari"><span>Soru bankası</span><strong>Tema sonu tekrar yap</strong><small>6 banka</small></a>
             <a href="#sinavlar"><span>Hazırlık</span><strong>Yazılı ve deneme çöz</strong><small>3 sınav</small></a>
           </div>
@@ -89,91 +115,92 @@
             <aside class="topic-sidebar" aria-label="Konu başlıkları">
               <span class="sidebar-kicker">Matematik</span>
               <strong>2. sınıf konuları</strong>
-              <a href="#a">1. Tema: Nesnelerin Geometrisi (1)</a>
-              <a href="#b">2. Tema: Sayılar ve Nicelikler (1)</a>
-              <a href="#c">3. Tema: İşlemlerden Cebirsel Düşünmeye</a>
-              <a href="#d">4. Tema: Sayılar ve Nicelikler (2)</a>
-              <a href="#e">5. Tema: Nesnelerin Geometrisi (2)</a>
-              <a href="#f">6. Tema: Veriye Dayalı Araştırma</a>
+              <a href="#tema-1">1. Tema: Nesnelerin Geometrisi (1)</a>
+              <a href="#tema-2">2. Tema: Sayılar ve Nicelikler (1)</a>
+              <a href="#tema-3">3. Tema: İşlemlerden Cebirsel Düşünmeye</a>
+              <a href="#tema-4">4. Tema: Sayılar ve Nicelikler (2)</a>
+              <a href="#tema-5">5. Tema: Nesnelerin Geometrisi (2)</a>
+              <a href="#tema-6">6. Tema: Veriye Dayalı Araştırma</a>
               <a href="#sinavlar">Sınav çalışmaları</a>
             </aside>
 
             <div class="skill-sections">
               <p class="no-results" hidden>Aramanla eşleşen konu bulunamadı.</p>
-              <details id="a" class="skill-section" open>
-                <summary class="skill-heading"><span class="skill-letter">1</span><div><h2>1. Tema: Nesnelerin Geometrisi (1)</h2><p>Geometrik cisim, şekil ve sıvı ölçme becerileri</p></div><span class="open-label" aria-hidden="true"></span></summary>
-                <div class="skill-list">
-                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.1</span><span><strong>Geometrik Cisimler</strong><span>Küre, küp, silindir ve benzer cisimleri tanı.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.2</span><span><strong>Geometrik Cisim Modelleri</strong><span>Günlük nesneleri geometrik cisimlerle eşleştir.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.3</span><span><strong>Geometrik Şekil Modelleri</strong><span>Üçgen, kare, dikdörtgen ve çemberi ayırt et.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.4</span><span><strong>Cisim ve Şekillerin Biçimsel Özellikleri</strong><span>Kenar, köşe ve yüz özelliklerini incele.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.5</span><span><strong>Sıvı Ölçme</strong><span>Kapların aldığı sıvı miktarını karşılaştır.</span></span></a>
-                  <a id="soru-bankalari" class="skill-link bank-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1</span><span><strong>1. Tema Soru Bankası <em>Soru Bankası</em></strong><span>Bu temadaki tüm becerileri tekrar et.</span></span></a>
-                </div>
-              </details>
 
-              <details id="b" class="skill-section">
-                <summary class="skill-heading"><span class="skill-letter">2</span><div><h2>2. Tema: Sayılar ve Nicelikler (1)</h2><p>Sayılar, sayı doğrusu, ritmik sayma, örüntü ve tahmin</p></div><span class="open-label" aria-hidden="true"></span></summary>
+              <article id="tema-1" class="theme-card" data-search-section>
+                <header class="theme-heading"><span class="theme-badge">1</span><div><h2>1. Tema: Nesnelerin Geometrisi (1)</h2><p>Geometrik cisim, şekil ve sıvı ölçme becerileri</p></div></header>
                 <div class="skill-list">
-                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.1</span><span><strong>Sayılar</strong><span>İki basamaklı sayıları oku ve yaz.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.2</span><span><strong>Sayıları Çözümleme</strong><span>Onluk ve birlikleri kullanarak çözümle.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.3</span><span><strong>Sayı Doğrusu</strong><span>Sayıları doğru üzerinde bul ve karşılaştır.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.4</span><span><strong>Ritmik Sayma</strong><span>İkişer, beşer ve onar saymaları tamamla.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.5</span><span><strong>Örüntü</strong><span>Sayı ve şekil örüntülerindeki kuralı bul.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.6</span><span><strong>Tahmin Etme</strong><span>Sonucu işlem yapmadan önce yaklaşık düşün.</span></span></a>
-                  <a class="skill-link bank-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2</span><span><strong>2. Tema Soru Bankası <em>Soru Bankası</em></strong><span>Bu temadaki tüm becerileri tekrar et.</span></span></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.1</span><span><strong>Geometrik Cisimler</strong><small>Küre, küp, silindir ve benzer cisimleri tanı.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.2</span><span><strong>Geometrik Cisim Modelleri</strong><small>Günlük nesneleri geometrik cisimlerle eşleştir.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.3</span><span><strong>Geometrik Şekil Modelleri</strong><small>Üçgen, kare, dikdörtgen ve çemberi ayırt et.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.4</span><span><strong>Cisim ve Şekillerin Biçimsel Özellikleri</strong><small>Kenar, köşe ve yüz özelliklerini incele.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><span class="skill-code">1.5</span><span><strong>Sıvı Ölçme</strong><small>Kapların aldığı sıvı miktarını karşılaştır.</small></span><em>Başla</em></a>
                 </div>
-              </details>
+                <a id="soru-bankalari" class="bank-button" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html"><strong>1. Tema Soru Bankası</strong><span>Bu temadaki tüm becerileri tekrar et.</span></a>
+              </article>
 
-              <details id="c" class="skill-section">
-                <summary class="skill-heading"><span class="skill-letter">3</span><div><h2>3. Tema: İşlemlerden Cebirsel Düşünmeye</h2><p>Toplama, çıkarma, çarpma, bölme, problem ve eşitlik</p></div><span class="open-label" aria-hidden="true"></span></summary>
+              <article id="tema-2" class="theme-card" data-search-section>
+                <header class="theme-heading"><span class="theme-badge">2</span><div><h2>2. Tema: Sayılar ve Nicelikler (1)</h2><p>Sayılar, sayı doğrusu, ritmik sayma, örüntü ve tahmin</p></div></header>
                 <div class="skill-list">
-                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.1</span><span><strong>Toplama ve Çıkarma İşlemi</strong><span>İki basamaklı sayılarla işlem yap.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.2</span><span><strong>Toplama ve Çıkarma Problemleri</strong><span>Günlük yaşam problemlerini çöz.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.3</span><span><strong>Sonuçları Tahmin Etme</strong><span>Toplama ve çıkarma sonucunu yaklaşık bul.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.4</span><span><strong>İşlemlerin İlişkisi</strong><span>Toplama ile çıkarma arasındaki bağı fark et.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.5</span><span><strong>Çarpma İşlemi</strong><span>Tekrarlı toplamayı çarpma olarak yaz.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.6</span><span><strong>Bölme İşlemi</strong><span>Eşit paylaşma ve gruplamayı kullan.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.7</span><span><strong>Çarpma ve Bölme Sonucunu Muhakeme Etme</strong><span>Sonucun anlamlı olup olmadığını kontrol et.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.8</span><span><strong>Eşitlik</strong><span>Eşitliği koruyan sayıyı bul.</span></span></a>
-                  <a class="skill-link bank-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3</span><span><strong>3. Tema Soru Bankası <em>Soru Bankası</em></strong><span>Bu temadaki tüm becerileri tekrar et.</span></span></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.1</span><span><strong>Sayılar</strong><small>İki basamaklı sayıları oku ve yaz.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.2</span><span><strong>Sayıları Çözümleme</strong><small>Onluk ve birlikleri kullanarak çözümle.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.3</span><span><strong>Sayı Doğrusu</strong><small>Sayıları doğru üzerinde bul ve karşılaştır.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.4</span><span><strong>Ritmik Sayma</strong><small>İkişer, beşer ve onar saymaları tamamla.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.5</span><span><strong>Örüntü</strong><small>Sayı ve şekil örüntülerindeki kuralı bul.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><span class="skill-code">2.6</span><span><strong>Tahmin Etme</strong><small>Sonucu işlem yapmadan önce yaklaşık düşün.</small></span><em>Başla</em></a>
                 </div>
-              </details>
+                <a class="bank-button" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html"><strong>2. Tema Soru Bankası</strong><span>Bu temadaki tüm becerileri tekrar et.</span></a>
+              </article>
 
-              <details id="d" class="skill-section">
-                <summary class="skill-heading"><span class="skill-letter">4</span><div><h2>4. Tema: Sayılar ve Nicelikler (2)</h2><p>Kesir, para, zaman, uzunluk ve kütle ölçme</p></div><span class="open-label" aria-hidden="true"></span></summary>
+              <article id="tema-3" class="theme-card" data-search-section>
+                <header class="theme-heading"><span class="theme-badge">3</span><div><h2>3. Tema: İşlemlerden Cebirsel Düşünmeye</h2><p>Toplama, çıkarma, çarpma, bölme, problem ve eşitlik</p></div></header>
                 <div class="skill-list">
-                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.1</span><span><strong>Bütün, Yarım ve Çeyrek</strong><span>Bir bütünün eş parçalarını adlandır.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.2</span><span><strong>Paralarımız</strong><span>Türk lirası ve kuruşla işlem yap.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.3</span><span><strong>Zaman Ölçme</strong><span>Saat, gün, hafta ve ay ilişkisini kullan.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.4</span><span><strong>Uzunluk ve Kütle Ölçme</strong><span>Uygun ölçme aracını ve birimini seç.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.5</span><span><strong>Uzunluk ve Kütleyi Tahmin Etme</strong><span>Ölçmeden önce yaklaşık değer söyle.</span></span></a>
-                  <a class="skill-link bank-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4</span><span><strong>4. Tema Soru Bankası <em>Soru Bankası</em></strong><span>Bu temadaki tüm becerileri tekrar et.</span></span></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.1</span><span><strong>Toplama ve Çıkarma İşlemi</strong><small>İki basamaklı sayılarla işlem yap.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.2</span><span><strong>Toplama ve Çıkarma Problemleri</strong><small>Günlük yaşam problemlerini çöz.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.3</span><span><strong>Sonuçları Tahmin Etme</strong><small>Toplama ve çıkarma sonucunu yaklaşık bul.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.4</span><span><strong>İşlemlerin İlişkisi</strong><small>Toplama ile çıkarma arasındaki bağı fark et.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.5</span><span><strong>Çarpma İşlemi</strong><small>Tekrarlı toplamayı çarpma olarak yaz.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.6</span><span><strong>Bölme İşlemi</strong><small>Eşit paylaşma ve gruplamayı kullan.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.7</span><span><strong>Çarpma ve Bölme Sonucunu Muhakeme Etme</strong><small>Sonucun anlamlı olup olmadığını kontrol et.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><span class="skill-code">3.8</span><span><strong>Eşitlik</strong><small>Eşitliği koruyan sayıyı bul.</small></span><em>Başla</em></a>
                 </div>
-              </details>
+                <a class="bank-button" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html"><strong>3. Tema Soru Bankası</strong><span>Bu temadaki tüm becerileri tekrar et.</span></a>
+              </article>
 
-              <details id="e" class="skill-section">
-                <summary class="skill-heading"><span class="skill-letter">5</span><div><h2>5. Tema: Nesnelerin Geometrisi (2)</h2><p>Yer, yön bulma ve simetri</p></div><span class="open-label" aria-hidden="true"></span></summary>
+              <article id="tema-4" class="theme-card" data-search-section>
+                <header class="theme-heading"><span class="theme-badge">4</span><div><h2>4. Tema: Sayılar ve Nicelikler (2)</h2><p>Kesir, para, zaman, uzunluk ve kütle ölçme</p></div></header>
                 <div class="skill-list">
-                  <a class="skill-link" href="/testler/2-sinif-matematik-5-tema-soru-bankasi.html"><span class="skill-code">5.1</span><span><strong>Yer ve Yön Bulma</strong><span>Sağ, sol, ileri ve geri yönergelerini izle.</span></span></a>
-                  <a class="skill-link" href="/testler/2-sinif-matematik-5-tema-soru-bankasi.html"><span class="skill-code">5.2</span><span><strong>Simetri</strong><span>Simetri doğrusu olan şekilleri tanı.</span></span></a>
-                  <a class="skill-link bank-link" href="/testler/2-sinif-matematik-5-tema-soru-bankasi.html"><span class="skill-code">5</span><span><strong>5. Tema Soru Bankası <em>Soru Bankası</em></strong><span>Bu temadaki tüm becerileri tekrar et.</span></span></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.1</span><span><strong>Bütün, Yarım ve Çeyrek</strong><small>Bir bütünün eş parçalarını adlandır.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.2</span><span><strong>Paralarımız</strong><small>Türk lirası ve kuruşla işlem yap.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.3</span><span><strong>Zaman Ölçme</strong><small>Saat, gün, hafta ve ay ilişkisini kullan.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.4</span><span><strong>Uzunluk ve Kütle Ölçme</strong><small>Uygun ölçme aracını ve birimini seç.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><span class="skill-code">4.5</span><span><strong>Uzunluk ve Kütleyi Tahmin Etme</strong><small>Ölçmeden önce yaklaşık değer söyle.</small></span><em>Başla</em></a>
                 </div>
-              </details>
+                <a class="bank-button" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html"><strong>4. Tema Soru Bankası</strong><span>Bu temadaki tüm becerileri tekrar et.</span></a>
+              </article>
 
-              <details id="f" class="skill-section">
-                <summary class="skill-heading"><span class="skill-letter">6</span><div><h2>6. Tema: Veriye Dayalı Araştırma</h2><p>Veri toplama ve değerlendirme</p></div><span class="open-label" aria-hidden="true"></span></summary>
+              <article id="tema-5" class="theme-card" data-search-section>
+                <header class="theme-heading"><span class="theme-badge">5</span><div><h2>5. Tema: Nesnelerin Geometrisi (2)</h2><p>Yer, yön bulma ve simetri</p></div></header>
                 <div class="skill-list">
-                  <a class="skill-link" href="/testler/2-sinif-matematik-6-tema-soru-bankasi.html"><span class="skill-code">6.1</span><span><strong>Veri Toplama ve Değerlendirme</strong><span>Tablo ve basit grafiklerden bilgi çıkar.</span></span></a>
-                  <a class="skill-link bank-link" href="/testler/2-sinif-matematik-6-tema-soru-bankasi.html"><span class="skill-code">6</span><span><strong>6. Tema Soru Bankası <em>Soru Bankası</em></strong><span>Bu temadaki tüm becerileri tekrar et.</span></span></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-5-tema-soru-bankasi.html"><span class="skill-code">5.1</span><span><strong>Yer ve Yön Bulma</strong><small>Sağ, sol, ileri ve geri yönergelerini izle.</small></span><em>Başla</em></a>
+                  <a class="skill-link" href="/testler/2-sinif-matematik-5-tema-soru-bankasi.html"><span class="skill-code">5.2</span><span><strong>Simetri</strong><small>Simetri doğrusu olan şekilleri tanı.</small></span><em>Başla</em></a>
                 </div>
-              </details>
+                <a class="bank-button" href="/testler/2-sinif-matematik-5-tema-soru-bankasi.html"><strong>5. Tema Soru Bankası</strong><span>Bu temadaki tüm becerileri tekrar et.</span></a>
+              </article>
+
+              <article id="tema-6" class="theme-card" data-search-section>
+                <header class="theme-heading"><span class="theme-badge">6</span><div><h2>6. Tema: Veriye Dayalı Araştırma</h2><p>Veri toplama ve değerlendirme</p></div></header>
+                <div class="skill-list">
+                  <a class="skill-link" href="/testler/2-sinif-matematik-6-tema-soru-bankasi.html"><span class="skill-code">6.1</span><span><strong>Veri Toplama ve Değerlendirme</strong><small>Tablo ve basit grafiklerden bilgi çıkar.</small></span><em>Başla</em></a>
+                </div>
+                <a class="bank-button" href="/testler/2-sinif-matematik-6-tema-soru-bankasi.html"><strong>6. Tema Soru Bankası</strong><span>Bu temadaki tüm becerileri tekrar et.</span></a>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="sinavlar" class="section soft">
+      <section id="sinavlar" class="section exam-section">
         <div class="container">
           <div class="section-head">
             <p class="section-kicker">Sınav hazırlığı</p>
@@ -190,29 +217,10 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container">e-kurs.com 2. sınıf matematik becerileri</div>
+      <div class="container">e-kurs.com - 2. sınıf matematik becerileri</div>
     </footer>
 
     <script>
-      const openThemeFromHash = () => {
-        const id = window.location.hash.slice(1);
-        if (!id || id === "sinavlar") return;
-        const target = document.getElementById(id);
-        if (target && target.tagName.toLowerCase() === "details") {
-          target.open = true;
-        }
-      };
-
-      document.querySelectorAll('.topic-sidebar a[href^="#"], .toolbar-links a[href^="#"], .recommend-strip a[href^="#"]').forEach((link) => {
-        link.addEventListener("click", () => {
-          const id = link.getAttribute("href").slice(1);
-          const target = document.getElementById(id);
-          if (target && target.tagName.toLowerCase() === "details") {
-            target.open = true;
-          }
-        });
-      });
-
       const searchInput = document.getElementById("skillSearch");
       const noResults = document.querySelector(".no-results");
       const normalize = (value) => value.toLocaleLowerCase("tr-TR").trim();
@@ -220,24 +228,20 @@
       searchInput?.addEventListener("input", () => {
         const query = normalize(searchInput.value);
         let visibleSections = 0;
-        document.querySelectorAll(".skill-section").forEach((section) => {
+
+        document.querySelectorAll("[data-search-section]").forEach((section) => {
           let visibleLinks = 0;
-          section.querySelectorAll(".skill-link").forEach((link) => {
-            const match = !query || normalize(link.textContent).includes(query) || normalize(section.textContent).includes(query);
+          section.querySelectorAll(".skill-link, .bank-button").forEach((link) => {
+            const match = !query || normalize(link.textContent).includes(query) || normalize(section.querySelector(".theme-heading")?.textContent || "").includes(query);
             link.hidden = !match;
             if (match) visibleLinks += 1;
           });
           section.hidden = visibleLinks === 0;
-          if (visibleLinks > 0) {
-            visibleSections += 1;
-            if (query) section.open = true;
-          }
+          if (visibleLinks > 0) visibleSections += 1;
         });
-        if (noResults) noResults.hidden = visibleSections !== 0;
-      });
 
-      window.addEventListener("hashchange", openThemeFromHash);
-      openThemeFromHash();
+        if (noResults) noResults.hidden = !query || visibleSections !== 0;
+      });
     </script>
   </body>
 </html>
