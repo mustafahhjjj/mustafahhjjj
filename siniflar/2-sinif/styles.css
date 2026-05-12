@@ -1,33 +1,323 @@
 :root{
   color-scheme:light;
-  --bg:#f8f9fa;
-  --card:#fff;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --ink:#15203b;
   --text:#1a237e;
   --body:#1f2937;
   --muted:#64748b;
   --border:#e5e7eb;
-  --green:#2ecc71;
-  --green-dark:#15a85d;
+  --green:#20c878;
+  --green-dark:#0d9464;
   --blue:#2563eb;
-  --soft-blue:#e3f2fd;
-  --soft-yellow:#fff9c4;
+  --sky:#38bdf8;
   --orange:#ff9800;
-  --rose:#fce7f3;
-  --shadow:0 8px 16px rgba(0,0,0,.06);
-  --shadow-strong:0 18px 42px rgba(15,23,42,.10);
+  --yellow:#fff7bf;
+  --soft-green:#ecfdf5;
+  --soft-blue:#eff6ff;
+  --shadow:0 8px 18px rgba(15,23,42,.07);
+  --shadow-strong:0 18px 44px rgba(15,23,42,.11);
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{margin:0;min-width:320px;overflow-x:hidden;background:#f8f9fa!important;color:var(--body)!important;font-family:Nunito,Quicksand,Poppins,Inter,Arial,sans-serif!important;line-height:1.6!important}
-a{color:inherit}[hidden]{display:none!important}.container,.nav{width:min(1180px,calc(100% - 32px));margin:0 auto}
-.site-header{background:#fff!important;border-bottom:1px solid var(--border)!important;box-shadow:0 4px 14px rgba(15,23,42,.04)!important}.nav{min-height:72px}.logo,.nav-links a{font-family:Nunito,Arial,sans-serif!important}.nav-links a:hover{color:var(--green-dark)!important}
-h1,h2,h3,.hero-copy h1,.theme-title h2,.section-head h2{color:#1a237e!important;letter-spacing:0!important}h1,.hero-copy h1{font-size:clamp(34px,4vw,48px)!important;font-weight:900!important}h2,.theme-title h2{font-size:clamp(24px,2.2vw,30px)!important;font-weight:900!important}h3,.skill-card strong,.exam-card h3{font-size:18px!important;font-weight:900!important}.lead,.skill-card small,.theme-title p,.theme-note,.student-card small{line-height:1.6!important}
-.btn,.grade-strip a,.quick-links a,.tabs a,.bank-band a{min-height:44px!important;border-radius:999px!important;font-weight:900!important;transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,color .18s ease!important}.btn:hover,.grade-strip a:hover,.quick-links a:hover,.tabs a:hover,.bank-band a:hover{transform:translateY(-2px)!important;box-shadow:0 10px 22px rgba(15,23,42,.10)!important}.btn-primary,.nav-links .btn-primary,.grade-strip a.active,.tabs a.active{background:var(--green)!important;border-color:var(--green)!important;color:#fff!important}.btn-primary:hover,.nav-links .btn-primary:hover{background:var(--green-dark)!important;border-color:var(--green-dark)!important}.btn-blue{background:var(--blue)!important;border-color:var(--blue)!important;color:#fff!important}
-.math-hero{background:linear-gradient(135deg,#fff 0%,#eefbf4 48%,#e3f2fd 100%)!important;padding-block:56px!important}.today-panel,.stat-card,.student-card,.search-row,.theme-card,.exam-card{background:#fff!important;border:1px solid var(--border)!important;box-shadow:var(--shadow)!important}.today-panel,.theme-card{border-radius:24px!important}.stat-card,.student-card,.search-row,.exam-card{border-radius:20px!important}.theme-card:hover,.student-card:hover,.exam-card:hover,.stat-card:hover{transform:translateY(-2px)!important;box-shadow:var(--shadow-strong)!important;border-color:rgba(46,204,113,.45)!important}.theme-card,.student-card,.exam-card,.stat-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important}
-.stat-section{position:relative}.stat-section::after{content:"Matematik Macerası Haritası\A 1. Durak: Geometri Vadisi -> 2. Durak: Sayılar Köprüsü -> 3. Durak: İşlem Kalesi -> 4. Durak: Ölçme Pazarı -> 5. Durak: Simetri Bahçesi -> 6. Durak: Veri Limanı\A Her tema bittiğinde pasaportuna yeni bir damga eklenir.";white-space:pre-line;display:block;width:min(1180px,calc(100% - 32px));margin:20px auto 4px;padding:22px 24px;border:1px solid rgba(37,99,235,.18);border-radius:28px;background:radial-gradient(circle at 14% 18%,rgba(255,249,196,.95),transparent 24%),radial-gradient(circle at 84% 18%,rgba(227,242,253,.95),transparent 25%),linear-gradient(135deg,#fff,#ecfdf5 52%,#eff6ff);box-shadow:var(--shadow-strong);color:#1a237e;font-size:1.04rem;font-weight:900;line-height:1.75;text-align:center}
-.student-cards,.exam-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))!important;gap:24px!important}.student-cards::after{content:"Yapay zeka destekli rota\A Zorlandığın mikro kazanımı fark eder, ipucu ve tekrar önerisiyle seni doğru göreve yönlendirir.";white-space:pre-line;display:grid;align-content:center;min-height:118px;padding:18px;border:1px solid rgba(37,99,235,.22);border-radius:20px;background:linear-gradient(135deg,#eff6ff,#ecfdf5);color:#1a237e;font-weight:900;box-shadow:var(--shadow)}
-.skill-list{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))!important;gap:18px!important}.skill-card{min-height:112px!important;border:1px solid var(--border)!important;border-radius:18px!important;background:#fff!important;box-shadow:0 4px 12px rgba(15,23,42,.045)!important;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease!important}.skill-card:nth-child(odd):hover{background:#fff9c4!important;border-color:#ffcc80!important}.skill-card:nth-child(even):hover{background:#e3f2fd!important;border-color:#90caf9!important}.skill-card:hover{transform:translateY(-3px)!important;box-shadow:0 16px 32px rgba(15,23,42,.12)!important}.skill-code{background:#ecfdf5!important;color:var(--green-dark)!important;border:1px solid rgba(46,204,113,.22)!important}.skill-icon{background:#e3f2fd!important;color:#1a237e!important}.skill-footer em,.bank-band a,.student-card span,.section-head span{color:var(--green-dark)!important}
-.preview-tip{border-color:#90caf9!important;background:#fff!important;box-shadow:0 14px 32px rgba(15,23,42,.16)!important;transition:opacity .18s ease .55s,transform .18s ease .55s,visibility .18s ease .55s!important}.preview-tip b{color:#1a237e!important}.theme-meta{min-width:190px!important}.theme-progress{position:relative!important;overflow:hidden!important;min-height:34px!important;padding-inline:14px!important;border:1px solid #cbd5e1!important;background:linear-gradient(90deg,#e5e7eb 0%,#e5e7eb 100%)!important;color:#334155!important}.theme-progress::before{content:"";position:absolute;inset:auto 8px 6px 8px;height:6px;border-radius:999px;background:#d1d5db}.theme-progress::after{content:"";position:absolute;left:8px;bottom:6px;width:var(--progress,0%);height:6px;border-radius:999px;background:linear-gradient(90deg,var(--green),#66bb6a);transition:width 1s ease-in-out}.mini-progress i{width:72px!important;height:8px!important;background:#e5e7eb!important}.mini-progress i::after{background:linear-gradient(90deg,var(--green),var(--orange))!important;transition:width 1s ease-in-out!important}
-.theme-card{--progress:0%;position:relative!important;overflow:hidden!important}.theme-card::before{position:absolute;right:22px;top:20px;z-index:0;display:grid;place-items:center;width:112px;height:112px;border:3px dashed rgba(26,35,126,.18);border-radius:999px;background:rgba(255,255,255,.72);color:#1a237e;font-size:.76rem;font-weight:900;text-align:center;line-height:1.25;transform:rotate(8deg);pointer-events:none}.theme-card>*{position:relative;z-index:1}#tema-1::before{content:"Pasaport\A Geometri\A Damgası"}#tema-2::before{content:"Pasaport\A Sayılar\A Damgası"}#tema-3::before{content:"Pasaport\A İşlemler\A Damgası"}#tema-4::before{content:"Pasaport\A Ölçme\A Damgası"}#tema-5::before{content:"Pasaport\A Simetri\A Damgası"}#tema-6::before{content:"Pasaport\A Veri\A Damgası"}.theme-badge{background:linear-gradient(135deg,var(--green),var(--blue))!important;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 12px 24px rgba(46,204,113,.22)!important}.bank-band{border-color:rgba(46,204,113,.35)!important;background:linear-gradient(135deg,#ecfdf5,#e3f2fd)!important}.exam-card:nth-child(3){border-top-color:var(--orange)!important}.theme-card.is-complete{border-color:rgba(255,152,0,.55)!important;box-shadow:0 20px 46px rgba(255,152,0,.16)!important}.theme-medal{display:inline-grid;width:38px;height:38px;place-items:center;margin-left:8px;border-radius:999px;background:radial-gradient(circle at 30% 30%,#fff7ad,#ff9800 68%,#d97706);color:#fff;font-size:20px;font-weight:900;box-shadow:inset 0 -3px 0 rgba(0,0,0,.14),0 10px 22px rgba(255,152,0,.28)}.theme-card.is-complete .theme-medal::before{content:"★"}.skill-card.is-progressed .mini-progress i::after{width:var(--skill-progress,0%)!important}.skill-card.is-mastered .skill-code{background:#fff7ed!important;border-color:rgba(255,152,0,.35)!important;color:#c2410c!important}.skill-card.is-mastered .mini-progress::after{content:"  Madalya";color:#c2410c;font-weight:900}
-@media(max-width:980px){.skill-list{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important}.stat-section::after{text-align:left}}
-@media(max-width:768px){.container,.nav{width:min(100% - 24px,1180px)}.math-hero{padding-block:36px!important}.skill-list,.student-cards,.exam-grid{grid-template-columns:1fr!important}.skill-card{min-height:104px!important}.theme-card::before{width:88px;height:88px;font-size:.66rem;right:14px;top:14px;opacity:.85}.stat-section::after{width:min(100% - 24px,1180px);font-size:.95rem;padding:18px}}
+body{
+  min-width:320px;
+  overflow-x:hidden;
+  background:linear-gradient(180deg,#ffffff 0%,#f7fbff 42%,#ffffff 100%)!important;
+  color:var(--body)!important;
+  font-family:Nunito,Quicksand,Poppins,Inter,Arial,sans-serif!important;
+  line-height:1.6!important;
+}
+a{color:inherit}
+[hidden]{display:none!important}
+.container,.nav{width:min(1180px,calc(100% - 32px));margin-inline:auto}
+
+.site-header{
+  background:rgba(255,255,255,.96)!important;
+  border-bottom:1px solid var(--border)!important;
+  box-shadow:0 6px 18px rgba(15,23,42,.04)!important;
+  backdrop-filter:saturate(1.2) blur(10px);
+}
+.nav{min-height:72px;align-items:center!important}
+.logo{font-family:Nunito,Arial,sans-serif!important;font-size:1.08rem!important;color:#111827!important}
+.logo-mark{box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 8px 18px rgba(32,200,120,.24)!important}
+.nav-links{gap:18px!important}
+.nav-links a{font-family:Nunito,Arial,sans-serif!important;font-size:15.5px!important;font-weight:900!important}
+.nav-links a:hover{color:var(--green-dark)!important}
+.nav-links .btn-light{border-color:var(--green)!important;color:var(--green-dark)!important;background:#fff!important}
+.nav-links .btn-primary{background:var(--green)!important;border-color:var(--green)!important;color:#fff!important}
+
+h1,h2,h3,.hero-copy h1,.theme-title h2,.section-head h2{
+  color:var(--text)!important;
+  letter-spacing:0!important;
+}
+.hero-copy h1{font-size:clamp(36px,4.2vw,52px)!important;font-weight:900!important;line-height:1.02!important}
+.theme-title h2,.section-head h2{font-size:clamp(24px,2.1vw,30px)!important;font-weight:900!important}
+.skill-card strong,.exam-card h3,.student-card strong{font-size:18px!important;font-weight:900!important}
+.lead,.skill-card small,.theme-title p,.theme-note,.student-card small{line-height:1.6!important}
+
+.btn,.grade-strip a,.quick-links a,.tabs a,.bank-band a{
+  min-height:46px!important;
+  border-radius:999px!important;
+  font-weight:900!important;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,color .18s ease!important;
+}
+.btn:hover,.grade-strip a:hover,.quick-links a:hover,.tabs a:hover,.bank-band a:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 12px 24px rgba(15,23,42,.11)!important;
+}
+.btn-primary,.grade-strip a.active,.tabs a.active{
+  background:var(--green)!important;
+  border-color:var(--green)!important;
+  color:#fff!important;
+}
+.btn-primary:hover{background:var(--green-dark)!important;border-color:var(--green-dark)!important}
+.btn-blue{background:var(--blue)!important;border-color:var(--blue)!important;color:#fff!important}
+
+.math-hero{
+  position:relative;
+  padding-block:62px 58px!important;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 8% 18%,rgba(255,247,191,.75),transparent 24%),
+    radial-gradient(circle at 82% 12%,rgba(219,234,254,.95),transparent 28%),
+    linear-gradient(135deg,#ffffff 0%,#effcf5 48%,#eff6ff 100%)!important;
+}
+.math-hero::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:5px;
+  background:linear-gradient(90deg,var(--green),var(--sky),var(--orange));
+}
+.hero-grid{gap:42px!important;align-items:center!important}
+.breadcrumb{font-weight:900!important;color:#64748b!important}
+.meb-hero-badge{
+  min-height:36px!important;
+  padding-inline:14px!important;
+  border-color:#bbf7d0!important;
+  background:#ecfdf5!important;
+  color:var(--green-dark)!important;
+  box-shadow:0 8px 18px rgba(32,200,120,.12);
+}
+.today-panel{
+  border:1px solid rgba(37,99,235,.14)!important;
+  border-radius:28px!important;
+  box-shadow:var(--shadow-strong)!important;
+  background:linear-gradient(180deg,#fff,#f8fbff)!important;
+}
+.today-card{
+  border-color:#bbf7d0!important;
+  background:linear-gradient(135deg,#ffffff,#ecfdf5)!important;
+}
+
+.stat-section{
+  position:relative;
+  padding-block:26px 34px!important;
+  background:#fff!important;
+}
+.stat-card,.student-card,.search-row,.theme-card,.exam-card{
+  background:#fff!important;
+  border:1px solid var(--border)!important;
+  box-shadow:var(--shadow)!important;
+}
+.stat-card{border-radius:20px!important;min-height:92px!important}
+.stat-card strong{color:#111827!important;font-size:1.85rem!important}
+.stat-card small{font-weight:900!important;color:#475569!important}
+
+.stat-section::after{
+  content:"Matematik Macerası Haritası\A A Geometri Vadisi   •   B Sayılar Köprüsü   •   C İşlem Kalesi\A D Ölçme Pazarı   •   E Simetri Bahçesi   •   F Veri Limanı\A Her tema bir durak, her soru bankası pasaportuna yeni bir başarı damgası.";
+  white-space:pre-line;
+  display:block;
+  width:min(1180px,calc(100% - 32px));
+  margin:24px auto 0;
+  padding:26px 28px;
+  border:1px solid rgba(37,99,235,.16);
+  border-radius:30px;
+  background:
+    linear-gradient(90deg,rgba(32,200,120,.10) 0 16.6%,transparent 16.6% 17.6%,rgba(56,189,248,.10) 17.6% 33.2%,transparent 33.2% 34.2%,rgba(255,152,0,.12) 34.2% 49.8%,transparent 49.8% 50.8%,rgba(32,200,120,.10) 50.8% 66.4%,transparent 66.4% 67.4%,rgba(56,189,248,.10) 67.4% 83%,transparent 83% 84%,rgba(255,152,0,.12) 84% 100%),
+    linear-gradient(135deg,#fff,#ecfdf5 48%,#eff6ff);
+  box-shadow:var(--shadow-strong);
+  color:var(--text);
+  font-size:1.05rem;
+  font-weight:900;
+  line-height:1.8;
+  text-align:center;
+}
+
+.grade-section{background:#fff!important}
+.grade-strip a,.quick-links a,.tabs a{border-color:#dbe3ef!important;background:#fff!important;color:#334155!important}
+.grade-strip a.active,.tabs a.active{background:var(--green)!important;border-color:var(--green)!important;color:#fff!important}
+
+.main-section{padding-block:38px!important;background:linear-gradient(180deg,#f8fafc,#ffffff 46%)!important}
+.student-cards,.exam-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr))!important;
+  gap:18px!important;
+}
+.student-card{
+  border-radius:22px!important;
+  min-height:132px!important;
+  padding:20px!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important;
+}
+.student-card:hover,.exam-card:hover,.theme-card:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:var(--shadow-strong)!important;
+  border-color:rgba(32,200,120,.45)!important;
+}
+.student-card span,.section-head span{color:var(--green-dark)!important}
+.student-cards::after{
+  content:"Akıllı çalışma önerisi\A Zorlandığın beceride ipucu, tekrar ve bir önceki mikro kazanıma dönüş önerisi görünür.";
+  white-space:pre-line;
+  display:grid;
+  align-content:center;
+  min-height:132px;
+  padding:20px;
+  border:1px solid rgba(37,99,235,.18);
+  border-radius:22px;
+  background:linear-gradient(135deg,#eff6ff,#ecfdf5);
+  color:var(--text);
+  font-weight:900;
+  line-height:1.55;
+  box-shadow:var(--shadow);
+}
+
+.search-row{
+  border-radius:26px!important;
+  padding:18px!important;
+}
+.search-box input{height:54px!important;border-color:#cbd5e1!important;font-weight:900!important}
+.search-box input:focus{border-color:var(--green)!important;box-shadow:0 0 0 4px rgba(32,200,120,.16)!important}
+
+.theme-card{
+  --progress:0%;
+  position:relative!important;
+  overflow:hidden!important;
+  border-radius:28px!important;
+  padding:30px!important;
+  margin-bottom:30px!important;
+}
+.theme-card::before{
+  position:absolute;
+  right:24px;
+  top:22px;
+  z-index:0;
+  display:grid;
+  place-items:center;
+  width:104px;
+  height:104px;
+  border:3px dashed rgba(26,35,126,.18);
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+  color:var(--text);
+  font-size:.74rem;
+  font-weight:900;
+  text-align:center;
+  line-height:1.22;
+  transform:rotate(8deg);
+  pointer-events:none;
+}
+.theme-card>*{position:relative;z-index:1}
+#tema-1::before{content:"Pasaport\A Geometri\A Damgası"}
+#tema-2::before{content:"Pasaport\A Sayılar\A Damgası"}
+#tema-3::before{content:"Pasaport\A İşlemler\A Damgası"}
+#tema-4::before{content:"Pasaport\A Ölçme\A Damgası"}
+#tema-5::before{content:"Pasaport\A Simetri\A Damgası"}
+#tema-6::before{content:"Pasaport\A Veri\A Damgası"}
+.theme-badge{
+  background:linear-gradient(135deg,var(--green),var(--blue))!important;
+  box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 12px 24px rgba(32,200,120,.22)!important;
+}
+.theme-meta{min-width:190px!important}
+.theme-progress{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:36px!important;
+  padding:0 14px 10px!important;
+  border:1px solid #cbd5e1!important;
+  background:#f8fafc!important;
+  color:#334155!important;
+}
+.theme-progress::before{
+  content:"";
+  position:absolute;
+  left:10px;right:10px;bottom:6px;
+  height:6px;
+  border-radius:999px;
+  background:#dbe3ef;
+}
+.theme-progress::after{
+  content:"";
+  position:absolute;
+  left:10px;bottom:6px;
+  width:var(--progress,0%);
+  height:6px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--green),var(--orange));
+  transition:width 1s ease;
+}
+.meb-chip{border-color:#bbf7d0!important;background:#ecfdf5!important;color:var(--green-dark)!important}
+
+.skill-list{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr))!important;
+  gap:16px!important;
+}
+.skill-card{
+  min-height:112px!important;
+  border:1px solid var(--border)!important;
+  border-radius:20px!important;
+  background:#fff!important;
+  box-shadow:0 4px 12px rgba(15,23,42,.045)!important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease!important;
+}
+.skill-card:nth-child(odd):hover{background:#fffdf0!important;border-color:#facc15!important}
+.skill-card:nth-child(even):hover{background:#f0f9ff!important;border-color:#93c5fd!important}
+.skill-card:hover{transform:translateY(-3px)!important;box-shadow:0 16px 32px rgba(15,23,42,.12)!important}
+.skill-code{background:#ecfdf5!important;color:var(--green-dark)!important;border:1px solid rgba(32,200,120,.24)!important}
+.skill-icon{background:#eff6ff!important;color:var(--text)!important}
+.skill-footer em,.bank-band a{color:var(--green-dark)!important}
+.mini-progress i{width:72px!important;height:8px!important;background:#e5e7eb!important}
+.mini-progress i::after{background:linear-gradient(90deg,var(--green),var(--orange))!important}
+.preview-tip{
+  border-color:#93c5fd!important;
+  background:#fff!important;
+  box-shadow:0 14px 32px rgba(15,23,42,.16)!important;
+  transition:opacity .18s ease .5s,transform .18s ease .5s,visibility .18s ease .5s!important;
+}
+.preview-tip b{color:var(--text)!important}
+
+.bank-band{
+  border-color:rgba(32,200,120,.35)!important;
+  background:linear-gradient(135deg,#ecfdf5,#eff6ff)!important;
+  border-radius:20px!important;
+}
+.exam-section{background:#fff!important}
+.exam-card{border-radius:24px!important;padding:22px!important}
+.exam-card:nth-child(3){border-top-color:var(--orange)!important}
+.site-footer{background:#fff!important}
+
+.theme-card.is-complete{border-color:rgba(255,152,0,.55)!important;box-shadow:0 20px 46px rgba(255,152,0,.16)!important}
+.theme-medal{display:inline-grid;width:38px;height:38px;place-items:center;margin-left:8px;border-radius:999px;background:radial-gradient(circle at 30% 30%,#fff7ad,#ff9800 68%,#d97706);color:#fff;font-size:20px;font-weight:900;box-shadow:inset 0 -3px 0 rgba(0,0,0,.14),0 10px 22px rgba(255,152,0,.28)}
+.theme-card.is-complete .theme-medal::before{content:"★"}
+.skill-card.is-progressed .mini-progress i::after{width:var(--skill-progress,0%)!important}
+.skill-card.is-mastered .skill-code{background:#fff7ed!important;border-color:rgba(255,152,0,.35)!important;color:#c2410c!important}
+.skill-card.is-mastered .mini-progress::after{content:"  Madalya";color:#c2410c;font-weight:900}
+
+@media(max-width:980px){
+  .hero-grid{gap:24px!important}
+  .skill-list{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important}
+  .stat-section::after{text-align:left;font-size:1rem}
+}
+@media(max-width:768px){
+  .container,.nav{width:min(100% - 24px,1180px)}
+  .math-hero{padding-block:38px!important}
+  .hero-copy h1{font-size:32px!important}
+  .student-cards,.exam-grid,.skill-list{grid-template-columns:1fr!important}
+  .theme-card{padding:20px!important}
+  .theme-card::before{width:84px;height:84px;font-size:.62rem;right:12px;top:12px;opacity:.72}
+  .stat-section::after{width:min(100% - 24px,1180px);padding:20px;font-size:.92rem;line-height:1.65}
+  .student-cards::after{min-height:112px}
+}
