@@ -1,136 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2. Sınıf Matematik Doğal Sayılar | e-kurs.com</title>
-  <meta name="description" content="2. sınıf matematik doğal sayılar konusu: onluk-birlik, basamak değeri, karşılaştırma, sıralama ve cevap yazma alanlı mini test.">
-  <link rel="stylesheet" href="/css/style.css">
-  <style>
-    :root { --math-blue:#2563eb; --math-green:#16a34a; --math-orange:#f59e0b; --paper:#fffaf0; --paper-line:rgba(37,99,235,.12); --ink:#0f172a; --soft:#eff6ff; }
-    body { background:#fbf7ec; }
-    .math-hero { background:#123f37; color:#fff; padding:64px 0 56px; }
-    .math-hero .breadcrumb { color:#d9f99d; margin:0 0 14px; font-weight:800; }
-    .math-hero h1 { margin:0; max-width:920px; font-size:clamp(2.8rem,7vw,5.8rem); line-height:1; letter-spacing:0; }
-    .math-hero .lead { color:#fef3c7; max-width:840px; margin:18px 0 0; font-size:1.18rem; }
-    .lesson-wrap { width:min(1180px, calc(100% - 32px)); margin:0 auto; padding:36px 0 68px; }
-    .topic-strip { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-bottom:24px; }
-    .topic-card { border:1px solid #f2c38f; border-radius:16px; background:#fffaf0; padding:16px; min-height:118px; }
-    .topic-card strong { display:block; color:#c2410c; font-size:1.05rem; margin-bottom:8px; }
-    .topic-card span { color:#475569; font-weight:750; }
-    .board { border:16px solid #d9c18d; border-radius:34px; background:linear-gradient(#fffdf7 0 0) padding-box, repeating-linear-gradient(0deg, transparent 0 47px, var(--paper-line) 48px 49px); box-shadow:0 24px 58px rgba(64,44,12,.12); overflow:hidden; }
-    .board-head { padding:28px 34px; border-bottom:1px solid rgba(148,115,52,.22); background:rgba(255,255,255,.64); }
-    .board-head h2 { margin:0 0 8px; color:var(--ink); font-size:clamp(2rem,4vw,3.6rem); line-height:1.05; }
-    .board-head p { margin:0; color:#475569; font-weight:800; font-size:1.08rem; }
-    .note { margin:26px 34px; border-left:8px solid #f15b3f; border-radius:12px; background:#fff; padding:18px 22px; color:#0b1220; font-weight:950; font-size:1.08rem; }
-    .lesson-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; padding:0 34px 34px; }
-    .lesson-card { background:rgba(255,255,255,.74); border:1px solid #e7d7b7; border-radius:28px; padding:26px; box-shadow:0 10px 28px rgba(15,23,42,.055); }
-    .lesson-card.full { grid-column:1 / -1; }
-    .card-title { display:flex; align-items:center; gap:14px; margin-bottom:18px; }
-    .num { width:58px; height:58px; border-radius:18px; display:grid; place-items:center; background:#eaf2ff; color:var(--math-blue); font-size:2rem; font-weight:950; flex:0 0 auto; }
-    .card-title h3 { margin:0; color:#071227; font-size:1.75rem; line-height:1.15; }
-    .reading { color:#0f172a; font-size:clamp(1.45rem,2.6vw,2.4rem); line-height:1.7; font-weight:950; margin:18px 0 22px; }
-    .number-row { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin:18px 0; }
-    .number-chip { min-height:72px; border:1px solid #bfdbfe; border-radius:16px; background:#f8fbff; display:grid; place-items:center; color:#0f172a; font-size:2rem; font-weight:950; }
-    .answer-box { margin-top:16px; border:1px solid #bfdbfe; border-radius:18px; background:#f8fbff; padding:18px; }
-    .answer-box label { display:block; color:#0f172a; font-weight:950; font-size:1.25rem; margin-bottom:10px; }
-    .answer-box textarea { width:100%; min-height:112px; resize:vertical; border:2px dashed #93c5fd; border-radius:16px; background:repeating-linear-gradient(#fff 0 40px, #dbeafe 41px 43px); color:#0f172a; padding:18px 20px; font-size:1.22rem; line-height:1.6; font-weight:850; outline:none; }
-    .answer-box textarea:focus { border-color:#2563eb; box-shadow:0 0 0 4px rgba(37,99,235,.14); }
-    .answer-box textarea::placeholder { color:#94a3b8; }
-    .practice { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-    .task { border:1px solid #fed7aa; border-radius:18px; background:#fffaf0; padding:18px; }
-    .task strong { display:block; color:#c2410c; font-size:1.15rem; margin-bottom:8px; }
-    .task p { margin:0; color:#0f172a; font-size:1.2rem; font-weight:850; }
-    .quiz { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:14px; }
-    .q { border:1px solid #dbeafe; border-radius:22px; background:#f8fbff; padding:18px; }
-    .q legend { color:#0f172a; font-size:1.15rem; font-weight:950; margin-bottom:10px; }
-    .choices { display:grid; gap:8px; }
-    .choices label { min-height:42px; display:flex; align-items:center; gap:10px; border:1px solid #e2e8f0; border-radius:12px; background:#fff; padding:8px 10px; font-weight:850; }
-    .result { margin-top:18px; min-height:48px; border-radius:14px; padding:12px 14px; background:#ecfdf5; color:#166534; font-weight:950; display:none; }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
-    .mini-btn { min-height:48px; border:0; border-radius:14px; padding:0 18px; background:#2563eb; color:#fff; font-weight:950; cursor:pointer; }
-    .mini-btn.secondary { background:#fff; color:#2563eb; border:1px solid #bfdbfe; }
-    @media (max-width:900px){ .topic-strip,.lesson-grid,.quiz,.practice { grid-template-columns:1fr; } .lesson-card.full { grid-column:auto; } .board { border-width:10px; border-radius:24px; } .board-head,.note,.lesson-grid { padding-left:18px; padding-right:18px; } .note { margin-left:18px; margin-right:18px; } }
-    @media (max-width:560px){ .lesson-wrap { width:min(100% - 18px, 1180px); } .math-hero { padding:44px 0; } .number-row { grid-template-columns:repeat(2,minmax(0,1fr)); } .lesson-card { padding:18px; } .card-title { align-items:flex-start; } .num { width:48px; height:48px; font-size:1.6rem; } .card-title h3 { font-size:1.35rem; } }
-  </style>
-</head>
-<body>
-  <header class="site-header"><nav class="nav container" aria-label="Ana menü"><a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="logo-mark">e</span><span>e-kurs.com</span></a><button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button><div class="nav-links"><a class="active" href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a></div><div class="nav-actions"><a class="btn btn-light" href="/giris.html">Giriş Yap</a><a class="btn btn-primary" href="/kayit.html">Ücretsiz Başla</a></div></nav></header>
-  <main>
-    <section class="math-hero"><div class="container"><p class="breadcrumb">Sınıflar / 2. Sınıf / Matematik</p><h1>Doğal Sayılar</h1><p class="lead">100'e kadar doğal sayıları oku, yaz, karşılaştır, sırala ve cevaplarını sayfa üzerinde yaz.</p></div></section>
-    <section class="lesson-wrap" aria-labelledby="dogal-title">
-      <div class="topic-strip" aria-label="Konu başlıkları">
-        <div class="topic-card"><strong>Onluk ve birlik</strong><span>Bir sayı kaç onluk ve kaç birlikten oluşur?</span></div>
-        <div class="topic-card"><strong>Basamak değeri</strong><span>Onlar ve birler basamağındaki rakamların değeri.</span></div>
-        <div class="topic-card"><strong>Karşılaştırma</strong><span>Büyük, küçük ve eşit sayıları bulma.</span></div>
-        <div class="topic-card"><strong>Ritmik sayma</strong><span>İleriye ve geriye doğru düzenli sayma.</span></div>
-      </div>
-      <div class="board">
-        <div class="board-head"><h2 id="dogal-title">2. Sınıf Matematik Doğal Sayılar</h2><p>Testleri Çöz doğal sayılar başlığındaki konu düzenine uygun, web üzerinde çözülebilen çalışma sayfası.</p></div>
-        <div class="note">10 soruluk doğal sayılar çalışması. Cevaplar bu sayfaya yazılır; indirme yoktur.</div>
-        <div class="lesson-grid">
-          <article class="lesson-card">
-            <div class="card-title"><span class="num">1</span><h3>Sayıları Oku</h3></div>
-            <div class="number-row"><span class="number-chip">18</span><span class="number-chip">24</span><span class="number-chip">37</span><span class="number-chip">56</span><span class="number-chip">90</span></div>
-            <p class="reading">18: on sekiz<br>24: yirmi dört<br>37: otuz yedi<br>56: elli altı<br>90: doksan</p>
-            <div class="answer-box"><label for="oku-cevap">Bu sayılardan üçünü yazıyla yaz.</label><textarea id="oku-cevap" placeholder="Cevabını buraya yaz"></textarea></div>
-          </article>
-          <article class="lesson-card">
-            <div class="card-title"><span class="num">2</span><h3>Onluk ve Birlik</h3></div>
-            <p class="reading">47 = 4 onluk + 7 birlik<br>63 = 6 onluk + 3 birlik<br>80 = 8 onluk + 0 birlik</p>
-            <div class="answer-box"><label for="onluk-cevap">52 sayısı kaç onluk ve kaç birliktir?</label><textarea id="onluk-cevap" placeholder="Cevabını buraya yaz"></textarea></div>
-          </article>
-          <article class="lesson-card full">
-            <div class="card-title"><span class="num">3</span><h3>Kısa Alıştırmalar</h3></div>
-            <div class="practice">
-              <div class="task"><strong>Önce gelen sayı</strong><p>45 sayısından önce gelen sayı: ____</p></div>
-              <div class="task"><strong>Sonra gelen sayı</strong><p>68 sayısından sonra gelen sayı: ____</p></div>
-              <div class="task"><strong>Büyük olan sayı</strong><p>72 ve 27 sayılarından büyük olan: ____</p></div>
-              <div class="task"><strong>Ritmik sayma</strong><p>10, 20, 30, ____, ____</p></div>
-            </div>
-            <div class="answer-box"><label for="alistirma-cevap">Alıştırmaların cevaplarını yaz.</label><textarea id="alistirma-cevap" placeholder="Cevabını buraya yaz"></textarea></div>
-          </article>
-          <article class="lesson-card full">
-            <div class="card-title"><span class="num">4</span><h3>Mini Test</h3></div>
-            <form id="dogalQuiz" class="quiz">
-              <fieldset class="q"><legend>1. 47 sayısında kaç onluk vardır?</legend><div class="choices"><label><input type="radio" name="q1" value="a"> 4</label><label><input type="radio" name="q1" value="b"> 7</label><label><input type="radio" name="q1" value="c"> 47</label></div></fieldset>
-              <fieldset class="q"><legend>2. 63 sayısından önce gelen sayı hangisidir?</legend><div class="choices"><label><input type="radio" name="q2" value="a"> 62</label><label><input type="radio" name="q2" value="b"> 64</label><label><input type="radio" name="q2" value="c"> 60</label></div></fieldset>
-              <fieldset class="q"><legend>3. 39 sayısından sonra gelen sayı hangisidir?</legend><div class="choices"><label><input type="radio" name="q3" value="a"> 38</label><label><input type="radio" name="q3" value="b"> 40</label><label><input type="radio" name="q3" value="c"> 49</label></div></fieldset>
-              <fieldset class="q"><legend>4. En büyük sayı hangisidir?</legend><div class="choices"><label><input type="radio" name="q4" value="a"> 56</label><label><input type="radio" name="q4" value="b"> 65</label><label><input type="radio" name="q4" value="c"> 46</label></div></fieldset>
-              <fieldset class="q"><legend>5. 8 onluk 5 birlik hangi sayıdır?</legend><div class="choices"><label><input type="radio" name="q5" value="a"> 58</label><label><input type="radio" name="q5" value="b"> 85</label><label><input type="radio" name="q5" value="c"> 80</label></div></fieldset>
-              <fieldset class="q"><legend>6. 54 sayısında 5'in basamak değeri kaçtır?</legend><div class="choices"><label><input type="radio" name="q6" value="a"> 5</label><label><input type="radio" name="q6" value="b"> 50</label><label><input type="radio" name="q6" value="c"> 4</label></div></fieldset>
-              <fieldset class="q"><legend>7. 18, 28, 38, ____ örüntüsünde boşluğa ne gelir?</legend><div class="choices"><label><input type="radio" name="q7" value="a"> 40</label><label><input type="radio" name="q7" value="b"> 48</label><label><input type="radio" name="q7" value="c"> 58</label></div></fieldset>
-              <fieldset class="q"><legend>8. En küçük sayı hangisidir?</legend><div class="choices"><label><input type="radio" name="q8" value="a"> 62</label><label><input type="radio" name="q8" value="b"> 26</label><label><input type="radio" name="q8" value="c"> 42</label></div></fieldset>
-              <fieldset class="q"><legend>9. 9 onluk 3 birlik hangi sayıdır?</legend><div class="choices"><label><input type="radio" name="q9" value="a"> 39</label><label><input type="radio" name="q9" value="b"> 93</label><label><input type="radio" name="q9" value="c"> 90</label></div></fieldset>
-              <fieldset class="q"><legend>10. 75 sayısı 57 sayısından nasıldır?</legend><div class="choices"><label><input type="radio" name="q10" value="a"> küçüktür</label><label><input type="radio" name="q10" value="b"> eşittir</label><label><input type="radio" name="q10" value="c"> büyüktür</label></div></fieldset>
-            </form>
-            <div class="actions"><button class="mini-btn" type="button" id="checkQuiz">Cevapları Kontrol Et</button><button class="mini-btn secondary" type="button" id="clearQuiz">Temizle</button></div>
-            <div class="result" id="quizResult" aria-live="polite"></div>
-          </article>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2. Sınıf Matematik | e-kurs.com</title>
+    <meta name="description" content="2. sınıf matematik tema alt konuları, tema soru bankaları, yazılı soruları ve deneme sınavı.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Ana menü">
+        <a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="logo-mark">e</span><span>e-kurs.com</span></a>
+        <div class="nav-links">
+          <a class="active" href="/siniflar/index.html">Sınıflar</a>
+          <a href="/dersler/index.html">Dersler</a>
+          <a href="/testler/index.html">Testler</a>
         </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer"><div class="container footer-grid"><div><a class="logo footer-logo" href="/index.html"><span class="logo-mark">e</span><span>e-kurs.com</span></a><p>Türkiye K12 öğrencileri için sınıf, ders, ünite, test ve takip odaklı öğrenme platformu.</p></div><div class="footer-links"><a href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a><a href="/veli-paneli.html">Veli Paneli</a><a href="/ogretmen-paneli.html">Öğretmen Paneli</a></div></div></footer>
-  <script src="/js/main.js"></script>
-  <script>
-    const answers = { q1:'a', q2:'a', q3:'b', q4:'b', q5:'b', q6:'b', q7:'b', q8:'b', q9:'b', q10:'c' };
-    const result = document.getElementById('quizResult');
-    document.getElementById('checkQuiz').addEventListener('click', () => {
-      let score = 0;
-      Object.keys(answers).forEach((key) => {
-        const checked = document.querySelector(`input[name="${key}"]:checked`);
-        if (checked && checked.value === answers[key]) score += 1;
-      });
-      result.style.display = 'block';
-      result.textContent = `Sonuç: ${score} / 10 doğru. Cevaplarını öğretmeninle birlikte kontrol et.`;
-    });
-    document.getElementById('clearQuiz').addEventListener('click', () => {
-      document.getElementById('dogalQuiz').reset();
-      document.querySelectorAll('textarea').forEach((area) => { area.value = ''; });
-      result.style.display = 'none';
-      result.textContent = '';
-    });
-  </script>
-</body>
+      </nav>
+      <section class="hero">
+        <div class="container">
+          <p class="breadcrumb">Sınıflar / 2. Sınıf / Matematik</p>
+          <h1>2. sınıf matematik</h1>
+          <p class="lead">Tema başlıklarını aç; alt konuları gör, her temanın soru bankasına ve dönem sınavlarına geç.</p>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Tema listesi</p>
+            <h2>Matematik tema alt konuları</h2>
+            <p>Öğrenci Matematik dersine tıkladığında temalar ve alt konular bu sayfada görünür.</p>
+          </div>
+
+          <div class="theme-list">
+            <details class="theme-card accent-coral" open>
+              <summary>
+                <span class="theme-number">1</span>
+                <span class="theme-title"><strong>Nesnelerin Geometrisi (1)</strong><span class="small">Geometri ve sıvı ölçme</span></span>
+                <span class="theme-toggle">Alt konuları aç</span>
+              </summary>
+              <ul class="topic-list">
+                <li>Geometrik Cisimler</li>
+                <li>Geometrik Cisim Modelleri</li>
+                <li>Geometrik Şekil Modelleri</li>
+                <li>Geometrik Cisim ve Şekillerin Biçimsel Özellikleri</li>
+                <li>Sıvı Ölçme</li>
+              </ul>
+              <div class="theme-actions"><a class="btn btn-soft" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html">1. Tema Soru Bankası</a></div>
+            </details>
+
+            <details class="theme-card accent-teal">
+              <summary>
+                <span class="theme-number">2</span>
+                <span class="theme-title"><strong>Sayılar ve Nicelikler (1)</strong><span class="small">Sayılar, sayı doğrusu ve örüntü</span></span>
+                <span class="theme-toggle">Alt konuları aç</span>
+              </summary>
+              <ul class="topic-list">
+                <li>Sayılar</li>
+                <li>Sayıları Çözümleme</li>
+                <li>Sayı Doğrusu</li>
+                <li>Ritmik Sayma</li>
+                <li>Örüntü</li>
+                <li>Tahmin Etme</li>
+              </ul>
+              <div class="theme-actions"><a class="btn btn-soft" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html">2. Tema Soru Bankası</a></div>
+            </details>
+
+            <details class="theme-card accent-gold">
+              <summary>
+                <span class="theme-number">3</span>
+                <span class="theme-title"><strong>İşlemlerden Cebirsel Düşünmeye</strong><span class="small">Dört işlem, problem ve eşitlik</span></span>
+                <span class="theme-toggle">Alt konuları aç</span>
+              </summary>
+              <ul class="topic-list">
+                <li>Toplama ve Çıkarma İşlemi</li>
+                <li>Toplama ve Çıkarma İşlemleriyle İlgili Problemler</li>
+                <li>Toplama ve Çıkarma İşlemlerinin Sonuçlarını Tahmin Etme</li>
+                <li>Toplama ve Çıkarma İşlemlerinin İlişkisi</li>
+                <li>Çarpma İşlemi</li>
+                <li>Bölme İşlemi</li>
+                <li>Çarpma ve Bölme İşlemlerinin Sonucunu Muhakeme Etme</li>
+                <li>Eşitlik</li>
+              </ul>
+              <div class="theme-actions"><a class="btn btn-soft" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html">3. Tema Soru Bankası</a></div>
+            </details>
+
+            <details class="theme-card accent-blue">
+              <summary>
+                <span class="theme-number">4</span>
+                <span class="theme-title"><strong>Sayılar ve Nicelikler (2)</strong><span class="small">Kesir, para, zaman, uzunluk ve kütle</span></span>
+                <span class="theme-toggle">Alt konuları aç</span>
+              </summary>
+              <ul class="topic-list">
+                <li>Bütün, Yarım ve Çeyrek</li>
+                <li>Paralarımız</li>
+                <li>Zaman Ölçme</li>
+                <li>Uzunluk ve Kütle Ölçme</li>
+                <li>Uzunluk ve Kütle Ölçmeyi Tahmin Etme</li>
+              </ul>
+              <div class="theme-actions"><a class="btn btn-soft" href="/testler/2-sinif-matematik-4-tema-soru-bankasi.html">4. Tema Soru Bankası</a></div>
+            </details>
+
+            <details class="theme-card accent-plum">
+              <summary>
+                <span class="theme-number">5</span>
+                <span class="theme-title"><strong>Nesnelerin Geometrisi (2)</strong><span class="small">Yer, yön ve simetri</span></span>
+                <span class="theme-toggle">Alt konuları aç</span>
+              </summary>
+              <ul class="topic-list">
+                <li>Yer ve Yön Bulma</li>
+                <li>Simetri</li>
+              </ul>
+              <div class="theme-actions"><a class="btn btn-soft" href="/testler/2-sinif-matematik-5-tema-soru-bankasi.html">5. Tema Soru Bankası</a></div>
+            </details>
+
+            <details class="theme-card accent-rose">
+              <summary>
+                <span class="theme-number">6</span>
+                <span class="theme-title"><strong>Veriye Dayalı Araştırma</strong><span class="small">Veri toplama ve değerlendirme</span></span>
+                <span class="theme-toggle">Alt konuları aç</span>
+              </summary>
+              <ul class="topic-list">
+                <li>Veri Toplama ve Değerlendirme</li>
+              </ul>
+              <div class="theme-actions"><a class="btn btn-soft" href="/testler/2-sinif-matematik-6-tema-soru-bankasi.html">6. Tema Soru Bankası</a></div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Sınav hazırlığı</p>
+            <h2>Matematik sınav çalışmaları</h2>
+          </div>
+          <div class="resources">
+            <a class="resource-card accent-coral" href="/testler/2-sinif-1-donem-matematik-yazili-sorulari.html">
+              <span class="small">Yazılı soruları</span>
+              <h3>1. Dönem Matematik Yazılı Soruları</h3>
+              <p class="muted">2. sınıf matematik 1. dönem sınav hazırlığı.</p>
+            </a>
+            <a class="resource-card accent-teal" href="/testler/2-sinif-2-donem-matematik-yazili-sorulari.html">
+              <span class="small">Yazılı soruları</span>
+              <h3>2. Dönem Matematik Yazılı Soruları</h3>
+              <p class="muted">2. sınıf matematik 2. dönem sınav hazırlığı.</p>
+            </a>
+            <a class="resource-card accent-gold" href="/testler/2-sinif-deneme-sinavi.html">
+              <span class="small">Genel tekrar</span>
+              <h3>2. Sınıf Deneme Sınavı</h3>
+              <p class="muted">Yıl boyunca işlenen konular için deneme sınavı.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">e-kurs.com 2. sınıf matematik tema sayfası</div>
+    </footer>
+  </body>
 </html>
