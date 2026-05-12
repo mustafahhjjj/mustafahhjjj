@@ -194,20 +194,37 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
 .topic-sidebar strong { font-size: 0.9rem; color: var(--muted); }
 .topic-sidebar a { color: #334155; font-size: 0.93rem; font-weight: 850; text-decoration: none; }
 .topic-sidebar a:hover { color: var(--blue-dark); }
-.skill-sections { display: grid; gap: 26px; }
-.skill-section { scroll-margin-top: 16px; }
+.skill-sections { display: grid; gap: 18px; }
+.skill-section {
+  scroll-margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 8px 22px rgb(15 23 42 / 0.04);
+}
 .skill-heading {
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-bottom: 12px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--line);
+  margin-bottom: 0;
+  padding: 14px;
+  border-bottom: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  list-style: none;
 }
+.skill-heading::-webkit-details-marker { display: none; }
+.skill-heading::marker { content: ""; }
+.skill-section[open] .skill-heading {
+  border-bottom-color: var(--line);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.skill-heading:hover { background: #f7fbff; }
 .skill-letter {
   display: inline-grid;
   width: 42px;
   height: 42px;
+  flex: 0 0 42px;
   place-items: center;
   border-radius: 50%;
   background: var(--blue);
@@ -216,7 +233,21 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
 }
 .skill-heading h2 { margin: 0; font-size: 1.55rem; }
 .skill-heading p { margin: 2px 0 0; color: var(--muted); }
-.skill-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.open-label {
+  margin-left: auto;
+  color: var(--blue-dark);
+  font-size: 0.86rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.open-label::after { content: "Alt konuları aç"; }
+.skill-section[open] .open-label::after { content: "Alt konuları kapat"; }
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 14px;
+}
 .skill-link {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -275,4 +306,6 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
   .nav { align-items: flex-start; flex-direction: column; }
   .grid-auto, .grid-3, .resources, .exam-strip { grid-template-columns: 1fr; }
   .progress-row { grid-template-columns: 1fr; }
+  .skill-heading { align-items: flex-start; flex-wrap: wrap; }
+  .open-label { width: 100%; margin-left: 54px; }
 }
