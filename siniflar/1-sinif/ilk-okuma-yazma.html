@@ -4,139 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1. Sınıf İlk Okuma Yazma Harf Grupları | e-kurs.com</title>
-  <meta name="description" content="1. sınıf ilk okuma yazma öğretimi için 2025-2026 harf grupları: anetil, okurım, üsöydz, çbgcş, phvğfj.">
+  <meta name="description" content="1. sınıf ilk okuma yazma harf grupları ve tıklanabilir okuma kartları.">
   <link rel="stylesheet" href="/css/style.css">
   <style>
-    :root {
-      --letter-ink: #17211f;
-      --letter-muted: #596963;
-      --letter-paper: #fffaf0;
-      --letter-line: #e0d7c7;
-      --letter-green: #24443e;
-      --coral: #e96142;
-      --teal: #2f9b8b;
-      --gold: #d99524;
-      --blue: #4b73bd;
-      --plum: #935c98;
-    }
-    .reading-page { background: var(--letter-paper); color: var(--letter-ink); }
-    .reading-hero { background: #17342f; color: #fff8e8; padding: clamp(34px, 6vw, 76px) 0; }
-    .reading-hero-grid { display: grid; grid-template-columns: minmax(280px, .9fr) minmax(300px, 1.1fr); gap: clamp(22px, 5vw, 58px); align-items: center; }
-    .reading-eyebrow { display: inline-flex; margin-bottom: 12px; color: #f2ba4a; font-size: .86rem; font-weight: 900; text-transform: uppercase; }
-    .reading-hero h1 { max-width: 12ch; margin: 0 0 18px; font-size: clamp(2.65rem, 7vw, 5.4rem); line-height: .94; letter-spacing: 0; }
-    .reading-lead { max-width: 58ch; margin: 0; color: #efe4cd; font-size: clamp(1.06rem, 2vw, 1.25rem); }
-    .board-preview { display: grid; gap: 14px; padding: 18px; border: 1px solid rgb(255 248 232 / .36); border-radius: 10px; background: rgb(255 255 255 / .08); box-shadow: 0 22px 54px rgb(0 0 0 / .22); }
-    .board-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
-    .board-card { min-height: 144px; display: grid; align-content: center; gap: 10px; padding: 12px; border-radius: 8px; background: #f8f4e8; color: #111; border-top: 7px solid var(--accent); }
-    .board-card span { color: var(--accent); font-weight: 900; }
-    .board-card strong { font-size: clamp(1.45rem, 2.2vw, 2rem); line-height: 1.24; word-spacing: .16em; }
-    .reading-main { padding: clamp(24px, 5vw, 64px) 0; }
-    .reading-section { margin-top: clamp(30px, 5vw, 60px); }
-    .reading-section:first-child { margin-top: 0; }
-    .reading-section-head { max-width: 760px; margin-bottom: 22px; }
-    .reading-section-head .label { margin: 0 0 6px; color: #c95635; font-size: .8rem; font-weight: 900; text-transform: uppercase; }
-    .reading-section-head h2 { margin: 0 0 8px; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.12; }
-    .reading-section-head p { margin: 0; color: var(--letter-muted); font-size: 1.04rem; }
-    .learning-order { display: grid; grid-template-columns: minmax(180px, .32fr) minmax(260px, .68fr); gap: 20px; align-items: center; padding-bottom: 30px; border-bottom: 1px solid var(--letter-line); }
-    .all-letters { margin: 0; color: var(--letter-green); font-size: clamp(1.25rem, 4vw, 2.65rem); font-weight: 900; line-height: 1.36; overflow-wrap: anywhere; }
-    .title-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
-    .title-pill { display: grid; min-height: 96px; align-content: center; gap: 4px; padding: 14px; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--letter-line)); border-left: 8px solid var(--accent); border-radius: 8px; background: #fffdf7; text-decoration: none; box-shadow: 0 10px 24px rgb(38 32 18 / .07); }
-    .title-pill span { color: var(--letter-muted); font-size: .92rem; font-weight: 800; }
-    .title-pill strong { color: var(--accent); font-size: clamp(1.14rem, 2vw, 1.46rem); line-height: 1.32; word-spacing: .18em; }
-    .group-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
-    .group-card { display: grid; grid-template-rows: auto auto auto 1fr; min-height: 340px; padding: 18px; border: 1px solid var(--letter-line); border-top: 8px solid var(--accent); border-radius: 8px; background: #fffdf7; box-shadow: 0 12px 30px rgb(38 32 18 / .08); }
-    .accent-coral { --accent: var(--coral); }
-    .accent-teal { --accent: var(--teal); }
-    .accent-gold { --accent: var(--gold); }
-    .accent-blue { --accent: var(--blue); }
-    .accent-plum { --accent: var(--plum); }
-    .group-meta { display: flex; gap: 10px; align-items: center; min-height: 42px; }
-    .group-number { display: inline-grid; width: 38px; height: 38px; place-items: center; flex: 0 0 auto; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 900; }
-    .group-card h3 { margin: 0; font-size: 1.05rem; line-height: 1.2; }
-    .word { margin: 22px 0 8px; color: var(--accent); font-size: clamp(1.75rem, 3vw, 2.2rem); font-weight: 900; line-height: 1.25; word-spacing: .16em; }
-    .sound-label { margin: 0 0 10px; color: var(--letter-muted); font-size: .9rem; font-weight: 800; }
-    .letters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-self: end; margin: 0; padding: 0; list-style: none; }
-    .letters li { display: grid; min-height: 78px; place-items: center; align-content: center; border: 1px solid color-mix(in srgb, var(--accent) 55%, white); border-radius: 8px; background: color-mix(in srgb, var(--accent) 14%, white); font-weight: 900; }
-    .letters span { display: block; font-size: clamp(2.15rem, 4vw, 3rem); line-height: 1; }
-    .letters small { display: block; color: color-mix(in srgb, var(--accent) 78%, black); font-size: 1.05rem; line-height: 1.1; }
-    .simple-table { overflow-x: auto; border: 1px solid var(--letter-line); border-radius: 8px; background: #fffdf7; }
-    .simple-table table { width: 100%; min-width: 640px; border-collapse: collapse; }
-    .simple-table th, .simple-table td { padding: 15px 18px; border-bottom: 1px solid var(--letter-line); text-align: left; }
-    .simple-table th { background: #f4ead4; font-size: .9rem; text-transform: uppercase; }
-    .simple-table tr:last-child td { border-bottom: 0; }
-    @media (max-width: 1100px) { .group-grid, .title-list, .board-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 860px) { .reading-hero-grid, .learning-order { grid-template-columns: 1fr; } }
-    @media (max-width: 620px) { .group-grid, .title-list, .board-row { grid-template-columns: 1fr; } .group-card { min-height: 300px; } .word { font-size: 2rem; } }
+    :root{--ink:#17211f;--muted:#596963;--paper:#fffaf0;--line:#e0d7c7;--coral:#e96142;--teal:#2f9b8b;--gold:#d99524;--blue:#4b73bd;--plum:#935c98}
+    body{background:var(--paper);color:var(--ink)}
+    .letter-hero{background:#17342f;color:#fff8e8;padding:54px 0}
+    .letter-hero .container{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(300px,1.15fr);gap:34px;align-items:center}
+    .letter-hero h1{max-width:12ch;margin:0 0 16px;font-size:clamp(2.8rem,7vw,5.4rem);line-height:.95;font-weight:950;letter-spacing:0}
+    .letter-hero p{max-width:58ch;margin:0;color:#efe4cd;font-size:1.15rem}
+    .eyebrow-line{display:inline-block;margin-bottom:10px;color:#f2ba4a;font-weight:950;text-transform:uppercase}
+    .hero-board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+    .hero-board-card{min-height:142px;display:grid;align-content:center;gap:8px;padding:14px;border-top:8px solid var(--accent);border-radius:8px;background:#fff8e8;color:#17211f}
+    .hero-board-card span{color:var(--accent);font-weight:950}.hero-board-card strong{font-size:clamp(1.3rem,2.2vw,2rem);word-spacing:.16em;line-height:1.25}
+    .letter-main{padding:42px 0 58px}.section-head{margin-bottom:18px}.section-label{margin:0 0 7px;color:#c95635;font-size:.8rem;font-weight:950;text-transform:uppercase}.section-head h2{margin:0;font-size:clamp(1.9rem,3vw,2.7rem)}
+    .learn-order{display:grid;grid-template-columns:minmax(180px,.32fr) minmax(260px,.68fr);gap:22px;align-items:center;padding-bottom:34px;border-bottom:1px solid var(--line)}
+    .all-letters{margin:0;color:#24443e;font-size:clamp(1.25rem,4vw,2.65rem);font-weight:950;line-height:1.35;overflow-wrap:anywhere}
+    .title-list,.group-grid,.reader-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.letter-section{margin-top:42px}
+    .title-pill{display:grid;min-height:96px;align-content:center;gap:4px;padding:14px;border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-left:8px solid var(--accent);border-radius:8px;background:#fffdf7;text-decoration:none;box-shadow:0 10px 24px rgb(38 32 18/.07)}
+    .title-pill span{color:var(--muted);font-weight:850}.title-pill strong{color:var(--accent);font-size:1.35rem;word-spacing:.18em;line-height:1.28}
+    .accent-coral{--accent:var(--coral)}.accent-teal{--accent:var(--teal)}.accent-gold{--accent:var(--gold)}.accent-blue{--accent:var(--blue)}.accent-plum{--accent:var(--plum)}
+    .group-card{display:grid;grid-template-rows:auto auto auto 1fr;min-height:330px;padding:18px;border:1px solid var(--line);border-top:8px solid var(--accent);border-radius:8px;background:#fffdf7;box-shadow:0 12px 30px rgb(38 32 18/.08)}
+    .group-meta{display:flex;gap:10px;align-items:center}.group-number{display:grid;width:38px;height:38px;place-items:center;border-radius:50%;background:var(--accent);color:white;font-weight:950}.group-card h3{margin:0;font-size:1.05rem}.word{margin:20px 0 8px;color:var(--accent);font-size:clamp(1.75rem,3vw,2.2rem);font-weight:950;word-spacing:.16em}.sound-label{margin:0 0 10px;color:var(--muted);font-weight:850}
+    .letters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}.letters li{display:grid;min-height:78px;place-items:center;align-content:center;border:1px solid color-mix(in srgb,var(--accent) 55%,white);border-radius:8px;background:color-mix(in srgb,var(--accent) 14%,white);cursor:pointer;font-weight:950;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}.letters li:hover,.letters li:focus-visible{border-color:var(--accent);box-shadow:0 10px 18px rgb(38 32 18/.12);outline:3px solid color-mix(in srgb,var(--accent) 24%,transparent);outline-offset:2px;transform:translateY(-2px)}.letters span{display:block;font-size:clamp(2.15rem,4vw,3rem);line-height:1}.letters small{display:block;color:color-mix(in srgb,var(--accent) 78%,black);font-size:1.05rem;line-height:1.1}
+    .reader-card{border:1px solid color-mix(in srgb,var(--accent) 42%,var(--line));border-top:8px solid var(--accent);border-radius:8px;background:#fffdf7;box-shadow:0 12px 30px rgb(38 32 18/.08);overflow:hidden}.reader-card summary{display:grid;gap:8px;min-height:134px;align-content:center;padding:18px;cursor:pointer;list-style:none}.reader-card summary::-webkit-details-marker{display:none}.reader-card summary:after{content:'Kartı aç';width:fit-content;margin-top:4px;padding:7px 11px;border-radius:999px;background:color-mix(in srgb,var(--accent) 14%,white);color:color-mix(in srgb,var(--accent) 78%,black);font-size:.88rem;font-weight:950}.reader-card[open] summary:after{content:'Kartı kapat'}.reader-card summary span{color:var(--muted);font-weight:850}.reader-card summary strong{color:var(--accent);font-size:1.7rem;word-spacing:.2em}.reader-content{display:grid;gap:10px;padding:0 18px 18px}.reader-title{margin:8px 0 0;color:var(--muted);font-size:.9rem;font-weight:950}.reader-line,.reader-sentence{margin:0;padding:12px;border:1px solid color-mix(in srgb,var(--accent) 35%,white);border-radius:8px;background:color-mix(in srgb,var(--accent) 10%,white);font-size:clamp(1.35rem,2.9vw,2rem);font-weight:950;line-height:1.35;overflow-wrap:anywhere}.reader-sentence{background:#fff8e8}
+    .simple-table{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fffdf7}.simple-table table{width:100%;min-width:640px;border-collapse:collapse}.simple-table th,.simple-table td{padding:15px 18px;border-bottom:1px solid var(--line);text-align:left}.simple-table th{background:#f4ead4;text-transform:uppercase}.simple-table tr:last-child td{border-bottom:0}
+    @media(max-width:1100px){.title-list,.group-grid,.reader-grid,.hero-board{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:860px){.letter-hero .container,.learn-order{grid-template-columns:1fr}}
+    @media(max-width:620px){.title-list,.group-grid,.reader-grid,.hero-board{grid-template-columns:1fr}.group-card{min-height:300px}}
   </style>
 </head>
-<body class="reading-page">
+<body>
   <header class="site-header"><nav class="nav container" aria-label="Ana menü"><a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="logo-mark">e</span><span>e-kurs.com</span></a><button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button><div class="nav-links"><a class="active" href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a></div><div class="nav-actions"><a class="btn btn-light" href="/giris.html">Giriş Yap</a><a class="btn btn-primary" href="/kayit.html">Ücretsiz Başla</a></div></nav></header>
   <main>
-    <section class="reading-hero">
-      <div class="container reading-hero-grid">
-        <div>
-          <span class="reading-eyebrow">1. sınıf ilk okuma yazma</span>
-          <h1>Harf Grupları</h1>
-          <p class="reading-lead">Büyük puntolu, sade ve renklerle ayrılmış ses kartları 1. sınıf öğrencilerinin harfleri tek tek fark etmesine uygun hazırlandı.</p>
-        </div>
-        <div class="board-preview" aria-label="Harf grupları panosu">
-          <div class="board-row">
-            <div class="board-card accent-coral"><span>1. Grup</span><strong>a n e t i l</strong></div>
-            <div class="board-card accent-teal"><span>2. Grup</span><strong>o k u r ı m</strong></div>
-            <div class="board-card accent-gold"><span>3. Grup</span><strong>ü s ö y d z</strong></div>
-            <div class="board-card accent-blue"><span>4. Grup</span><strong>ç b g c ş</strong></div>
-            <div class="board-card accent-plum"><span>5. Grup</span><strong>p h v ğ f j</strong></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container reading-main">
-      <section class="learning-order" aria-labelledby="ogrenme-sirasi">
-        <div class="reading-section-head">
-          <p class="label">Tam sıra</p>
-          <h2 id="ogrenme-sirasi">Öğrenme Sırası</h2>
-        </div>
-        <p class="all-letters">a n e t i l o k u r ı m ü s ö y d z ç b g c ş p h v ğ f j</p>
-      </section>
-
-      <section class="reading-section" aria-labelledby="basliklar">
-        <div class="reading-section-head">
-          <p class="label">Başlık düzeni</p>
-          <h2 id="basliklar">Gruplandırılmış Başlıklar</h2>
-          <p>Her grup ayrı renkle gösterilir; çocuk önce grubu, sonra ses kartlarını takip eder.</p>
-        </div>
-        <nav class="title-list" aria-label="Harf grubu başlıkları">
-          <a class="title-pill accent-coral" href="#grup-1"><span>1. Grup Harfler</span><strong>a n e t i l</strong></a>
-          <a class="title-pill accent-teal" href="#grup-2"><span>2. Grup Harfler</span><strong>o k u r ı m</strong></a>
-          <a class="title-pill accent-gold" href="#grup-3"><span>3. Grup Harfler</span><strong>ü s ö y d z</strong></a>
-          <a class="title-pill accent-blue" href="#grup-4"><span>4. Grup Harfler</span><strong>ç b g c ş</strong></a>
-          <a class="title-pill accent-plum" href="#grup-5"><span>5. Grup Harfler</span><strong>p h v ğ f j</strong></a>
-        </nav>
-      </section>
-
-      <section class="reading-section" aria-labelledby="gruplar">
-        <div class="reading-section-head">
-          <p class="label">Ses kartları</p>
-          <h2 id="gruplar">Sırayla Harf Grupları</h2>
-          <p>Küçük ve büyük harf birlikte gösterildi; kartlar kalabalık olmayan 1. sınıf düzenindedir.</p>
-        </div>
-        <div class="group-grid">
-          <article id="grup-1" class="group-card accent-coral"><div class="group-meta"><span class="group-number">1</span><h3>1. Grup Harfler</h3></div><p class="word">a n e t i l</p><p class="sound-label">Ses kartları</p><ol class="letters"><li><span>a</span><small>A</small></li><li><span>n</span><small>N</small></li><li><span>e</span><small>E</small></li><li><span>t</span><small>T</small></li><li><span>i</span><small>İ</small></li><li><span>l</span><small>L</small></li></ol></article>
-          <article id="grup-2" class="group-card accent-teal"><div class="group-meta"><span class="group-number">2</span><h3>2. Grup Harfler</h3></div><p class="word">o k u r ı m</p><p class="sound-label">Ses kartları</p><ol class="letters"><li><span>o</span><small>O</small></li><li><span>k</span><small>K</small></li><li><span>u</span><small>U</small></li><li><span>r</span><small>R</small></li><li><span>ı</span><small>I</small></li><li><span>m</span><small>M</small></li></ol></article>
-          <article id="grup-3" class="group-card accent-gold"><div class="group-meta"><span class="group-number">3</span><h3>3. Grup Harfler</h3></div><p class="word">ü s ö y d z</p><p class="sound-label">Ses kartları</p><ol class="letters"><li><span>ü</span><small>Ü</small></li><li><span>s</span><small>S</small></li><li><span>ö</span><small>Ö</small></li><li><span>y</span><small>Y</small></li><li><span>d</span><small>D</small></li><li><span>z</span><small>Z</small></li></ol></article>
-          <article id="grup-4" class="group-card accent-blue"><div class="group-meta"><span class="group-number">4</span><h3>4. Grup Harfler</h3></div><p class="word">ç b g c ş</p><p class="sound-label">Ses kartları</p><ol class="letters"><li><span>ç</span><small>Ç</small></li><li><span>b</span><small>B</small></li><li><span>g</span><small>G</small></li><li><span>c</span><small>C</small></li><li><span>ş</span><small>Ş</small></li></ol></article>
-          <article id="grup-5" class="group-card accent-plum"><div class="group-meta"><span class="group-number">5</span><h3>5. Grup Harfler</h3></div><p class="word">p h v ğ f j</p><p class="sound-label">Ses kartları</p><ol class="letters"><li><span>p</span><small>P</small></li><li><span>h</span><small>H</small></li><li><span>v</span><small>V</small></li><li><span>ğ</span><small>Ğ</small></li><li><span>f</span><small>F</small></li><li><span>j</span><small>J</small></li></ol></article>
-        </div>
-      </section>
-
-      <section class="reading-section" aria-labelledby="tablo">
-        <div class="reading-section-head"><p class="label">Hızlı bakış</p><h2 id="tablo">Grup Tablosu</h2></div>
-        <div class="simple-table"><table><thead><tr><th>Grup</th><th>Grup kelimesi</th><th>Harfler</th></tr></thead><tbody><tr><td>1. Grup</td><td>anetil</td><td>a, n, e, t, i, l</td></tr><tr><td>2. Grup</td><td>okurım</td><td>o, k, u, r, ı, m</td></tr><tr><td>3. Grup</td><td>üsöydz</td><td>ü, s, ö, y, d, z</td></tr><tr><td>4. Grup</td><td>çbgcş</td><td>ç, b, g, c, ş</td></tr><tr><td>5. Grup</td><td>phvğfj</td><td>p, h, v, ğ, f, j</td></tr></tbody></table></div>
-      </section>
+    <section class="letter-hero"><div class="container"><div><span class="eyebrow-line">1. sınıf ilk okuma yazma</span><h1>Harf Grupları</h1><p>Harf kutularına tıkla; ilgili okuma kartı aynı sayfada açılsın. İndirme yok, öğrenci doğrudan okur.</p></div><div class="hero-board"><div class="hero-board-card accent-coral"><span>1. Grup</span><strong>a n e t i l</strong></div><div class="hero-board-card accent-teal"><span>2. Grup</span><strong>o k u r ı m</strong></div><div class="hero-board-card accent-gold"><span>3. Grup</span><strong>ü s ö y d z</strong></div><div class="hero-board-card accent-blue"><span>4. Grup</span><strong>ç b g c ş</strong></div><div class="hero-board-card accent-plum"><span>5. Grup</span><strong>p h v ğ f j</strong></div></div></div></section>
+    <div class="container letter-main">
+      <section class="learn-order" aria-labelledby="sirasi"><div class="section-head"><p class="section-label">Tam sıra</p><h2 id="sirasi">Öğrenme Sırası</h2></div><p class="all-letters">a n e t i l o k u r ı m ü s ö y d z ç b g c ş p h v ğ f j</p></section>
+      <section class="letter-section" aria-labelledby="basliklar"><div class="section-head"><p class="section-label">Başlık düzeni</p><h2 id="basliklar">Gruplandırılmış Başlıklar</h2></div><nav class="title-list" aria-label="Harf grubu başlıkları"><a class="title-pill accent-coral" href="#grup-1"><span>1. Grup Harfler</span><strong>a n e t i l</strong></a><a class="title-pill accent-teal" href="#grup-2"><span>2. Grup Harfler</span><strong>o k u r ı m</strong></a><a class="title-pill accent-gold" href="#grup-3"><span>3. Grup Harfler</span><strong>ü s ö y d z</strong></a><a class="title-pill accent-blue" href="#grup-4"><span>4. Grup Harfler</span><strong>ç b g c ş</strong></a><a class="title-pill accent-plum" href="#grup-5"><span>5. Grup Harfler</span><strong>p h v ğ f j</strong></a></nav></section>
+      <section class="letter-section" aria-labelledby="gruplar"><div class="section-head"><p class="section-label">Harf kutuları</p><h2 id="gruplar">Harfe Tıkla, Kartı Aç</h2></div><div class="group-grid">
+        <article id="ses-grup-1" class="group-card accent-coral"><div class="group-meta"><span class="group-number">1</span><h3>1. Grup Harfler</h3></div><p class="word">a n e t i l</p><p class="sound-label">Harflerden birine tıkla</p><ol class="letters"><li><span>a</span><small>A</small></li><li><span>n</span><small>N</small></li><li><span>e</span><small>E</small></li><li><span>t</span><small>T</small></li><li><span>i</span><small>İ</small></li><li><span>l</span><small>L</small></li></ol></article>
+        <article id="ses-grup-2" class="group-card accent-teal"><div class="group-meta"><span class="group-number">2</span><h3>2. Grup Harfler</h3></div><p class="word">o k u r ı m</p><p class="sound-label">Harflerden birine tıkla</p><ol class="letters"><li><span>o</span><small>O</small></li><li><span>k</span><small>K</small></li><li><span>u</span><small>U</small></li><li><span>r</span><small>R</small></li><li><span>ı</span><small>I</small></li><li><span>m</span><small>M</small></li></ol></article>
+        <article id="ses-grup-3" class="group-card accent-gold"><div class="group-meta"><span class="group-number">3</span><h3>3. Grup Harfler</h3></div><p class="word">ü s ö y d z</p><p class="sound-label">Harflerden birine tıkla</p><ol class="letters"><li><span>ü</span><small>Ü</small></li><li><span>s</span><small>S</small></li><li><span>ö</span><small>Ö</small></li><li><span>y</span><small>Y</small></li><li><span>d</span><small>D</small></li><li><span>z</span><small>Z</small></li></ol></article>
+        <article id="ses-grup-4" class="group-card accent-blue"><div class="group-meta"><span class="group-number">4</span><h3>4. Grup Harfler</h3></div><p class="word">ç b g c ş</p><p class="sound-label">Harflerden birine tıkla</p><ol class="letters"><li><span>ç</span><small>Ç</small></li><li><span>b</span><small>B</small></li><li><span>g</span><small>G</small></li><li><span>c</span><small>C</small></li><li><span>ş</span><small>Ş</small></li></ol></article>
+        <article id="ses-grup-5" class="group-card accent-plum"><div class="group-meta"><span class="group-number">5</span><h3>5. Grup Harfler</h3></div><p class="word">p h v ğ f j</p><p class="sound-label">Harflerden birine tıkla</p><ol class="letters"><li><span>p</span><small>P</small></li><li><span>h</span><small>H</small></li><li><span>v</span><small>V</small></li><li><span>ğ</span><small>Ğ</small></li><li><span>f</span><small>F</small></li><li><span>j</span><small>J</small></li></ol></article>
+      </div></section>
+      <section class="letter-section" aria-labelledby="kartlar"><div class="section-head"><p class="section-label">Öğrenci okuma alanı</p><h2 id="kartlar">Açılır Okuma Kartları</h2></div><div class="reader-grid">
+        <details id="grup-1" class="reader-card accent-coral"><summary><span>1. Grup Okuma Kartı</span><strong>a n e t i l</strong></summary><div class="reader-content"><p class="reader-title">Harfleri oku</p><p class="reader-line">a  n  e  t  i  l</p><p class="reader-title">Heceleri oku</p><p class="reader-line">an  at  al  el  et  il  in</p><p class="reader-title">Kelimeleri oku</p><p class="reader-line">anne  nine  lale  tel  el</p><p class="reader-title">Cümleyi oku</p><p class="reader-sentence">Ali lale al.</p></div></details>
+        <details id="grup-2" class="reader-card accent-teal"><summary><span>2. Grup Okuma Kartı</span><strong>o k u r ı m</strong></summary><div class="reader-content"><p class="reader-title">Harfleri oku</p><p class="reader-line">o  k  u  r  ı  m</p><p class="reader-title">Heceleri oku</p><p class="reader-line">ok  ko  ku  ru  um  mı  ra</p><p class="reader-title">Kelimeleri oku</p><p class="reader-line">okul  okur  mor  kuru  nar</p><p class="reader-title">Cümleyi oku</p><p class="reader-sentence">Mert okur.</p></div></details>
+        <details id="grup-3" class="reader-card accent-gold"><summary><span>3. Grup Okuma Kartı</span><strong>ü s ö y d z</strong></summary><div class="reader-content"><p class="reader-title">Harfleri oku</p><p class="reader-line">ü  s  ö  y  d  z</p><p class="reader-title">Heceleri oku</p><p class="reader-line">üs  sö  yö  dü  öz  yaz  diz</p><p class="reader-title">Kelimeleri oku</p><p class="reader-line">söz  yüz  dede  yaz  yıldız</p><p class="reader-title">Cümleyi oku</p><p class="reader-sentence">Duru söz okur.</p></div></details>
+        <details id="grup-4" class="reader-card accent-blue"><summary><span>4. Grup Okuma Kartı</span><strong>ç b g c ş</strong></summary><div class="reader-content"><p class="reader-title">Harfleri oku</p><p class="reader-line">ç  b  g  c  ş</p><p class="reader-title">Heceleri oku</p><p class="reader-line">ça  be  ge  ce  şa  baş  geç</p><p class="reader-title">Kelimeleri oku</p><p class="reader-line">baş  geç  çiçek  gece  çaba</p><p class="reader-title">Cümleyi oku</p><p class="reader-sentence">Çiçek çok güzel.</p></div></details>
+        <details id="grup-5" class="reader-card accent-plum"><summary><span>5. Grup Okuma Kartı</span><strong>p h v ğ f j</strong></summary><div class="reader-content"><p class="reader-title">Harfleri oku</p><p class="reader-line">p  h  v  ğ  f  j</p><p class="reader-title">Heceleri oku</p><p class="reader-line">pa  he  ve  fa  yağ  haf  jap</p><p class="reader-title">Kelimeleri oku</p><p class="reader-line">hava  yağmur  fırın  vapur  pijama</p><p class="reader-title">Cümleyi oku</p><p class="reader-sentence">Hava çok güzel.</p></div></details>
+      </div></section>
+      <section class="letter-section"><div class="section-head"><p class="section-label">Hızlı bakış</p><h2>Grup Tablosu</h2></div><div class="simple-table"><table><thead><tr><th>Grup</th><th>Grup kelimesi</th><th>Harfler</th></tr></thead><tbody><tr><td>1. Grup</td><td>anetil</td><td>a, n, e, t, i, l</td></tr><tr><td>2. Grup</td><td>okurım</td><td>o, k, u, r, ı, m</td></tr><tr><td>3. Grup</td><td>üsöydz</td><td>ü, s, ö, y, d, z</td></tr><tr><td>4. Grup</td><td>çbgcş</td><td>ç, b, g, c, ş</td></tr><tr><td>5. Grup</td><td>phvğfj</td><td>p, h, v, ğ, f, j</td></tr></tbody></table></div></section>
     </div>
   </main>
   <footer class="footer"><div class="container footer-grid"><div><a class="logo footer-logo" href="/index.html"><span class="logo-mark">e</span><span>e-kurs.com</span></a><p>Türkiye K12 öğrencileri için sınıf, ders, ünite, test ve takip odaklı öğrenme platformu.</p></div><div class="footer-links"><a href="/siniflar/index.html">Sınıflar</a><a href="/siniflar/1-sinif/index.html">1. Sınıf</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a></div></div></footer>
   <script src="/js/main.js"></script>
+  <script>
+    function openCard(id){var target=document.getElementById(id);if(!target||target.tagName.toLowerCase()!=='details')return;target.open=true;setTimeout(function(){target.scrollIntoView({block:'start',behavior:'smooth'});},30)}
+    function openHashCard(){var id=window.location.hash.slice(1);if(id)openCard(id)}
+    document.addEventListener('click',function(event){var titleLink=event.target.closest('a[href^="#grup-"]');var letter=event.target.closest('.letters li');var id='';if(titleLink){id=titleLink.getAttribute('href').slice(1)}else if(letter){var group=letter.closest('.group-card');if(group&&group.id.indexOf('ses-')===0)id=group.id.replace('ses-','')}if(!id)return;event.preventDefault();openCard(id);if(window.location.hash!=='#'+id)window.location.hash=id});
+    document.querySelectorAll('.letters li').forEach(function(letter){letter.setAttribute('role','button');letter.setAttribute('tabindex','0');letter.setAttribute('aria-label','Okuma kartını aç');letter.addEventListener('keydown',function(event){if(event.key==='Enter'||event.key===' '){event.preventDefault();letter.click()}})});
+    window.addEventListener('hashchange',openHashCard);openHashCard();
+  </script>
 </body>
 </html>
