@@ -16,10 +16,11 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -142,7 +143,7 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
   font-weight: 850;
 }
 
-.skills-shell { background: #fff; }
+.skills-shell { overflow-x: hidden; background: #fff; }
 .skills-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 290px;
@@ -194,8 +195,9 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
 .topic-sidebar strong { font-size: 0.9rem; color: var(--muted); }
 .topic-sidebar a { color: #334155; font-size: 0.93rem; font-weight: 850; text-decoration: none; }
 .topic-sidebar a:hover { color: var(--blue-dark); }
-.skill-sections { display: grid; gap: 18px; }
+.skill-sections { display: grid; gap: 18px; min-width: 0; }
 .skill-section {
+  min-width: 0;
   scroll-margin-top: 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -220,6 +222,7 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
   border-radius: var(--radius) var(--radius) 0 0;
 }
 .skill-heading:hover { background: #f7fbff; }
+.skill-heading > div { min-width: 0; }
 .skill-letter {
   display: inline-grid;
   width: 42px;
@@ -231,8 +234,8 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
   color: #fff;
   font-weight: 950;
 }
-.skill-heading h2 { margin: 0; font-size: 1.55rem; }
-.skill-heading p { margin: 2px 0 0; color: var(--muted); }
+.skill-heading h2 { margin: 0; font-size: 1.55rem; overflow-wrap: anywhere; }
+.skill-heading p { margin: 2px 0 0; color: var(--muted); overflow-wrap: anywhere; }
 .open-label {
   margin-left: auto;
   color: var(--blue-dark);
@@ -250,10 +253,11 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
 }
 .skill-link {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto minmax(0, 1fr);
   gap: 10px;
   align-items: start;
   min-height: 58px;
+  min-width: 0;
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -273,8 +277,8 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
   font-size: 0.88rem;
   font-weight: 950;
 }
-.skill-link strong { display: block; margin-bottom: 2px; font-size: 0.98rem; }
-.skill-link span:last-child { color: var(--muted); font-size: 0.86rem; font-weight: 750; }
+.skill-link strong { display: block; margin-bottom: 2px; font-size: 0.98rem; overflow-wrap: anywhere; }
+.skill-link span:last-child { min-width: 0; color: var(--muted); font-size: 0.86rem; font-weight: 750; overflow-wrap: anywhere; }
 .bank-link { grid-column: 1 / -1; border-style: dashed; }
 .exam-strip {
   display: grid;
@@ -293,6 +297,7 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
 }
 .exam-card:hover { border-color: #9ec5ff; box-shadow: 0 10px 22px rgb(15 23 42 / 0.08); }
 
+.lead, .progress-panel p, .topic-sidebar a, .exam-card, .card, .resource-card { overflow-wrap: anywhere; }
 .accent-coral, .accent-teal, .accent-gold, .accent-blue, .accent-plum, .accent-rose { --accent: var(--blue); }
 .theme-list, .theme-card, .topic-list, .theme-actions { display: initial; }
 
@@ -303,9 +308,11 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; letter-spacing: 
   .skill-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {
+  .container, .nav { width: min(100% - 32px, 1120px); }
   .nav { align-items: flex-start; flex-direction: column; }
   .grid-auto, .grid-3, .resources, .exam-strip { grid-template-columns: 1fr; }
   .progress-row { grid-template-columns: 1fr; }
   .skill-heading { align-items: flex-start; flex-wrap: wrap; }
-  .open-label { width: 100%; margin-left: 54px; }
+  .skill-heading > div { flex: 1 1 calc(100% - 54px); }
+  .open-label { width: calc(100% - 54px); margin-left: 54px; }
 }
