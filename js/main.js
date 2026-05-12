@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.body.classList.add('has-focus-mode');
     const focusBar=document.createElement('div');
     focusBar.className='focus-tools';
-    focusBar.innerHTML='<button class="focus-toggle" type="button" aria-pressed="false">Odak Modu</button><span class="focus-note">Sadece soru ve cevaplar kalsin.</span>';
+    focusBar.innerHTML='<button class="focus-toggle" type="button" aria-pressed="false">Odak Modu</button><span class="focus-note">Sadece soru ve cevaplar kalsın.</span>';
     const main=document.querySelector('main')||document.body;
     main.insertBefore(focusBar,main.firstChild);
     const focusButton=focusBar.querySelector('.focus-toggle');
     focusButton.addEventListener('click',()=>{
       const active=document.body.classList.toggle('focus-mode');
       focusButton.setAttribute('aria-pressed',active?'true':'false');
-      focusButton.textContent=active?'Odak Modundan Cik':'Odak Modu';
+      focusButton.textContent=active?'Odak Modundan Çık':'Odak Modu';
       if(active){
         quizRoot.scrollIntoView({behavior:'smooth',block:'start'});
       }
@@ -37,19 +37,21 @@ document.addEventListener('DOMContentLoaded',()=>{
   const feedback=document.getElementById('feedback')||document.getElementById('feed');
   const hint=document.getElementById('hintBox')||document.getElementById('hint');
   const topic=document.getElementById('topicCode')||document.getElementById('code');
+  const fold=text=>(text||'').toLocaleLowerCase('tr-TR').replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s').replace(/ı/g,'i').replace(/ö/g,'o').replace(/ç/g,'c');
   if(feedback&&hint&&topic){
     const advisor=document.createElement('div');
     advisor.className='adaptive-advisor';
-    advisor.innerHTML='<strong>Akilli onerim:</strong> Zorlanirsan ipucunu ac, sonra bir onceki mikro kazanimi tekrar et.';
+    advisor.innerHTML='<strong>Akıllı önerim:</strong> Zorlanırsan ipucunu aç, sonra bir önceki mikro kazanımı tekrar et.';
     hint.parentNode.insertBefore(advisor,hint.nextSibling);
     const observer=new MutationObserver(()=>{
-      const text=(feedback.textContent||'').toLocaleLowerCase('tr-TR');
+      const text=fold(feedback.textContent);
+      advisor.classList.remove('good');
       if(text.includes('dogru cevap:')||text.includes('bir daha')||text.includes('yanlis')){
         advisor.classList.add('show');
-        advisor.innerHTML='<strong>Akilli onerim:</strong> '+topic.textContent+' icin once ipucunu oku. Arka arkaya zorlanirsan bir onceki gorevi tekrar ederek guclen.';
+        advisor.innerHTML='<strong>Akıllı önerim:</strong> '+topic.textContent+' için önce ipucunu oku. Arka arkaya zorlanırsan bir önceki görevi tekrar ederek güçlen.';
       }else if(text.includes('harika')||text.includes('dogru cevap')){
         advisor.classList.add('show','good');
-        advisor.innerHTML='<strong>Super seri!</strong> Bu hizla devam et; puanin yildiz rozetine yaklasiyor.';
+        advisor.innerHTML='<strong>Süper seri!</strong> Bu hızla devam et; puanın yıldız rozetine yaklaşıyor.';
       }
     });
     observer.observe(feedback,{childList:true,characterData:true,subtree:true});
