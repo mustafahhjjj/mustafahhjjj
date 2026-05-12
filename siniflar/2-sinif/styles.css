@@ -197,3 +197,36 @@ h3, .skill-card strong, .exam-card h3 { font-size: 18px !important; font-weight:
   .skill-list, .student-cards, .exam-grid { grid-template-columns: 1fr !important; }
   .skill-card { min-height: 104px !important; }
 }
+
+/* Smart progress and medal layer */
+.theme-card { --progress: 0%; }
+.theme-progress::after { width: var(--progress, 0%) !important; }
+.theme-card.is-complete {
+  border-color: rgba(255, 152, 0, .55) !important;
+  box-shadow: 0 20px 46px rgba(255, 152, 0, .16) !important;
+}
+.theme-medal {
+  display: inline-grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  margin-left: 8px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fff7ad, #ff9800 68%, #d97706);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,.14), 0 10px 22px rgba(255,152,0,.28);
+}
+.theme-card.is-complete .theme-medal::before { content: "★"; }
+.skill-card.is-progressed .mini-progress i::after { width: var(--skill-progress, 0%) !important; }
+.skill-card.is-mastered .skill-code {
+  background: #fff7ed !important;
+  border-color: rgba(255,152,0,.35) !important;
+  color: #c2410c !important;
+}
+.skill-card.is-mastered .mini-progress::after {
+  content: "  Madalya";
+  color: #c2410c;
+  font-weight: 900;
+}
