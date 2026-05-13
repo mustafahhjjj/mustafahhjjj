@@ -1,7 +1,8 @@
 (function(){
-  var assetVersion='20260513-home-stable';
+  var assetVersion='20260513-math-landing-stable';
   var path=(location.pathname||'').replace(/\/+$/,'')||'/';
   var isHomePage=path==='/'||path==='/index.html';
+  var isMathLanding=path==='/dersler/matematik'||path==='/dersler/matematik.html';
   var isGrade2Class=path==='/siniflar/2-sinif';
   var isGrade2TestList=path==='/testler/2-sinif';
   var isGrade2Exam=path==='/testler/2-sinif-deneme-sinavi';
@@ -10,7 +11,7 @@
   var isGeneratedLesson=/^\/siniflar\/(?:[1-9]|1[0-2])-sinif\/[^/]+$/.test(path);
   var isCurriculumShell=path==='/siniflar/ders'||path==='/siniflar/konu';
   var isLightGrade2Page=isGrade2Class||isGrade2TestList||isGrade2Exam||isGrade2MathBank;
-  var isLeanCurriculumPage=isHomePage||isLightGrade2Page||isClassLanding||isGeneratedLesson||isCurriculumShell;
+  var isLeanCurriculumPage=isHomePage||isMathLanding||isLightGrade2Page||isClassLanding||isGeneratedLesson||isCurriculumShell;
 
   function versioned(assetPath){return assetPath+'?v='+assetVersion;}
   function loadCss(href){
