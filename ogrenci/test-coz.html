@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akıllı Test Çöz | e-kurs.com</title>
+  <meta name="description" content="Anında geri bildirim, sesli okuma, öğrenme puanı ve adım adım açıklamalı test çözme ekranı.">
+  <link rel="stylesheet" href="/css/student-panel.css?v=20260513-student-v1">
+  <script src="/js/student-panel.js?v=20260513-student-v2" defer></script>
+</head>
+<body class="student-body">
+<header class="student-header"><nav class="student-container student-nav" aria-label="Öğrenci menüsü"><a class="student-logo" href="/ogrenci/panel.html"><span class="student-logo-mark">e</span><span>e-kurs.com</span></a><button class="student-menu" type="button" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button><div class="student-links"><a href="/ogrenci/panel.html">Ana Panelim</a><a href="/ogrenci/testlerim.html">Testlerim</a><a href="/ogrenci/yanlislarim.html">Yanlışlarım</a><a href="/ogrenci/mustafa-hocaya-sor.html">Mustafa Hoca’ya Sor</a></div><div class="student-actions"><span class="student-pill">Öğrenme Puanı: <b id="solveScore" data-score="72">72 / 100</b></span></div></nav></header>
+<main class="student-container student-main">
+  <section class="page-layout">
+    <article class="student-card" data-question data-score-target="solveScore">
+      <div class="card-head"><div><span class="eyebrow">2. Sınıf Matematik</span><h1 style="margin:.4rem 0 0;font-size:2rem">Toplama Problemi</h1></div><span class="tag warn">Hedef 85</span></div>
+      <div id="questionText"><p>Ayşe’nin 8 kalemi vardı. Arkadaşı ona 3 kalem daha verdi. Ayşe’nin toplam kaç kalemi oldu?</p></div>
+      <div class="hero-cta"><button class="student-btn soft" type="button" data-read="questionText">Soruyu Sesli Oku</button><button class="student-btn yellow" type="button" data-tip="testTip">Mustafa Hoca’dan İpucu Al</button></div>
+      <div class="option-grid" style="margin-top:14px"><button class="answer-option" type="button" data-answer="wrong">10</button><button class="answer-option" type="button" data-answer="correct">11</button><button class="answer-option" type="button" data-answer="wrong">12</button><button class="answer-option" type="button" data-answer="wrong">13</button></div>
+      <div class="explain-box" id="testTip">İpucu veya açıklama burada açılır.</div>
+      <div class="explain-box">Yanıt seçince adım adım açıklama burada açılır.</div>
+      <div class="score-row"><span>Öğrenme Puanı</span><strong id="solveScoreMirror">72 / 100</strong></div>
+      <div class="progress" data-score-bar="solveScore" style="--value:72%"><span></span></div>
+      <div class="hero-cta"><a class="student-btn primary" href="/ogrenci/test-coz.html">Benzer Soru Çöz</a><a class="student-btn soft" href="/siniflar/2-sinif/matematik.html#tema-3">Konuya Dön</a><a class="student-btn yellow" href="/ogrenci/yanlislarim.html">Yanlışlarıma Git</a></div>
+    </article>
+    <aside class="task-list">
+      <article class="student-card"><h2>Öğrenme Puanı Nasıl İşler?</h2><div class="parent-summary"><div class="summary-row"><strong>Doğru cevap</strong><span>Puan artar</span></div><div class="summary-row"><strong>Yanlış cevap</strong><span>Biraz düşer</span></div><div class="summary-row"><strong>Zor soru</strong><span>Daha fazla artırır</span></div><div class="summary-row"><strong>Hedef</strong><span>85 başarılı</span></div></div></article>
+      <article class="student-card assistant-card"><span class="assistant-face">MH</span><h2>Çocuk dili açıklama</h2><p>Yanlış yaptığında yalnızca “yanlış” görmezsin. Cevap küçük adımlarla anlatılır.</p></article>
+    </aside>
+  </section>
+</main>
+</body>
+</html>
