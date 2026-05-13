@@ -39,6 +39,7 @@
   loadCss('/css/math-localized-ux.css');
   loadCss('/css/math-component-layout.css');
   loadCss('/css/test-center.css');
+  loadCss('/css/test-runner.css');
   loadScript('/js/k12-ui.js');
   loadScript('/js/home-polish.js');
   loadScript('/js/k12-gamification.js');
