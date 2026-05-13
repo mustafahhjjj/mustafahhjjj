@@ -33,10 +33,12 @@
   loadCss('/css/k12-gamification.css');
   loadCss('/css/subject-intelligence.css');
   loadCss('/css/micro-skills.css');
+  loadCss('/css/math-curriculum-ux.css');
   loadScript('/js/k12-ui.js');
   loadScript('/js/home-polish.js');
   loadScript('/js/k12-gamification.js');
   loadScript('/js/subject-intelligence.js');
   loadScript('/js/micro-skills.js');
+  loadScript('/js/math-curriculum-ux.js');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
 })();
