@@ -28,9 +28,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       const active=document.body.classList.toggle('focus-mode');
       focusButton.setAttribute('aria-pressed',active?'true':'false');
       focusButton.textContent=active?'Odak Modundan Çık':'Odak Modu';
-      if(active){
-        quizRoot.scrollIntoView({behavior:'smooth',block:'start'});
-      }
+      if(active) quizRoot.scrollIntoView({behavior:'smooth',block:'start'});
     });
   }
 
@@ -58,6 +56,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
 
   if(document.body.classList.contains('home-modern')){
+    document.querySelectorAll('#canli-metrikler [data-countup]').forEach(item=>{
+      if(item.textContent.trim()==='0') item.textContent='...';
+    });
+
     const style=document.createElement('style');
     style.textContent='.stage-tabs-panels{min-height:318px}.daily-skill-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;min-height:104px;margin-top:18px;padding:18px;border:1px solid #bbf7d0;border-radius:24px;background:linear-gradient(135deg,#fff,#ecfdf5);box-shadow:0 12px 32px rgba(15,23,42,.08)}.daily-skill-panel span{color:#0d9464;font-size:.78rem;font-weight:900;text-transform:uppercase}.daily-skill-panel h3{margin:2px 0 4px}.daily-skill-panel p{margin:0}.daily-skill-panel.is-loading{background:#fff}.daily-skill-panel.is-loading h3,.daily-skill-panel.is-loading p{color:transparent;border-radius:999px;background:linear-gradient(90deg,#eef2f7,#dbeafe,#eef2f7);background-size:220% 100%;animation:skeleton 1.1s linear infinite}@media(max-width:640px){.daily-skill-panel{grid-template-columns:1fr}.daily-skill-panel .btn{width:100%}}';
     document.head.appendChild(style);
@@ -102,8 +104,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const dailyText=document.getElementById('dailySkillText');
     const dailyLink=document.getElementById('dailySkillLink');
     document.querySelectorAll('.class-pill').forEach(pill=>{
-      const key=pill.textContent.trim();
-      const data=skillMap[key];
+      const data=skillMap[pill.textContent.trim()];
       if(data){pill.dataset.skillTitle=data[0];pill.dataset.skillText=data[1];pill.dataset.skillUrl=data[2];}
       pill.addEventListener('click',event=>{
         if(!pill.dataset.skillUrl)return;
@@ -143,7 +144,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const trialLabel=document.querySelector('#trialModal .demo-label');
     const trialTitle=document.getElementById('trialTitle');
     const trialText=document.getElementById('trialText');
-    if(trialLabel)trialLabel.textContent='Soft paywall';
+    if(trialLabel)trialLabel.textContent='Ücretsiz deneme eşiği';
     if(trialTitle)trialTitle.textContent='10 soruda %80 başarı!';
     if(trialText)trialText.textContent='Bu harika veriyi kaybetmemek ve yapay zeka analizini görmek için ücretsiz profilini oluştur.';
 
