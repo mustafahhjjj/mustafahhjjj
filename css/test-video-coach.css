@@ -101,6 +101,113 @@ body>.ekurs-video-coach{
   color:#31415a!important;
   font-weight:800;
 }
+.ekurs-video-movie{
+  display:grid;
+  gap:10px;
+  margin:10px 0;
+  padding:12px;
+  border-radius:18px;
+  background:#0f172a;
+  color:#fff;
+  box-shadow:0 18px 42px rgba(15,23,42,.18);
+}
+.ekurs-video-scene{
+  position:relative;
+  min-height:190px;
+  overflow:hidden;
+  border-radius:14px;
+  padding:14px;
+  background:radial-gradient(circle at 22% 12%,rgba(96,165,250,.45),transparent 32%),linear-gradient(135deg,#1d4ed8,#0f766e);
+}
+.ekurs-video-scene-label{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:0 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.16);
+  color:#e0f2fe;
+  font-size:12px;
+  font-weight:900;
+}
+.ekurs-video-formula{
+  margin-top:22px;
+  font-size:42px;
+  line-height:1;
+  font-weight:950;
+  color:#fff;
+  text-shadow:0 8px 18px rgba(2,8,23,.25);
+  animation:ekursMoviePop 8s ease-in-out infinite;
+}
+.ekurs-video-blocks{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  margin-top:18px;
+}
+.ekurs-video-blocks span{
+  display:grid;
+  place-items:center;
+  min-height:42px;
+  border-radius:12px;
+  background:rgba(255,255,255,.92);
+  color:#10233f;
+  font-weight:950;
+  opacity:.2;
+  transform:translateY(10px);
+  animation:ekursBlockIn 8s ease-in-out infinite;
+}
+.ekurs-video-blocks span:nth-child(2){animation-delay:.35s;}
+.ekurs-video-blocks span:nth-child(3){animation-delay:.7s;}
+.ekurs-video-blocks span:nth-child(4){animation-delay:1.05s;}
+.ekurs-video-result{
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:12px;
+  background:#facc15;
+  color:#10233f;
+  font-weight:950;
+  text-align:center;
+  opacity:.15;
+  animation:ekursResultIn 8s ease-in-out infinite;
+}
+.ekurs-video-caption{
+  margin:0;
+  padding:10px 12px;
+  border-radius:14px;
+  background:rgba(255,255,255,.08);
+  color:#dbeafe!important;
+  font-weight:800;
+}
+.ekurs-video-progress{
+  height:8px;
+  overflow:hidden;
+  border-radius:999px;
+  background:rgba(255,255,255,.16);
+}
+.ekurs-video-progress span{
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:inherit;
+  background:#38bdf8;
+  transform-origin:left;
+  animation:ekursMovieProgress 8s linear infinite;
+}
+.ekurs-video-controls{
+  display:flex;
+  justify-content:flex-end;
+}
+.ekurs-video-mini-btn{
+  min-height:36px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:10px;
+  padding:0 12px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+}
 .ekurs-video-steps{
   display:grid;
   gap:8px;
@@ -143,6 +250,25 @@ body>.ekurs-video-coach{
   background:#fff7ed;
   color:#9a3412!important;
   font-weight:800;
+}
+@keyframes ekursMoviePop{
+  0%,10%{transform:scale(.92);opacity:.4;}
+  20%,80%{transform:scale(1);opacity:1;}
+  100%{transform:scale(.98);opacity:.72;}
+}
+@keyframes ekursBlockIn{
+  0%,18%{opacity:.2;transform:translateY(10px);}
+  35%,82%{opacity:1;transform:translateY(0);}
+  100%{opacity:.2;transform:translateY(8px);}
+}
+@keyframes ekursResultIn{
+  0%,45%{opacity:.15;transform:scale(.96);}
+  58%,88%{opacity:1;transform:scale(1);}
+  100%{opacity:.18;transform:scale(.97);}
+}
+@keyframes ekursMovieProgress{
+  from{transform:scaleX(0);}
+  to{transform:scaleX(1);}
 }
 @media (max-width:860px){
   .ekurs-video-coach{
