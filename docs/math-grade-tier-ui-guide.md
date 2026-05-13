@@ -2,6 +2,16 @@
 
 Bu codex, `e-kurs.com/siniflar/[sinif]/matematik` sayfalarının tek şablon gibi hissettirmemesi için sınıf seviyesine göre farklı arayüz, ton ve pedagojik destek üretir.
 
+## Kaynak Kuralı
+
+Tema adları ürün ekibi tarafından uydurulmaz. Matematik sayfalarındaki sınıf tema listeleri şu resmi kaynaklara göre alınır:
+
+- 1-4. sınıflar: MEB Türkiye Yüzyılı Maarif Modeli İlkokul Matematik Dersi Öğretim Programı (2024)
+- 5-8. sınıflar: MEB Türkiye Yüzyılı Maarif Modeli Ortaokul Matematik Dersi Öğretim Programı (2024)
+- 9-12. sınıflar: MEB Türkiye Yüzyılı Maarif Modeli Ortaöğretim Matematik Dersi Öğretim Programı (Hazırlık, 9-12) (2024)
+
+Oyunlaştırılmış veya pazarlama dili sadece arayüz katmanında kullanılabilir; tema başlığı ve MEB kodu değiştirilmez.
+
 ## Katmanlar
 
 | Sınıf | Tier | UI/UX ilkesi | Öne çıkan araç |
@@ -23,9 +33,10 @@ JS yardımcıları:
 window.EKursGradeTier.getGradeTier(2)  // PRIMARY
 window.EKursGradeTier.getGradeTier(8)  // MIDDLE
 window.EKursGradeTier.getGradeTier(12) // HIGH
+window.EKursGradeTier.themes[8].themes // MEB kaynaklı 8. sınıf tema listesi
 ```
 
-Sayfa yolu `/siniflar/8-sinif/matematik.html` gibi olduğunda JS sınıfı otomatik algılar, `html[data-grade-tier]` ve `body.tier-middle` değerlerini ekler, ardından hero bölümünden sonra yaşa uygun çalışma panelini yerleştirir.
+Sayfa yolu `/siniflar/8-sinif/matematik.html` gibi olduğunda JS sınıfı otomatik algılar, `html[data-grade-tier]` ve `body.tier-middle` değerlerini ekler, ardından hero bölümünden sonra yaşa uygun çalışma panelini ve MEB kaynaklı tema listesini yerleştirir.
 
 ## Next.js Karşılığı
 
