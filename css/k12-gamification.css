@@ -1,0 +1,192 @@
+.gamification-dashboard {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 28px;
+}
+
+.xp-card {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid #bfdbfe;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fff 0%, #eff6ff 55%, #ecfeff 100%);
+  box-shadow: 0 22px 52px rgba(15, 23, 42, .12);
+}
+
+.xp-copy span,
+.diagnostic-title span {
+  color: #1d4ed8;
+  font-size: .78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.xp-copy h2 {
+  margin: 4px 0;
+  color: #102033;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1;
+}
+
+.xp-copy p {
+  margin: 0;
+  color: #5f6b7a;
+  font-weight: 850;
+}
+
+.xp-progress {
+  position: relative;
+  height: 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dbeafe;
+}
+
+.xp-progress i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #f9734d, #facc15);
+  box-shadow: 0 0 18px rgba(249, 115, 77, .35);
+  transition: width .7s ease;
+}
+
+.badge-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.badge-chip {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid #e6ebf2;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.badge-chip svg {
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border-radius: 16px;
+  fill: currentColor;
+}
+
+.badge-chip strong,
+.badge-chip span {
+  display: block;
+}
+
+.badge-chip span {
+  color: #64748b;
+  font-size: .86rem;
+  font-weight: 800;
+}
+
+.badge-chip.is-unlocked {
+  border-color: #bbf7d0;
+  color: #087443;
+}
+
+.badge-chip.is-unlocked svg {
+  background: #dcfce7;
+}
+
+.badge-chip.is-locked {
+  color: #64748b;
+  opacity: .78;
+}
+
+.badge-chip.is-locked svg {
+  background: #f1f5f9;
+}
+
+.diagnostic-recommendations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.diagnostic-title {
+  grid-column: 1 / -1;
+}
+
+.diagnostic-title h2 {
+  margin: 4px 0 0;
+  color: #102033;
+}
+
+.diagnostic-card {
+  display: grid;
+  gap: 6px;
+  min-height: 178px;
+  padding: 16px;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  background: #fff;
+  color: #102033;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.diagnostic-card:hover {
+  transform: translateY(-3px);
+  border-color: #93c5fd;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, .1);
+}
+
+.diagnostic-card b {
+  color: #1d4ed8;
+  font-size: .78rem;
+  text-transform: uppercase;
+}
+
+.diagnostic-card strong {
+  font-size: 1.05rem;
+}
+
+.diagnostic-card span {
+  color: #5f6b7a;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.diagnostic-card em {
+  align-self: end;
+  color: #f9734d;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.gamification-mini {
+  display: inline-grid;
+  gap: 2px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.gamification-mini strong,
+.gamification-mini span {
+  line-height: 1.1;
+}
+
+.gamification-mini span {
+  font-size: .82rem;
+  font-weight: 850;
+}
+
+@media (max-width: 860px) {
+  .badge-row,
+  .diagnostic-recommendations {
+    grid-template-columns: 1fr;
+  }
+}
