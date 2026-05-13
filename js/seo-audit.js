@@ -1,5 +1,5 @@
 (function(){
-  var assetVersion='20260513-kids-polish';
+  var assetVersion='20260513-grade2-data';
   function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
     var src=versioned(href);
