@@ -36,6 +36,7 @@
   loadCss('/css/math-curriculum-ux.css');
   loadCss('/css/math-practice-engine.css');
   loadCss('/css/world-class-math.css');
+  loadCss('/css/math-localized-ux.css');
   loadScript('/js/k12-ui.js');
   loadScript('/js/home-polish.js');
   loadScript('/js/k12-gamification.js');
@@ -44,5 +45,6 @@
   loadScript('/js/math-curriculum-ux.js');
   loadScript('/js/math-practice-engine.js');
   loadScript('/js/world-class-math.js');
+  loadScript('/js/math-localized-ux.js');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
 })();
