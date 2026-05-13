@@ -1,0 +1,188 @@
+.ekurs-read-aloud{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:40px;
+  border:0;
+  border-radius:999px;
+  padding:0 12px;
+  background:#facc15;
+  color:#10233f;
+  font-size:14px;
+  font-weight:950;
+  cursor:pointer;
+  box-shadow:0 10px 22px rgba(250,204,21,.22);
+}
+.ekurs-read-aloud:before{content:"\1F50A";font-size:16px;}
+.ekurs-primary-mascot{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 14px;
+  padding:10px 12px;
+  border-radius:16px;
+  background:#f0f9ff;
+  border:1px solid #bae6fd;
+}
+.ekurs-primary-mascot span,
+.ekurs-learning-mascot{
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  flex:0 0 auto;
+  border-radius:14px;
+  background:#1d4ed8;
+  color:#fff;
+  font-weight:950;
+  box-shadow:0 10px 22px rgba(29,78,216,.18);
+}
+.ekurs-primary-mascot p{
+  margin:0;
+  color:#174ea6;
+  font-weight:850;
+  line-height:1.4;
+}
+.ekurs-status-title{
+  display:block;
+  color:#10233f;
+  font-size:15px;
+  margin-bottom:2px;
+}
+.ekurs-countdown{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:14px;
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+}
+.ekurs-countdown span{
+  color:#52657f;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.ekurs-countdown strong{
+  color:#174ea6;
+  font-size:18px;
+}
+.ekurs-question-map{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:7px;
+  padding:10px;
+  border-radius:14px;
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+}
+.ekurs-question-map span{
+  display:grid;
+  place-items:center;
+  min-height:30px;
+  border-radius:10px;
+  color:#fff;
+  font-size:12px;
+  font-weight:950;
+}
+.ekurs-question-map .is-done{background:#16a34a;}
+.ekurs-question-map .is-current{background:#2563eb;}
+.ekurs-question-map .is-stuck,
+.ekurs-question-map .is-flagged{background:#f97316;}
+.ekurs-question-map .is-empty{background:#cbd5e1;color:#334155;}
+.ekurs-flag-current{
+  min-height:42px;
+  border:1px solid #fed7aa;
+  border-radius:12px;
+  background:#fff7ed;
+  color:#9a3412;
+  font-weight:900;
+  cursor:pointer;
+}
+.ekurs-test-question.is-flagged{
+  outline:3px solid rgba(249,115,22,.18);
+  outline-offset:4px;
+}
+.ekurs-learning-modal{
+  position:relative;
+  z-index:4;
+  border-width:2px!important;
+  box-shadow:0 24px 58px rgba(127,29,29,.18);
+}
+.ekurs-learning-intro{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  margin-bottom:12px;
+  padding:12px;
+  border-radius:16px;
+  background:#fff;
+  border:1px solid #fecaca;
+}
+.ekurs-learning-intro strong{
+  margin:0 0 4px!important;
+  color:#991b1b!important;
+}
+.ekurs-learning-intro p{
+  margin:0!important;
+  color:#5f3030!important;
+  font-weight:800;
+}
+.ekurs-star-burst{
+  display:inline-flex;
+  align-items:center;
+  min-height:36px;
+  margin-bottom:10px;
+  padding:0 12px;
+  border-radius:999px;
+  background:#dcfce7;
+  color:#166534;
+  font-weight:950;
+  animation:ekursStarPop .7s ease-out both;
+}
+.ekurs-star-burst:before{content:"\2726";margin-right:7px;color:#facc15;}
+.ekurs-ai-report{
+  margin-top:18px;
+  padding:16px;
+  border-radius:18px;
+  background:#f8fbff;
+  border:1px solid #dbeafe;
+}
+.ekurs-ai-report h3{
+  margin:10px 0 12px;
+  color:#10233f;
+  font-size:22px;
+}
+.ekurs-ai-report-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.ekurs-ai-report-grid article{
+  padding:12px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #dbeafe;
+}
+.ekurs-ai-report-grid strong{
+  display:block;
+  color:#174ea6;
+  margin-bottom:6px;
+}
+.ekurs-ai-report-grid p{
+  margin:0;
+  color:#52657f;
+  line-height:1.45;
+  font-weight:780;
+}
+@keyframes ekursStarPop{
+  0%{transform:scale(.86);opacity:0;}
+  70%{transform:scale(1.06);opacity:1;}
+  100%{transform:scale(1);opacity:1;}
+}
+@media (max-width:720px){
+  .ekurs-ai-report-grid{grid-template-columns:1fr;}
+  .ekurs-question-map{grid-template-columns:repeat(4,minmax(0,1fr));}
+}
