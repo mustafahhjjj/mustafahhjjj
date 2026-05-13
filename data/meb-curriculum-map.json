@@ -1,0 +1,304 @@
+[
+  {
+    "grade": 1,
+    "gradeName": "1. Sınıf",
+    "tier": "PRIMARY",
+    "tierSettings": {
+      "theme": "playful",
+      "hasVoiceAssist": true,
+      "hasAvatarGuide": true,
+      "hasPositiveReinforcement": true,
+      "hasProgressRings": false,
+      "hasDarkMode": false,
+      "hasPomodoro": false,
+      "examMode": null
+    },
+    "subjects": [
+      { "slug": "turkce", "name": "Türkçe", "themeColor": "red-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/1-sinif/turkce" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/1-sinif/matematik" },
+      { "slug": "hayat-bilgisi", "name": "Hayat Bilgisi", "themeColor": "green-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/1-sinif/hayat-bilgisi" }
+    ]
+  },
+  {
+    "grade": 2,
+    "gradeName": "2. Sınıf",
+    "tier": "PRIMARY",
+    "tierSettings": {
+      "theme": "playful",
+      "hasVoiceAssist": true,
+      "hasAvatarGuide": true,
+      "hasPositiveReinforcement": true,
+      "hasProgressRings": false,
+      "hasDarkMode": false,
+      "hasPomodoro": false,
+      "examMode": null
+    },
+    "subjects": [
+      { "slug": "turkce", "name": "Türkçe", "themeColor": "red-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/2-sinif/turkce" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/2-sinif/matematik" },
+      { "slug": "hayat-bilgisi", "name": "Hayat Bilgisi", "themeColor": "green-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/2-sinif/hayat-bilgisi" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/2-sinif/ingilizce" }
+    ]
+  },
+  {
+    "grade": 3,
+    "gradeName": "3. Sınıf",
+    "tier": "PRIMARY",
+    "tierSettings": {
+      "theme": "playful",
+      "hasVoiceAssist": true,
+      "hasAvatarGuide": true,
+      "hasPositiveReinforcement": true,
+      "hasProgressRings": false,
+      "hasDarkMode": false,
+      "hasPomodoro": false,
+      "examMode": null
+    },
+    "subjects": [
+      { "slug": "turkce", "name": "Türkçe", "themeColor": "red-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/3-sinif/turkce" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/3-sinif/matematik" },
+      { "slug": "hayat-bilgisi", "name": "Hayat Bilgisi", "themeColor": "green-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/3-sinif/hayat-bilgisi" },
+      { "slug": "fen-bilimleri", "name": "Fen Bilimleri", "themeColor": "teal-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/3-sinif/fen-bilimleri" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/3-sinif/ingilizce" }
+    ]
+  },
+  {
+    "grade": 4,
+    "gradeName": "4. Sınıf",
+    "tier": "PRIMARY",
+    "tierSettings": {
+      "theme": "playful",
+      "hasVoiceAssist": true,
+      "hasAvatarGuide": true,
+      "hasPositiveReinforcement": true,
+      "hasProgressRings": false,
+      "hasDarkMode": false,
+      "hasPomodoro": false,
+      "examMode": null
+    },
+    "subjects": [
+      { "slug": "turkce", "name": "Türkçe", "themeColor": "red-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/4-sinif/turkce" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/4-sinif/matematik" },
+      { "slug": "fen-bilimleri", "name": "Fen Bilimleri", "themeColor": "teal-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/4-sinif/fen-bilimleri" },
+      { "slug": "sosyal-bilgiler", "name": "Sosyal Bilgiler", "themeColor": "amber-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/4-sinif/sosyal-bilgiler" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/4-sinif/ingilizce" },
+      { "slug": "din-kulturu-ve-ahlak-bilgisi", "name": "Din Kültürü ve Ahlak Bilgisi", "themeColor": "emerald-400", "hasVoiceAssist": true, "isExamFocus": false, "route": "/siniflar/4-sinif/din-kulturu-ve-ahlak-bilgisi" }
+    ]
+  },
+  {
+    "grade": 5,
+    "gradeName": "5. Sınıf",
+    "tier": "MIDDLE",
+    "tierSettings": {
+      "theme": "clean-engaging",
+      "hasVoiceAssist": false,
+      "hasAvatarGuide": false,
+      "hasPositiveReinforcement": true,
+      "hasProgressRings": true,
+      "hasStreaks": true,
+      "hasClassLeaderboard": true,
+      "hasDarkMode": false,
+      "hasPomodoro": false,
+      "examMode": "LGS_AWARENESS"
+    },
+    "subjects": [
+      { "slug": "turkce", "name": "Türkçe", "themeColor": "red-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/5-sinif/turkce" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/5-sinif/matematik" },
+      { "slug": "fen-bilimleri", "name": "Fen Bilimleri", "themeColor": "teal-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/5-sinif/fen-bilimleri" },
+      { "slug": "sosyal-bilgiler", "name": "Sosyal Bilgiler", "themeColor": "amber-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/5-sinif/sosyal-bilgiler" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/5-sinif/ingilizce" },
+      { "slug": "din-kulturu-ve-ahlak-bilgisi", "name": "Din Kültürü ve Ahlak Bilgisi", "themeColor": "emerald-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/5-sinif/din-kulturu-ve-ahlak-bilgisi" }
+    ]
+  },
+  {
+    "grade": 6,
+    "gradeName": "6. Sınıf",
+    "tier": "MIDDLE",
+    "tierSettings": {
+      "theme": "clean-engaging",
+      "hasVoiceAssist": false,
+      "hasAvatarGuide": false,
+      "hasPositiveReinforcement": true,
+      "hasProgressRings": true,
+      "hasStreaks": true,
+      "hasClassLeaderboard": true,
+      "hasDarkMode": false,
+      "hasPomodoro": false,
+      "examMode": "LGS_AWARENESS"
+    },
+    "subjects": [
+      { "slug": "turkce", "name": "Türkçe", "themeColor": "red-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/6-sinif/turkce" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/6-sinif/matematik" },
+      { "slug": "fen-bilimleri", "name": "Fen Bilimleri", "themeColor": "teal-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/6-sinif/fen-bilimleri" },
+      { "slug": "sosyal-bilgiler", "name": "Sosyal Bilgiler", "themeColor": "amber-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/6-sinif/sosyal-bilgiler" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/6-sinif/ingilizce" },
+      { "slug": "din-kulturu-ve-ahlak-bilgisi", "name": "Din Kültürü ve Ahlak Bilgisi", "themeColor": "emerald-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/6-sinif/din-kulturu-ve-ahlak-bilgisi" }
+    ]
+  },
+  {
+    "grade": 7,
+    "gradeName": "7. Sınıf",
+    "tier": "MIDDLE",
+    "tierSettings": {
+      "theme": "clean-engaging",
+      "hasVoiceAssist": false,
+      "hasAvatarGuide": false,
+      "hasPositiveReinforcement": true,
+      "hasProgressRings": true,
+      "hasStreaks": true,
+      "hasClassLeaderboard": true,
+      "hasDarkMode": false,
+      "hasPomodoro": false,
+      "examMode": "LGS_AWARENESS"
+    },
+    "subjects": [
+      { "slug": "turkce", "name": "Türkçe", "themeColor": "red-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/7-sinif/turkce" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/7-sinif/matematik" },
+      { "slug": "fen-bilimleri", "name": "Fen Bilimleri", "themeColor": "teal-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/7-sinif/fen-bilimleri" },
+      { "slug": "sosyal-bilgiler", "name": "Sosyal Bilgiler", "themeColor": "amber-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/7-sinif/sosyal-bilgiler" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/7-sinif/ingilizce" },
+      { "slug": "din-kulturu-ve-ahlak-bilgisi", "name": "Din Kültürü ve Ahlak Bilgisi", "themeColor": "emerald-500", "hasVoiceAssist": false, "isExamFocus": false, "route": "/siniflar/7-sinif/din-kulturu-ve-ahlak-bilgisi" }
+    ]
+  },
+  {
+    "grade": 8,
+    "gradeName": "8. Sınıf",
+    "tier": "MIDDLE",
+    "tierSettings": {
+      "theme": "clean-engaging",
+      "hasVoiceAssist": false,
+      "hasAvatarGuide": false,
+      "hasPositiveReinforcement": true,
+      "hasProgressRings": true,
+      "hasStreaks": true,
+      "hasClassLeaderboard": true,
+      "hasDarkMode": false,
+      "hasPomodoro": false,
+      "examMode": "LGS_FOCUS"
+    },
+    "subjects": [
+      { "slug": "turkce", "name": "Türkçe", "themeColor": "red-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/8-sinif/turkce" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/8-sinif/matematik" },
+      { "slug": "fen-bilimleri", "name": "Fen Bilimleri", "themeColor": "teal-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/8-sinif/fen-bilimleri" },
+      { "slug": "inkilap-tarihi", "name": "T.C. İnkılap Tarihi ve Atatürkçülük", "themeColor": "red-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/8-sinif/inkilap-tarihi" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/8-sinif/ingilizce" },
+      { "slug": "din-kulturu-ve-ahlak-bilgisi", "name": "Din Kültürü ve Ahlak Bilgisi", "themeColor": "emerald-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/8-sinif/din-kulturu-ve-ahlak-bilgisi" }
+    ]
+  },
+  {
+    "grade": 9,
+    "gradeName": "9. Sınıf",
+    "tier": "HIGH",
+    "tierSettings": {
+      "theme": "minimal-data-dense",
+      "hasVoiceAssist": false,
+      "hasAvatarGuide": false,
+      "hasPositiveReinforcement": false,
+      "hasProgressRings": true,
+      "hasStreaks": true,
+      "hasClassLeaderboard": false,
+      "hasDarkMode": true,
+      "hasPomodoro": true,
+      "examMode": "YKS_ANALYTICS"
+    },
+    "subjects": [
+      { "slug": "turk-dili-ve-edebiyati", "name": "Türk Dili ve Edebiyatı", "themeColor": "rose-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/turk-dili-ve-edebiyati" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/matematik" },
+      { "slug": "fizik", "name": "Fizik", "themeColor": "sky-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/fizik" },
+      { "slug": "kimya", "name": "Kimya", "themeColor": "violet-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/kimya" },
+      { "slug": "biyoloji", "name": "Biyoloji", "themeColor": "green-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/biyoloji" },
+      { "slug": "tarih", "name": "Tarih", "themeColor": "amber-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/tarih" },
+      { "slug": "cografya", "name": "Coğrafya", "themeColor": "cyan-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/cografya" },
+      { "slug": "felsefe", "name": "Felsefe", "themeColor": "indigo-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/felsefe" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/ingilizce" },
+      { "slug": "din-kulturu-ve-ahlak-bilgisi", "name": "Din Kültürü ve Ahlak Bilgisi", "themeColor": "emerald-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/9-sinif/din-kulturu-ve-ahlak-bilgisi" }
+    ]
+  },
+  {
+    "grade": 10,
+    "gradeName": "10. Sınıf",
+    "tier": "HIGH",
+    "tierSettings": {
+      "theme": "minimal-data-dense",
+      "hasVoiceAssist": false,
+      "hasAvatarGuide": false,
+      "hasPositiveReinforcement": false,
+      "hasProgressRings": true,
+      "hasStreaks": true,
+      "hasClassLeaderboard": false,
+      "hasDarkMode": true,
+      "hasPomodoro": true,
+      "examMode": "YKS_ANALYTICS"
+    },
+    "subjects": [
+      { "slug": "turk-dili-ve-edebiyati", "name": "Türk Dili ve Edebiyatı", "themeColor": "rose-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/turk-dili-ve-edebiyati" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/matematik" },
+      { "slug": "fizik", "name": "Fizik", "themeColor": "sky-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/fizik" },
+      { "slug": "kimya", "name": "Kimya", "themeColor": "violet-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/kimya" },
+      { "slug": "biyoloji", "name": "Biyoloji", "themeColor": "green-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/biyoloji" },
+      { "slug": "tarih", "name": "Tarih", "themeColor": "amber-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/tarih" },
+      { "slug": "cografya", "name": "Coğrafya", "themeColor": "cyan-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/cografya" },
+      { "slug": "felsefe", "name": "Felsefe", "themeColor": "indigo-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/felsefe" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/ingilizce" },
+      { "slug": "din-kulturu-ve-ahlak-bilgisi", "name": "Din Kültürü ve Ahlak Bilgisi", "themeColor": "emerald-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/10-sinif/din-kulturu-ve-ahlak-bilgisi" }
+    ]
+  },
+  {
+    "grade": 11,
+    "gradeName": "11. Sınıf",
+    "tier": "HIGH",
+    "tierSettings": {
+      "theme": "minimal-data-dense",
+      "hasVoiceAssist": false,
+      "hasAvatarGuide": false,
+      "hasPositiveReinforcement": false,
+      "hasProgressRings": true,
+      "hasStreaks": true,
+      "hasClassLeaderboard": false,
+      "hasDarkMode": true,
+      "hasPomodoro": true,
+      "examMode": "YKS_ANALYTICS"
+    },
+    "subjects": [
+      { "slug": "turk-dili-ve-edebiyati", "name": "Türk Dili ve Edebiyatı", "themeColor": "rose-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/turk-dili-ve-edebiyati" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/matematik" },
+      { "slug": "fizik", "name": "Fizik", "themeColor": "sky-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/fizik" },
+      { "slug": "kimya", "name": "Kimya", "themeColor": "violet-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/kimya" },
+      { "slug": "biyoloji", "name": "Biyoloji", "themeColor": "green-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/biyoloji" },
+      { "slug": "tarih", "name": "Tarih", "themeColor": "amber-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/tarih" },
+      { "slug": "cografya", "name": "Coğrafya", "themeColor": "cyan-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/cografya" },
+      { "slug": "felsefe", "name": "Felsefe", "themeColor": "indigo-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/felsefe" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/ingilizce" },
+      { "slug": "din-kulturu-ve-ahlak-bilgisi", "name": "Din Kültürü ve Ahlak Bilgisi", "themeColor": "emerald-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/11-sinif/din-kulturu-ve-ahlak-bilgisi" }
+    ]
+  },
+  {
+    "grade": 12,
+    "gradeName": "12. Sınıf",
+    "tier": "HIGH",
+    "tierSettings": {
+      "theme": "minimal-data-dense",
+      "hasVoiceAssist": false,
+      "hasAvatarGuide": false,
+      "hasPositiveReinforcement": false,
+      "hasProgressRings": true,
+      "hasStreaks": true,
+      "hasClassLeaderboard": false,
+      "hasDarkMode": true,
+      "hasPomodoro": true,
+      "examMode": "YKS_ANALYTICS"
+    },
+    "subjects": [
+      { "slug": "turk-dili-ve-edebiyati", "name": "Türk Dili ve Edebiyatı", "themeColor": "rose-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/turk-dili-ve-edebiyati" },
+      { "slug": "matematik", "name": "Matematik", "themeColor": "blue-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/matematik" },
+      { "slug": "fizik", "name": "Fizik", "themeColor": "sky-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/fizik" },
+      { "slug": "kimya", "name": "Kimya", "themeColor": "violet-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/kimya" },
+      { "slug": "biyoloji", "name": "Biyoloji", "themeColor": "green-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/biyoloji" },
+      { "slug": "tarih", "name": "Tarih", "themeColor": "amber-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/tarih" },
+      { "slug": "cografya", "name": "Coğrafya", "themeColor": "cyan-600", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/cografya" },
+      { "slug": "felsefe", "name": "Felsefe", "themeColor": "indigo-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/felsefe" },
+      { "slug": "ingilizce", "name": "İngilizce", "themeColor": "purple-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/ingilizce" },
+      { "slug": "din-kulturu-ve-ahlak-bilgisi", "name": "Din Kültürü ve Ahlak Bilgisi", "themeColor": "emerald-500", "hasVoiceAssist": false, "isExamFocus": true, "route": "/siniflar/12-sinif/din-kulturu-ve-ahlak-bilgisi" }
+    ]
+  }
+]
