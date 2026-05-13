@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Öğrenci Paneli | e-kurs.com</title>
+  <meta name="description" content="e-kurs.com öğrenci paneli; kişisel çalışma önerileri, öğrenme puanı, yanlışlar, rozetler ve veli özeti sunar.">
+  <link rel="stylesheet" href="/css/student-panel.css?v=20260513-student-v1">
+  <script src="/js/student-panel.js?v=20260513-student-v1" defer></script>
+</head>
+<body class="student-body">
+<div class="student-shell">
+  <header class="student-header">
+    <nav class="student-container student-nav" aria-label="Öğrenci menüsü">
+      <a class="student-logo" href="/ogrenci/panel.html"><span class="student-logo-mark">e</span><span>e-kurs.com</span></a>
+      <button class="student-menu" type="button" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="student-links">
+        <a class="active" href="/ogrenci/panel.html">Ana Panelim</a>
+        <a href="/ogrenci/derslerim.html">Derslerim</a>
+        <a href="/ogrenci/odevlerim.html">Ödevlerim</a>
+        <a href="/ogrenci/yanlislarim.html">Yanlışlarım</a>
+        <a href="/ogrenci/basarilarim.html">Başarı Bahçem</a>
+        <a href="/ogrenci/mesajlarim.html">Mesajlarım</a>
+      </div>
+      <div class="student-actions"><span class="student-pill">5 gün seri</span><span class="student-pill hide-mobile">320 yıldız</span></div>
+    </nav>
+  </header>
+
+  <main class="student-container student-main">
+    <section class="student-hero" aria-labelledby="welcome-title">
+      <article class="welcome-card">
+        <span class="eyebrow">Akıllı çalışma merkezi</span>
+        <h1 id="welcome-title">Merhaba Mustafa</h1>
+        <p>Bugün senin için 3 çalışma önerim var. Nereden başlayacağını düşünmene gerek yok; sıradaki küçük hedefin hazır.</p>
+        <div class="hero-cta">
+          <a class="student-btn primary" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html">Çalışmaya Başla</a>
+          <a class="student-btn soft" href="/ogrenci/seviye-haritam.html">Seviye Haritamı Aç</a>
+        </div>
+      </article>
+      <aside class="profile-card" aria-label="Öğrenci özeti">
+        <div class="profile-top"><span class="avatar">M</span><div><b>Mustafa</b><span>2. sınıf öğrencisi</span></div></div>
+        <div class="mini-stats"><div class="mini-stat"><strong>74</strong><span>Matematik puanı</span></div><div class="mini-stat"><strong>18</strong><span>Bugün soru</span></div></div>
+        <a class="student-btn yellow full" href="/ogrenci/basarilarim.html">Sonraki ödüle 8 soru kaldı</a>
+      </aside>
+    </section>
+
+    <section class="dashboard-grid" aria-label="Öğrenci panel kartları">
+      <div class="task-list">
+        <article class="student-card">
+          <div class="card-head"><h2>Bugünkü Görevim</h2><span class="tag good">3 hedef</span></div>
+          <div class="task-list">
+            <div class="task-item"><span class="task-check">1</span><div><b>10 matematik sorusu çöz</b><span>Toplama problemleriyle başlayalım.</span></div></div>
+            <div class="task-item"><span class="task-check">2</span><div><b>1 Türkçe okuma metni tamamla</b><span>Kısa metin ve 5 soru.</span></div></div>
+            <div class="task-item"><span class="task-check">3</span><div><b>1 yanlışını tekrar çöz</b><span>Yanlışlarım defterinden seçildi.</span></div></div>
+          </div>
+          <a class="student-btn primary full" href="/ogrenci/odevlerim.html">Görevlerime Git</a>
+        </article>
+
+        <article class="student-card continue-card">
+          <div class="card-head"><h2>Devam Et</h2><span class="tag">Son çalışma</span></div>
+          <p>2. Sınıf Matematik &gt; Doğal Sayılar &gt; Ritmik Sayma</p>
+          <div class="score-row"><span>Öğrenme Puanı</span><strong id="mathScore" data-score="72">72 / 100</strong></div>
+          <div class="progress" data-score-bar="mathScore" style="--value:72%"><span></span></div>
+          <div class="hero-cta"><a class="student-btn blue" href="/testler/2-sinif-matematik-2-tema-soru-bankasi.html">Devam Et</a><button class="student-btn soft" type="button" data-score-demo="mathScore">Doğru Cevap Demo</button></div>
+        </article>
+
+        <article class="student-card assistant-card">
+          <span class="assistant-face">MH</span>
+          <h2>Mustafa Hoca Yardımcısı</h2>
+          <p>Takıldığında sana çocuk dilinde kısa ipucu verir.</p>
+          <div class="assistant-bubble" id="assistantTip">Bu soruda önce birlikleri sayalım.</div>
+          <button class="student-btn yellow full" type="button" data-tip="assistantTip">Mustafa Hoca’ya Sor</button>
+        </article>
+      </div>
+
+      <div class="task-list">
+        <article class="student-card">
+          <div class="card-head"><h2>Bugün Sana Önerilenler</h2><span class="tag purple">Kişisel</span></div>
+          <div class="recommend-grid">
+            <article class="recommend-card math"><div class="recommend-meta"><span class="subject-chip">Matematik</span><span class="subject-chip">Hedef 85</span></div><h3>Toplama İşlemi Problemleri</h3><p>Bu konuda biraz desteğe ihtiyacın var.</p><a class="student-btn primary" href="/testler/2-sinif-matematik-3-tema-soru-bankasi.html">Başla</a></article>
+            <article class="recommend-card math"><div class="recommend-meta"><span class="subject-chip">Matematik</span><span class="subject-chip">Zor seviye</span></div><h3>Ritmik Sayma</h3><p>Seviyen iyi. Daha zor sorulara geçebilirsin.</p><a class="student-btn soft" href="/siniflar/2-sinif/matematik.html#tema-2">Konuya Git</a></article>
+            <article class="recommend-card turkce"><div class="recommend-meta"><span class="subject-chip">Türkçe</span><span class="subject-chip">Okuma</span></div><h3>Kısa Okuma Metni</h3><p>Bugünkü Türkçe çalışmanı tamamla.</p><a class="student-btn soft" href="/dersler/turkce/index.html">Oku</a></article>
+            <article class="recommend-card english"><div class="recommend-meta"><span class="subject-chip">İngilizce</span><span class="subject-chip">Renkler</span></div><h3>İngilizce Renkler</h3><p>5 dakikalık tekrar sana iyi gelir.</p><a class="student-btn soft" href="/dersler/index.html">Çalış</a></article>
+          </div>
+        </article>
+
+        <article class="student-card" data-question>
+          <div class="card-head"><h2>Hatadan Öğrenme</h2><span class="tag warn">Örnek</span></div>
+          <p>8 + 3 kaç eder?</p>
+          <div class="option-grid"><button class="answer-option" type="button" data-answer="wrong">10</button><button class="answer-option" type="button" data-answer="correct">11</button><button class="answer-option" type="button" data-answer="wrong">12</button><button class="answer-option" type="button" data-answer="wrong">13</button></div>
+          <div class="explain-box">Yanıt seçince adım adım açıklama burada açılır.</div>
+          <div class="hero-cta"><a class="student-btn soft" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html">Benzer Soru Çöz</a><a class="student-btn yellow" href="/siniflar/2-sinif/matematik.html">Konuya Dön</a></div>
+        </article>
+      </div>
+
+      <aside class="task-list">
+        <article class="student-card">
+          <div class="card-head"><h2>Öğrenme Puanım</h2><span class="tag">0-100</span></div>
+          <div class="score-map">
+            <div class="lesson-line"><strong>Matematik <span>74</span></strong><div class="progress" style="--value:74%"><span></span></div></div>
+            <div class="lesson-line"><strong>Türkçe <span>68</span></strong><div class="progress" style="--value:68%"><span></span></div></div>
+            <div class="lesson-line"><strong>Hayat Bilgisi <span>81</span></strong><div class="progress" style="--value:81%"><span></span></div></div>
+            <div class="lesson-line"><strong>İngilizce <span>55</span></strong><div class="progress" style="--value:55%"><span></span></div></div>
+          </div>
+          <a class="student-btn soft full" href="/ogrenci/seviye-haritam.html">Eksiklerimi Göster</a>
+        </article>
+
+        <article class="student-card">
+          <div class="card-head"><h2>Yanlışlarım Defteri</h2><span class="tag warn">18 yanlış</span></div>
+          <p>Son 7 günde 11 yanlış toplama problemlerinden geldi.</p>
+          <a class="student-btn yellow full" href="/ogrenci/yanlislarim.html">Yanlışlarımı Tekrar Çöz</a>
+        </article>
+
+        <article class="student-card">
+          <div class="card-head"><h2>Başarı Bahçem</h2><span class="tag good">3 rozet</span></div>
+          <div class="award-grid" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div class="award-card"><span class="award-icon">85</span><b>Toplama Ustası</b></div><div class="award-card locked"><span class="award-icon">10</span><b>10 Günlük Seri</b></div></div>
+          <a class="student-btn soft full" href="/ogrenci/basarilarim.html">Bahçemi Aç</a>
+        </article>
+      </aside>
+    </section>
+
+    <section class="two-grid" style="margin-top:18px">
+      <article class="student-card">
+        <div class="card-head"><h2>Öğretmen Mesajları</h2><span class="tag">2 yeni</span></div>
+        <div class="message-list"><div class="message-item unread"><span class="task-check">M</span><div><b>Bugün 10 problem çözmeni istiyorum.</b><span>Mustafa Hoca tarafından gönderildi.</span></div></div><div class="message-item"><span class="task-check">S</span><div><b>Yarın sınıfta grafik etkinliği yapacağız.</b><span>Sınıf duyurusu.</span></div></div></div>
+        <a class="student-btn soft" href="/ogrenci/mesajlarim.html">Mesajları Aç</a>
+      </article>
+      <article class="student-card" id="parentSummary">
+        <div class="card-head"><h2>Veliye Göster</h2><span class="tag good">Günlük özet</span></div>
+        <div class="parent-summary"><div class="summary-row"><strong>Çözülen soru</strong><span>18</span></div><div class="summary-row"><strong>Doğru / Yanlış</strong><span>14 / 4</span></div><div class="summary-row"><strong>Çalışma süresi</strong><span>12 dakika</span></div><div class="summary-row"><strong>Zorlanılan konu</strong><span>Toplama problemleri</span></div><div class="summary-row"><strong>Yarın öneri</strong><span>10 problem sorusu</span></div></div>
+        <button class="student-btn primary" type="button" data-copy-summary="parentSummary">Veli Özetini Hazırla</button>
+      </article>
+    </section>
+
+    <footer class="footer-strip"><nav aria-label="Öğrenci alt menü"><a href="/ogrenci/derslerim.html">Derslerim</a><a href="/ogrenci/odevlerim.html">Ödevlerim</a><a href="/ogrenci/seviye-haritam.html">Seviye Haritam</a><a href="/ogrenci/yanlislarim.html">Yanlışlarım</a><a href="/ogrenci/basarilarim.html">Başarılarım</a><a href="/ogrenci/mesajlarim.html">Mesajlarım</a></nav></footer>
+  </main>
+</div>
+</body>
+</html>
