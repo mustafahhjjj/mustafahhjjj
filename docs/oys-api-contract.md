@@ -1,6 +1,6 @@
 # e-kurs.com OYS API Contract
 
-Bu sözleşme öğretmen panelinin Roster, Live Hub, Diagnostic Arena, SmartScore, Skill Plans, Awards, Otonom AI Asistanı, Recommendations ve Analytics modülleri için hedef backend uçlarını tanımlar.
+Bu sözleşme öğretmen panelinin Roster, Live Hub, Diagnostic Arena, SmartScore, Skill Plans, Awards, Otonom AI Asistanı, Recommendations, Analytics, WhatsApp bildirimleri ve background job modülleri için hedef backend uçlarını tanımlar.
 
 ## Auth
 
@@ -109,20 +109,9 @@ Tarayıcı WebSocket açamazsa EventSource ile aynı payload gönderilir.
 
 `POST /api/oys/live-classroom/message`
 
-```json
-{
-  "classId": "2A",
-  "studentId": "stu-123",
-  "template": "together_review",
-  "message": "Bu konuyu birlikte inceleyelim. Önce verilenleri işaretle."
-}
-```
-
 ### Project Question
 
 `POST /api/oys/live-classroom/project-question`
-
-Akıllı tahtaya sınıfta en çok yanlış yapılan soruyu gönderir.
 
 ## Diagnostic Arena
 
@@ -144,17 +133,6 @@ Akıllı tahtaya sınıfta en çok yanlış yapılan soruyu gönderir.
 
 `GET /api/oys/diagnostic/student-level?studentId=stu-123`
 
-```json
-{
-  "studentId": "stu-123",
-  "grade": 6,
-  "estimatedMathGradeLevel": 4.3,
-  "estimatedTurkishGradeLevel": 5.1,
-  "weakSkills": ["MAT.4.1.2", "MAT.5.2.1"],
-  "nextBestActions": ["foundation_practice", "teacher_small_group"]
-}
-```
-
 ### Class Map
 
 `GET /api/oys/diagnostic/class-map?classId=2A`
@@ -163,7 +141,7 @@ Akıllı tahtaya sınıfta en çok yanlış yapılan soruyu gönderir.
 
 `POST /api/oys/smart-score/recalculate`
 
-SmartScore sadece doğru sayısından hesaplanmaz. Minimum girişler:
+Minimum girişler:
 
 - `isCorrect`
 - `difficulty`
@@ -177,43 +155,21 @@ SmartScore sadece doğru sayısından hesaplanmaz. Minimum girişler:
 
 ## Cognitive Misconception Diagnosis
 
-Çeldiricilere bilişsel etiket eklenmelidir.
-
-```json
-{
-  "questionId": "q-778",
-  "choices": [
-    { "key": "A", "isCorrect": false, "cognitiveTag": "adds_denominators_directly" },
-    { "key": "B", "isCorrect": false, "cognitiveTag": "operation_direction_error" },
-    { "key": "C", "isCorrect": true, "cognitiveTag": "mastered" }
-  ]
-}
-```
-
 `GET /api/oys/assistant/misconceptions?classId=2A`
 
-Sınıf bazında kök neden uyarısı döndürür.
+Çeldiricilere bilişsel etiket eklenmelidir.
 
 ## Frustration Engine
 
 `POST /api/oys/telemetry/frustration-signal`
-
-Girişler:
-
-- `thinkingSeconds`
-- `answerChanges`
-- `rapidClicks`
-- `eraseCount`
-- `consecutiveWrong`
-- `activeSeconds`
-- `screenSeconds`
 
 Çıkış:
 
 ```json
 {
   "studentId": "stu-123",
-  "state": "burnout_risk",
+  "state": "frustrated",
+  "severity": "high",
   "loadScore": 92,
   "teacherMessage": "Derin bir nefes al, biraz ara verelim mi?"
 }
@@ -223,35 +179,9 @@ Girişler:
 
 `GET /api/oys/assistant/groups?classId=2A`
 
-K-Means veya benzeri kümeleme çıktısı:
-
-```json
-{
-  "groups": [
-    {
-      "name": "Onluk bozma destek grubu",
-      "level": "foundation",
-      "studentIds": ["stu-123", "stu-128"],
-      "recommendedActivity": "15 dakika tahtada onluk bozma tekrarı"
-    }
-  ]
-}
-```
-
 ## Generative Curriculum
 
 `POST /api/oys/assistant/rewrite-question`
-
-```json
-{
-  "studentId": "stu-123",
-  "interest": "Futbol",
-  "skillCode": "MAT.2.2.1",
-  "questionSkeleton": "28 kalem + 15 kalem"
-}
-```
-
-Yanıt, öğretmen onayına sunulmalıdır; doğrudan öğrenciye yayınlanmamalıdır.
 
 ## Parent Communication Bot
 
@@ -262,20 +192,6 @@ AI veli mesajı pozitif, yapıcı ve uygulanabilir ev önerisi içermelidir.
 ## Recommendations
 
 `GET /api/oys/recommendations?classId=2A`
-
-```json
-{
-  "items": [
-    {
-      "studentId": "stu-123",
-      "studentName": "Efe D.",
-      "skillCode": "MAT.2.3.2",
-      "summary": "Onluk bozma adımında kavramsal eksik yaşıyor.",
-      "actions": ["Alt seviye 3 alıştırma ata", "Öğretmen ipucu gönder", "Veli notu hazırla"]
-    }
-  ]
-}
-```
 
 ## Analytics
 
@@ -289,93 +205,74 @@ AI veli mesajı pozitif, yapıcı ve uygulanabilir ev önerisi içermelidir.
 
 ## Skill Plans & MEB Alignment
 
-### MEB Curriculum
-
-`GET /api/oys/curriculum/meb?grade=2&lesson=matematik`
-
-### Pin Skill
-
-`POST /api/oys/skill-plans/pin`
-
-```json
-{
-  "classId": "2A",
-  "skillCode": "MAT.2.3.2",
-  "targetType": "class",
-  "targetIds": ["2A"],
-  "label": "Öğretmeninin Görevi"
-}
-```
-
-### Textbook Mapping
-
+- `GET /api/oys/curriculum/meb?grade=2&lesson=matematik`
+- `POST /api/oys/skill-plans/pin`
 - `POST /api/oys/textbook-map`
 - `GET /api/oys/textbook-map?bookId=book-123`
-
-```json
-{
-  "bookId": "book-123",
-  "publisher": "MEB",
-  "grade": 2,
-  "lesson": "matematik",
-  "unit": "Doğal Sayılar",
-  "page": 34,
-  "skillCodes": ["MAT.2.1.1", "MAT.2.1.2"]
-}
-```
 
 ## Assignments
 
 `POST /api/oys/assignments`
 
-```json
-{
-  "targetType": "group",
-  "targetIds": ["stu-123", "stu-128"],
-  "skillCode": "MAT.2.3.2",
-  "title": "Onluk bozarak çıkarma telafi görevi",
-  "difficulty": "foundation",
-  "questionCount": 3,
-  "dueAt": "2026-05-15T18:00:00+03:00"
-}
-```
-
 ## Awards & Certificates
 
-### Class Awards
+- `GET /api/oys/awards/class?classId=2A`
+- `POST /api/oys/awards/rules`
+- `POST /api/oys/certificates/mastery.pdf`
+- `PATCH /api/oys/leaderboard/settings`
 
-`GET /api/oys/awards/class?classId=2A`
+## WhatsApp / Notification Services
 
-### Award Rules
+### Queue Weekly Parent Reports
 
-`POST /api/oys/awards/rules`
-
-```json
-{
-  "name": "Toplama Ustası",
-  "conditionType": "skill_mastery",
-  "skillCode": "MAT.2.2.1",
-  "threshold": 85,
-  "visibility": "student_and_teacher"
-}
-```
-
-### Certificates
-
-`POST /api/oys/certificates/mastery.pdf`
-
-### Leaderboard Settings
-
-`PATCH /api/oys/leaderboard/settings`
+`POST /api/oys/notifications/weekly-parent-reports/queue`
 
 ```json
 {
   "classId": "2A",
-  "studentVisible": false,
-  "teacherVisible": true,
-  "sortBy": "weekly_growth"
+  "weekStart": "2026-05-11",
+  "provider": "meta_whatsapp",
+  "requireTeacherApproval": true
 }
 ```
+
+### Send Teacher Approved Message
+
+`POST /api/oys/notifications/whatsapp/send`
+
+```json
+{
+  "studentId": "stu-123",
+  "parentId": "parent-456",
+  "message": "Efe bu hafta problem çözmede çaba gösterdi...",
+  "provider": "meta_whatsapp"
+}
+```
+
+### PDR Alert
+
+`POST /api/oys/notifications/pdr-alert`
+
+```json
+{
+  "studentId": "stu-123",
+  "reason": "frustration_threshold_exceeded",
+  "severity": "high",
+  "summary": "Son 3 soruda hızlı ve yanlış cevap paterni görüldü."
+}
+```
+
+## Background Jobs
+
+- `POST /api/oys/jobs/monday-admin-summary/run`
+- `POST /api/oys/jobs/friday-parent-whatsapp/run`
+- `GET /api/oys/jobs/:jobId/status`
+
+Cron hedefleri:
+
+- Pazartesi 08:00: yönetici PDF raporu ve okul müdürü e-postası.
+- Cuma 17:00: haftalık veli WhatsApp kuyruk hazırlığı.
+- Anlık: PDR uyarısı ve öğretmen panel bildirimi.
 
 ## Exports
 
