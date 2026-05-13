@@ -6,8 +6,13 @@ function ekurs_param($key, $default = '') {
     return isset($_GET[$key]) ? trim((string) $_GET[$key]) : $default;
 }
 
+function ekurs_lower($value) {
+    $value = trim((string) $value);
+    return function_exists('mb_strtolower') ? mb_strtolower($value, 'UTF-8') : strtolower($value);
+}
+
 $grade = ekurs_param('grade', '8');
-$subject = mb_strtolower(ekurs_param('subject', 'matematik'), 'UTF-8');
+$subject = ekurs_lower(ekurs_param('subject', 'matematik'));
 
 $tests = [
     [
@@ -96,7 +101,7 @@ $filtered = array_values(array_filter($tests, function ($test) use ($grade, $sub
     if ($grade !== 'all' && $test['grade'] !== $grade) {
         return false;
     }
-    if ($subject !== 'all' && mb_strtolower($test['subject'], 'UTF-8') !== $subject) {
+    if ($subject !== 'all' && ekurs_lower($test['subject']) !== $subject) {
         return false;
     }
     return true;
@@ -129,6 +134,8 @@ $response = [
             'reason' => 'Son denemelerde kuvvet alma adımlarında hata oranı arttı.',
             'target' => 'M.8.1.1.1',
             'action' => '5 soruluk tekrar testi',
+            'xp' => 75,
+            'questionCount' => 5,
         ],
         [
             'label' => 'Ön koşul önerisi',
@@ -136,6 +143,8 @@ $response = [
             'reason' => 'Bir üst konuya geçmeden önce temel ilişkiyi güçlendirmek gerekir.',
             'target' => 'M.8.1.2.2',
             'action' => 'Kısa pratik başlat',
+            'xp' => 65,
+            'questionCount' => 5,
         ],
     ],
     'dailyChallenge' => [
