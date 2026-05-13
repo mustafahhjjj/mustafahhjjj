@@ -1,0 +1,137 @@
+.math-practice-engine {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #fed7aa;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fff 0%, #fff7ed 100%);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, .08);
+}
+
+.math-practice-engine > span {
+  color: #f9734d;
+  font-size: .74rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.math-practice-engine h3,
+.math-practice-engine p,
+.math-practice-engine strong {
+  margin: 0;
+}
+
+.practice-skill {
+  color: #5f6b7a;
+  font-size: .9rem;
+  font-weight: 850;
+}
+
+.practice-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.practice-meta b {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #fff;
+  color: #102033;
+  font-size: .78rem;
+}
+
+.practice-manipulative {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+  align-items: end;
+  min-height: 64px;
+  padding: 10px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.practice-manipulative b {
+  height: 48px;
+  border-radius: 7px;
+  background: #60a5fa;
+}
+
+.practice-manipulative span {
+  height: 20px;
+  border-radius: 999px;
+  background: #facc15;
+}
+
+.practice-question {
+  color: #102033;
+  font-size: 1.05rem;
+}
+
+.practice-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.practice-answer {
+  min-height: 42px;
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+  padding: 8px 10px;
+  font: inherit;
+  font-weight: 900;
+}
+
+.practice-row button,
+.practice-next {
+  min-height: 42px;
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: #f9734d;
+  color: #fff;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.practice-next {
+  background: #102033;
+}
+
+.practice-feedback {
+  display: grid;
+  gap: 8px;
+}
+
+.practice-feedback > div {
+  padding: 10px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.practice-feedback strong,
+.practice-feedback span {
+  display: block;
+}
+
+.practice-feedback span,
+.practice-feedback li {
+  color: #5f6b7a;
+  font-size: .86rem;
+  font-weight: 820;
+}
+
+.practice-feedback ol {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.practice-feedback .is-correct {
+  border: 1px solid #bbf7d0;
+}
+
+.practice-feedback .is-wrong {
+  border: 1px solid #fecaca;
+}
