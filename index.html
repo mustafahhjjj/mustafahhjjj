@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>e-kurs.com | MEB Uyumlu K-12 Öğrenme Platformu</title>
-  <meta name="description" content="1. sınıftan 12. sınıfa kadar MEB uyumlu dersler, testler, deneme sınavları ve öğrenme puanı sistemi.">
+  <meta name="description" content="1. sınıftan 12. sınıfa kadar MEB uyumlu dersler, testler, deneme sınavları ve videolu konu anlatımları.">
   <style>
     :root {
       --green: #16a34a;
@@ -51,7 +51,6 @@
       border-radius: 999px;
       border: 1px solid transparent;
       font-weight: 900;
-      cursor: pointer;
       text-align: center;
       transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
     }
@@ -66,7 +65,7 @@
     h1 { margin: 16px 0 12px; font-size: clamp(2.25rem, 5vw, 4rem); line-height: 1.05; letter-spacing: 0; }
     .lead { max-width: 720px; margin: 0; color: var(--muted); font-size: 1.08rem; font-weight: 700; }
     .quick-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-top: 22px; }
-    .quick-grid a, .quick-card {
+    .quick-grid a {
       min-height: 58px;
       display: grid;
       place-items: center;
@@ -86,22 +85,10 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
-    .start-card { padding: 22px; }
-    .start-card h2 { margin: 0 0 8px; font-size: 1.45rem; }
-    .start-card p { color: var(--muted); font-weight: 700; }
-    .start-form { display: grid; gap: 10px; }
-    label { display: grid; gap: 6px; color: #475569; font-size: .9rem; font-weight: 900; }
-    select {
-      width: 100%;
-      min-height: 48px;
-      border: 1px solid #cbd5e1;
-      border-radius: 14px;
-      padding: 0 12px;
-      background: #fff;
-      color: var(--text);
-      font: inherit;
-      font-weight: 800;
-    }
+    .start-card { padding: 22px; display: grid; gap: 12px; }
+    .start-card h2 { margin: 0; font-size: 1.45rem; }
+    .start-card p { margin: 0; color: var(--muted); font-weight: 700; }
+    .start-links { display: grid; gap: 10px; }
     .section { padding: 46px 0; }
     .section.alt { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .section-head { margin-bottom: 20px; }
@@ -151,7 +138,7 @@
       <div>
         <span class="eyebrow">MEB uyumlu K-12 öğrenme sistemi</span>
         <h1>Sınıfını seç, derse gir, testi çöz.</h1>
-        <p class="lead">e-kurs.com; 1. sınıftan 12. sınıfa kadar sınıf, ders, konu, test ve deneme akışını tek yerde toplayan sade ve hızlı çalışma alanıdır.</p>
+        <p class="lead">e-kurs.com; 1. sınıftan 12. sınıfa kadar sınıf, ders, konu, videolu anlatım, test ve deneme akışını tek yerde toplayan sade ve hızlı çalışma alanıdır.</p>
         <div class="quick-grid" aria-label="Sınıf seçimi">
           <a href="/siniflar/1-sinif/index.html">1. Sınıf</a>
           <a href="/siniflar/2-sinif/index.html">2. Sınıf</a>
@@ -168,27 +155,13 @@
         </div>
       </div>
       <aside class="start-card" aria-label="Hızlı başlangıç">
-        <h2>Hızlı test başlat</h2>
-        <p>Sınıf ve testi seç; buton seni doğrudan çalışan sayfaya götürür.</p>
-        <form class="start-form" id="quickStart">
-          <label>Sınıf
-            <select id="quickGrade">
-              <option value="2">2. Sınıf</option>
-              <option value="3">3. Sınıf</option>
-              <option value="5">5. Sınıf</option>
-              <option value="8">8. Sınıf LGS</option>
-              <option value="11">11. Sınıf YKS</option>
-            </select>
-          </label>
-          <label>Çalışma
-            <select id="quickTarget">
-              <option value="deneme">Deneme sınavı</option>
-              <option value="matematik">Matematik testi</option>
-              <option value="sinif">Sınıf sayfası</option>
-            </select>
-          </label>
-          <button class="btn btn-primary" type="submit">Başla</button>
-        </form>
+        <h2>Hızlı başlangıç</h2>
+        <p>JavaScript gerektirmeyen doğrudan çalışan bağlantılar.</p>
+        <div class="start-links">
+          <a class="btn btn-primary" href="/siniflar/2-sinif/matematik/">Videolu 2. Sınıf Matematik</a>
+          <a class="btn btn-light" href="/siniflar/1-sinif/matematik.html">1. Sınıf Matematik</a>
+          <a class="btn btn-blue" href="/testler/2-sinif-deneme-sinavi.html">2. Sınıf Deneme</a>
+        </div>
       </aside>
     </div>
   </section>
@@ -197,41 +170,41 @@
     <div class="container">
       <div class="section-head">
         <h2>Öne çıkan çalışma yolları</h2>
-        <p>En çok kullanılan sınıf, ders ve deneme bağlantıları gerçek sayfalara gider.</p>
+        <p>En çok kullanılan sınıf, ders, konu ve deneme bağlantıları gerçek sayfalara gider.</p>
       </div>
       <div class="grid-3">
         <article class="card">
-          <span class="badge">İlkokul modeli</span>
+          <span class="badge">Geri getirilen sayfa</span>
+          <h3>1. Sınıf Matematik</h3>
+          <p>Büyük puntolu, çocuk dostu konu ve test akışı.</p>
+          <ul class="link-list">
+            <li><a href="/siniflar/1-sinif/index.html">1. sınıf ana sayfa <span>→</span></a></li>
+            <li><a href="/siniflar/1-sinif/matematik.html">Matematik sayfası <span>→</span></a></li>
+            <li><a href="/siniflar/1-sinif/matematik/rakamlari-tanima-test.html">Rakamları tanıma testi <span>→</span></a></li>
+          </ul>
+          <a class="btn btn-light" href="/siniflar/1-sinif/matematik.html">1. Sınıfı Aç</a>
+        </article>
+        <article class="card">
+          <span class="badge">Videolu anlatım</span>
           <h3>2. Sınıf Matematik</h3>
-          <p>Büyük butonlu, çocuk dostu matematik çalışma alanı.</p>
+          <p>Dünkü ayrıntılı şablon: tema, konu, test ve videolu destek.</p>
           <ul class="link-list">
-            <li><a href="/siniflar/2-sinif/matematik.html">Matematik sayfası <span>→</span></a></li>
+            <li><a href="/siniflar/2-sinif/matematik/">Matematik sayfası <span>→</span></a></li>
+            <li><a href="/siniflar/2-sinif/matematik/dogal-sayilar.html">Doğal sayılar videolu konu <span>→</span></a></li>
             <li><a href="/siniflar/2-sinif/matematik/dogal-sayilar-test.html">Doğal sayılar testi <span>→</span></a></li>
+          </ul>
+          <a class="btn btn-primary" href="/siniflar/2-sinif/matematik/">2. Sınıf Matematiği Aç</a>
+        </article>
+        <article class="card">
+          <span class="badge">Test merkezi</span>
+          <h3>Deneme ve soru bankası</h3>
+          <p>Deneme sınavları ve sınıf testleri için hızlı geçiş.</p>
+          <ul class="link-list">
             <li><a href="/testler/2-sinif-deneme-sinavi.html">2. sınıf deneme <span>→</span></a></li>
+            <li><a href="/testler/3-sinif-deneme-sinavi.html">3. sınıf deneme <span>→</span></a></li>
+            <li><a href="/testler/index.html">Tüm testler <span>→</span></a></li>
           </ul>
-          <a class="btn btn-light" href="/siniflar/2-sinif/index.html">2. Sınıfa Git</a>
-        </article>
-        <article class="card">
-          <span class="badge">LGS hazırlık</span>
-          <h3>8. Sınıf</h3>
-          <p>LGS odaklı matematik testi ve deneme sınavı.</p>
-          <ul class="link-list">
-            <li><a href="/siniflar/8-sinif/index.html">8. sınıf ana sayfa <span>→</span></a></li>
-            <li><a href="/siniflar/8-sinif/matematik/">LGS matematik <span>→</span></a></li>
-            <li><a href="/testler/8-sinif-deneme-sinavi.html">LGS deneme <span>→</span></a></li>
-          </ul>
-          <a class="btn btn-blue" href="/siniflar/8-sinif/index.html">LGS Alanını Aç</a>
-        </article>
-        <article class="card">
-          <span class="badge">YKS hazırlık</span>
-          <h3>11. Sınıf</h3>
-          <p>YKS mantığında matematik ve deneme akışı.</p>
-          <ul class="link-list">
-            <li><a href="/siniflar/11-sinif/index.html">11. sınıf ana sayfa <span>→</span></a></li>
-            <li><a href="/siniflar/11-sinif/matematik/">YKS matematik <span>→</span></a></li>
-            <li><a href="/testler/11-sinif-deneme-sinavi.html">YKS deneme <span>→</span></a></li>
-          </ul>
-          <a class="btn btn-primary" href="/siniflar/11-sinif/index.html">YKS Alanını Aç</a>
+          <a class="btn btn-blue" href="/testler/index.html">Testleri Aç</a>
         </article>
       </div>
     </div>
@@ -241,12 +214,12 @@
     <div class="container">
       <div class="section-head">
         <h2>Panel ve raporlar</h2>
-        <p>Öğrenci, öğretmen ve test merkezine hızlı geçiş.</p>
+        <p>Öğrenci, öğretmen ve sınıf merkezine hızlı geçiş.</p>
       </div>
       <div class="grid-3">
         <article class="card"><h3>Öğrenci Paneli</h3><p>Günlük görev, öneriler ve başarı bahçesi.</p><a class="btn btn-light" href="/ogrenci/panel.html">Öğrenci Panelini Aç</a></article>
         <article class="card"><h3>Öğretmen Paneli</h3><p>Canlı sınıf, kazanım takibi ve veli raporları.</p><a class="btn btn-light" href="/ogretmen-paneli/index.html">Öğretmen Panelini Aç</a></article>
-        <article class="card"><h3>Test Merkezi</h3><p>Yazılı, soru bankası ve deneme sınavları.</p><a class="btn btn-light" href="/testler/index.html">Testleri Aç</a></article>
+        <article class="card"><h3>Sınıflar</h3><p>1. sınıftan 12. sınıfa kadar ders sayfaları.</p><a class="btn btn-light" href="/siniflar/index.html">Sınıfları Aç</a></article>
       </div>
     </div>
   </section>
@@ -263,28 +236,5 @@
     </div>
   </div>
 </footer>
-<script>
-  (function () {
-    const form = document.getElementById('quickStart');
-    const grade = document.getElementById('quickGrade');
-    const target = document.getElementById('quickTarget');
-    const mathTestMap = {
-      '2': '/siniflar/2-sinif/matematik/dogal-sayilar-test.html',
-      '3': '/siniflar/3-sinif/matematik/uc-basamakli-dogal-sayilar-test.html',
-      '5': '/siniflar/5-sinif/matematik/dogal-sayilar-test.html',
-      '8': '/siniflar/8-sinif/matematik/sayilar-ve-islemler-test.html',
-      '11': '/siniflar/11-sinif/matematik/sayilar-ve-islemler-test.html'
-    };
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const selectedGrade = grade.value;
-      const selectedTarget = target.value;
-      let url = '/siniflar/' + selectedGrade + '-sinif/index.html';
-      if (selectedTarget === 'deneme') url = '/testler/' + selectedGrade + '-sinif-deneme-sinavi.html';
-      if (selectedTarget === 'matematik') url = mathTestMap[selectedGrade] || url;
-      window.location.href = url;
-    });
-  })();
-</script>
 </body>
 </html>
