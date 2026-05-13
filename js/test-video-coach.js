@@ -44,7 +44,7 @@
     panel.appendChild(el('span','ekurs-test-chip','Anlamadın mı? O zaman izle'));
     panel.appendChild(el('h3','',skill.topic+' kısa ders'));
     var body=el('div','ekurs-video-body');
-    body.appendChild(el('p','', 'Kazanıma bağlı video aranıyor. Video yoksa testten çıkmadan AI ders özeti gösterilecek.'));
+    body.appendChild(el('p','', 'Kazanıma bağlı video aranıyor. Video yoksa testten çıkmadan animasyonlu mini ders açılacak.'));
     panel.appendChild(body);
     (dialog||document.body).appendChild(panel);
     fetch('/api/k12-video-helper.php?skill_id='+encodeURIComponent(skill.skillId)+'&topic='+encodeURIComponent(skill.topic)+'&lesson_url='+encodeURIComponent(skill.lessonUrl),{credentials:'same-origin'})
@@ -61,22 +61,35 @@
       body.appendChild(video);
       body.appendChild(el('small','', 'Video bittiğinde aynı kazanımdan kısa anlama kontrolü açılacak.'));
     }else{
-      var preview=el('div','ekurs-video-preview');
-      var head=el('div','ekurs-video-preview-head');
-      head.appendChild(el('span','ekurs-video-avatar','AI'));
-      var meta=el('div','ekurs-video-preview-meta');
-      meta.appendChild(el('strong','',data.status==='queued'?'AI video taslağı hazır':'Kısa ders özeti'));
-      meta.appendChild(el('small','',skill.skillId+' · 45-60 sn'));
-      head.appendChild(meta);
-      preview.appendChild(head);
-      preview.appendChild(el('p','ekurs-video-script',data.script||skill.hint));
-      var list=el('ul','ekurs-video-steps');
-      (data.storyboard||[skill.hint]).forEach(function(step){list.appendChild(el('li','',step));});
-      preview.appendChild(list);
-      body.appendChild(preview);
-      body.appendChild(el('small','', 'Bu buton artık ders sayfasına yönlendirmez. Gerçek video dosyası bağlanana kadar özet ve adım kartları panel içinde gösterilir.'));
-      body.appendChild(button('Videoyu/özeti bitirdim','ekurs-test-next',function(){showCheck(body,skill,dialog);}));
+      body.appendChild(makeMiniLessonMovie(skill,data));
+      body.appendChild(el('small','', 'Gerçek video dosyası bağlanana kadar bu alanda animasyonlu mini ders oynatılır. Öğrenci testten çıkmaz.'));
+      body.appendChild(button('Videoyu bitirdim, kontrol sorusuna geç','ekurs-test-next',function(){showCheck(body,skill,dialog);}));
     }
+  }
+  function makeMiniLessonMovie(skill,data){
+    var movie=el('div','ekurs-video-movie is-playing');
+    var scene=el('div','ekurs-video-scene');
+    scene.appendChild(el('span','ekurs-video-scene-label','Animasyonlu mini ders'));
+    var formulaText=norm(skill.topic).indexOf('üslü')>-1?'2³ + 4':skill.topic;
+    scene.appendChild(el('div','ekurs-video-formula',formulaText));
+    var blocks=el('div','ekurs-video-blocks');
+    ['2','× 2','× 2','= 8'].forEach(function(item){blocks.appendChild(el('span','',item));});
+    scene.appendChild(blocks);
+    var result=el('div','ekurs-video-result','8 + 4 = 12');
+    scene.appendChild(result);
+    movie.appendChild(scene);
+    movie.appendChild(el('p','ekurs-video-caption',data.script||skill.hint));
+    var progress=el('div','ekurs-video-progress');
+    progress.appendChild(el('span',''));
+    movie.appendChild(progress);
+    var controls=el('div','ekurs-video-controls');
+    controls.appendChild(button('Tekrar oynat','ekurs-video-mini-btn',function(){
+      movie.classList.remove('is-playing');
+      void movie.offsetWidth;
+      movie.classList.add('is-playing');
+    }));
+    movie.appendChild(controls);
+    return movie;
   }
   function showCheck(body,skill,dialog){
     body.innerHTML='';
