@@ -1,13 +1,17 @@
 (function(){
-  var assetVersion='20260513-grade2-novideo';
+  var assetVersion='20260513-lean-class-pages';
   var path=(location.pathname||'').replace(/\/+$/,'');
   var isGrade2Class=path==='/siniflar/2-sinif';
   var isGrade2TestList=path==='/testler/2-sinif';
   var isGrade2Exam=path==='/testler/2-sinif-deneme-sinavi';
   var isGrade2MathBank=/^\/testler\/2-sinif-matematik-[1-6]-tema-soru-bankasi$/.test(path);
+  var isClassLanding=/^\/siniflar\/(?:[1-9]|1[0-2])-sinif$/.test(path);
+  var isGeneratedLesson=/^\/siniflar\/(?:[1-9]|1[0-2])-sinif\/[^/]+$/.test(path);
+  var isCurriculumShell=path==='/siniflar/ders'||path==='/siniflar/konu';
   var isLightGrade2Page=isGrade2Class||isGrade2TestList||isGrade2Exam||isGrade2MathBank;
+  var isLeanCurriculumPage=isLightGrade2Page||isClassLanding||isGeneratedLesson||isCurriculumShell;
 
-  function versioned(path){return path+'?v='+assetVersion;}
+  function versioned(assetPath){return assetPath+'?v='+assetVersion;}
   function loadCss(href){
     var src=versioned(href);
     if(document.querySelector('link[href="'+src+'"]'))return;
@@ -47,10 +51,13 @@
       if(previous&&current>previous+1){warnings.push('Baslik hiyerarsisi atlandi: H'+previous+' sonrasi H'+current+' - '+node.textContent.trim().slice(0,80));}
       previous=current;
     });
-    if(warnings.length){document.documentElement.setAttribute('data-heading-audit','warning');if(window.console&&console.warn)console.warn('[e-kurs SEO heading audit]',warnings);}
+    if(warnings.length){
+      document.documentElement.setAttribute('data-heading-audit','warning');
+      if(window.console&&console.warn)console.warn('[e-kurs SEO heading audit]',warnings);
+    }
   }
 
-  if(isLightGrade2Page){
+  if(isLeanCurriculumPage){
     if(isGrade2Class||isGrade2TestList||isGrade2Exam)loadCss('/siniflar/2-sinif/styles.css');
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
     return;
