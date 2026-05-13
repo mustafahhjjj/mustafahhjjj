@@ -62,10 +62,49 @@ body>.ekurs-video-coach{
   border-radius:16px;
   background:#0f172a;
 }
+.ekurs-video-preview{
+  display:grid;
+  gap:12px;
+  margin:10px 0;
+  padding:14px;
+  border-radius:18px;
+  background:linear-gradient(145deg,#eff6ff,#f8fbff 58%,#ecfeff);
+  border:1px solid #cfe0f5;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.72);
+}
+.ekurs-video-preview-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.ekurs-video-avatar{
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  flex:0 0 auto;
+  border-radius:14px;
+  background:#174ea6;
+  color:#fff;
+  font-weight:950;
+  letter-spacing:.02em;
+  box-shadow:0 10px 22px rgba(23,78,166,.2);
+}
+.ekurs-video-preview-meta strong{
+  margin:0 0 2px;
+}
+.ekurs-video-script{
+  margin:0;
+  padding:10px 12px;
+  border-radius:14px;
+  background:#fff;
+  color:#31415a!important;
+  font-weight:800;
+}
 .ekurs-video-steps{
   display:grid;
   gap:8px;
-  margin:10px 0;
+  margin:0;
   padding-left:20px;
   color:#31415a;
   font-weight:750;
