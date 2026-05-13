@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ders sayfası açılıyor | e-kurs.com</title>
-  <script>
-    (function(){var m=location.pathname.match(/\/siniflar\/(\d+)-sinif\/([^/]+)/);var target=m?'/siniflar/ders.html?grade='+m[1]+'&subject='+m[2]+location.hash:'/siniflar/index.html';location.replace(target);})();
-  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1. Sınıf Matematik | e-kurs.com</title>
+  <meta name="description" content="1. sınıf Matematik tema, konu ve test bağlantıları.">
+  <link rel="stylesheet" href="/css/grade1.css">
+  <script src="/js/grade1.js" defer></script>
 </head>
-<body>
-  <p>Ders sayfası açılıyor. <a href="/siniflar/ders.html?grade=1&subject=matematik">Devam et</a></p>
+<body class="grade1" data-mode="subject" data-subject="matematik">
+  <div id="app"></div>
 </body>
 </html>
