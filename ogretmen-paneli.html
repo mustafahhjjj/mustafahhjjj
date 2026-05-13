@@ -4,75 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Öğretmen Paneli | e-kurs.com ÖYS</title>
-  <meta name="description" content="e-kurs.com Öğretmen Yönetim Sistemi canlı sınıf, öğrenci denetim, hedef atama ve rapor ekranı.">
-  <link rel="stylesheet" href="/css/oys-panel.css?v=20260513-oys-v1">
+  <meta name="description" content="e-kurs.com Öğretmen Paneli: canlı öğrenme izleme, akıllı öneriler, SmartScore, trouble spots ve raporlama.">
+  <link rel="stylesheet" href="/css/oys-panel.css?v=20260513-oys-v2">
 </head>
 <body class="oys-body">
   <div class="oys-app">
     <aside class="oys-sidebar">
       <a class="oys-brand" href="/index.html"><span class="oys-mark">e</span><span>e-kurs.com ÖYS</span></a>
-      <div class="oys-role"><b>Öğretmen Paneli</b><span>2-A Matematik / Canlı takip</span></div>
+      <div class="oys-role"><b>Öğretmen Paneli</b><span>Live Hub / 2-A Matematik</span></div>
       <nav class="oys-menu" aria-label="ÖYS menü">
-        <button class="active" data-view="overview">Genel Bakış</button>
-        <button data-view="live">Canlı Sınıf</button>
-        <button data-view="audit">Öğrenci Denetim</button>
-        <button data-view="skills">Hedef & Ödev</button>
-        <button data-view="reports">Raporlar</button>
+        <button class="active" data-view="overview">Live Hub</button>
+        <button data-view="live">Canlı Öğrenme</button>
+        <button data-view="recommendations">Öneri Duvarı</button>
+        <button data-view="skills">Beceri Analizi</button>
+        <button data-view="analytics">Analytics</button>
+        <button data-view="reports">Çıktılar</button>
         <a href="/yonetici-paneli.html">Yönetici Paneli</a>
       </nav>
     </aside>
 
     <main class="oys-main">
       <header class="oys-topbar">
-        <div><h1>Öğretmen Yönetim Sistemi</h1><p>IXL Analytics yaklaşımıyla canlı sınıf, SmartScore, trouble spots ve raporlama.</p></div>
-        <div class="oys-actions"><button class="oys-btn" data-export="csv">Excel İndir</button><button class="oys-btn" data-export="pdf">Veli PDF Raporu</button><a class="oys-btn green" data-export="whatsapp" href="#">WhatsApp Gönder</a></div>
+        <div><h1>Öğretmen Paneli</h1><p>Canlı veri, kişiselleştirilmiş yönlendirme ve SmartScore odaklı sınıf yönetimi.</p></div>
+        <div class="oys-actions"><button class="oys-btn" data-export="csv">Excel İndir</button><button class="oys-btn" data-export="pdf">Veli PDF Raporu</button><button class="oys-btn warn" id="printCertificate">Sertifika Yazdır</button></div>
       </header>
 
       <div class="oys-content">
         <section class="oys-view active" id="overview">
           <div class="metric-grid">
-            <article class="metric good"><span>Aktif öğrenci</span><strong>5</strong></article>
-            <article class="metric wait"><span>Boşta 3+ dk</span><strong>2</strong></article>
-            <article class="metric bad"><span>Yardım gerekiyor</span><strong>2</strong></article>
-            <article class="metric"><span>Panel yanıt hedefi</span><strong>&lt;2 sn</strong></article>
+            <article class="metric good"><span>Anlık aktif</span><strong id="metricActive">5</strong></article>
+            <article class="metric bad"><span>Kırmızı bayrak</span><strong id="metricFlags">2</strong></article>
+            <article class="metric"><span>Sınıf doğruluk</span><strong id="metricAccuracy">68%</strong></article>
+            <article class="metric wait"><span>Öneri bekleyen</span><strong>6</strong></article>
           </div>
-          <div class="panel-grid">
-            <section class="oys-panel"><h2>Kırmızı Alarm</h2><div class="notice">Sınıfın %40+ bölümü MAT.2.3.2 Onluk bozarak çıkarma kazanımında hata yapıyor. Sistem bunu “Sınıf İçi Salgın Hata” olarak etiketledi.</div><div class="chart-bars" style="margin-top:14px"><div class="chart-row"><b>Onluk bozarak çıkarma</b><div class="bar"><span class="red" style="width:58%"></span></div><strong>58%</strong></div><div class="chart-row"><b>Eldeli toplama</b><div class="bar"><span class="amber" style="width:32%"></span></div><strong>32%</strong></div><div class="chart-row"><b>Nesne grafiği</b><div class="bar"><span class="green" style="width:18%"></span></div><strong>18%</strong></div></div></section>
-            <section class="oys-panel"><h2>Erken Uyarı</h2><p class="muted">Mevcut hız ve başarıya göre dönem sonu hedef riski.</p><table class="data-table"><thead><tr><th>Öğrenci</th><th>Risk</th><th>Öneri</th></tr></thead><tbody><tr class="risk-row"><td data-label="Öğrenci">Efe D.</td><td data-label="Risk">Yüksek</td><td data-label="Öneri">Telafi görevi ata</td></tr><tr class="risk-row"><td data-label="Öğrenci">Can B.</td><td data-label="Risk">Yüksek</td><td data-label="Öneri">Alt seviye çıkarma seti</td></tr><tr><td data-label="Öğrenci">Kerem A.</td><td data-label="Risk">Orta</td><td data-label="Öneri">Aktif süre takibi</td></tr></tbody></table></section>
+          <div class="wall-grid">
+            <section class="oys-panel"><h2>Duvar Görünümü</h2><p class="muted">Sınıfın o anki doğru/yanlış oranı ve kırmızı bayrak dağılımı.</p><div id="wallDashboard" class="wall-dashboard"></div></section>
+            <section class="oys-panel"><h2>En Acil Aksiyon</h2><div class="notice">MAT.2.3.2 kazanımında 2 öğrenci üst üste 3+ yanlış yaptı. Kırmızı bayrak yandı; önerilen aksiyon: 5 dakikalık sınıf içi tekrar ve alt seviye görev.</div><div class="oys-actions" style="margin-top:12px"><button class="oys-btn primary" id="projectWorstQuestion">En Çok Yanlış Soruyu Yansıt</button><button class="oys-btn green" data-view-jump="recommendations">Önerileri Aç</button></div></section>
           </div>
         </section>
 
         <section class="oys-view" id="live">
-          <div class="panel-grid">
-            <section class="oys-panel"><h2>Canlı Sınıf</h2><p class="muted">WebSocket olayları demo olarak simüle edilir. Canlı sistemde öğrenci çözüm olayı anlık düşer.</p><div id="liveGrid" class="live-grid"></div></section>
-            <aside class="oys-panel"><h2>Anlık İpucu Gönder</h2><p id="selectedStudent" class="muted">Bir öğrenci kutucuğu seç.</p><textarea id="hintMessage" rows="5" style="width:100%;resize:vertical;border:1px solid var(--oys-line);border-radius:8px;padding:10px;font:inherit">Sana bir ipucu gönderiyorum: önce onlukları ayır, sonra birlikleri kontrol et.</textarea><div class="oys-actions" style="margin-top:10px"><button class="oys-btn primary" id="sendHint">İpucu Gönder</button></div><h3 style="margin-top:16px">WebSocket Olayları</h3><ul class="ws-log" id="wsLog"><li>Bağlantı hazır: live-classroom/2A</li></ul></aside>
+          <div class="panel-grid wide-left">
+            <section class="oys-panel"><h2>Canlı Öğrenme İzleme</h2><p class="muted">Her kutucuk öğrencinin çalıştığı soru, kazanım, SmartScore ve yardım sinyalini gösterir.</p><div id="liveGrid" class="live-grid live-hub-grid"></div></section>
+            <aside class="oys-panel"><h2>Anlık Müdahale</h2><p id="selectedStudent" class="muted">Bir öğrenci kutucuğu seç.</p><textarea id="hintMessage" rows="5" style="width:100%;resize:vertical;border:1px solid var(--oys-line);border-radius:8px;padding:10px;font:inherit">Sana bir ipucu gönderiyorum: önce işlemin hangi basamakta zorlandığını bulalım.</textarea><div class="oys-actions" style="margin-top:10px"><button class="oys-btn primary" id="sendHint">İpucu Gönder</button><button class="oys-btn" id="assignRescue">Eksik Giderme Ata</button></div><h3 style="margin-top:16px">WebSocket Olayları</h3><ul class="ws-log" id="wsLog"><li>Bağlantı hazır: live-hub/2A</li></ul></aside>
           </div>
         </section>
 
-        <section class="oys-view" id="audit">
+        <section class="oys-view" id="recommendations">
           <div class="panel-grid">
-            <section class="oys-panel"><h2>Son 30 Gün Çözüm Günlüğü</h2><p class="mobile-table-note">Mobilde tablo kart yapısına dönüşür.</p><table class="data-table"><thead><tr><th>Saat</th><th>Öğrenci</th><th>Kazanım</th><th>Düşünme</th><th>Şık</th><th>Sonuç</th></tr></thead><tbody id="auditTableBody"></tbody></table></section>
-            <section class="oys-panel"><h2>Ekran Süresi / Aktif Çözüm</h2><p class="muted">Sistemi açık bırakıp gitme tespiti için aktif çalışma oranı.</p><div class="chart-bars" id="screenWorkRows"></div></section>
+            <section class="oys-panel"><h2>Akıllı Öneri Duvarı</h2><p class="muted">AI, öğrenci hata paternini yorumlayıp öğretmene atanabilir görev üretir.</p><div id="recommendationList" class="recommendation-list"></div></section>
+            <section class="oys-panel"><h2>Otomatik Çalışma Grupları</h2><p class="muted">Benzer hataları yapan öğrenciler gruplanır.</p><div id="groupList" class="group-list"></div></section>
           </div>
         </section>
 
         <section class="oys-view" id="skills">
           <div class="panel-grid">
-            <section class="oys-panel"><h2>MEB Kazanım Hizalama</h2><p class="muted">Yıldızlanan kazanımlar öğrencide “Öğretmeninin Görevi” olarak üstte görünür.</p><div class="skill-list" id="skillList"></div></section>
-            <section class="oys-panel"><h2>Ödev Atama Akışı</h2><div class="accordion"><article class="accordion-item open"><button class="accordion-head">1. Kazanım seç <span>+</span></button><div class="accordion-body">MAT.2.3.2 için telafi görevi önerildi.</div></article><article class="accordion-item"><button class="accordion-head">2. Zorluk seviyesi <span>+</span></button><div class="accordion-body">SmartScore 0-60 için alt seviye, 60-85 için hedef seviye, 85+ için pekiştirme.</div></article><article class="accordion-item"><button class="accordion-head">3. Öğrenci ekranı <span>+</span></button><div class="accordion-body">Görev öğrenci ana sayfasında sabitlenir.</div></article></div></section>
+            <section class="oys-panel"><h2>Beceri Analizi ve Müfredat Eşleştirme</h2><p class="muted">MEB kazanım kodu bazında SmartScore ve mastery durumu.</p><div id="curriculumList" class="curriculum-list"></div></section>
+            <section class="oys-panel"><h2>SmartScore Açıklaması</h2><div class="score-card"><strong>0-100</strong><p>Doğru sayısı, soru zorluğu, tutarlılık ve son hatalara göre hesaplanır. 100 puan Tam Öğrenme seviyesidir.</p></div><div class="accordion" style="margin-top:12px"><article class="accordion-item open"><button class="accordion-head">Anında geri bildirim <span>+</span></button><div class="accordion-body">Yanlış cevaplar öğretmen paneline kavramsal eksik, işlem hatası veya dikkat hatası olarak düşer.</div></article><article class="accordion-item"><button class="accordion-head">Alt seviye önerisi <span>+</span></button><div class="accordion-body">3+ yanlışta sistem kazanımı bölerek daha temel alıştırma önerir.</div></article></div></section>
           </div>
+        </section>
+
+        <section class="oys-view" id="analytics">
+          <div class="panel-grid">
+            <section class="oys-panel"><h2>Trouble Spots</h2><p class="muted">Sınıfın %20+ bölümünün takıldığı sorular ve kazanımlar.</p><table class="data-table"><thead><tr><th>Kazanım</th><th>Soru</th><th>Hata</th><th>Aksiyon</th></tr></thead><tbody id="troubleTable"></tbody></table></section>
+            <section class="oys-panel"><h2>Students Trends</h2><p class="muted">Son 30 gün hız ve doğruluk değişimi.</p><div id="trendList" class="chart-bars"></div></section>
+          </div>
+          <section class="oys-panel" style="margin-top:14px"><h2>Skill Score Alignment</h2><div id="alignmentList" class="alignment-grid"></div></section>
         </section>
 
         <section class="oys-view" id="reports">
           <div class="export-grid">
-            <article class="export-card"><h3>Excel İndir</h3><p class="muted">Sınıf performansı CSV/Excel formatında dışa aktarılır.</p><button class="oys-btn primary" data-export="csv">Excel İndir</button></article>
-            <article class="export-card"><h3>Veli PDF Raporu</h3><p class="muted">Print-ready rapor servisine bağlanacak çıktı taslağı.</p><button class="oys-btn primary" data-export="pdf">PDF Oluştur</button></article>
-            <article class="export-card"><h3>WhatsApp / E-posta</h3><p class="muted">Veli raporu tek tık paylaşım akışına hazırlanır.</p><a class="oys-btn green" data-export="whatsapp" href="#">WhatsApp Gönder</a></article>
+            <article class="export-card"><h3>Excel İndir</h3><p class="muted">Live Hub ve analytics verisi CSV/Excel formatında dışa aktarılır.</p><button class="oys-btn primary" data-export="csv">Excel İndir</button></article>
+            <article class="export-card"><h3>Veli PDF Raporu</h3><p class="muted">Öğrenci bazlı SmartScore, trend ve öneri raporu üretir.</p><button class="oys-btn primary" data-export="pdf">PDF Oluştur</button></article>
+            <article class="export-card"><h3>Başarı Sertifikası</h3><p class="muted">100 SmartScore ustalık puanı alan öğrenci için print-ready belge.</p><button class="oys-btn warn" id="printCertificate2">Sertifika Yazdır</button></article>
           </div>
         </section>
       </div>
     </main>
   </div>
-  <script src="/js/oys-panel.js?v=20260513-oys-v1" defer></script>
+  <script src="/js/oys-panel.js?v=20260513-oys-v2" defer></script>
 </body>
 </html>
