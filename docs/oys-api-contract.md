@@ -1,6 +1,6 @@
 # e-kurs.com OYS API Contract
 
-Bu sözleşme öğretmen panelinin IXL benzeri Live Hub, Recommendations ve Analytics modülleri için hedef backend uçlarını tanımlar.
+Bu sözleşme öğretmen panelinin Live Hub, Otonom AI Asistanı, Recommendations ve Analytics modülleri için hedef backend uçlarını tanımlar.
 
 ## Auth
 
@@ -16,8 +16,6 @@ Tüm uçlar öğretmen JWT/session yetkisi ister. Middleware şu kontrolleri yap
 
 `GET /api/oys/live-classroom?classId=2A`
 
-Event örneği:
-
 ```json
 {
   "type": "student_answered",
@@ -30,6 +28,8 @@ Event örneği:
   "consecutiveWrong": 3,
   "smartScore": 42,
   "mistakePattern": "conceptual_gap",
+  "cognitiveTag": "place_value_borrowing_error",
+  "frustrationState": "burnout_risk",
   "status": "help",
   "createdAt": "2026-05-13T13:00:00+03:00"
 }
@@ -40,6 +40,90 @@ Event örneği:
 `GET /api/oys/live-classroom/events?classId=2A`
 
 Tarayıcı WebSocket açamazsa EventSource ile aynı payload gönderilir.
+
+## Cognitive Misconception Diagnosis
+
+Çeldiricilere bilişsel etiket eklenmelidir.
+
+```json
+{
+  "questionId": "q-778",
+  "choices": [
+    { "key": "A", "isCorrect": false, "cognitiveTag": "adds_denominators_directly" },
+    { "key": "B", "isCorrect": false, "cognitiveTag": "operation_direction_error" },
+    { "key": "C", "isCorrect": true, "cognitiveTag": "mastered" }
+  ]
+}
+```
+
+`GET /api/oys/assistant/misconceptions?classId=2A`
+
+Sınıf bazında kök neden uyarısı döndürür.
+
+## Frustration Engine
+
+`POST /api/oys/telemetry/frustration-signal`
+
+Girişler:
+
+- `thinkingSeconds`
+- `answerChanges`
+- `rapidClicks`
+- `eraseCount`
+- `consecutiveWrong`
+- `activeSeconds`
+- `screenSeconds`
+
+Çıkış:
+
+```json
+{
+  "studentId": "stu-123",
+  "state": "burnout_risk",
+  "loadScore": 92,
+  "teacherMessage": "Derin bir nefes al, biraz ara verelim mi?"
+}
+```
+
+## AI Grouping
+
+`GET /api/oys/assistant/groups?classId=2A`
+
+K-Means veya benzeri kümeleme çıktısı:
+
+```json
+{
+  "groups": [
+    {
+      "name": "Onluk bozma destek grubu",
+      "level": "foundation",
+      "studentIds": ["stu-123", "stu-128"],
+      "recommendedActivity": "15 dakika tahtada onluk bozma tekrarı"
+    }
+  ]
+}
+```
+
+## Generative Curriculum
+
+`POST /api/oys/assistant/rewrite-question`
+
+```json
+{
+  "studentId": "stu-123",
+  "interest": "Futbol",
+  "skillCode": "MAT.2.2.1",
+  "questionSkeleton": "28 kalem + 15 kalem"
+}
+```
+
+Yanıt, öğretmen onayına sunulmalıdır; doğrudan öğrenciye yayınlanmamalıdır.
+
+## Parent Communication Bot
+
+`GET /api/oys/assistant/parent-message?studentId=stu-123&period=weekly`
+
+AI veli mesajı pozitif, yapıcı ve uygulanabilir ev önerisi içermelidir.
 
 ## Recommendations
 
@@ -55,30 +139,16 @@ Tarayıcı WebSocket açamazsa EventSource ile aynı payload gönderilir.
       "summary": "Onluk bozma adımında kavramsal eksik yaşıyor.",
       "actions": ["Alt seviye 3 alıştırma ata", "Öğretmen ipucu gönder", "Veli notu hazırla"]
     }
-  ],
-  "groups": [
-    {
-      "name": "Onluk bozma destek grubu",
-      "skillCode": "MAT.2.3.2",
-      "studentIds": ["stu-123", "stu-128"]
-    }
   ]
 }
 ```
 
 ## Analytics
 
-`GET /api/oys/reports/trouble-spots?classId=2A`
-
-Sınıfın %20+ bölümünün takıldığı soruları listeler.
-
-`GET /api/oys/reports/student-trends?classId=2A&days=30`
-
-Öğrenci bazında hız, doğruluk ve aktif süre trendi döndürür.
-
-`GET /api/oys/reports/skill-score-alignment?classId=2A`
-
-Kazanım bazında SmartScore ortalaması ve Mastery durumunu döndürür.
+- `GET /api/oys/reports/trouble-spots?classId=2A`
+- `GET /api/oys/reports/student-trends?classId=2A&days=30`
+- `GET /api/oys/reports/skill-score-alignment?classId=2A`
+- `GET /api/oys/reports/growth-tree?classId=2A`
 
 ## Assignments
 
@@ -113,3 +183,5 @@ SmartScore sadece doğru sayısından hesaplanmaz. Minimum girişler:
 - `thinkingSeconds`
 - `recentAccuracy`
 - `skillMasteryHistory`
+- `frustrationState`
+- `cognitiveTag`
