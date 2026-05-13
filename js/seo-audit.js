@@ -1,10 +1,11 @@
 (function(){
-  var assetVersion='20260513-grade2-stable';
+  var assetVersion='20260513-grade2-math60';
   var path=(location.pathname||'').replace(/\/+$/,'');
   var isGrade2Class=path==='/siniflar/2-sinif';
   var isGrade2TestList=path==='/testler/2-sinif';
   var isGrade2Exam=path==='/testler/2-sinif-deneme-sinavi';
-  var isLightGrade2Page=isGrade2Class||isGrade2TestList||isGrade2Exam;
+  var isGrade2MathBank=/^\/testler\/2-sinif-matematik-[1-6]-tema-soru-bankasi$/.test(path);
+  var isLightGrade2Page=isGrade2Class||isGrade2TestList||isGrade2Exam||isGrade2MathBank;
 
   function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
@@ -50,7 +51,7 @@
   }
 
   if(isLightGrade2Page){
-    loadCss('/siniflar/2-sinif/styles.css');
+    if(isGrade2Class||isGrade2TestList||isGrade2Exam)loadCss('/siniflar/2-sinif/styles.css');
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
     return;
   }
