@@ -1,5 +1,5 @@
 (function(){
-  var assetVersion='20260513-grade2-data';
+  var assetVersion='20260513-grade2-force';
   function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
     var src=versioned(href);
@@ -60,5 +60,6 @@
   loadScript('/js/test-center.js');
   loadScript('/js/test-video-coach.js');
   loadScript('/js/primary-exam-coach.js');
+  loadScript('/js/grade2-test-fix.js');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
 })();
