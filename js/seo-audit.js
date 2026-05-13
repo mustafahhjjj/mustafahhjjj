@@ -1,5 +1,5 @@
 (function(){
-  var assetVersion='20260513-c104ad2';
+  var assetVersion='20260513-primary-coach';
   function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
     var src=versioned(href);
@@ -46,6 +46,7 @@
   loadCss('/css/test-runner.css');
   loadCss('/css/test-interactions.css');
   loadCss('/css/test-video-coach.css');
+  loadCss('/css/primary-exam-coach.css');
   loadScript('/js/k12-ui.js');
   loadScript('/js/home-polish.js');
   loadScript('/js/k12-gamification.js');
@@ -58,5 +59,6 @@
   loadScript('/js/math-component-layout.js');
   loadScript('/js/test-center.js');
   loadScript('/js/test-video-coach.js');
+  loadScript('/js/primary-exam-coach.js');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
 })();
