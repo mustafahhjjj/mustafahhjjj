@@ -1,0 +1,189 @@
+.ekurs-test-fill{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:12px;
+  align-items:center;
+}
+.ekurs-test-fill input{
+  min-height:64px;
+  border-radius:14px;
+  border:2px solid #cfe0f5;
+  padding:0 16px;
+  color:#10233f;
+  font-size:20px;
+  font-weight:900;
+  touch-action:manipulation;
+}
+.ekurs-test-match,
+.ekurs-test-order,
+.ekurs-test-mark{
+  display:grid;
+  gap:12px;
+  margin-top:16px;
+}
+.ekurs-test-match-row{
+  display:grid;
+  grid-template-columns:minmax(120px,.45fr) minmax(0,1fr);
+  gap:10px;
+  align-items:center;
+  padding:12px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #dbeafe;
+}
+.ekurs-test-match-row strong{
+  color:#10233f;
+}
+.ekurs-test-match-row select{
+  min-height:48px;
+  border-radius:12px;
+  border:1px solid #cfe0f5;
+  padding:0 12px;
+  font-weight:800;
+  color:#31415a;
+  background:#fff;
+}
+.ekurs-test-order-chip{
+  width:100%;
+  min-height:52px;
+  border:2px solid #cfe0f5;
+  border-radius:14px;
+  background:#fff;
+  color:#10233f;
+  font-weight:900;
+  text-align:left;
+  padding:0 14px;
+  cursor:grab;
+  touch-action:manipulation;
+}
+.ekurs-test-order-chip:before{
+  content:"↕";
+  display:inline-flex;
+  width:28px;
+  color:#1d4ed8;
+}
+.ekurs-test-order-chip.is-dragging{
+  opacity:.55;
+  border-color:#1d4ed8;
+}
+.ekurs-angle-board{
+  position:relative;
+  min-height:210px;
+  border-radius:18px;
+  border:1px solid #dbeafe;
+  background:linear-gradient(135deg,#f8fbff,#ffffff);
+  overflow:hidden;
+}
+.ekurs-angle-board:before,
+.ekurs-angle-board:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:150px;
+  height:5px;
+  transform-origin:left center;
+  background:#1d4ed8;
+  border-radius:999px;
+}
+.ekurs-angle-board:before{transform:rotate(0deg)}
+.ekurs-angle-board:after{transform:rotate(-90deg)}
+.ekurs-angle-board span{
+  position:absolute;
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#fff;
+  border:2px solid #bfdbfe;
+  color:#10233f;
+  font-weight:900;
+}
+.ekurs-angle-board .angle-a{left:24px;bottom:24px}
+.ekurs-angle-board .angle-b{left:50%;top:50%;transform:translate(-50%,-50%);border-color:#f6b91a;background:#fff7d6}
+.ekurs-angle-board .angle-c{right:24px;top:24px}
+.ekurs-test-results h2{
+  margin:14px 0 8px;
+  color:#10233f;
+  font-size:clamp(28px,5vw,44px);
+}
+.ekurs-test-results>p{
+  margin:0 0 18px;
+  color:#52657f;
+  line-height:1.65;
+}
+.ekurs-test-result-summary{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:16px 0;
+}
+.ekurs-test-report-chart{
+  display:grid;
+  gap:10px;
+  margin:18px 0;
+  padding:16px;
+  border:1px solid #dbe5f0;
+  border-radius:18px;
+  background:#f8fbff;
+}
+.ekurs-report-row{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr) 48px;
+  gap:10px;
+  align-items:center;
+}
+.ekurs-report-row span{
+  color:#31415a;
+  font-weight:850;
+}
+.ekurs-report-row i{
+  display:block;
+  min-width:12px;
+  height:14px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#93c5fd,#1d4ed8);
+}
+.ekurs-report-row strong{
+  color:#10233f;
+  font-size:13px;
+}
+.ekurs-test-remediation-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.ekurs-remediation-card{
+  padding:16px;
+  border-radius:16px;
+  border:1px solid #fecaca;
+  background:#fff7f7;
+}
+.ekurs-remediation-card strong{
+  display:block;
+  color:#991b1b;
+  margin-bottom:8px;
+  font-size:17px;
+}
+.ekurs-remediation-card p{
+  color:#5f3030;
+  line-height:1.55;
+  margin:0 0 12px;
+  font-weight:750;
+}
+@media (max-width:720px){
+  .ekurs-test-fill,
+  .ekurs-test-match-row,
+  .ekurs-test-result-summary,
+  .ekurs-test-remediation-list{
+    grid-template-columns:1fr;
+  }
+  .ekurs-report-row{
+    grid-template-columns:1fr;
+  }
+  .ekurs-test-fill input,
+  .ekurs-test-fill .ekurs-test-next{
+    width:100%;
+  }
+}
