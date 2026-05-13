@@ -4,111 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Öğretmen Paneli | e-kurs.com ÖYS</title>
-  <meta name="description" content="e-kurs.com Öğretmen Paneli: otonom AI öğretmen asistanı, canlı röntgen, müdahale merkezi, SmartScore ve veli iletişimi.">
-  <link rel="stylesheet" href="/css/oys-panel.css?v=20260513-oys-v2">
-  <link rel="stylesheet" href="/css/oys-ai-assistant.css?v=20260513-oys-ai-v1">
+  <meta name="description" content="e-kurs.com Öğretmen Paneli artık günlük öğretmen karar ekranı olarak /ogretmen-paneli/ altında çalışır.">
+  <link rel="canonical" href="https://e-kurs.com/ogretmen-paneli/">
+  <meta http-equiv="refresh" content="0; url=/ogretmen-paneli/">
+  <style>
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f6f8fb;color:#101828;font-family:Inter,Arial,sans-serif}
+    main{max-width:560px;padding:28px;border:1px solid #d9e1ec;border-radius:14px;background:#fff;box-shadow:0 12px 30px rgba(16,24,40,.08);text-align:center}
+    a{display:inline-flex;min-height:42px;align-items:center;justify-content:center;margin-top:14px;padding:0 16px;border-radius:9px;background:#2563eb;color:#fff;font-weight:800;text-decoration:none}
+  </style>
 </head>
-<body class="oys-body">
-  <div class="oys-app">
-    <aside class="oys-sidebar">
-      <a class="oys-brand" href="/index.html"><span class="oys-mark">e</span><span>e-kurs.com ÖYS</span></a>
-      <div class="oys-role"><b>Otonom Öğretmen Asistanı</b><span>2-A Matematik / AI destekli sınıf yönetimi</span></div>
-      <nav class="oys-menu" aria-label="ÖYS menü">
-        <button class="active" data-view="assistant">AI Asistan</button>
-        <button data-view="xray">Canlı Röntgen</button>
-        <button data-view="intervention">Müdahale Merkezi</button>
-        <button data-view="growthTree">Gelişim Ağacı</button>
-        <button data-view="overview">Live Hub</button>
-        <button data-view="live">Canlı Öğrenme</button>
-        <button data-view="recommendations">Öneri Duvarı</button>
-        <button data-view="skills">Beceri Analizi</button>
-        <button data-view="analytics">Analytics</button>
-        <button data-view="reports">Çıktılar</button>
-        <a href="/yonetici-paneli.html">Yönetici Paneli</a>
-      </nav>
-    </aside>
-
-    <main class="oys-main">
-      <header class="oys-topbar">
-        <div><h1>Otonom Öğretmen Asistanı</h1><p>Veri tablosu değil; kök neden, duygu durumu, grup planı ve tek tık müdahale öneren karar ekranı.</p></div>
-        <div class="oys-actions"><button class="oys-btn" data-export="csv">Excel İndir</button><button class="oys-btn" data-export="pdf">Veli PDF Raporu</button><button class="oys-btn warn" id="printCertificate">Sertifika Yazdır</button></div>
-      </header>
-
-      <div class="oys-content">
-        <section class="oys-view active" id="assistant">
-          <div class="ai-hero-grid">
-            <section class="oys-panel ai-brief"><h2>AI Asistan Özeti</h2><p class="muted">Günün en kritik 3 öğretmen aksiyonu. Amaç: “ne oldu?” değil, “neden oldu ve şimdi ne yapmalıyım?” sorusunu cevaplamak.</p><div id="aiBriefList" class="ai-brief-list"></div></section>
-            <section class="oys-panel"><h2>Kavram Yanılgısı Teşhisi</h2><div id="misconceptionPanel" class="misconception-panel"></div></section>
-          </div>
-          <div class="ai-hero-grid" style="margin-top:14px">
-            <section class="oys-panel"><h2>Yarınki Ders İçin AI Planı</h2><div id="lessonPlanPanel" class="lesson-plan-panel"></div></section>
-            <section class="oys-panel"><h2>Veli İletişim Botu</h2><div id="parentBotPanel" class="parent-bot-panel"></div></section>
-          </div>
-        </section>
-
-        <section class="oys-view" id="xray">
-          <div class="panel-grid wide-left">
-            <section class="oys-panel"><h2>Canlı Röntgen</h2><p class="muted">Akademik durum + bilişsel yük + duygu sinyali birlikte izlenir.</p><div id="xrayMap" class="xray-map"></div></section>
-            <aside class="oys-panel"><h2>Frustration Engine</h2><p class="muted">Süre, tekrar seçme, hızlı tıklama ve üst üste hata sinyallerinden durum üretir.</p><div id="frustrationPanel" class="frustration-panel"></div><div class="oys-actions" style="margin-top:12px"><button class="oys-btn primary" id="sendBreathMessage">Ara Ver Mesajı Gönder</button><button class="oys-btn" data-view-jump="intervention">Müdahale Aç</button></div></aside>
-          </div>
-        </section>
-
-        <section class="oys-view" id="intervention">
-          <div class="panel-grid">
-            <section class="oys-panel"><h2>Müdahale Merkezi</h2><p class="muted">Tek tıkla ödev atama, grup kurma, seviye düşürme/yükseltme ve mikro-anlatım gönderme.</p><div id="interventionCards" class="intervention-cards"></div></section>
-            <section class="oys-panel"><h2>Müfredat Üreticisi</h2><p class="muted">Soru iskeleti aynı kalır; hikaye öğrencinin ilgisine göre yeniden yazılır.</p><div class="generator-box"><label>Öğrenci ilgisi<select id="interestSelect"><option>Uzay</option><option>Futbol</option><option>Doğa</option><option>Müzik</option></select></label><label>Soru iskeleti<textarea id="questionStem" rows="4">28 kalemim vardı. 15 kalem daha aldım. Toplam kaç kalemim oldu?</textarea></label><button class="oys-btn primary" id="rewriteQuestion">AI ile Yeniden Yaz</button><div id="rewrittenQuestion" class="rewritten-question"></div></div></section>
-          </div>
-        </section>
-
-        <section class="oys-view" id="growthTree">
-          <section class="oys-panel"><h2>Sınıf Gelişim Ağacı</h2><p class="muted">MEB müfredat ağacında sınıfın yeşillenen, sararan ve kırmızı kalan yaprakları.</p><div id="growthTreeGrid" class="growth-tree-grid"></div></section>
-        </section>
-
-        <section class="oys-view" id="overview">
-          <div class="metric-grid">
-            <article class="metric good"><span>Anlık aktif</span><strong id="metricActive">5</strong></article>
-            <article class="metric bad"><span>Kırmızı bayrak</span><strong id="metricFlags">2</strong></article>
-            <article class="metric"><span>Sınıf doğruluk</span><strong id="metricAccuracy">68%</strong></article>
-            <article class="metric wait"><span>Öneri bekleyen</span><strong>6</strong></article>
-          </div>
-          <div class="wall-grid">
-            <section class="oys-panel"><h2>Duvar Görünümü</h2><p class="muted">Sınıfın o anki doğru/yanlış oranı ve kırmızı bayrak dağılımı.</p><div id="wallDashboard" class="wall-dashboard"></div></section>
-            <section class="oys-panel"><h2>En Acil Aksiyon</h2><div class="notice">MAT.2.3.2 kazanımında 2 öğrenci üst üste 3+ yanlış yaptı. Kırmızı bayrak yandı; önerilen aksiyon: 5 dakikalık sınıf içi tekrar ve alt seviye görev.</div><div class="oys-actions" style="margin-top:12px"><button class="oys-btn primary" id="projectWorstQuestion">En Çok Yanlış Soruyu Yansıt</button><button class="oys-btn green" data-view-jump="recommendations">Önerileri Aç</button></div></section>
-          </div>
-        </section>
-
-        <section class="oys-view" id="live">
-          <div class="panel-grid wide-left">
-            <section class="oys-panel"><h2>Canlı Öğrenme İzleme</h2><p class="muted">Her kutucuk öğrencinin çalıştığı soru, kazanım, SmartScore ve yardım sinyalini gösterir.</p><div id="liveGrid" class="live-grid live-hub-grid"></div></section>
-            <aside class="oys-panel"><h2>Anlık Müdahale</h2><p id="selectedStudent" class="muted">Bir öğrenci kutucuğu seç.</p><textarea id="hintMessage" rows="5" style="width:100%;resize:vertical;border:1px solid var(--oys-line);border-radius:8px;padding:10px;font:inherit">Sana bir ipucu gönderiyorum: önce işlemin hangi basamakta zorlandığını bulalım.</textarea><div class="oys-actions" style="margin-top:10px"><button class="oys-btn primary" id="sendHint">İpucu Gönder</button><button class="oys-btn" id="assignRescue">Eksik Giderme Ata</button></div><h3 style="margin-top:16px">WebSocket Olayları</h3><ul class="ws-log" id="wsLog"><li>Bağlantı hazır: live-hub/2A</li></ul></aside>
-          </div>
-        </section>
-
-        <section class="oys-view" id="recommendations">
-          <div class="panel-grid">
-            <section class="oys-panel"><h2>Akıllı Öneri Duvarı</h2><p class="muted">AI, öğrenci hata paternini yorumlayıp öğretmene atanabilir görev üretir.</p><div id="recommendationList" class="recommendation-list"></div></section>
-            <section class="oys-panel"><h2>Otomatik Çalışma Grupları</h2><p class="muted">Benzer hataları yapan öğrenciler gruplanır.</p><div id="groupList" class="group-list"></div></section>
-          </div>
-        </section>
-
-        <section class="oys-view" id="skills">
-          <div class="panel-grid">
-            <section class="oys-panel"><h2>Beceri Analizi ve Müfredat Eşleştirme</h2><p class="muted">MEB kazanım kodu bazında SmartScore ve mastery durumu.</p><div id="curriculumList" class="curriculum-list"></div></section>
-            <section class="oys-panel"><h2>SmartScore Açıklaması</h2><div class="score-card"><strong>0-100</strong><p>Doğru sayısı, soru zorluğu, tutarlılık ve son hatalara göre hesaplanır. 100 puan Tam Öğrenme seviyesidir.</p></div><div class="accordion" style="margin-top:12px"><article class="accordion-item open"><button class="accordion-head">Anında geri bildirim <span>+</span></button><div class="accordion-body">Yanlış cevaplar öğretmen paneline kavramsal eksik, işlem hatası veya dikkat hatası olarak düşer.</div></article><article class="accordion-item"><button class="accordion-head">Alt seviye önerisi <span>+</span></button><div class="accordion-body">3+ yanlışta sistem kazanımı bölerek daha temel alıştırma önerir.</div></article></div></section>
-          </div>
-        </section>
-
-        <section class="oys-view" id="analytics">
-          <div class="panel-grid"><section class="oys-panel"><h2>Trouble Spots</h2><p class="muted">Sınıfın %20+ bölümünün takıldığı sorular ve kazanımlar.</p><table class="data-table"><thead><tr><th>Kazanım</th><th>Soru</th><th>Hata</th><th>Aksiyon</th></tr></thead><tbody id="troubleTable"></tbody></table></section><section class="oys-panel"><h2>Students Trends</h2><p class="muted">Son 30 gün hız ve doğruluk değişimi.</p><div id="trendList" class="chart-bars"></div></section></div><section class="oys-panel" style="margin-top:14px"><h2>Skill Score Alignment</h2><div id="alignmentList" class="alignment-grid"></div></section>
-        </section>
-
-        <section class="oys-view" id="reports">
-          <div class="export-grid"><article class="export-card"><h3>Excel İndir</h3><p class="muted">Live Hub ve analytics verisi CSV/Excel formatında dışa aktarılır.</p><button class="oys-btn primary" data-export="csv">Excel İndir</button></article><article class="export-card"><h3>Veli PDF Raporu</h3><p class="muted">Öğrenci bazlı SmartScore, trend ve öneri raporu üretir.</p><button class="oys-btn primary" data-export="pdf">PDF Oluştur</button></article><article class="export-card"><h3>Başarı Sertifikası</h3><p class="muted">100 SmartScore ustalık puanı alan öğrenci için print-ready belge.</p><button class="oys-btn warn" id="printCertificate2">Sertifika Yazdır</button></article></div>
-        </section>
-      </div>
-    </main>
-  </div>
-  <script src="/js/oys-panel.js?v=20260513-oys-v2" defer></script>
-  <script src="/js/oys-ai-assistant.js?v=20260513-oys-ai-v1" defer></script>
+<body>
+  <main>
+    <h1>Öğretmen Paneli yenilendi</h1>
+    <p>Yeni günlük karar ekranına yönlendiriliyorsunuz.</p>
+    <a href="/ogretmen-paneli/">Yeni Öğretmen Panelini Aç</a>
+  </main>
 </body>
 </html>
