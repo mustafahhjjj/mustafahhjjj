@@ -1,8 +1,9 @@
 Options -Indexes
 RewriteEngine On
 
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.e-kurs\.com$ [NC]
+RewriteRule ^ https://e-kurs.com%{REQUEST_URI} [L,R=301]
 
 RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
 RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
