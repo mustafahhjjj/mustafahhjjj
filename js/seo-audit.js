@@ -41,6 +41,7 @@
   loadCss('/css/test-center.css');
   loadCss('/css/test-runner.css');
   loadCss('/css/test-interactions.css');
+  loadCss('/css/test-video-coach.css');
   loadScript('/js/k12-ui.js');
   loadScript('/js/home-polish.js');
   loadScript('/js/k12-gamification.js');
@@ -52,5 +53,6 @@
   loadScript('/js/math-localized-ux.js');
   loadScript('/js/math-component-layout.js');
   loadScript('/js/test-center.js');
+  loadScript('/js/test-video-coach.js');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
 })();
