@@ -1,15 +1,19 @@
 (function(){
+  var assetVersion='20260513-c104ad2';
+  function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
-    if(document.querySelector('link[href="'+href+'"]'))return;
+    var src=versioned(href);
+    if(document.querySelector('link[href="'+src+'"]'))return;
     var link=document.createElement('link');
     link.rel='stylesheet';
-    link.href=href;
+    link.href=src;
     document.head.appendChild(link);
   }
   function loadScript(src){
-    if(document.querySelector('script[src="'+src+'"]'))return;
+    var versionedSrc=versioned(src);
+    if(document.querySelector('script[src="'+versionedSrc+'"]'))return;
     var script=document.createElement('script');
-    script.src=src;
+    script.src=versionedSrc;
     script.defer=true;
     document.head.appendChild(script);
   }
