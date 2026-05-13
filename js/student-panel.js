@@ -1,0 +1,11 @@
+(function(){
+function $(id){return document.getElementById(id)}
+function qsa(sel,root){return Array.prototype.slice.call((root||document).querySelectorAll(sel))}
+function initMenu(){var nav=document.querySelector('.student-nav');var btn=document.querySelector('.student-menu');if(!nav||!btn)return;btn.addEventListener('click',function(){var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(open))})}
+function initScoreDemo(){qsa('[data-score-demo]').forEach(function(button){button.addEventListener('click',function(){var target=$(button.dataset.scoreDemo);if(!target)return;var current=Number(target.dataset.score||target.textContent.replace(/\D/g,''));var next=Math.min(100,current+7);target.dataset.score=String(next);target.textContent=next+' / 100';var bar=document.querySelector('[data-score-bar="'+target.id+'"]');if(bar)bar.style.setProperty('--value',next+'%')})})}
+function initAnswers(){qsa('[data-answer]').forEach(function(button){button.addEventListener('click',function(){var group=button.closest('[data-question]');if(!group)return;qsa('[data-answer]',group).forEach(function(item){item.classList.remove('correct','wrong')});var correct=button.dataset.answer==='correct';button.classList.add(correct?'correct':'wrong');var explain=group.querySelector('.explain-box');if(explain){explain.classList.add('show');explain.textContent=correct?'Harika. 8’den sonra 9, 10, 11 diye üç adım saydın.':'Yanlış ama çok yaklaştın. 8’den sonra 3 sayı ileri sayalım: 9, 10, 11. Doğru cevap 11.'}})})}
+function initAssistant(){qsa('[data-tip]').forEach(function(button){button.addEventListener('click',function(){var box=$(button.dataset.tip);if(!box)return;box.textContent='Önce soruda ne istendiğini bulalım. Sonra küçük adımlarla ilerleyelim: birlikleri say, işlemi yaz, cevabı kontrol et.';box.classList.add('show')})})}
+function initCopy(){qsa('[data-copy-summary]').forEach(function(button){button.addEventListener('click',function(){var target=$(button.dataset.copySummary);if(!target)return;var text=target.innerText.replace(/\n{2,}/g,'\n');if(navigator.clipboard)navigator.clipboard.writeText(text);button.textContent='Özet hazırlandı'})})}
+function init(){initMenu();initScoreDemo();initAnswers();initAssistant();initCopy()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
