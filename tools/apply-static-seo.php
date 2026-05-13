@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 $root = rtrim($argv[1] ?? dirname(__DIR__), DIRECTORY_SEPARATOR);
 $base = 'https://e-kurs.com';
-$assetVersion = '20260513-grade2-math60';
+$assetVersion = '20260513-math-landing-stable';
 
 function ekurs_slug(string $value): string
 {
@@ -79,6 +79,22 @@ function ekurs_keywords(string $relative, string $title): string
     return implode(', ', array_values(array_unique($keywords)));
 }
 
+function ekurs_should_inject_audit(string $relative): bool
+{
+    $skip = [
+        'index.html',
+        'dersler/matematik.html',
+        'siniflar/1-sinif/turkce.html',
+        'siniflar/1-sinif/turkce/index.html',
+        'siniflar/1-sinif/turkce/konu.html',
+        'siniflar/1-sinif/turkce/test.html',
+        'siniflar/1-sinif/turkce/okudugunu-anlama.html',
+        'siniflar/1-sinif/turkce/okudugunu-anlama-test.html',
+        'siniflar/2-sinif/matematik/dogal-sayilar-test.html',
+    ];
+    return !in_array($relative, $skip, true);
+}
+
 function ekurs_seo_block(string $relative, string $html): string
 {
     preg_match('~<title[^>]*>(.*?)</title>~is', $html, $titleMatch);
@@ -140,7 +156,9 @@ function ekurs_update_html(string $root, string $file): void
     } else {
         $html = preg_replace('~<head>~i', "<head>\n" . $block, $html, 1) ?? $html;
     }
-    $html = preg_replace('~</head>~i', "  <script src=\"/js/seo-audit.js?v={$assetVersion}\" defer></script>\n</head>", $html, 1) ?? $html;
+    if (ekurs_should_inject_audit($relative)) {
+        $html = preg_replace('~</head>~i', "  <script src=\"/js/seo-audit.js?v={$assetVersion}\" defer></script>\n</head>", $html, 1) ?? $html;
+    }
     file_put_contents($file, $html);
 }
 
