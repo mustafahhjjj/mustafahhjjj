@@ -18,7 +18,19 @@
   <url><loc>https://e-kurs.com/ogrenci/mustafa-hocaya-sor</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
   <url><loc>https://e-kurs.com/ogrenci/veliye-goster</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
   <url><loc>https://e-kurs.com/ogrenci/ayarlar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://e-kurs.com/ogretmen-paneli</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.86</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/canli-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/ogrenciler</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/ogrenci-detay</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/odevler</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/quizler</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/kazanim-haritasi</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/zorlanilan-konular</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/otomatik-gruplar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/veli-raporlari</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/mesajlar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/sertifikalar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
+  <url><loc>https://e-kurs.com/ogretmen-paneli/ayarlar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
   <url><loc>https://e-kurs.com/yonetici-paneli</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
   <url><loc>https://e-kurs.com/siniflar/2-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/siniflar/2-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
