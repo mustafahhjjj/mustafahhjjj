@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 $root = rtrim($argv[1] ?? dirname(__DIR__), DIRECTORY_SEPARATOR);
 $base = 'https://e-kurs.com';
-$assetVersion = '20260513-c104ad2';
+$assetVersion = '20260513-primary-coach';
 
 function ekurs_slug(string $value): string
 {
