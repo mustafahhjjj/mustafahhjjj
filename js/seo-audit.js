@@ -2,6 +2,8 @@
   var assetVersion='20260513-grade2-stable';
   var path=(location.pathname||'').replace(/\/+$/,'');
   var isGrade2Class=path==='/siniflar/2-sinif';
+  var isGrade2Exam=path==='/testler/2-sinif-deneme-sinavi';
+  var isLightGrade2Page=isGrade2Class||isGrade2Exam;
 
   function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
@@ -46,7 +48,7 @@
     if(warnings.length){document.documentElement.setAttribute('data-heading-audit','warning');if(window.console&&console.warn)console.warn('[e-kurs SEO heading audit]',warnings);}
   }
 
-  if(isGrade2Class){
+  if(isLightGrade2Page){
     loadCss('/siniflar/2-sinif/styles.css');
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
     return;
