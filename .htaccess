@@ -27,6 +27,14 @@ RewriteRule ^(.+?)/?$ $1.html [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^siniflar/1-sinif/([^/]+)/([^/]+)-test/?$ /siniflar/1-sinif/test-sablon.html?ders=$1&konu=$2 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^siniflar/1-sinif/([^/]+)/([^/]+)/?$ /siniflar/1-sinif/konu-sablon.html?ders=$1&konu=$2 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^siniflar/([0-9]+)-sinif/([^/]+)/([^/]+)/?$ /siniflar/konu.html?grade=$1&subject=$2&topic=$3 [L,QSA]
 
 RewriteCond %{REQUEST_FILENAME} !-f
