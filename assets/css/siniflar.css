@@ -1,0 +1,3 @@
+@import url('/css/class-landing.css');
+.class-page-shell{background:var(--bg-color,#f9f9fb)}
+.class-card,.lesson-card{border-radius:12px}
