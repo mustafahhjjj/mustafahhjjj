@@ -19,16 +19,18 @@
     if(!headings.length)return;
     var warnings=[];
     var h1Count=headings.filter(function(node){return node.tagName==='H1';}).length;
-    if(h1Count!==1)warnings.push('Sayfada tek H1 olmal\u0131; bulunan H1 say\u0131s\u0131: '+h1Count);
+    if(h1Count!==1)warnings.push('Sayfada tek H1 olmali; bulunan H1 sayisi: '+h1Count);
     var previous=0;
     headings.forEach(function(node){
       var current=level(node);
-      if(previous&&current>previous+1){warnings.push('Ba\u015fl\u0131k hiyerar\u015fisi atland\u0131: H'+previous+' sonras\u0131 H'+current+' - '+node.textContent.trim().slice(0,80));}
+      if(previous&&current>previous+1){warnings.push('Baslik hiyerarsisi atlandi: H'+previous+' sonrasi H'+current+' - '+node.textContent.trim().slice(0,80));}
       previous=current;
     });
     if(warnings.length){document.documentElement.setAttribute('data-heading-audit','warning');if(window.console&&console.warn)console.warn('[e-kurs SEO heading audit]',warnings);}
   }
   loadCss('/css/k12-ui.css');
+  loadCss('/css/home-polish.css');
   loadScript('/js/k12-ui.js');
+  loadScript('/js/home-polish.js');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
 })();
