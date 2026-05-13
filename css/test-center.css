@@ -1,0 +1,404 @@
+:root{
+  --ek-test-blue:#1d4ed8;
+  --ek-test-navy:#10233f;
+  --ek-test-sky:#eaf4ff;
+  --ek-test-soft:#f8fafc;
+  --ek-test-border:#dbe5f0;
+  --ek-test-green:#0f9f6e;
+  --ek-test-orange:#f97316;
+  --ek-test-gold:#f6b91a;
+  --ek-test-red:#dc2626;
+}
+.ekurs-test-legacy-muted{
+  display:none!important;
+}
+.ekurs-test-center{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:linear-gradient(180deg,#ffffff 0%,#f7fbff 58%,#ffffff 100%);
+  color:#172033;
+  padding:clamp(18px,3vw,42px);
+}
+.ekurs-test-center *{box-sizing:border-box;letter-spacing:0}
+.ekurs-test-hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr);
+  gap:24px;
+  max-width:1220px;
+  margin:0 auto 22px;
+  align-items:stretch;
+}
+.ekurs-test-hero-copy,.ekurs-test-stats,.ekurs-test-filters,.ekurs-test-recommendations,.ekurs-test-cards-section,.ekurs-test-leaderboard{
+  background:#fff;
+  border:1px solid var(--ek-test-border);
+  border-radius:18px;
+  box-shadow:0 16px 40px rgba(17,36,61,.08);
+}
+.ekurs-test-hero-copy{
+  padding:clamp(22px,4vw,44px);
+  position:relative;
+  overflow:hidden;
+}
+.ekurs-test-hero-copy:after{
+  content:"";
+  position:absolute;
+  right:-70px;
+  top:-70px;
+  width:220px;
+  height:220px;
+  border-radius:48px;
+  transform:rotate(18deg);
+  background:linear-gradient(135deg,rgba(29,78,216,.12),rgba(15,159,110,.12));
+}
+.ekurs-test-eyebrow,.ekurs-test-chip{
+  display:inline-flex;
+  width:max-content;
+  align-items:center;
+  gap:8px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:#eaf4ff;
+  color:#174ea6;
+  font-weight:800;
+  font-size:12px;
+}
+.ekurs-test-hero h1{
+  max-width:760px;
+  margin:14px 0 12px;
+  color:var(--ek-test-navy);
+  font-size:clamp(32px,5vw,58px);
+  line-height:1.02;
+  font-weight:900;
+}
+.ekurs-test-lead{
+  max-width:720px;
+  margin:0;
+  color:#4b5f7a;
+  font-size:17px;
+  line-height:1.65;
+}
+.ekurs-test-hero-actions,.ekurs-test-card-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+.ekurs-test-primary,.ekurs-test-secondary,.ekurs-test-card-primary,.ekurs-test-card-secondary,.ekurs-test-reco-meta button,.ekurs-test-feedback button{
+  border:0;
+  min-height:44px;
+  border-radius:12px;
+  padding:0 16px;
+  font-weight:850;
+  cursor:pointer;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.ekurs-test-primary,.ekurs-test-card-primary,.ekurs-test-reco-meta button{
+  background:var(--ek-test-blue);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(29,78,216,.24);
+}
+.ekurs-test-secondary,.ekurs-test-card-secondary{
+  background:#fff;
+  color:#173255;
+  border:1px solid var(--ek-test-border);
+}
+.ekurs-test-primary:hover,.ekurs-test-secondary:hover,.ekurs-test-card-primary:hover,.ekurs-test-card-secondary:hover,.ekurs-test-reco-meta button:hover,.ekurs-test-feedback button:hover{transform:translateY(-1px)}
+.ekurs-test-stats{
+  display:grid;
+  gap:12px;
+  padding:18px;
+  align-content:center;
+}
+.ekurs-test-stat{
+  padding:18px;
+  border-radius:14px;
+  background:var(--ek-test-soft);
+  border:1px solid #e8eef6;
+}
+.ekurs-test-stat span,.ekurs-test-fact span,.ekurs-test-select span,.ekurs-test-search span{
+  display:block;
+  color:#64748b;
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.ekurs-test-stat strong{
+  display:block;
+  margin-top:6px;
+  color:var(--ek-test-navy);
+  font-size:24px;
+}
+.ekurs-test-layout{
+  display:grid;
+  grid-template-columns:280px minmax(0,1fr);
+  gap:22px;
+  max-width:1220px;
+  margin:0 auto;
+}
+.ekurs-test-filters{
+  position:sticky;
+  top:18px;
+  align-self:start;
+  padding:18px;
+}
+.ekurs-test-filters h2{
+  margin:0 0 16px;
+  font-size:20px;
+  color:var(--ek-test-navy);
+}
+.ekurs-test-select,.ekurs-test-search{
+  display:block;
+  margin-bottom:13px;
+}
+.ekurs-test-select select,.ekurs-test-search input{
+  width:100%;
+  margin-top:7px;
+  min-height:44px;
+  border-radius:12px;
+  border:1px solid var(--ek-test-border);
+  padding:0 12px;
+  background:#fff;
+  color:#172033;
+  font-weight:750;
+}
+.ekurs-test-filter-note{
+  margin-top:16px;
+  padding:14px;
+  border-radius:14px;
+  background:#f1f8ff;
+  color:#42526d;
+}
+.ekurs-test-filter-note strong{color:#15345d}
+.ekurs-test-filter-note p{margin:6px 0 0;line-height:1.5}
+.ekurs-test-main{display:grid;gap:20px}
+.ekurs-test-recommendations,.ekurs-test-cards-section{padding:18px}
+.ekurs-test-section-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:14px;
+  color:#10233f;
+  font-weight:900;
+  font-size:18px;
+}
+.ekurs-test-section-title span{
+  color:#64748b;
+  font-size:12px;
+  font-weight:850;
+}
+.ekurs-test-reco-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.ekurs-test-reco-card,.ekurs-test-daily,.ekurs-test-card{
+  border:1px solid #e3ebf5;
+  border-radius:16px;
+  background:#fff;
+  padding:16px;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.ekurs-test-reco-card:hover,.ekurs-test-daily:hover,.ekurs-test-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(15,35,63,.1);
+  border-color:#bdd3f4;
+}
+.ekurs-test-reco-card h3,.ekurs-test-daily h3,.ekurs-test-card h3{
+  margin:12px 0 8px;
+  color:#11243f;
+  font-size:18px;
+  line-height:1.25;
+}
+.ekurs-test-reco-card p,.ekurs-test-daily p,.ekurs-test-skill{
+  color:#52657f;
+  line-height:1.55;
+  margin:0 0 14px;
+}
+.ekurs-test-reco-meta,.ekurs-test-daily-meta,.ekurs-test-meta,.ekurs-test-facts{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.ekurs-test-reco-meta span,.ekurs-test-daily-meta span,.ekurs-test-meta span{
+  display:inline-flex;
+  min-height:28px;
+  align-items:center;
+  padding:0 9px;
+  border-radius:999px;
+  background:#f5f8fc;
+  color:#43546d;
+  font-size:12px;
+  font-weight:800;
+}
+.ekurs-test-daily{
+  cursor:pointer;
+  background:linear-gradient(135deg,#fff7ed,#eef6ff);
+}
+.ekurs-test-card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.ekurs-test-status{
+  display:inline-flex;
+  padding:7px 10px;
+  border-radius:999px;
+  background:#eef6ff;
+  color:#174ea6;
+  font-size:12px;
+  font-weight:900;
+}
+.ekurs-test-card[data-status="Yarım Kalan"] .ekurs-test-status{background:#fff7ed;color:#b45309}
+.ekurs-test-card[data-status="Tamamlanan"] .ekurs-test-status{background:#ecfdf5;color:#047857}
+.ekurs-test-facts{margin:14px 0}
+.ekurs-test-fact{
+  flex:1 1 88px;
+  min-width:82px;
+  padding:10px;
+  border-radius:12px;
+  background:#f8fafc;
+  border:1px solid #edf2f7;
+}
+.ekurs-test-fact strong{
+  display:block;
+  margin-top:4px;
+  color:#10233f;
+  font-size:15px;
+}
+.ekurs-test-progress{
+  position:relative;
+  height:36px;
+  border-radius:999px;
+  background:#f1f5f9;
+  overflow:hidden;
+  border:1px solid #e2e8f0;
+}
+.ekurs-test-progress span{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  height:100%;
+  padding-left:12px;
+  font-weight:850;
+  color:#173255;
+  font-size:13px;
+}
+.ekurs-test-progress i{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  background:linear-gradient(90deg,#bae6fd,#93c5fd);
+}
+.ekurs-test-card small{display:block;margin-top:12px;color:#64748b;font-weight:750}
+.ekurs-test-leaderboard{margin-top:16px;padding:16px}
+.ekurs-test-rank{
+  display:grid;
+  grid-template-columns:44px 1fr auto;
+  gap:10px;
+  align-items:center;
+  min-height:42px;
+  border-top:1px solid #edf2f7;
+}
+.ekurs-test-rank span{color:#1d4ed8;font-weight:900}
+.ekurs-test-rank strong{color:#11243f}
+.ekurs-test-rank em{font-style:normal;color:#64748b;font-weight:800}
+.ekurs-test-empty{
+  grid-column:1/-1;
+  border:1px dashed #bdd3f4;
+  background:#f8fbff;
+  color:#4b5f7a;
+  border-radius:16px;
+  padding:26px;
+  text-align:center;
+  font-weight:800;
+}
+.ekurs-test-modal{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:grid;
+  place-items:center;
+  padding:18px;
+  background:rgba(11,24,43,.58);
+  backdrop-filter:blur(8px);
+}
+.ekurs-test-dialog{
+  position:relative;
+  width:min(760px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:#fff;
+  border-radius:20px;
+  padding:24px;
+  box-shadow:0 30px 80px rgba(2,8,23,.32);
+}
+.ekurs-test-close{
+  position:absolute;
+  right:18px;
+  top:18px;
+  border:1px solid #dbe5f0;
+  background:#fff;
+  border-radius:999px;
+  min-height:36px;
+  padding:0 12px;
+  cursor:pointer;
+  font-weight:850;
+}
+.ekurs-test-dialog h2{margin:14px 0 8px;color:#10233f;font-size:28px;line-height:1.2}
+.ekurs-test-dialog>p{color:#52657f;line-height:1.6;margin:0 0 14px}
+.ekurs-test-runner-summary{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin:16px 0;
+}
+.ekurs-test-question{
+  border:1px solid #dbe5f0;
+  border-radius:18px;
+  padding:18px;
+  background:#f8fbff;
+}
+.ekurs-test-question h3{margin:0 0 8px;color:#10233f}
+.ekurs-test-question p{margin:0 0 12px;color:#31415a;font-size:18px;font-weight:800}
+.ekurs-test-choices{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.ekurs-test-choices button{
+  min-height:48px;
+  border-radius:12px;
+  border:1px solid #cfe0f5;
+  background:#fff;
+  color:#10233f;
+  font-weight:900;
+  cursor:pointer;
+}
+.ekurs-test-feedback{
+  margin-top:14px;
+  padding:14px;
+  border-radius:14px;
+  border:1px solid #dbe5f0;
+  background:#fff;
+}
+.ekurs-test-feedback strong{display:block;color:#10233f;margin-bottom:6px}
+.ekurs-test-feedback p{font-size:15px;font-weight:650;line-height:1.55;color:#44546c;margin:0 0 10px}
+.ekurs-test-feedback.is-correct{border-color:#bbf7d0;background:#f0fdf4}
+.ekurs-test-feedback.is-wrong{border-color:#fecaca;background:#fff7f7}
+.ekurs-test-feedback button{background:var(--ek-test-red);color:#fff}
+@media (max-width:980px){
+  .ekurs-test-hero,.ekurs-test-layout{grid-template-columns:1fr}
+  .ekurs-test-filters{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .ekurs-test-filters h2,.ekurs-test-filter-note{grid-column:1/-1}
+  .ekurs-test-reco-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .ekurs-test-center{padding:14px}
+  .ekurs-test-card-grid,.ekurs-test-runner-summary{grid-template-columns:1fr}
+  .ekurs-test-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ekurs-test-filters{grid-template-columns:1fr}
+  .ekurs-test-hero h1{font-size:34px}
+  .ekurs-test-section-title{align-items:flex-start;flex-direction:column}
+}
