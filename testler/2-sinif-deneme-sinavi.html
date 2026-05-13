@@ -4,49 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2. Sınıf Deneme Sınavı | e-kurs.com</title>
-  <meta name="description" content="2. sınıf öğrencileri için 10 soruluk çocuk dostu deneme sınavı.">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/siniflar/2-sinif/styles.css">
+  <meta name="description" content="2. sınıf öğrencileri için açıklamalı, çocuk dostu 10 soruluk deneme sınavı.">
+  <link rel="stylesheet" href="/css/grade1.css">
   <style>
-    .exam-shell{display:grid;gap:22px;max-width:920px;margin:0 auto}
-    .exam-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-    .exam-stat{padding:18px;border:2px solid var(--border);border-radius:20px;background:#fff;box-shadow:var(--shadow);text-align:center}
-    .exam-stat strong{display:block;color:var(--text);font-size:28px;line-height:1}
-    .exam-stat span{display:block;margin-top:6px;color:var(--muted);font-size:15px;font-weight:800}
-    .question-card{display:grid;gap:18px;padding:26px;border:2px solid var(--border);border-radius:24px;background:#fff;box-shadow:var(--shadow-strong)}
-    .question-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
-    .question-code{display:inline-flex;min-height:38px;align-items:center;padding:0 14px;border-radius:999px;background:var(--soft-blue);color:var(--math);font-weight:800}
-    .question-card h2{margin:0;color:var(--text)}
-    .choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .choice{display:flex;min-height:62px;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border);border-radius:18px;background:#fff;color:var(--body);font:inherit;font-weight:800;text-align:left;cursor:pointer}
-    .choice:hover{border-color:var(--math);background:var(--soft-blue)}
-    .choice[aria-pressed="true"]{border-color:var(--green);background:var(--soft-green)}
-    .choice-letter{display:grid;width:34px;height:34px;place-items:center;flex:0 0 auto;border-radius:12px;background:#f1f5f9;color:var(--text)}
-    .exam-actions{display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center;justify-content:space-between}
-    .feedback{min-height:52px;padding:14px 16px;border:2px solid #dbeafe;border-radius:18px;background:#eff6ff;color:#1e3a8a;font-weight:800}
-    .feedback.good{border-color:#bbf7d0;background:#ecfdf5;color:#166534}
-    .feedback.bad{border-color:#fecaca;background:#fff1f2;color:#991b1b}
-    .result-panel{display:none;padding:24px;border:2px solid #bbf7d0;border-radius:24px;background:linear-gradient(135deg,#fff,#ecfdf5);box-shadow:var(--shadow-strong)}
-    .result-panel.is-visible{display:grid;gap:14px}
-    .review-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
-    .review-list li{padding:12px;border:1px solid var(--border);border-radius:14px;background:#fff;font-weight:700}
-    @media(max-width:700px){.exam-status,.choice-grid{grid-template-columns:1fr}.exam-actions .btn{width:100%}}
+    .exam-shell{display:grid;gap:18px;max-width:920px;margin:0 auto}.exam-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.exam-stat{padding:18px;border:2px solid #dbe7f5;border-radius:20px;background:#fff;box-shadow:0 10px 24px rgba(15,23,42,.08);text-align:center}.exam-stat strong{display:block;font-size:28px}.question-card{display:grid;gap:18px;padding:26px;border:2px solid #dbe7f5;border-radius:24px;background:#fff;box-shadow:0 14px 30px rgba(15,23,42,.1)}.question-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.question-code,.pill{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:999px;background:#eff6ff;color:#2563eb;font-weight:900}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.choice{display:flex;min-height:64px;align-items:center;gap:12px;padding:14px 16px;border:2px solid #dbe7f5;border-radius:18px;background:#fff;font:inherit;font-weight:900;text-align:left;cursor:pointer}.choice:hover,.choice[aria-pressed="true"]{border-color:#2563eb;background:#eff6ff}.choice-letter{display:grid;width:36px;height:36px;place-items:center;border-radius:12px;background:#f1f5f9;color:#0f172a}.feedback{min-height:54px;padding:14px 16px;border:2px solid #dbeafe;border-radius:18px;background:#eff6ff;color:#1e3a8a;font-weight:900}.feedback.good{border-color:#bbf7d0;background:#ecfdf5;color:#166534}.feedback.bad{border-color:#fecaca;background:#fff1f2;color:#991b1b}.exam-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}.result-panel{display:none;padding:24px;border:2px solid #bbf7d0;border-radius:24px;background:#ecfdf5}.result-panel.is-visible{display:grid;gap:14px}.review-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}.review-list li{padding:12px;border:1px solid #dbe7f5;border-radius:14px;background:#fff;font-weight:800}@media(max-width:700px){.exam-status,.choice-grid{grid-template-columns:1fr}.exam-actions .btn{width:100%}}
   </style>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav container" aria-label="Ana menü">
       <a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="logo-mark">e</span><span>e-kurs.com</span></a>
-      <div class="nav-links"><a href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a class="active" href="/testler/index.html">Testler</a></div>
+      <div class="nav-links">
+        <a href="/index.html">Ana Sayfa</a>
+        <a href="/siniflar/index.html">Sınıflar</a>
+        <a href="/dersler/index.html">Dersler</a>
+        <a class="active" href="/testler/index.html">Testler</a>
+        <a href="/giris.html">Giriş Yap</a>
+      </div>
     </nav>
   </header>
 
   <main>
-    <section class="page-hero">
+    <section class="page-hero grade-2-hero">
       <div class="container">
-        <p class="breadcrumb">Testler / 2. Sınıf</p>
+        <nav class="breadcrumb" aria-label="Sayfa yolu">
+          <a href="/index.html">Ana Sayfa</a><span>/</span><a href="/testler/index.html">Testler</a><span>/</span><span>2. Sınıf Deneme</span>
+        </nav>
+        <p class="eyebrow">2. sınıf deneme</p>
         <h1>2. Sınıf Deneme Sınavı</h1>
-        <p class="lead">10 soruluk kısa tekrar. Her soruyu çöz, sonucu hemen gör, yanlışlarını en sonda tekrar et.</p>
+        <p class="lead">Türkçe, Matematik, Hayat Bilgisi ve İngilizce konularından 10 soruluk kısa deneme.</p>
       </div>
     </section>
 
@@ -60,7 +46,7 @@
 
         <article class="question-card" aria-live="polite">
           <div class="question-top"><span id="questionCode" class="question-code">Matematik</span><span class="pill">2. sınıf</span></div>
-          <h2 id="questionText">Soru yükleniyor...</h2>
+          <h2 id="questionText">23 + 14 işleminin sonucu kaçtır?</h2>
           <div id="choices" class="choice-grid"></div>
           <div id="feedback" class="feedback">Cevabını seç ve kontrol et.</div>
           <div class="exam-actions">
@@ -74,13 +60,21 @@
           <p id="resultText" class="lead"></p>
           <ul id="reviewList" class="review-list"></ul>
           <div class="exam-actions">
-            <button id="restartBtn" class="btn btn-primary" type="button">Tekrar Çöz</button>
-            <a class="btn btn-light" href="/testler/2-sinif.html">2. Sınıf Testlerine Dön</a>
+            <button id="restartBtn" class="btn btn-primary" type="button">Yanlışları Tekrar Çöz</button>
+            <a class="btn btn-light" href="/siniflar/2-sinif/index.html">Sınıfa Dön</a>
+            <a class="btn btn-light" href="/testler/index.html">Testlere Dön</a>
           </div>
         </section>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="logo" href="/index.html"><span class="logo-mark">e</span><span>e-kurs.com</span></a>
+      <a class="footer-link" href="/siniflar/2-sinif/matematik.html">2. Sınıf Matematik</a>
+    </div>
+  </footer>
 
   <script>
     (function(){
@@ -111,7 +105,6 @@
       var resultText=document.getElementById('resultText');
       var reviewList=document.getElementById('reviewList');
       var restartBtn=document.getElementById('restartBtn');
-
       function render(){
         var q=questions[index];
         selected=null;
@@ -140,11 +133,7 @@
         });
       }
       function check(){
-        if(selected===null){
-          feedback.className='feedback bad';
-          feedback.textContent='Önce bir cevap seçmelisin.';
-          return;
-        }
+        if(selected===null){feedback.className='feedback bad';feedback.textContent='Önce bir cevap seçmelisin.';return;}
         var q=questions[index];
         var correct=selected===q.answer;
         if(correct)score+=1;
@@ -166,21 +155,12 @@
           li.textContent=(i+1)+'. soru: '+q.text+' Doğru cevap: '+q.choices[q.answer]+'.';
           reviewList.appendChild(li);
         });
-        if(!reviewList.children.length){
-          var li=document.createElement('li');
-          li.textContent='Tüm sorular doğru. Yıldızı hak ettin!';
-          reviewList.appendChild(li);
-        }
+        if(!reviewList.children.length){var li=document.createElement('li');li.textContent='Tüm sorular doğru. Harika iş!';reviewList.appendChild(li);}
         resultPanel.scrollIntoView({behavior:'smooth',block:'start'});
       }
       checkBtn.addEventListener('click',check);
-      nextBtn.addEventListener('click',function(){
-        if(index<questions.length-1){index+=1;render();}
-        else finish();
-      });
-      restartBtn.addEventListener('click',function(){
-        index=0;selected=null;score=0;answers=[];resultPanel.classList.remove('is-visible');render();window.scrollTo({top:0,behavior:'smooth'});
-      });
+      nextBtn.addEventListener('click',function(){if(index<questions.length-1){index+=1;render();}else finish();});
+      restartBtn.addEventListener('click',function(){index=0;selected=null;score=0;answers=[];resultPanel.classList.remove('is-visible');render();window.scrollTo({top:0,behavior:'smooth'});});
       render();
     })();
   </script>
