@@ -1,45 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Giriş Yap | e-kurs.com</title>
-    <meta name="description" content="e-kurs.com öğrenci girişi.">
-    <link rel="stylesheet" href="/siniflar/2-sinif/styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav" aria-label="Ana menü">
-        <a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="logo-mark">e</span><span>e-kurs.com</span></a>
-        <div class="nav-links">
-          <a href="/siniflar/index.html">Sınıflar</a>
-          <a href="/dersler/index.html">Dersler</a>
-          <a href="/testler/index.html">Testler</a>
-          <a href="/oduller.html">Ödüller</a>
-          <a class="btn btn-primary" href="/kayit.html">Üye Ol</a>
-        </div>
-      </nav>
-    </header>
-    <main class="skills-shell">
-      <section class="math-hero">
-        <div class="container skills-intro">
-          <div>
-            <p class="breadcrumb">Üyelik / Giriş</p>
-            <h1>Öğrenci girişi</h1>
-            <p class="lead">Kendi çalışma listen, soru bankaların ve sınav hazırlıkların için hesabına giriş yap.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="/siniflar/2-sinif/matematik.html">Matematik Çalış</a>
-              <a class="btn btn-light" href="/kayit.html">Yeni Üyelik</a>
-            </div>
-          </div>
-          <aside class="progress-panel" aria-label="Giriş özeti">
-            <span class="panel-kicker">Yakında</span>
-            <strong>Üyelik paneli</strong>
-            <p>Giriş formu ve öğrenci takip alanı bu sayfaya bağlanacak.</p>
-            <div class="progress-row"><span>6<small>Tema</small></span><span>27<small>Beceri</small></span><span>6<small>Banka</small></span><span>3<small>Sınav</small></span></div>
-          </aside>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş Yap | e-kurs.com</title>
+  <meta name="description" content="e-kurs.com K-12 öğrenci, öğretmen ve veli giriş ekranı.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/auth.css">
+  <script src="/js/auth.js" defer></script>
+</head>
+<body class="auth-body">
+  <header class="site-header">
+    <nav class="nav" aria-label="Ana menü">
+      <a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="logo-mark">e</span><span>e-kurs.com</span></a>
+      <div class="nav-links"><a href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a><a href="/oduller.html">Ödüller</a></div>
+      <div class="nav-actions"><a class="btn btn-light" href="/kayit.html">Üye Ol</a></div>
+    </nav>
+  </header>
+  <main class="auth-shell">
+    <div class="container auth-grid">
+      <section class="auth-hero">
+        <span class="auth-kicker">K-12 güvenli giriş</span>
+        <h1>Çalışmana sessiz, sade ve güvenli başla.</h1>
+        <p>Öğrenci, öğretmen ve veli hesapları ayrı panel deneyimine yönlendirilir. Küçük yaş grupları için hesaplar veli veya öğretmen kontrolüyle açılır.</p>
+        <div class="auth-points"><span>Reklamsız ve dikkat dağıtmayan ekran</span><span>Yumuşak hata mesajları</span><span>Rol bazlı panel yönlendirmesi</span></div>
       </section>
-    </main>
-  </body>
+      <section class="auth-card" aria-label="Giriş formu">
+        <h2>Giriş Yap</h2>
+        <p class="auth-small">Okulun, öğretmenin veya velin tarafından verilen bilgilerle giriş yap.</p>
+        <form class="auth-form" id="loginForm" novalidate>
+          <label class="auth-field">Rol
+            <select id="loginRole" name="role"><option value="student">Öğrenci</option><option value="teacher">Öğretmen</option><option value="parent">Veli</option></select>
+          </label>
+          <label class="auth-field">Kullanıcı adı veya e-posta
+            <input id="loginUser" name="username" autocomplete="username" placeholder="ornek@e-posta.com" required>
+          </label>
+          <label class="auth-field">Şifre
+            <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Şifren" required>
+          </label>
+          <div class="auth-row"><label class="auth-check"><input id="rememberMe" type="checkbox"> Beni hatırla</label><a class="auth-link" href="/sifremi-unuttum.html">Şifremi Unuttum</a></div>
+          <div class="auth-message" id="loginMessage" role="status" aria-live="polite"></div>
+          <button class="auth-submit" type="submit">Giriş Yap</button>
+        </form>
+        <div class="auth-divider"><span>veya</span></div>
+        <a class="sso-button" href="/auth/google.html"><span class="sso-dot">G</span> Google ile Giriş Yap</a>
+        <p class="auth-small">Hesabın yoksa <a class="auth-link" href="/kayit.html">kayıt başvurusu oluştur</a>.</p>
+      </section>
+    </div>
+  </main>
+</body>
 </html>
