@@ -56,4 +56,99 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
     observer.observe(feedback,{childList:true,characterData:true,subtree:true});
   }
+
+  if(document.body.classList.contains('home-modern')){
+    const style=document.createElement('style');
+    style.textContent='.stage-tabs-panels{min-height:318px}.daily-skill-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;min-height:104px;margin-top:18px;padding:18px;border:1px solid #bbf7d0;border-radius:24px;background:linear-gradient(135deg,#fff,#ecfdf5);box-shadow:0 12px 32px rgba(15,23,42,.08)}.daily-skill-panel span{color:#0d9464;font-size:.78rem;font-weight:900;text-transform:uppercase}.daily-skill-panel h3{margin:2px 0 4px}.daily-skill-panel p{margin:0}.daily-skill-panel.is-loading{background:#fff}.daily-skill-panel.is-loading h3,.daily-skill-panel.is-loading p{color:transparent;border-radius:999px;background:linear-gradient(90deg,#eef2f7,#dbeafe,#eef2f7);background-size:220% 100%;animation:skeleton 1.1s linear infinite}@media(max-width:640px){.daily-skill-panel{grid-template-columns:1fr}.daily-skill-panel .btn{width:100%}}';
+    document.head.appendChild(style);
+
+    const skillMap={
+      '1. sınıf':['Toplama Öncesi Sayma','10 içinde sayıları tanı ve kısa alıştırmaya başla.','/siniflar/1-sinif/matematik.html'],
+      '2. sınıf':['Geometrik Cisimleri Tanı','Küre, küp ve silindiri ayırt et; sonra soru bankasına geç.','/testler/2-sinif-matematik-1-tema-soru-bankasi.html'],
+      '3. sınıf':['Çarpım Tablosu Pratiği','Kısa çarpma görevleriyle ritmini güçlendir.','/siniflar/3-sinif/matematik.html'],
+      '4. sınıf':['Kesirleri Sıralama','Pay ve payda ilişkisini mini görevlerle pekiştir.','/siniflar/4-sinif/matematik.html#kesirleri-siralama'],
+      '5. sınıf':['Kesirlerde Toplama','Kesirleri aynı paydada topla ve seviyeni gör.','/siniflar/5-sinif/matematik.html#kesirlerde-toplama'],
+      '6. sınıf':['Oran Problemleri','Oran kur ve kısa problem çöz.','/siniflar/6-sinif/matematik.html#oran'],
+      '7. sınıf':['Tam Sayılar','İşaret kurallarını hızlı alıştırmayla tekrar et.','/siniflar/7-sinif/matematik.html#tam-sayilar'],
+      '8. sınıf':['LGS Problem Pratiği','Yeni nesil problem çözmeye başla.','/siniflar/8-sinif/matematik.html#problemler'],
+      '9. sınıf':['Üslü Sayılar','Üslü ifadeleri temel görevlerle çalış.','/siniflar/9-sinif/matematik.html#uslu-sayilar'],
+      '10. sınıf':['Fonksiyonları Tanı','Fonksiyon okuma ve eşleştirme görevini aç.','/siniflar/10-sinif/matematik.html#fonksiyonlar'],
+      '11. sınıf':['Paragrafta Ana Düşünce','Metnin ana fikrini bulma pratiği yap.','/siniflar/11-sinif/turkce.html#paragrafta-ana-dusunce'],
+      '12. sınıf':['TYT Mini Deneme','Süreli mini deneme ile seviyeni ölç.','/testler/index.html']
+    };
+    const panels=document.querySelector('.stage-tabs-panels');
+    if(panels&&!document.getElementById('dailySkillPanel')){
+      const panel=document.createElement('div');
+      panel.className='daily-skill-panel';
+      panel.id='dailySkillPanel';
+      panel.innerHTML='<div><span>Günün Becerisi</span><h3 id="dailySkillTitle">Geometrik Cisimleri Tanı</h3><p id="dailySkillText">Küre, küp ve silindiri ayırt et; sonra soru bankasına geç.</p></div><a class="btn btn-primary" id="dailySkillLink" href="/testler/2-sinif-matematik-1-tema-soru-bankasi.html" data-trial-link>Hemen Çöz</a>';
+      panels.appendChild(panel);
+    }
+    const dailyPanel=document.getElementById('dailySkillPanel');
+    const dailyTitle=document.getElementById('dailySkillTitle');
+    const dailyText=document.getElementById('dailySkillText');
+    const dailyLink=document.getElementById('dailySkillLink');
+    document.querySelectorAll('.class-pill').forEach(pill=>{
+      const key=pill.textContent.trim();
+      const data=skillMap[key];
+      if(data){pill.dataset.skillTitle=data[0];pill.dataset.skillText=data[1];pill.dataset.skillUrl=data[2];}
+      pill.addEventListener('click',event=>{
+        if(!pill.dataset.skillUrl)return;
+        event.preventDefault();
+        document.querySelectorAll('.class-pill').forEach(item=>item.classList.remove('active'));
+        pill.classList.add('active');
+        dailyPanel?.classList.add('is-loading');
+        setTimeout(()=>{
+          dailyTitle.textContent=pill.dataset.skillTitle;
+          dailyText.textContent=pill.dataset.skillText;
+          dailyLink.href=pill.dataset.skillUrl;
+          dailyLink.textContent='Hemen Çöz';
+          dailyPanel?.classList.remove('is-loading');
+        },220);
+      });
+    });
+
+    const replaceLinkText=(needle,text)=>document.querySelectorAll('.skill-links a,.card .btn').forEach(a=>{if(a.textContent.includes(needle)){a.firstChild.textContent=text+' ';}});
+    replaceLinkText('Geometrik Cisimler','Geometrik Cisimleri Tanı');
+    replaceLinkText('Sayılar ve Ritmik Sayma','Ritmik Saymayı Tamamla');
+    replaceLinkText('Toplama ve Çıkarma','Toplama ve Çıkarma Problemi Çöz');
+    replaceLinkText('1. Dönem Yazılı','1. Dönem Yazılıyı Dene');
+    replaceLinkText('Deneme Sınavı','2. Sınıf Deneme Çöz');
+    document.querySelectorAll('.card .btn').forEach(btn=>{if(btn.textContent.includes('Testleri Aç'))btn.textContent='Deneme Çöz';});
+
+    const mathList=document.querySelector('.feature-card .skill-links');
+    if(mathList&&!mathList.querySelector('[href*="dogal-sayilarla-toplama"]')){
+      [['Doğal Sayılarla Toplama','/siniflar/4-sinif/matematik.html#dogal-sayilarla-toplama'],['Kesirleri Sıralama','/siniflar/4-sinif/matematik.html#kesirleri-siralama'],['Zaman Ölçüleri','/siniflar/4-sinif/matematik.html#zaman-olculeri']].forEach(([label,href])=>{
+        const li=document.createElement('li');li.className='extra-skill';li.innerHTML='<a href="'+href+'">'+label+' <b>→</b></a>';mathList.appendChild(li);
+      });
+    }
+    const trList=document.querySelectorAll('.feature-card .skill-links')[1];
+    if(trList&&!trList.querySelector('[href*="paragrafta-ana-dusunce"]')){
+      const li=document.createElement('li');li.className='extra-skill';li.innerHTML='<a href="/siniflar/11-sinif/turkce.html#paragrafta-ana-dusunce">Paragrafta Ana Düşünce <b>→</b></a>';trList.appendChild(li);
+    }
+
+    const trialLabel=document.querySelector('#trialModal .demo-label');
+    const trialTitle=document.getElementById('trialTitle');
+    const trialText=document.getElementById('trialText');
+    if(trialLabel)trialLabel.textContent='Soft paywall';
+    if(trialTitle)trialTitle.textContent='10 soruda %80 başarı!';
+    if(trialText)trialText.textContent='Bu harika veriyi kaybetmemek ve yapay zeka analizini görmek için ücretsiz profilini oluştur.';
+
+    const steps=document.querySelectorAll('.diagnostic-step');
+    if(steps.length>=3){
+      steps[0].querySelector('h3').textContent='1. Öğrenci yanlış cevap verir';
+      steps[0].querySelector('p').textContent='Sistem hatanın hangi kazanımdan geldiğini ayırır.';
+      steps[1].querySelector('h3').textContent='2. Sistem seviyeyi kolaylaştırır';
+      steps[1].querySelector('p').textContent='AI ikonu parlar ve daha küçük adımlı soru seçilir.';
+      steps[2].querySelector('h3').textContent='3. İpucu gelir, doğru çözülür';
+      steps[2].querySelector('p').textContent='Öğrenci destekle tekrar dener ve başarı hissini korur.';
+    }
+    const metricCards=document.querySelectorAll('#canli-metrikler .metric-card');
+    if(metricCards.length>=2){
+      metricCards[0].querySelector('strong')?.setAttribute('data-countup','14502');
+      metricCards[0].querySelector('span').textContent='Bugün çözülen soru';
+      metricCards[1].querySelector('strong')?.setAttribute('data-countup','1250');
+      metricCards[1].querySelector('span').textContent='Aktif öğrenci';
+    }
+  }
 });
