@@ -1,5 +1,5 @@
 (function(){
-  var assetVersion='20260513-grade2-math60';
+  var assetVersion='20260513-grade2-novideo';
   var path=(location.pathname||'').replace(/\/+$/,'');
   var isGrade2Class=path==='/siniflar/2-sinif';
   var isGrade2TestList=path==='/testler/2-sinif';
@@ -69,7 +69,6 @@
   loadCss('/css/test-center.css');
   loadCss('/css/test-runner.css');
   loadCss('/css/test-interactions.css');
-  loadCss('/css/test-video-coach.css');
   loadCss('/css/primary-exam-coach.css');
   loadCss('/css/cp-sync-guard.css');
   loadScript('/js/k12-ui.js');
@@ -83,7 +82,6 @@
   loadScript('/js/math-localized-ux.js');
   loadScript('/js/math-component-layout.js');
   loadScript('/js/test-center.js');
-  loadScript('/js/test-video-coach.js');
   loadScript('/js/primary-exam-coach.js');
   loadScript('/js/grade2-test-fix.js');
   loadScript('/js/cp-sync-guard.js');
