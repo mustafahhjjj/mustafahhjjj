@@ -1,5 +1,5 @@
 (function(){
-  var assetVersion='20260513-grade2-force';
+  var assetVersion='20260513-cp-sync';
   function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
     var src=versioned(href);
@@ -47,6 +47,7 @@
   loadCss('/css/test-interactions.css');
   loadCss('/css/test-video-coach.css');
   loadCss('/css/primary-exam-coach.css');
+  loadCss('/css/cp-sync-guard.css');
   loadScript('/js/k12-ui.js');
   loadScript('/js/home-polish.js');
   loadScript('/js/k12-gamification.js');
@@ -61,5 +62,6 @@
   loadScript('/js/test-video-coach.js');
   loadScript('/js/primary-exam-coach.js');
   loadScript('/js/grade2-test-fix.js');
+  loadScript('/js/cp-sync-guard.js');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
 })();
