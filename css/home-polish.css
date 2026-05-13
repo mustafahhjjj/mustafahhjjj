@@ -1,0 +1,87 @@
+.k12-entry-grid a,
+.class-pill {
+  align-items: center;
+  gap: 3px;
+  min-height: 62px;
+}
+
+.k12-entry-grid a .class-stat,
+.class-pill .class-stat {
+  display: block;
+  color: #64748b;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.ai-diagnostic-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr);
+  gap: 18px;
+  align-items: center;
+  margin: 0 0 20px;
+  padding: 24px;
+  border: 1px solid #bfdbfe;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #fff 0%, #eff6ff 58%, #ecfeff 100%);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, .12);
+}
+
+.ai-diagnostic-copy h3 {
+  margin: 8px 0;
+  color: #12203a;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.15;
+}
+
+.ai-diagnostic-copy p {
+  max-width: 620px;
+  color: #5f6f85;
+  font-weight: 800;
+  line-height: 1.65;
+}
+
+.diagnostic-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.diagnostic-snapshot {
+  display: grid;
+  gap: 10px;
+}
+
+.diagnostic-snapshot div {
+  padding: 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.diagnostic-snapshot strong {
+  display: block;
+  color: #12203a;
+  font-weight: 950;
+}
+
+.diagnostic-snapshot span {
+  display: block;
+  margin-top: 3px;
+  color: #5f6f85;
+  font-size: .92rem;
+  font-weight: 850;
+}
+
+.footer-extra-hidden {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .ai-diagnostic-hero {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+}
