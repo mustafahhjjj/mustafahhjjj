@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://e-kurs.com/</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>1.00</priority></url>
-  <url><loc>https://e-kurs.com/siniflar/</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.92</priority></url>
   <url><loc>https://e-kurs.com/dersler/</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
   <url><loc>https://e-kurs.com/testler/</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
   <url><loc>https://e-kurs.com/ogrenci/</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
@@ -10,36 +10,45 @@
   <url><loc>https://e-kurs.com/ogrenci/derslerim</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/ogrenci/odevlerim</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/ogrenci/testlerim</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://e-kurs.com/ogrenci/test-coz</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
   <url><loc>https://e-kurs.com/ogrenci/yanlislarim</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/ogrenci/basarilarim</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/ogrenci/mesajlarim</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/ogrenci/seviye-haritam</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://e-kurs.com/ogrenci/mustafa-hocaya-sor</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
-  <url><loc>https://e-kurs.com/ogrenci/veliye-goster</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
-  <url><loc>https://e-kurs.com/ogrenci/ayarlar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
   <url><loc>https://e-kurs.com/ogretmen-paneli</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.86</priority></url>
   <url><loc>https://e-kurs.com/ogretmen-paneli/canli-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
   <url><loc>https://e-kurs.com/ogretmen-paneli/ogrenciler</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://e-kurs.com/ogretmen-paneli/ogrenci-detay</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
   <url><loc>https://e-kurs.com/ogretmen-paneli/odevler</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
   <url><loc>https://e-kurs.com/ogretmen-paneli/quizler</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/ogretmen-paneli/kazanim-haritasi</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
   <url><loc>https://e-kurs.com/ogretmen-paneli/zorlanilan-konular</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://e-kurs.com/ogretmen-paneli/otomatik-gruplar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/ogretmen-paneli/veli-raporlari</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://e-kurs.com/ogretmen-paneli/mesajlar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
-  <url><loc>https://e-kurs.com/ogretmen-paneli/sertifikalar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.78</priority></url>
-  <url><loc>https://e-kurs.com/ogretmen-paneli/ayarlar</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.65</priority></url>
   <url><loc>https://e-kurs.com/yonetici-paneli</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://e-kurs.com/siniflar/2-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://e-kurs.com/siniflar/2-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://e-kurs.com/siniflar/3-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://e-kurs.com/siniflar/3-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/1-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/1-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/2-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/2-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/3-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/3-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/4-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/4-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/5-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/5-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/6-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/6-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/7-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/7-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/8-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/8-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/9-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/9-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/10-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/10-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/11-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/11-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/12-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.83</priority></url>
+  <url><loc>https://e-kurs.com/siniflar/12-sinif/matematik</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.81</priority></url>
   <url><loc>https://e-kurs.com/testler/2-sinif</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/testler/2-sinif-deneme-sinavi</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://e-kurs.com/testler/2-sinif-1-donem-matematik-yazili-sorulari</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://e-kurs.com/testler/2-sinif-2-donem-matematik-yazili-sorulari</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/testler/2-sinif-matematik-1-tema-soru-bankasi</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/testler/2-sinif-matematik-2-tema-soru-bankasi</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
   <url><loc>https://e-kurs.com/testler/2-sinif-matematik-3-tema-soru-bankasi</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
