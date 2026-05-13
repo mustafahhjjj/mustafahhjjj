@@ -1,5 +1,5 @@
 (function(){
-  var assetVersion='20260513-primary-coach';
+  var assetVersion='20260513-kids-polish';
   function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
     var src=versioned(href);
