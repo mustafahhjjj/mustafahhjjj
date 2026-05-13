@@ -2,16 +2,17 @@
   display:inline-flex;
   align-items:center;
   gap:6px;
-  min-height:40px;
+  min-height:46px;
   border:0;
   border-radius:999px;
-  padding:0 12px;
+  padding:0 14px;
   background:#facc15;
   color:#10233f;
   font-size:14px;
   font-weight:950;
   cursor:pointer;
   box-shadow:0 10px 22px rgba(250,204,21,.22);
+  touch-action:manipulation;
 }
 .ekurs-read-aloud:before{content:"\1F50A";font-size:16px;}
 .ekurs-primary-mascot{
@@ -43,11 +44,81 @@
   font-weight:850;
   line-height:1.4;
 }
+.ekurs-primary-choice{
+  display:flex!important;
+  align-items:center;
+  justify-content:flex-start!important;
+  gap:12px;
+  min-height:76px!important;
+  border-radius:24px!important;
+  padding:0 18px!important;
+  font-size:22px!important;
+  text-align:left;
+  touch-action:manipulation;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.ekurs-primary-choice:hover{
+  transform:translateY(-2px);
+}
+.ekurs-choice-letter{
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  flex:0 0 auto;
+  border-radius:14px;
+  background:#fff;
+  color:#10233f;
+  font-size:16px;
+  font-weight:950;
+}
+.ekurs-primary-choice strong{
+  color:#10233f;
+  font-size:24px;
+}
+.ekurs-primary-choice.choice-1{background:#eff6ff!important;border-color:#93c5fd!important;}
+.ekurs-primary-choice.choice-2{background:#ecfdf5!important;border-color:#86efac!important;}
+.ekurs-primary-choice.choice-3{background:#fff7ed!important;border-color:#fdba74!important;}
+.ekurs-primary-choice.choice-4{background:#fef2f2!important;border-color:#fca5a5!important;}
 .ekurs-status-title{
   display:block;
   color:#10233f;
   font-size:15px;
   margin-bottom:2px;
+}
+.ekurs-energy-bar{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:7px 10px;
+  align-items:center;
+  padding:10px 12px;
+  border-radius:14px;
+  background:#f8fafc;
+  border:1px solid #dbeafe;
+}
+.ekurs-energy-bar span{
+  color:#52657f;
+  font-size:12px;
+  font-weight:950;
+  text-transform:uppercase;
+}
+.ekurs-energy-bar strong{
+  color:#174ea6;
+  font-size:13px;
+}
+.ekurs-energy-bar i{
+  grid-column:1/-1;
+  display:block;
+  height:12px;
+  min-width:8px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#60a5fa,#22c55e);
+  box-shadow:0 8px 18px rgba(34,197,94,.18);
+  transition:width .25s ease;
+}
+.ekurs-energy-bar.is-challenge i{
+  background:linear-gradient(90deg,#facc15,#f97316);
+  animation:ekursEnergyPulse 1s ease-in-out infinite alternate;
 }
 .ekurs-countdown{
   display:flex;
@@ -93,13 +164,14 @@
 .ekurs-question-map .is-flagged{background:#f97316;}
 .ekurs-question-map .is-empty{background:#cbd5e1;color:#334155;}
 .ekurs-flag-current{
-  min-height:42px;
+  min-height:46px;
   border:1px solid #fed7aa;
   border-radius:12px;
   background:#fff7ed;
   color:#9a3412;
   font-weight:900;
   cursor:pointer;
+  touch-action:manipulation;
 }
 .ekurs-test-question.is-flagged{
   outline:3px solid rgba(249,115,22,.18);
@@ -133,9 +205,9 @@
 .ekurs-star-burst{
   display:inline-flex;
   align-items:center;
-  min-height:36px;
+  min-height:40px;
   margin-bottom:10px;
-  padding:0 12px;
+  padding:0 14px;
   border-radius:999px;
   background:#dcfce7;
   color:#166534;
@@ -154,6 +226,36 @@
   margin:10px 0 12px;
   color:#10233f;
   font-size:22px;
+}
+.ekurs-success-radar{
+  display:grid;
+  gap:10px;
+  margin:12px 0 14px;
+  padding:12px;
+  border-radius:16px;
+  background:#fff;
+  border:1px solid #dbeafe;
+}
+.ekurs-success-radar div{
+  display:grid;
+  grid-template-columns:150px minmax(0,1fr) 46px;
+  gap:10px;
+  align-items:center;
+}
+.ekurs-success-radar span{
+  color:#31415a;
+  font-weight:900;
+}
+.ekurs-success-radar i{
+  display:block;
+  height:13px;
+  min-width:10px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#93c5fd,#22c55e);
+}
+.ekurs-success-radar strong{
+  color:#10233f;
+  font-size:13px;
 }
 .ekurs-ai-report-grid{
   display:grid;
@@ -182,7 +284,13 @@
   70%{transform:scale(1.06);opacity:1;}
   100%{transform:scale(1);opacity:1;}
 }
+@keyframes ekursEnergyPulse{
+  from{filter:saturate(1);box-shadow:0 8px 18px rgba(249,115,22,.16);}
+  to{filter:saturate(1.35);box-shadow:0 8px 24px rgba(249,115,22,.34);}
+}
 @media (max-width:720px){
-  .ekurs-ai-report-grid{grid-template-columns:1fr;}
+  .ekurs-ai-report-grid,
+  .ekurs-success-radar div{grid-template-columns:1fr;}
   .ekurs-question-map{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .ekurs-primary-choice{min-height:68px!important;}
 }
