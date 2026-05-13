@@ -2,8 +2,9 @@
   var assetVersion='20260513-grade2-stable';
   var path=(location.pathname||'').replace(/\/+$/,'');
   var isGrade2Class=path==='/siniflar/2-sinif';
+  var isGrade2TestList=path==='/testler/2-sinif';
   var isGrade2Exam=path==='/testler/2-sinif-deneme-sinavi';
-  var isLightGrade2Page=isGrade2Class||isGrade2Exam;
+  var isLightGrade2Page=isGrade2Class||isGrade2TestList||isGrade2Exam;
 
   function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
