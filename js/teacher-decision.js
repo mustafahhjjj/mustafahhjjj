@@ -9,15 +9,11 @@ var students=[
 {name:'Arda T.',status:'danger',lesson:'Matematik',skill:'MAT.2.1.3 Eldeli toplama',last:'Yanlış',score:38,time:'7 dk',answers:[0,0,0,1,0],weak:'Elde kavramı',strong:'Onluk-birlik',today:12,accuracy:41,login:'09:31'},
 {name:'Defne Y.',status:'warn',lesson:'Matematik',skill:'MAT.2.5.1 Nesne grafiği',last:'Dikkat',score:69,time:'10 dk',answers:[1,1,0,2,1],weak:'Grafikte fark bulma',strong:'Veri okuma',today:19,accuracy:72,login:'09:10'}
 ];
-var trouble=[
-['MAT.2.1.3','Eldeli toplama','5 öğrenci','%46','1 dk 32 sn','Basamak hatası','Mini tekrar öner'],
-['MAT.2.6.1','Yön ve konum','3 öğrenci','%39','1 dk 08 sn','Sağ-sol karışıyor','Grup oluştur'],
-['TR.2.3.2','Okuduğunu anlama','4 öğrenci','%34','2 dk 10 sn','Metinden çıkarım','Benzer metin gönder'],
-['MAT.2.5.1','Nesne grafiği','3 öğrenci','%31','58 sn','Fark yerine toplam','Soru havuzu aç']
-];
+var trouble=[['MAT.2.1.3','Eldeli toplama','5 öğrenci','%46','1 dk 32 sn','Basamak hatası','Mini tekrar öner'],['MAT.2.6.1','Yön ve konum','3 öğrenci','%39','1 dk 08 sn','Sağ-sol karışıyor','Grup oluştur'],['TR.2.3.2','Okuduğunu anlama','4 öğrenci','%34','2 dk 10 sn','Metinden çıkarım','Benzer metin gönder'],['MAT.2.5.1','Nesne grafiği','3 öğrenci','%31','58 sn','Fark yerine toplam','Soru havuzu aç']];
 function $(id){return document.getElementById(id)}
 function qsa(sel,root){return Array.prototype.slice.call((root||document).querySelectorAll(sel))}
-function navActive(){var path=location.pathname.replace(/\/$/,'/index.html');qsa('.td-menu a').forEach(function(a){var href=a.getAttribute('href');a.classList.toggle('active',path.endsWith(href)||location.pathname===href.replace('/index.html',''))})}
+function ensureMenu(){var menu=document.querySelector('.td-menu');if(!menu)return;var links=[['Otomatik Gruplar','/ogretmen-paneli/otomatik-gruplar.html'],['Ayarlar','/ogretmen-paneli/ayarlar.html']];links.forEach(function(item){if(menu.querySelector('a[href="'+item[1]+'"]'))return;var a=document.createElement('a');a.href=item[1];a.textContent=item[0];menu.appendChild(a)})}
+function navActive(){ensureMenu();var path=location.pathname.replace(/\/$/,'/index.html');qsa('.td-menu a').forEach(function(a){var href=a.getAttribute('href');a.classList.toggle('active',path.endsWith(href)||location.pathname===href.replace('/index.html',''))})}
 function dot(v){return '<span class="td-dot '+(v===1?'':v===2?'wait':'bad')+'"></span>'}
 function statusLabel(s){return s==='danger'?'Müdahale':s==='struggle'?'Zorlanıyor':s==='warn'?'Dikkat':'İyi'}
 function renderLive(){var el=$('tdLiveGrid');if(!el)return;el.innerHTML=students.map(function(s,i){return '<button class="td-student-card '+s.status+'" data-student="'+i+'"><b>'+s.name+'</b><span class="td-tag '+(s.status==='danger'?'red':s.status==='good'?'green':'yellow')+'">'+statusLabel(s.status)+'</span><span>'+s.lesson+' / '+s.skill+'</span><span>Son soru: <b>'+s.last+'</b></span><span>Öğrenme Puanı: <b>'+s.score+'</b></span><div class="td-score" style="--value:'+s.score+'%"><span></span></div><div class="td-last5">'+s.answers.map(dot).join('')+'</div><span class="td-subtle">Süre: '+s.time+'</span></button>'}).join('');qsa('[data-student]',el).forEach(function(btn){btn.addEventListener('click',function(){renderStudentDetail(students[Number(btn.dataset.student)])})});renderStudentDetail(students.find(function(s){return s.status==='danger'})||students[0])}
