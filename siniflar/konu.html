@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Konu ve Test | e-kurs.com</title>
+  <meta name="description" content="MEB uyumlu konu anlatımı, örnek soru ve test sayfası.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/ders-sayfasi.css">
+  <link rel="stylesheet" href="/assets/css/test.css">
+</head>
+<body>
+  <header class="ek-header"><nav class="ek-nav ek-container" aria-label="Ana menü"><a class="ek-logo" href="/index.html"><span class="ek-logo-mark">e</span><span>e-kurs.com</span></a><div class="ek-links"><a class="active" href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a><a href="/giris.html">Giriş Yap</a></div></nav></header>
+  <main id="topicRoot"></main>
+  <footer class="ek-footer"><div class="ek-container">e-kurs.com - Konu anlatımı ve test</div></footer>
+  <script src="/assets/js/mufredat-data.js"></script>
+  <script src="/assets/js/test.js"></script>
+  <script>
+    function q(name){return new URLSearchParams(location.search).get(name)}
+    function titleCase(slug){return slug.split('-').map(function(w){return w.charAt(0).toLocaleUpperCase('tr-TR')+w.slice(1)}).join(' ')}
+    const parts=location.pathname.split('/').filter(Boolean);const grade=q('grade')||((parts[1]||'').split('-')[0]);const subject=q('subject')||parts[2]||'matematik';const topic=q('topic')||parts[3]||'dogal-sayilar';const isTest=topic.includes('test');const cleanTopic=topic.replace(/-test-1|-kolay-test|-orta-test|-zor-test/g,'');const subjectTitle=titleCase(subject);const topicTitle=titleCase(cleanTopic);document.title=grade+'. Sınıf '+subjectTitle+' - '+topicTitle+' | e-kurs.com';
+    if(isTest){document.getElementById('topicRoot').innerHTML='<section class="test-hero"><div class="ek-container"><nav class="breadcrumb"><a href="/index.html">Ana Sayfa</a><span>&gt;</span><a href="/siniflar/'+grade+'-sinif/index.html">'+grade+'. Sınıf</a><span>&gt;</span><a href="/siniflar/'+grade+'-sinif/'+subject+'.html">'+subjectTitle+'</a><span>&gt;</span><strong>'+topicTitle+' Testi</strong></nav><h1 class="lesson-title">'+grade+'. Sınıf '+subjectTitle+' - '+topicTitle+' Testi</h1><div class="test-meta"><span>Sınıf: '+grade+'. Sınıf</span><span>Ders: '+subjectTitle+'</span><span>Konu: '+topicTitle+'</span><span>Seviye: Kolay</span><span>Soru: 10</span></div></div></section><section class="ek-container" id="testMount"></section>';renderEkursTest('testMount',{topic:topic});}else{document.getElementById('topicRoot').innerHTML='<section class="lesson-hero"><div class="ek-container"><nav class="breadcrumb"><a href="/index.html">Ana Sayfa</a><span>&gt;</span><a href="/siniflar/'+grade+'-sinif/index.html">'+grade+'. Sınıf</a><span>&gt;</span><a href="/siniflar/'+grade+'-sinif/'+subject+'.html">'+subjectTitle+'</a><span>&gt;</span><strong>'+topicTitle+'</strong></nav><span class="tier-badge">Konu Anlatımı</span><h1 class="lesson-title">'+topicTitle+'</h1><p class="lesson-lead">Bu konu sayfası; kısa anlatım, örnek soru, test ve yanlış tekrar akışına hazır MEB uyumlu şablondur.</p><div class="lesson-actions"><a class="ek-btn primary" href="/siniflar/'+grade+'-sinif/'+subject+'/'+cleanTopic+'-test-1.html">10 Soruluk Test</a><a class="ek-btn soft" href="/testler/index.html?sinif='+grade+'&ders='+subject+'&konu='+cleanTopic+'">Örnek Sorular</a></div></div></section><section class="theme-section"><div class="ek-container"><article class="theme-card"><h2>Kısa Konu Anlatımı</h2><p>Önce kavramı oku, ardından örnek sorularla pekiştir. Yanlış yaptığın sorularda açıklama panelini incele.</p><div class="topic-list"><div class="topic-card"><div><strong>Örnek Soru</strong><small>'+topicTitle+' konusunda temel bir soru çöz ve açıklamasını oku.</small></div><div class="topic-actions"><a class="primary" href="/siniflar/'+grade+'-sinif/'+subject+'/'+cleanTopic+'-test-1.html">Test Çöz</a></div></div></div></article></div></section>';}
+  </script>
+</body>
+</html>
