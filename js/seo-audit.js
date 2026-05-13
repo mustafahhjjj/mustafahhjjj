@@ -34,11 +34,13 @@
   loadCss('/css/subject-intelligence.css');
   loadCss('/css/micro-skills.css');
   loadCss('/css/math-curriculum-ux.css');
+  loadCss('/css/math-practice-engine.css');
   loadScript('/js/k12-ui.js');
   loadScript('/js/home-polish.js');
   loadScript('/js/k12-gamification.js');
   loadScript('/js/subject-intelligence.js');
   loadScript('/js/micro-skills.js');
   loadScript('/js/math-curriculum-ux.js');
+  loadScript('/js/math-practice-engine.js');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
 })();
