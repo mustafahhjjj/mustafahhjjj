@@ -25,6 +25,7 @@
       addReadAloud(dialog);
       addMascot(dialog);
       addStatusCenter(dialog);
+      styleChoices(dialog);
       upgradeWrongFeedback(dialog);
       upgradeCorrectFeedback(dialog);
       upgradeResults(dialog);
@@ -73,14 +74,28 @@
     if(!question||question.querySelector('.ekurs-primary-mascot'))return;
     var mascot=el('div','ekurs-primary-mascot');
     mascot.appendChild(el('span','','AI'));
-    mascot.appendChild(el('p','','Ben buradayım. Takılırsan birlikte öğreniriz.'));
+    mascot.appendChild(el('p','','Ben Eko. Takılırsan birlikte öğreniriz.'));
     question.insertBefore(mascot,question.firstChild);
+  }
+
+  function styleChoices(dialog){
+    dialog.querySelectorAll('.ekurs-test-choices button:not([data-primary-choice])').forEach(function(btn,index){
+      btn.dataset.primaryChoice='1';
+      btn.classList.add('ekurs-primary-choice','choice-'+((index%4)+1));
+      var label=String.fromCharCode(65+index);
+      if(btn.querySelector('.ekurs-choice-letter'))return;
+      var text=btn.textContent;
+      btn.textContent='';
+      btn.appendChild(el('span','ekurs-choice-letter',label));
+      btn.appendChild(el('strong','',text));
+    });
   }
 
   function addStatusCenter(dialog){
     var panel=dialog.querySelector('.ekurs-test-smart-panel');
     if(!panel)return;
     if(!panel.querySelector('.ekurs-status-title'))panel.insertBefore(el('strong','ekurs-status-title','Sınav Durum Merkezi'),panel.firstChild);
+    addEnergyBar(panel);
     if(!panel.querySelector('.ekurs-countdown')){
       var cd=el('div','ekurs-countdown');
       cd.appendChild(el('span','','Kalan süre'));
@@ -97,6 +112,23 @@
     }
     updateCountdown(panel);
     updateQuestionMap(dialog);
+  }
+
+  function addEnergyBar(panel){
+    var scoreNode=panel.querySelector('.ekurs-test-score-ring strong');
+    var score=scoreNode?Math.max(0,Math.min(100,parseInt(scoreNode.textContent,10)||0)):0;
+    var bar=panel.querySelector('.ekurs-energy-bar');
+    if(!bar){
+      bar=el('div','ekurs-energy-bar');
+      bar.appendChild(el('span','','Başarı Enerjisi'));
+      bar.appendChild(el('i',''));
+      bar.appendChild(el('strong','',score+'%'));
+      var ring=panel.querySelector('.ekurs-test-score-ring');
+      panel.insertBefore(bar,ring?ring.nextSibling:panel.firstChild.nextSibling);
+    }
+    bar.querySelector('i').style.width=score+'%';
+    bar.querySelector('strong').textContent=score+'%';
+    bar.classList.toggle('is-challenge',score>=90);
   }
 
   function updateCountdown(panel){
@@ -133,11 +165,13 @@
       intro.appendChild(el('span','ekurs-learning-mascot','AI'));
       var copy=el('div','');
       copy.appendChild(el('strong','','Bir hata yaptın ama sorun değil, gel birlikte öğrenelim.'));
-      copy.appendChild(el('p','','Bu adımı anlamadan sonraki soruya geçmiyoruz. Önce kısa açıklamayı oku veya mini dersi aç.'));
+      copy.appendChild(el('p','','Moral bozma. Mini dersi izle, puanı geri kazan. Bu adımı anlamadan sonraki soruya geçmiyoruz.'));
       intro.appendChild(copy);
       box.insertBefore(intro,box.firstChild);
       var next=box.querySelector('.ekurs-test-next');
       if(next)next.textContent='Anladım, sonraki soruya geç';
+      var video=box.querySelector('.ekurs-video-inline-btn');
+      if(video)video.textContent='Önce mini dersi izle';
       speak('Bir hata yaptın ama sorun değil. Gel birlikte öğrenelim.');
       updateQuestionMap(dialog);
     });
@@ -160,6 +194,15 @@
     var report=el('section','ekurs-ai-report');
     report.appendChild(el('span','ekurs-test-chip','Yapay Zeka Karnesi'));
     report.appendChild(el('h3','','Bugünkü öğrenme özeti'));
+    var radar=el('div','ekurs-success-radar');
+    [['Matematik Toplama','8/10',80],['Dikkat ve İşlem Sırası','7/10',70],['Okuma Anlama','10/10',100]].forEach(function(item){
+      var row=el('div','');
+      row.appendChild(el('span','',item[0]));
+      var line=el('i','');line.style.width=item[2]+'%';row.appendChild(line);
+      row.appendChild(el('strong','',item[1]));
+      radar.appendChild(row);
+    });
+    report.appendChild(radar);
     var grid=el('div','ekurs-ai-report-grid');
     [
       ['Güçlü alanların','Toplama adımlarını doğru kurmaya başladın.'],
@@ -171,7 +214,7 @@
   }
 
   setInterval(function(){
-    document.querySelectorAll('.ekurs-test-smart-panel').forEach(updateCountdown);
+    document.querySelectorAll('.ekurs-test-smart-panel').forEach(function(panel){updateCountdown(panel);addEnergyBar(panel);});
   },1000);
   var observer=new MutationObserver(enhance);
   observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true});
