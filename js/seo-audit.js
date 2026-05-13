@@ -1,5 +1,8 @@
 (function(){
-  var assetVersion='20260513-cp-sync';
+  var assetVersion='20260513-grade2-stable';
+  var path=(location.pathname||'').replace(/\/+$/,'');
+  var isGrade2Class=path==='/siniflar/2-sinif';
+
   function versioned(path){return path+'?v='+assetVersion;}
   function loadCss(href){
     var src=versioned(href);
@@ -17,8 +20,18 @@
     script.defer=true;
     document.head.appendChild(script);
   }
+  function fixGrade2ClassLinks(){
+    if(!isGrade2Class)return;
+    document.querySelectorAll('a.btn').forEach(function(link){
+      if(link.textContent.trim()==='Test Çöz'){
+        link.href='/testler/2-sinif.html';
+        link.textContent='2. Sınıf Testleri';
+      }
+    });
+  }
   function level(node){return Number(node.tagName.slice(1));}
   function audit(){
+    fixGrade2ClassLinks();
     var headings=Array.prototype.slice.call(document.querySelectorAll('h1,h2,h3'));
     if(!headings.length)return;
     var warnings=[];
@@ -32,6 +45,13 @@
     });
     if(warnings.length){document.documentElement.setAttribute('data-heading-audit','warning');if(window.console&&console.warn)console.warn('[e-kurs SEO heading audit]',warnings);}
   }
+
+  if(isGrade2Class){
+    loadCss('/siniflar/2-sinif/styles.css');
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
+    return;
+  }
+
   loadCss('/css/k12-ui.css');
   loadCss('/css/home-polish.css');
   loadCss('/css/k12-gamification.css');
