@@ -7,6 +7,7 @@ deployment:
     - /bin/cp -f .htaccess robots.txt sitemap.xml $DEPLOYPATH/
     - /bin/cp -Rf css $DEPLOYPATH/
     - /bin/cp -Rf js $DEPLOYPATH/
+    - /bin/cp -Rf api $DEPLOYPATH/
     - /bin/cp -Rf siniflar $DEPLOYPATH/
     - /bin/cp -Rf dersler $DEPLOYPATH/
     - /bin/cp -Rf testler $DEPLOYPATH/
