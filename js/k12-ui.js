@@ -81,7 +81,24 @@
     gradeSelect.addEventListener('change',refresh);
   }
   function normalizeText(){
-    var map={'What Ders Siz Want':'Hangi dersi \u00e7al\u0131\u015fmak istiyorsun?','Get I\u00e7inde Touch':'\u0130leti\u015fime ge\u00e7','Search for Teachers':'Ders ve beceri ara','Search Teachers':'Ders ve beceri ara','Instructor':'\u00d6\u011fretmen','Students':'\u00d6\u011frenciler','Teachers':'\u00d6\u011fretmenler'};
+    var map={
+      'What Ders Siz Want':'Hangi dersi \u00e7al\u0131\u015fmak istiyorsun?',
+      'What do you want to learn':'Hangi konuyu \u00e7al\u0131\u015fmak istiyorsun?',
+      'Get I\u00e7inde Touch':'\u0130leti\u015fime ge\u00e7',
+      'Search for Teachers':'Ders ve beceri ara',
+      'Search Teachers':'Ders ve beceri ara',
+      'Find Teachers':'S\u0131n\u0131f ve bran\u015f se\u00e7',
+      'Book Now':'\u00c7al\u0131\u015fmaya ba\u015fla',
+      'Book Lesson':'\u00c7al\u0131\u015fmaya ba\u015fla',
+      'Book':'Ba\u015fla',
+      'Browse Tutors':'S\u0131n\u0131flar\u0131 incele',
+      'Tutors':'\u00d6\u011fretmenler',
+      'Instructor':'\u00d6\u011fretmen',
+      'Students':'\u00d6\u011frenciler',
+      'Teachers':'\u00d6\u011fretmenler',
+      'Lorem Ipsum':'',
+      'Lorem ipsum dolor sit amet':''
+    };
     var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(node){return node.parentElement&&/SCRIPT|STYLE|NOSCRIPT/.test(node.parentElement.tagName)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;}});
     var node;
     while((node=walker.nextNode())){
@@ -91,16 +108,37 @@
     }
   }
   function hideImmatureCounters(){
-    Array.prototype.slice.call(document.querySelectorAll('[data-countup],.metric-card,.stat-card,.counter')).forEach(function(item){
+    Array.prototype.slice.call(document.querySelectorAll('[data-countup],.metric-card,.stat-card,.counter,.badge,.pill,.meta,li,span,strong,small')).forEach(function(item){
       var text=item.textContent||'';
       var raw=item.getAttribute('data-countup')||((text.match(/\d+/)||[])[0]);
       var value=Number(raw);
-      var sensitive=/\u00d6\u011frenci|E\u011fitmen|\u00d6\u011fretmen/i.test(text);
-      if((/0\s*E\u011fitmen|1\s*\u00d6\u011frenci/i.test(text))||(sensitive&&Number.isFinite(value)&&value>0&&value<10)){
+      var sensitive=/\u00d6\u011frenci|Kayıtl\u0131|Kay\u0131tl\u0131|E\u011fitmen|\u00d6\u011fretmen|De\u011ferlendirme|Yorum|Review|Student|Teacher|Tutor/i.test(text);
+      if((/(^|\s)0\s*(\u00d6\u011fretmen|E\u011fitmen|De\u011ferlendirme|Yorum|Review|Teacher|Tutor)s?/i.test(text))||(/(^|\s)1\s*(Kayıtl\u0131|Kay\u0131tl\u0131)?\s*(\u00d6\u011frenci|Student)/i.test(text))||(sensitive&&Number.isFinite(value)&&value>=0&&value<10)){
         (item.closest('.metric-card,.stat-card,.card,section')||item).classList.add('is-hidden-counter');
       }
     });
   }
-  function run(){normalizeText();hideImmatureCounters();enhanceNav();addGradeProfile();addAiAssistant();}
+  function removeTemplateResidue(){
+    Array.prototype.slice.call(document.querySelectorAll('a[href],p,li,span,small,address')).forEach(function(item){
+      var text=(item.textContent||'').replace(/\s+/g,' ').trim();
+      var href=item.getAttribute&&item.getAttribute('href')||'';
+      if(/(\+91|\+1\s?\d{3}|India|United States|California|New York|dummy|demo|placeholder|lorem ipsum)/i.test(text+' '+href)){
+        (item.closest('li,.card,address,.footer-col,.contact-item')||item).classList.add('is-template-residue');
+      }
+      if(/facebook\.com\/#|twitter\.com\/#|instagram\.com\/#|linkedin\.com\/#|javascript:void\(0\)|\/#$/i.test(href)){
+        item.classList.add('is-template-residue');
+      }
+    });
+  }
+  function consolidateMarketplaceCtas(){
+    var marketplace=/\u00d6\u011fretmen Bul|Hemen Rezervasyon Yap|Rezervasyon Yap|Ders Ayarla|Book Now|Find Teachers|Search Teachers/i;
+    Array.prototype.slice.call(document.querySelectorAll('a,button')).forEach(function(item){
+      if(!marketplace.test(item.textContent||''))return;
+      item.textContent='S\u0131n\u0131f\u0131n\u0131 se\u00e7';
+      if(item.tagName==='A')item.setAttribute('href','/siniflar/index.html');
+      item.classList.add('k12-primary-cta');
+    });
+  }
+  function run(){normalizeText();hideImmatureCounters();removeTemplateResidue();consolidateMarketplaceCtas();enhanceNav();addGradeProfile();addAiAssistant();}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
