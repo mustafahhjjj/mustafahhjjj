@@ -44,7 +44,7 @@
     panel.appendChild(el('span','ekurs-test-chip','Anlamadın mı? O zaman izle'));
     panel.appendChild(el('h3','',skill.topic+' kısa ders'));
     var body=el('div','ekurs-video-body');
-    body.appendChild(el('p','', 'Kazanıma bağlı video aranıyor. Video yoksa AI video senaryosu hazırlanacak.'));
+    body.appendChild(el('p','', 'Kazanıma bağlı video aranıyor. Video yoksa testten çıkmadan AI ders özeti gösterilecek.'));
     panel.appendChild(body);
     (dialog||document.body).appendChild(panel);
     fetch('/api/k12-video-helper.php?skill_id='+encodeURIComponent(skill.skillId)+'&topic='+encodeURIComponent(skill.topic)+'&lesson_url='+encodeURIComponent(skill.lessonUrl),{credentials:'same-origin'})
@@ -59,16 +59,24 @@
       video.className='ekurs-video-player';video.src=data.videoUrl;video.controls=true;video.playsInline=true;
       video.addEventListener('ended',function(){showCheck(body,skill,dialog);});
       body.appendChild(video);
+      body.appendChild(el('small','', 'Video bittiğinde aynı kazanımdan kısa anlama kontrolü açılacak.'));
     }else{
-      body.appendChild(el('strong','',data.status==='queued'?'AI video üretim isteği hazır':'Kısa ders özeti'));
-      body.appendChild(el('p','',data.script||skill.hint));
+      var preview=el('div','ekurs-video-preview');
+      var head=el('div','ekurs-video-preview-head');
+      head.appendChild(el('span','ekurs-video-avatar','AI'));
+      var meta=el('div','ekurs-video-preview-meta');
+      meta.appendChild(el('strong','',data.status==='queued'?'AI video taslağı hazır':'Kısa ders özeti'));
+      meta.appendChild(el('small','',skill.skillId+' · 45-60 sn'));
+      head.appendChild(meta);
+      preview.appendChild(head);
+      preview.appendChild(el('p','ekurs-video-script',data.script||skill.hint));
       var list=el('ul','ekurs-video-steps');
       (data.storyboard||[skill.hint]).forEach(function(step){list.appendChild(el('li','',step));});
-      body.appendChild(list);
-      body.appendChild(el('small','', 'Video üretim servisi bağlandığında bu alanda 45-60 saniyelik video oynatılacak.'));
+      preview.appendChild(list);
+      body.appendChild(preview);
+      body.appendChild(el('small','', 'Bu buton artık ders sayfasına yönlendirmez. Gerçek video dosyası bağlanana kadar özet ve adım kartları panel içinde gösterilir.'));
       body.appendChild(button('Videoyu/özeti bitirdim','ekurs-test-next',function(){showCheck(body,skill,dialog);}));
     }
-    body.appendChild(button('Ders sayfasını yeni sekmede aç','ekurs-video-link',function(){window.open(data.lessonUrl||skill.lessonUrl,'_blank','noopener');}));
   }
   function showCheck(body,skill,dialog){
     body.innerHTML='';
