@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /user/
+Disallow: /cart/
+Disallow: /sepet/
+Disallow: /checkout/
+Disallow: /odeme/
+Disallow: /payment/
+Disallow: /login/
+Disallow: /register/
+Disallow: /testler/bos-
+Disallow: /testler/demo-
+Disallow: /*?id=
+Disallow: /*?session=
+
+Sitemap: https://e-kurs.com/sitemap.xml

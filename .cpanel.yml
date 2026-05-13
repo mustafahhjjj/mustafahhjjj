@@ -4,7 +4,11 @@ deployment:
     - export DEPLOYPATH=/home/u1878454/public_html
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -f *.html $DEPLOYPATH/
+    - /bin/cp -f .htaccess robots.txt sitemap.xml $DEPLOYPATH/
+    - /bin/cp -Rf css $DEPLOYPATH/
+    - /bin/cp -Rf js $DEPLOYPATH/
     - /bin/cp -Rf siniflar $DEPLOYPATH/
     - /bin/cp -Rf dersler $DEPLOYPATH/
     - /bin/cp -Rf testler $DEPLOYPATH/
-    - /bin/echo "cPanel deployment copied repository files to public_html."
+    - if [ -x /usr/local/bin/php ]; then /usr/local/bin/php tools/apply-static-seo.php $DEPLOYPATH; else /usr/bin/php tools/apply-static-seo.php $DEPLOYPATH; fi
+    - /bin/echo "cPanel deployment copied repository files to public_html and rebuilt SEO metadata."
