@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yönetici Paneli | e-kurs.com ÖYS</title>
+  <meta name="description" content="e-kurs.com ÖYS yönetici paneli okul geneli performans, trouble spots, cron rapor ve sertifika ekranı.">
+  <link rel="stylesheet" href="/css/oys-panel.css?v=20260513-oys-v1">
+</head>
+<body class="oys-body">
+  <div class="oys-app">
+    <aside class="oys-sidebar">
+      <a class="oys-brand" href="/index.html"><span class="oys-mark">e</span><span>e-kurs.com ÖYS</span></a>
+      <div class="oys-role"><b>Yönetici Paneli</b><span>Okul geneli analitik</span></div>
+      <nav class="oys-menu" aria-label="Yönetici menü">
+        <button class="active" data-view="overview">Okul Özeti</button>
+        <button data-view="live">Canlı Risk</button>
+        <button data-view="audit">Denetim</button>
+        <button data-view="skills">Müfredat Hedefleri</button>
+        <button data-view="reports">Çıktılar</button>
+        <a href="/ogretmen-paneli.html">Öğretmen Paneli</a>
+      </nav>
+    </aside>
+
+    <main class="oys-main">
+      <header class="oys-topbar">
+        <div><h1>Yönetici Analitik Paneli</h1><p>Cron ile ön hesaplanan raporlar, kırmızı alarm kazanımları ve okul geneli ustalık durumu.</p></div>
+        <div class="oys-actions"><button class="oys-btn" data-export="csv">Excel İndir</button><button class="oys-btn" data-export="pdf">PDF Rapor</button><a class="oys-btn green" data-export="whatsapp" href="#">Veli Paylaşımı</a></div>
+      </header>
+
+      <div class="oys-content">
+        <section class="oys-view active" id="overview">
+          <div class="metric-grid">
+            <article class="metric good"><span>Aktif sınıf</span><strong>18</strong></article>
+            <article class="metric"><span>Öğrenci</span><strong>486</strong></article>
+            <article class="metric wait"><span>Cron raporu</span><strong>01:30</strong></article>
+            <article class="metric bad"><span>Kırmızı alarm</span><strong>4</strong></article>
+          </div>
+          <div class="admin-grid">
+            <section class="oys-panel"><h2>Okul Geneli Trouble Spots</h2><div class="accordion"><article class="accordion-item open"><button class="accordion-head">MAT.2.3.2 Onluk bozarak çıkarma <span>%58 hata</span></button><div class="accordion-body">2-A, 2-B ve 2-D sınıflarında telafi görevi önerilir. Eşik: sınıfın %40+ aynı alt kazanımda hata.</div></article><article class="accordion-item"><button class="accordion-head">TR.3.1.4 Ana fikir bulma <span>%43 hata</span></button><div class="accordion-body">Okuma günlükleri ve kısa metin çalışması önerilir.</div></article><article class="accordion-item"><button class="accordion-head">FEN.5.2.1 Kuvvet etkisi <span>%41 hata</span></button><div class="accordion-body">Görsel deney föyü önerilir.</div></article></div></section>
+            <section class="oys-panel"><h2>Asenkron Rapor Kuyruğu</h2><table class="data-table"><thead><tr><th>Rapor</th><th>Kaynak</th><th>Durum</th><th>SLA</th></tr></thead><tbody><tr><td data-label="Rapor">Aylık gelişim</td><td data-label="Kaynak">PostgreSQL + Mongo özet</td><td data-label="Durum">Hazır cache</td><td data-label="SLA">1.2 sn</td></tr><tr><td data-label="Rapor">Sınıf hata ortalaması</td><td data-label="Kaynak">Nightly cron</td><td data-label="Durum">Hazır</td><td data-label="SLA">0.8 sn</td></tr><tr><td data-label="Rapor">Canlı sınıf</td><td data-label="Kaynak">WebSocket</td><td data-label="Durum">Anlık</td><td data-label="SLA">Realtime</td></tr></tbody></table></section>
+          </div>
+        </section>
+
+        <section class="oys-view" id="live">
+          <div class="panel-grid"><section class="oys-panel"><h2>Canlı Risk Haritası</h2><div id="liveGrid" class="live-grid"></div></section><aside class="oys-panel"><h2>Olay Akışı</h2><ul class="ws-log" id="wsLog"><li>WebSocket gateway: school/live-risk hazır.</li></ul></aside></div>
+        </section>
+
+        <section class="oys-view" id="audit">
+          <section class="oys-panel"><h2>Öğrenci Denetim Örnekleri</h2><p class="muted">Ekran süresi ve aktif çözüm süresi ayrıştırılır.</p><div class="chart-bars" id="screenWorkRows"></div><table class="data-table" style="margin-top:14px"><thead><tr><th>Saat</th><th>Öğrenci</th><th>Kazanım</th><th>Düşünme</th><th>Şık</th><th>Sonuç</th></tr></thead><tbody id="auditTableBody"></tbody></table></section>
+        </section>
+
+        <section class="oys-view" id="skills">
+          <div class="admin-grid"><section class="oys-panel"><h2>Okul Müfredat Hedefleri</h2><div class="skill-list" id="skillList"></div></section><section class="oys-panel"><h2>Predictive Analytics</h2><div class="notice">21 öğrenci dönem sonu hedefini kaçırma riski taşıyor. Sistem öğretmenlere telafi görevi önerisi üretmelidir.</div><div class="chart-bars" style="margin-top:14px"><div class="chart-row"><b>Hedefte</b><div class="bar"><span class="green" style="width:72%"></span></div><strong>72%</strong></div><div class="chart-row"><b>İzlemeli</b><div class="bar"><span class="amber" style="width:19%"></span></div><strong>19%</strong></div><div class="chart-row"><b>Riskli</b><div class="bar"><span class="red" style="width:9%"></span></div><strong>9%</strong></div></div></section></div>
+        </section>
+
+        <section class="oys-view" id="reports">
+          <div class="export-grid"><article class="export-card"><h3>Okul Excel Raporu</h3><p class="muted">Sınıf, öğretmen, kazanım ve risk kırılımı.</p><button class="oys-btn primary" data-export="csv">Excel İndir</button></article><article class="export-card"><h3>Sertifika Üretimi</h3><p class="muted">100 SmartScore ustalık puanı alan öğrenci için print-ready PDF sertifika.</p><button class="oys-btn primary" data-export="pdf">Sertifika Taslağı</button></article><article class="export-card"><h3>Veli İletişimi</h3><p class="muted">WhatsApp API veya e-posta entegrasyonuna hazır bağlantı.</p><a class="oys-btn green" data-export="whatsapp" href="#">Paylaş</a></article></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="/js/oys-panel.js?v=20260513-oys-v1" defer></script>
+</body>
+</html>
