@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 $root = rtrim($argv[1] ?? dirname(__DIR__), DIRECTORY_SEPARATOR);
 $base = 'https://e-kurs.com';
+$assetVersion = '20260513-c104ad2';
 
 function ekurs_slug(string $value): string
 {
@@ -116,6 +117,7 @@ function ekurs_seo_block(string $relative, string $html): string
 
 function ekurs_update_html(string $root, string $file): void
 {
+    global $assetVersion;
     $relative = ekurs_relative($root, $file);
     $html = file_get_contents($file);
     if ($html === false || !str_contains($html, '<head')) return;
@@ -128,7 +130,7 @@ function ekurs_update_html(string $root, string $file): void
         '~\s*<meta\s+property=["\']og:[^>]+>\s*~i',
         '~\s*<meta\s+name=["\']twitter:[^>]+>\s*~i',
         '~\s*<script\s+type=["\']application/ld\+json["\'][\s\S]*?</script>\s*~i',
-        '~\s*<script\s+src=["\']/js/seo-audit\.js["\'][^>]*></script>\s*~i',
+        '~\s*<script\s+src=["\']/js/seo-audit\.js(?:\?[^"\']*)?["\'][^>]*></script>\s*~i',
     ];
     foreach ($patterns as $pattern) $html = preg_replace($pattern, "\n", $html) ?? $html;
 
@@ -138,7 +140,7 @@ function ekurs_update_html(string $root, string $file): void
     } else {
         $html = preg_replace('~<head>~i', "<head>\n" . $block, $html, 1) ?? $html;
     }
-    $html = preg_replace('~</head>~i', "  <script src=\"/js/seo-audit.js\" defer></script>\n</head>", $html, 1) ?? $html;
+    $html = preg_replace('~</head>~i', "  <script src=\"/js/seo-audit.js?v={$assetVersion}\" defer></script>\n</head>", $html, 1) ?? $html;
     file_put_contents($file, $html);
 }
 
