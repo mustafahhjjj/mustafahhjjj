@@ -1,0 +1,144 @@
+{
+  "version": "2026-05-13",
+  "scope": "K-12 Matematik İçerik Codex",
+  "pilot_grade": "2-sinif",
+  "rules": {
+    "micro_skills_per_unit": {
+      "min": 5,
+      "max": 12
+    },
+    "summary_video_max_seconds": 180,
+    "question_variations_per_level": 20,
+    "difficulty_levels": ["kolay", "orta", "zor"],
+    "difficulty_step_after_correct_streak": 3,
+    "difficulty_increment": 0.2,
+    "mastery_threshold": 90
+  },
+  "grades": {
+    "2-sinif": {
+      "subject": "matematik",
+      "units": [
+        {
+          "unit_slug": "toplama-islemi",
+          "unit_name": "Toplama İşlemi",
+          "manipulative": "base-ten-blocks",
+          "badge": "Toplama Ustası",
+          "micro_skills": [
+            {
+              "skill_slug": "10un-katlarini-toplama",
+              "skill_name": "10'un katlarını toplama",
+              "difficulty": 1,
+              "video_brief": "Onluk gruplarla toplama mantığını 3 dakikada açıkla.",
+              "question_template": "{a} + {b} = ?",
+              "bounds": { "a_min": 10, "a_max": 90, "b_min": 10, "b_max": 90, "multiples_of": 10 },
+              "remediation": [
+                "Önce kaç tane onluk olduğunu say.",
+                "Onlukları birleştir.",
+                "Toplam onluk sayısını 10 ile çarp."
+              ]
+            },
+            {
+              "skill_slug": "iki-basamakli-eldesiz-toplama",
+              "skill_name": "İki basamaklı eldesiz toplama",
+              "difficulty": 2,
+              "video_brief": "Birlik ve onluk basamaklarını ayrı ayrı toplamayı göster.",
+              "question_template": "{a} + {b} = ?",
+              "bounds": { "a_min": 11, "a_max": 84, "b_min": 11, "b_max": 84, "carry": false },
+              "remediation": [
+                "Birlikleri topla.",
+                "Onlukları topla.",
+                "Sonuçları aynı sayıda birleştir."
+              ]
+            },
+            {
+              "skill_slug": "iki-basamakli-eldeli-toplama",
+              "skill_name": "İki basamaklı eldeli toplama",
+              "difficulty": 3,
+              "video_brief": "10'u aşan birlikleri bir onluğa dönüştürmeyi anlat.",
+              "question_template": "{a} + {b} = ?",
+              "bounds": { "a_min": 18, "a_max": 89, "b_min": 18, "b_max": 89, "carry": true },
+              "remediation": [
+                "Önce birlikleri topla.",
+                "10 veya daha fazlaysa 1 onluk elde et.",
+                "Eldeyi onlar basamağına ekle."
+              ]
+            },
+            {
+              "skill_slug": "uc-terimli-toplama",
+              "skill_name": "Üç terimli toplama",
+              "difficulty": 4,
+              "video_brief": "Üç sayıyı stratejik sırayla toplama yollarını göster.",
+              "question_template": "{a} + {b} + {c} = ?",
+              "bounds": { "a_min": 5, "a_max": 45, "b_min": 5, "b_max": 45, "c_min": 5, "c_max": 45 },
+              "remediation": [
+                "Önce kolay eşleşen iki sayıyı seç.",
+                "Ara toplamı yaz.",
+                "Üçüncü sayıyı ara toplama ekle."
+              ]
+            },
+            {
+              "skill_slug": "toplama-problemleri",
+              "skill_name": "Toplama işlemiyle problem çözme",
+              "difficulty": 4,
+              "video_brief": "Problemde verilenleri ve isteneni ayırmayı öğret.",
+              "question_template": "Bir kutuda {a} kalem var. Kutuyu {b} kalem daha eklersek toplam kaç kalem olur?",
+              "bounds": { "a_min": 8, "a_max": 45, "b_min": 6, "b_max": 45 },
+              "remediation": [
+                "Problemde başlangıç miktarını bul.",
+                "Eklenen miktarı bul.",
+                "İki miktarı topla ve birimi yaz."
+              ]
+            }
+          ]
+        },
+        {
+          "unit_slug": "bolme-islemi",
+          "unit_name": "Bölme İşlemi",
+          "manipulative": "equal-groups",
+          "badge": "Bölme Kaşifi",
+          "micro_skills": [
+            {
+              "skill_slug": "kalansiz-bolme-mantigi",
+              "skill_name": "Kalansız bölme mantığı",
+              "difficulty": 1,
+              "video_brief": "Paylaştırma ve gruplama fikrini somut nesnelerle göster.",
+              "question_template": "{a} nesne {b} eş gruba ayrılırsa her grupta kaç nesne olur?",
+              "bounds": { "divisor_min": 2, "divisor_max": 5, "quotient_min": 2, "quotient_max": 9 },
+              "remediation": [
+                "Toplam nesne sayısını eş gruplara dağıt.",
+                "Her grupta aynı sayı olmasına dikkat et.",
+                "Bir gruptaki nesne sayısı bölümdür."
+              ]
+            },
+            {
+              "skill_slug": "bolunen-bolen-bolum",
+              "skill_name": "Bölünen, bölen, bölüm terimleri",
+              "difficulty": 2,
+              "video_brief": "Bölme işlemindeki terimleri renklerle ayır.",
+              "question_template": "{a} ÷ {b} = {q} işleminde bölen hangisidir?",
+              "bounds": { "divisor_min": 2, "divisor_max": 9, "quotient_min": 2, "quotient_max": 9 },
+              "remediation": [
+                "Bölünen, paylaştırılan toplam sayıdır.",
+                "Bölen, kaç eş gruba ayrıldığını gösterir.",
+                "Bölüm, her gruba düşen sayıdır."
+              ]
+            },
+            {
+              "skill_slug": "10-ile-kisa-yoldan-bolme",
+              "skill_name": "10 ile kısa yoldan bölme",
+              "difficulty": 3,
+              "video_brief": "10 ile bölmede son sıfırın etkisini modelle.",
+              "question_template": "{a} ÷ 10 = ?",
+              "bounds": { "a_min": 20, "a_max": 900, "multiples_of": 10 },
+              "remediation": [
+                "Sayının 10'un kaç katı olduğunu düşün.",
+                "Son sıfırı ayır.",
+                "Kalan sayı bölüm olur."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
