@@ -31,8 +31,10 @@
   loadCss('/css/k12-ui.css');
   loadCss('/css/home-polish.css');
   loadCss('/css/k12-gamification.css');
+  loadCss('/css/subject-intelligence.css');
   loadScript('/js/k12-ui.js');
   loadScript('/js/home-polish.js');
   loadScript('/js/k12-gamification.js');
+  loadScript('/js/subject-intelligence.js');
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',audit);else audit();
 })();
