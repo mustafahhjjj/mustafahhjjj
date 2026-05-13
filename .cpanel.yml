@@ -3,6 +3,8 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/u1878454/public_html
     - /bin/mkdir -p $DEPLOYPATH
+    - /bin/find $DEPLOYPATH -maxdepth 1 -type f -name "*.html" -delete
+    - /bin/rm -rf $DEPLOYPATH/css $DEPLOYPATH/js $DEPLOYPATH/api $DEPLOYPATH/content $DEPLOYPATH/siniflar $DEPLOYPATH/dersler $DEPLOYPATH/testler
     - /bin/cp -f *.html $DEPLOYPATH/
     - /bin/cp -f .htaccess robots.txt sitemap.xml $DEPLOYPATH/
     - /bin/cp -Rf css $DEPLOYPATH/
@@ -13,4 +15,4 @@ deployment:
     - /bin/cp -Rf dersler $DEPLOYPATH/
     - /bin/cp -Rf testler $DEPLOYPATH/
     - if [ -x /usr/local/bin/php ]; then /usr/local/bin/php tools/apply-static-seo.php $DEPLOYPATH; else /usr/bin/php tools/apply-static-seo.php $DEPLOYPATH; fi
-    - /bin/echo "cPanel deployment copied repository files to public_html and rebuilt SEO metadata."
+    - /bin/echo "cPanel deployment cleaned managed public_html files, copied repository files, and rebuilt SEO metadata."
