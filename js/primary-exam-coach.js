@@ -19,6 +19,7 @@
   }
 
   function enhance(){
+    syncPrimaryFilters();
     document.querySelectorAll('.ekurs-test-dialog').forEach(function(dialog){
       if(!dialog.dataset.primaryCoach){dialog.dataset.primaryCoach='1';startedAt=Date.now();}
       localizePrimary(dialog);
@@ -30,6 +31,21 @@
       upgradeCorrectFeedback(dialog);
       upgradeResults(dialog);
     });
+  }
+
+  function syncPrimaryFilters(){
+    if(!isPrimary||document.documentElement.dataset.primaryFiltersSynced==='1')return;
+    var filters=document.querySelector('.ekurs-test-filters');
+    if(!filters)return;
+    var selects=filters.querySelectorAll('select');
+    if(selects.length<4)return;
+    var changed=false;
+    if(selects[0].value!=='2'){selects[0].value='2';changed=true;}
+    if(selects[1].value!=='matematik'){selects[1].value='matematik';changed=true;}
+    if(selects[2].value!=='all'){selects[2].value='all';changed=true;}
+    if(selects[3].value!=='all'){selects[3].value='all';changed=true;}
+    document.documentElement.dataset.primaryFiltersSynced='1';
+    if(changed)selects[0].dispatchEvent(new Event('change',{bubbles:true}));
   }
 
   function localizePrimary(dialog){
