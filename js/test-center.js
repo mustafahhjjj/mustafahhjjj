@@ -117,11 +117,11 @@
 
   function buildQuestions(test){
     var base=[
-      {prompt:'2^3 + 4',text:'işleminin sonucu kaçtır?',choices:['10','12','16','24'],answer:'12',rule:'Önce üs hesaplanır, sonra toplama yapılır.',steps:['2^3 = 8','8 + 4 = 12'],visual:'Üslü ifade, aynı sayının tekrarlı çarpımıdır.'},
-      {prompt:'\u221a49 + 3',text:'işleminin sonucu kaçtır?',choices:['7','10','13','52'],answer:'10',rule:'Karekök, hangi sayının karesinin verilen sayıyı oluşturduğunu bulur.',steps:['\u221a49 = 7','7 + 3 = 10'],visual:'Tam kare sayıları önce tanı, sonra işlemi tamamla.'},
-      {prompt:'18 ve 24',text:'sayılarının EBOB değeri kaçtır?',choices:['3','6','9','12'],answer:'6',rule:'EBOB, ortak bölenlerin en büyüğüdür.',steps:['18: 1,2,3,6,9,18','24: 1,2,3,4,6,8,12,24','En büyük ortak bölen 6'],visual:'Ortak bölenleri iki kümenin kesişimi gibi düşün.'},
-      {prompt:'3/4 + 1/4',text:'toplamı kaçtır?',choices:['1','4/8','3/8','2/4'],answer:'1',rule:'Paydalar eşitse paylar toplanır.',steps:['3/4 + 1/4 = 4/4','4/4 = 1'],visual:'Dört eş parçanın dördü tamamlanınca bir bütün oluşur.'},
-      {prompt:'5x = 40',text:'denkleminde x kaçtır?',choices:['5','6','8','10'],answer:'8',rule:'Çarpan bilinmiyorsa iki taraf aynı sayıya bölünür.',steps:['5x / 5 = 40 / 5','x = 8'],visual:'Dengeyi korumak için iki tarafa da aynı işlemi uygula.'}
+      {type:'choice',outcome:'M.8.1.1.1',topic:'Üslü Sayılar',prompt:'2^3 + 4',text:'işleminin sonucu kaçtır?',choices:['10','12','16','24'],answer:'12',rule:'Önce üs hesaplanır, sonra toplama yapılır.',steps:['2^3 = 8','8 + 4 = 12'],visual:'Üslü ifade, aynı sayının tekrarlı çarpımıdır.',video:'/dersler/matematik?konu=uslu-sayilar'},
+      {type:'fill',outcome:'M.8.1.3.2',topic:'Kareköklü İfadeler',prompt:'\u221a49 + 3',text:'işleminin sonucunu yaz.',answer:'10',rule:'Karekök, hangi sayının karesinin verilen sayıyı oluşturduğunu bulur.',steps:['\u221a49 = 7','7 + 3 = 10'],visual:'Tam kare sayıları önce tanı, sonra işlemi tamamla.',video:'/dersler/matematik?konu=karekoklu-ifadeler'},
+      {type:'match',outcome:'M.8.1.2.1',topic:'Çarpanlar ve Katlar',prompt:'Terimleri eşleştir',text:'Her kavramı doğru açıklamayla eşleştir.',pairs:[['EBOB','Ortak bölenlerin en büyüğü'],['EKOK','Ortak katların en küçüğü'],['Asal sayı','Sadece 1 ve kendisine bölünen sayı']],rule:'EBOB ortak bölenlere, EKOK ortak katlara bakar.',steps:['Kavramı oku','Bölen mi kat mı aradığını belirle','En büyük/en küçük ifadesini kontrol et'],visual:'EBOB ve EKOK ters yönlü iki merdiven gibidir.',video:'/dersler/matematik?konu=carpanlar-katlar'},
+      {type:'order',outcome:'M.8.1.1.2',topic:'İşlem Önceliği',prompt:'Çözüm adımlarını sırala',text:'Doğru sırayı oluştur.',items:['Üslü ifadeyi hesapla','Parantez varsa önce onu çöz','Çarpma/bölme işlemlerini yap','Toplama/çıkarma ile bitir'],answer:['Parantez varsa önce onu çöz','Üslü ifadeyi hesapla','Çarpma/bölme işlemlerini yap','Toplama/çıkarma ile bitir'],rule:'İşlem önceliği parantez, üs, çarpma-bölme, toplama-çıkarma şeklindedir.',steps:['Parantez','Üs','Çarpma/Bölme','Toplama/Çıkarma'],visual:'Sıra hatası sonucu tamamen değiştirebilir.',video:'/dersler/matematik?konu=islem-onceligi'},
+      {type:'mark',outcome:'M.8.3.1.1',topic:'Geometri',prompt:'Görsel üzerinde işaretle',text:'Dik açıyı temsil eden bölgeyi seç.',choices:['A: 45 derece','B: 90 derece','C: 120 derece'],answer:'B: 90 derece',rule:'Dik açı 90 derecedir.',steps:['Açı kollarını kontrol et','Köşe kare işaretliyse 90 derecedir'],visual:'Dik açı günlük hayatta masa köşesi gibi görünür.',video:'/dersler/matematik?konu=acilar'}
     ];
     var count=Math.max(5,Math.min(Number(test.questionCount)||5,8));
     var out=[];
@@ -131,7 +131,7 @@
 
   function openRunner(test,mode){
     loadKaTeX();
-    var session={test:test,mode:mode,questions:buildQuestions(test),index:0,score:20,solved:0,correct:0,start:Date.now(),locked:false};
+    var session={test:test,mode:mode,questions:buildQuestions(test),index:0,score:20,solved:0,correct:0,start:Date.now(),locked:false,misses:[],hits:[],done:false};
     var overlay=el('div','ekurs-test-modal ekurs-test-runner-theme is-blue');
     var dialog=el('div','ekurs-test-dialog ekurs-test-runner-dialog');
     overlay.appendChild(dialog);document.body.appendChild(overlay);
@@ -140,7 +140,7 @@
     function close(){clearInterval(interval);overlay.remove();}
     function rerender(){renderRunner(dialog,session,close);updateRunnerTheme(overlay,session.score);tick();renderMath(dialog);}
     dialog.__nextQuestion=function(){if(session.index<session.questions.length-1){session.index++;session.locked=false;session.feedback=null;rerender();}else{finish();}};
-    function finish(){session.score=Math.max(session.score,session.correct===session.solved?100:session.score);rerender();if(session.score>=100){saveMastery(session.test);celebrate(overlay,session.test);}}
+    function finish(){session.done=true;session.score=Math.max(session.score,session.correct===session.solved?100:session.score);rerender();if(session.score>=100){saveMastery(session.test);celebrate(overlay,session.test);}}
     dialog.__answer=function(choice){handleAnswer(dialog,overlay,session,choice,rerender);};
     rerender();
   }
@@ -148,6 +148,7 @@
   function renderRunner(root,session,close){
     root.innerHTML='';
     root.appendChild(button('Kapat','ekurs-test-close',close));
+    if(session.done){root.appendChild(resultsPanel(session));return;}
     var header=el('div','ekurs-test-runner-head');
     header.appendChild(el('span','ekurs-test-chip',session.mode==='practice'?'Anlık geri bildirim':'Odak modu'));
     header.appendChild(el('h2','',session.test.title||'Kişisel test'));
@@ -161,36 +162,88 @@
   function questionPanel(session){
     var q=session.questions[session.index];
     var panel=el('section','ekurs-test-question ekurs-test-live-question');
-    panel.appendChild(el('span','ekurs-test-question-count','Soru '+(session.index+1)+' / '+session.questions.length));
+    panel.appendChild(el('span','ekurs-test-question-count','Soru '+(session.index+1)+' / '+session.questions.length+' · '+typeLabel(q.type)));
     var prompt=el('div','ekurs-test-math-prompt');
     var math=el('span','ekurs-test-math');math.setAttribute('data-ekurs-math',q.prompt);math.textContent=q.prompt;prompt.appendChild(math);prompt.appendChild(el('span','', ' '+q.text));panel.appendChild(prompt);
-    var choices=el('div','ekurs-test-choices');
-    q.choices.forEach(function(choice){choices.appendChild(button(choice,'',function(){var dialog=panel.closest('.ekurs-test-dialog');if(dialog&&dialog.__answer)dialog.__answer(choice);}));});
-    panel.appendChild(choices);
+    panel.appendChild(renderInteraction(q));
     if(session.feedback)panel.appendChild(feedbackPanel(session));
     return panel;
+  }
+  function renderInteraction(q){
+    if(q.type==='fill')return fillInteraction(q);
+    if(q.type==='match')return matchInteraction(q);
+    if(q.type==='order')return orderInteraction(q);
+    if(q.type==='mark')return markInteraction(q);
+    var choices=el('div','ekurs-test-choices');
+    q.choices.forEach(function(choice){choices.appendChild(button(choice,'',function(){answerFrom(choices,choice);}));});
+    return choices;
+  }
+  function fillInteraction(q){
+    var wrap=el('div','ekurs-test-fill');
+    var input=document.createElement('input');input.type='text';input.inputMode='numeric';input.placeholder='Cevabını yaz';
+    wrap.appendChild(input);wrap.appendChild(button('Kontrol et','ekurs-test-next',function(){answerFrom(wrap,input.value.trim());}));return wrap;
+  }
+  function matchInteraction(q){
+    var wrap=el('div','ekurs-test-match');
+    var options=q.pairs.map(function(p){return p[1];}).sort();
+    q.pairs.forEach(function(pair){var row=el('label','ekurs-test-match-row');row.appendChild(el('strong','',pair[0]));var s=document.createElement('select');s.appendChild(new Option('Açıklama seç',''));options.forEach(function(o){s.appendChild(new Option(o,o));});row.appendChild(s);wrap.appendChild(row);});
+    wrap.appendChild(button('Eşleştirmeyi kontrol et','ekurs-test-next',function(){var values=[].slice.call(wrap.querySelectorAll('select')).map(function(s){return s.value;});answerFrom(wrap,values);}));return wrap;
+  }
+  function orderInteraction(q){
+    var wrap=el('div','ekurs-test-order');
+    q.items.forEach(function(item){var chip=el('button','ekurs-test-order-chip',item);chip.type='button';chip.draggable=true;chip.addEventListener('click',function(){wrap.insertBefore(chip,wrap.firstChild);});chip.addEventListener('dragstart',function(e){e.dataTransfer.setData('text/plain',item);chip.classList.add('is-dragging');});chip.addEventListener('dragend',function(){chip.classList.remove('is-dragging');});chip.addEventListener('dragover',function(e){e.preventDefault();});chip.addEventListener('drop',function(e){e.preventDefault();var dragging=wrap.querySelector('.is-dragging');if(dragging&&dragging!==chip)wrap.insertBefore(dragging,chip);});wrap.appendChild(chip);});
+    wrap.appendChild(button('Sıralamayı kontrol et','ekurs-test-next',function(){var values=[].slice.call(wrap.querySelectorAll('.ekurs-test-order-chip')).map(function(x){return x.textContent;});answerFrom(wrap,values);}));return wrap;
+  }
+  function markInteraction(q){
+    var wrap=el('div','ekurs-test-mark');var canvas=el('div','ekurs-angle-board');canvas.appendChild(el('span','angle-a','A'));canvas.appendChild(el('span','angle-b','B'));canvas.appendChild(el('span','angle-c','C'));wrap.appendChild(canvas);
+    var choices=el('div','ekurs-test-choices');q.choices.forEach(function(choice){choices.appendChild(button(choice,'',function(){answerFrom(wrap,choice);}));});wrap.appendChild(choices);return wrap;
+  }
+  function answerFrom(node,payload){var dialog=node.closest('.ekurs-test-dialog');if(dialog&&dialog.__answer)dialog.__answer(payload);}
+  function typeLabel(type){return {choice:'Çoktan seçmeli',fill:'Boşluk doldurma',match:'Eşleştirme',order:'Sıralama',mark:'Görsel işaretleme'}[type]||'Soru';}
+  function isCorrect(q,payload){
+    if(q.type==='match')return q.pairs.every(function(pair,i){return payload[i]===pair[1];});
+    if(q.type==='order')return q.answer.every(function(item,i){return payload[i]===item;});
+    return norm(payload).replace(',','.')===norm(q.answer).replace(',','.');
   }
   function scorePanel(session){
     var p=el('aside','ekurs-test-smart-panel');
     p.appendChild(el('span','ekurs-test-chip',session.score>=90?'Challenge Zone':session.score>=70?'Güçleniyor':'Sakin başlangıç'));
     var ring=el('div','ekurs-test-score-ring');ring.style.setProperty('--score',session.score);ring.appendChild(el('strong','',String(session.score)));ring.appendChild(el('span','', 'SmartScore'));p.appendChild(ring);
     p.appendChild(fact('Çözülen',session.solved+' soru'));p.appendChild(fact('Doğru',session.correct+' cevap'));p.appendChild(fact('Süre',''));p.lastChild.querySelector('strong').setAttribute('data-ekurs-timer','1');
-    var zone=el('p','ekurs-test-zone-copy',session.score>=90?'Final bölgesindesin. Sorular biraz daha dikkat istiyor.':session.score>=70?'Ritmi yakaladın. Birkaç doğru cevap seni final bölgesine taşır.':'Rahat başla. Her soru sana yol gösterecek.');
-    p.appendChild(zone);return p;
+    p.appendChild(el('p','ekurs-test-zone-copy',session.score>=90?'Final bölgesindesin. Sorular biraz daha dikkat istiyor.':session.score>=70?'Ritmi yakaladın. Birkaç doğru cevap seni final bölgesine taşır.':'Rahat başla. Her soru sana yol gösterecek.'));
+    return p;
   }
   function feedbackPanel(session){
     var q=session.questions[session.index],f=session.feedback,box=el('div','ekurs-test-feedback '+(f.correct?'is-correct':'is-wrong'));
-    if(f.correct){box.appendChild(el('strong','', 'Doğru. SmartScore yükseldi.'));box.appendChild(el('p','', q.steps.join(' → ')));box.appendChild(button('Sonraki soru','ekurs-test-next',function(){var d=box.closest('.ekurs-test-dialog');if(d&&d.__nextQuestion)d.__nextQuestion();}));}
-    else{box.appendChild(el('strong','', 'Burada küçük bir adımı güçlendirelim.'));box.appendChild(el('p','', q.rule));var steps=el('ol','ekurs-test-steps');q.steps.forEach(function(s){steps.appendChild(el('li','',s));});box.appendChild(steps);box.appendChild(el('div','ekurs-test-visual-hint',q.visual));box.appendChild(button('Anladım, sıradaki soruya geç','ekurs-test-next',function(){var d=box.closest('.ekurs-test-dialog');if(d&&d.__nextQuestion)d.__nextQuestion();}));}
+    if(f.correct){box.appendChild(el('strong','', 'Doğru. SmartScore yükseldi.'));box.appendChild(el('p','', q.steps.join(' → ')));}
+    else{box.appendChild(el('strong','', 'Burada küçük bir adımı güçlendirelim.'));box.appendChild(el('p','', q.rule));var steps=el('ol','ekurs-test-steps');q.steps.forEach(function(s){steps.appendChild(el('li','',s));});box.appendChild(steps);box.appendChild(el('div','ekurs-test-visual-hint',q.visual));}
+    box.appendChild(button(f.correct?'Sonraki soru':'Anladım, sıradaki soruya geç','ekurs-test-next',function(){var d=box.closest('.ekurs-test-dialog');if(d&&d.__nextQuestion)d.__nextQuestion();}));
     return box;
   }
-  function handleAnswer(dialog,overlay,session,choice,rerender){
+  function handleAnswer(dialog,overlay,session,payload,rerender){
     if(session.locked)return;
-    var q=session.questions[session.index],correct=choice===q.answer;session.locked=true;session.solved++;
-    if(correct){session.correct++;session.score=Math.min(100,session.score+(session.score>=90?4:session.score>=70?7:10));miniConfetti(overlay);}else{session.score=Math.max(0,session.score-(session.score>=90?12:7));}
-    session.feedback={correct:correct,choice:choice};rerender();
+    var q=session.questions[session.index],correct=isCorrect(q,payload);session.locked=true;session.solved++;
+    if(correct){session.correct++;session.hits.push(q);session.score=Math.min(100,session.score+(session.score>=90?4:session.score>=70?7:10));miniConfetti(overlay);}else{session.misses.push(q);session.score=Math.max(0,session.score-(session.score>=90?12:7));}
+    session.feedback={correct:correct,payload:payload};rerender();
     if(correct&&session.score>=100){saveMastery(session.test);celebrate(overlay,session.test);}
   }
+  function resultsPanel(session){
+    var wrap=el('section','ekurs-test-results');
+    wrap.appendChild(el('span','ekurs-test-chip',session.score>=90?'Ustalık bölgesi':'Kazanım karnesi'));
+    wrap.appendChild(el('h2','', 'Test tamamlandı'));
+    wrap.appendChild(el('p','', 'Puan yerine hangi kazanımların güçlendiğini ve nerede tekrar gerektiğini gösteriyoruz.'));
+    var summary=el('div','ekurs-test-result-summary');summary.appendChild(fact('SmartScore',session.score));summary.appendChild(fact('Doğru',session.correct+' / '+session.solved));summary.appendChild(fact('Süre',formatTime(Date.now()-session.start)));wrap.appendChild(summary);
+    var chart=el('div','ekurs-test-report-chart');
+    aggregate(session).forEach(function(row){var line=el('div','ekurs-report-row');line.appendChild(el('span','',row.topic));var bar=el('i','');bar.style.width=Math.max(12,row.rate)+'%';line.appendChild(bar);line.appendChild(el('strong','',row.rate+'%'));chart.appendChild(line);});wrap.appendChild(chart);
+    var actions=el('div','ekurs-test-remediation-list');
+    var misses=uniqueQuestions(session.misses);
+    if(!misses.length){actions.appendChild(el('div','ekurs-test-visual-hint','Harika. Bu sette tekrar gerektiren kazanım görünmüyor.'));}
+    misses.forEach(function(q){var card=el('article','ekurs-remediation-card');card.appendChild(el('strong','',q.topic));card.appendChild(el('p','',q.rule));card.appendChild(button('Konu eksiğin olabilir, şimdi izle','ekurs-test-next',function(){location.href=q.video||'/dersler/matematik';}));actions.appendChild(card);});
+    wrap.appendChild(actions);
+    return wrap;
+  }
+  function aggregate(session){var map={};session.questions.forEach(function(q){map[q.topic]=map[q.topic]||{topic:q.topic,total:0,hit:0};map[q.topic].total++;});session.hits.forEach(function(q){if(map[q.topic])map[q.topic].hit++;});return Object.keys(map).map(function(k){var row=map[k];row.rate=Math.round(row.hit/row.total*100);return row;});}
+  function uniqueQuestions(list){var seen={};return list.filter(function(q){if(seen[q.topic])return false;seen[q.topic]=true;return true;});}
   function updateRunnerTheme(overlay,score){overlay.classList.remove('is-blue','is-green','is-gold');overlay.classList.add(score>=90?'is-gold':score>=70?'is-green':'is-blue');}
   function formatTime(ms){var s=Math.floor(ms/1000),m=Math.floor(s/60);return String(m).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
   function miniConfetti(root){for(var i=0;i<10;i++){var c=el('i','ekurs-mini-confetti');c.style.left=(20+Math.random()*60)+'%';c.style.setProperty('--x',(Math.random()*120-60)+'px');c.style.background=['#22c55e','#3b82f6','#facc15','#fb7185'][i%4];root.appendChild(c);setTimeout(function(node){node.remove();},900,c);}}
