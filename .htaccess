@@ -51,6 +51,14 @@ RewriteRule ^siniflar/3-sinif/([^/]+)/([^/]+)/?$ /siniflar/3-sinif/konu-sablon.h
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^siniflar/4-sinif/([^/]+)/([^/]+)-test/?$ /siniflar/4-sinif/test-sablon.html?ders=$1&konu=$2 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^siniflar/4-sinif/([^/]+)/([^/]+)/?$ /siniflar/4-sinif/konu-sablon.html?ders=$1&konu=$2 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^siniflar/5-sinif/([^/]+)/([^/]+)-test/?$ /siniflar/5-sinif/test-sablon.html?ders=$1&konu=$2 [L,QSA]
 
 RewriteCond %{REQUEST_FILENAME} !-f
