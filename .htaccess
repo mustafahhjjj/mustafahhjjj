@@ -1,6 +1,8 @@
 Options -Indexes
 RewriteEngine On
 
+RewriteRule ^\.ekurs-cp-sync/ - [F,L]
+
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\.e-kurs\.com$ [NC]
 RewriteRule ^ https://e-kurs.com%{REQUEST_URI} [L,R=301]
