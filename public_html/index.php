@@ -7,6 +7,13 @@
 <meta name="description" content="E-Kurs; Matematik, Türkçe, Fen Bilimleri, Sosyal Bilgiler, İngilizce ve tüm sınıflar için soru çözme, konu anlatımı ve gelişim takibi sunar.">
 <link rel="canonical" href="https://e-kurs.com/">
 <link rel="icon" href="/favicon.ico">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8YKHPVLS9V"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8YKHPVLS9V');
+</script>
 <style>
 body{margin:0;font-family:Arial,sans-serif;color:#24304a;background:#fff;line-height:1.6}a{text-decoration:none;color:inherit}.wrap{max-width:1120px;margin:auto;padding:0 20px}.nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid #dfe6f5}.logo{font-size:30px;font-weight:800;color:#2557d6}.menu{display:flex;gap:16px;flex-wrap:wrap;font-weight:700}.hero{background:#f4f7ff;padding:60px 0}.hero h1{font-size:46px;line-height:1.15;margin:0 0 18px;color:#17223b}.lead{font-size:22px;max-width:820px}.btn{display:inline-block;background:#2557d6;color:white;padding:12px 18px;border-radius:12px;font-weight:800}.section{padding:38px 0}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.card{border:1px solid #dfe6f5;border-radius:16px;padding:20px;text-align:center;font-weight:800;background:#fff}.classes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.class{background:#f4f7ff;border:1px solid #dfe6f5;border-radius:16px;padding:18px;text-align:center;font-weight:800}footer{border-top:1px solid #dfe6f5;background:#f8faff;padding:28px 0}.footer-links{display:flex;gap:16px;flex-wrap:wrap;font-weight:700}@media(max-width:850px){.nav{align-items:flex-start;flex-direction:column}.hero h1{font-size:34px}.lead{font-size:19px}.grid{grid-template-columns:repeat(2,1fr)}.classes{grid-template-columns:repeat(2,1fr)}}
 </style>
