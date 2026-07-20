@@ -3,385 +3,336 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>e-kurs.com | Matematik, Türkçe, Fen, Sosyal ve İngilizce</title>
-  <meta name="description" content="e-kurs.com kişiselleştirilmiş K–12 öğrenme. 1.–12. sınıf MEB uyumlu beceriler, testler, seviye belirleme ve öğretmen analitikleri.">
-  <meta property="og:title" content="e-kurs.com | Kişiselleştirilmiş öğrenme">
-  <meta property="og:description" content="Türkiye K–12 için kapsamlı müfredat, beceri pratiği, seviye belirleme ve sınıf analitikleri.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="tr_TR">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@600;700;800&display=swap" rel="stylesheet">
+  <title>e-kurs.com | Matematik, Türkçe, Fen, Sosyal Bilgiler ve İngilizce</title>
+  <meta name="description" content="e-kurs.com kişiselleştirilmiş öğrenmedir. 1.–12. sınıf MEB uyumlu matematik, Türkçe, fen, sosyal bilgiler ve İngilizce.">
   <link rel="stylesheet" href="/css/home-ixl.css">
 </head>
 <body>
-  <a class="skip-link" href="#icerik">İçeriğe geç</a>
-
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa">e-kurs<small>.com</small></a>
-      <div class="nav-spacer"></div>
-      <div class="nav-meta">
+  <!-- IXL birebir kopya düzeni — TR logo + görseller -->
+  <header class="ixl-header">
+    <div class="wrap">
+      <a class="ixl-logo" href="/index.html" aria-label="e-kurs.com">
+        <img src="/assets/img/ekurs-logo.png" width="167" height="48" alt="e-kurs">
+      </a>
+      <nav class="ixl-nav-right" aria-label="Hesap">
         <a href="/kayit.html">Üyelik</a>
-        <a class="btn btn-green" href="/kayit.html">Hemen üye ol</a>
+        <a class="ixl-btn ixl-btn-green" href="/kayit.html">Hemen üye ol</a>
         <a href="/giris.html">Giriş yap</a>
-      </div>
-      <button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobil-nav">
+      </nav>
+      <button class="menu-btn" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobil">
         <span></span>
       </button>
     </div>
-    <div class="container mobile-nav" id="mobil-nav">
+    <div class="mobile-panel" id="mobil">
       <a href="/kayit.html">Hemen üye ol</a>
       <a href="/giris.html">Giriş yap</a>
       <a href="#siniflar">Sınıflar</a>
       <a href="#dersler">Dersler</a>
       <a href="/testler/index.html">Testler</a>
-      <a href="/ogretmen-paneli/index.html">Öğretmen paneli</a>
     </div>
   </header>
 
-  <main id="icerik">
-    <section class="hero" aria-label="Ana tanıtım">
-      <div class="container hero-inner">
-        <p class="hero-brand">e-kurs.com</p>
-        <h1 class="hero-title">kişiselleştirilmiş öğrenmedir</h1>
-        <p class="hero-lead">1. sınıftan 12. sınıfa her öğrenciye doğru seviyede beceri, pratik ve geri bildirim.</p>
-        <a class="btn btn-green" href="/kayit.html">Hemen başla</a>
+  <main>
+    <section class="ixl-hero" aria-label="Ana tanıtım">
+      <div class="wrap">
+        <h1>
+          <span class="brand">e-kurs.com</span>
+          <span class="rest">kişiselleştirilmiş öğrenmedir</span>
+        </h1>
+        <a class="ixl-btn ixl-btn-green ixl-btn-lg" href="/kayit.html">Hemen üye ol</a>
       </div>
     </section>
 
-    <section class="section" id="dersler">
-      <div class="container reveal">
-        <div class="section-head">
-          <h2 class="section-title">Kapsamlı K–12 müfredat</h2>
-        </div>
-        <div class="subjects" aria-label="Dersler">
-          <a href="/dersler/matematik.html"><span class="dot math" aria-hidden="true"></span>Matematik</a>
-          <a href="/dersler/turkce/index.html"><span class="dot ela" aria-hidden="true"></span>Türkçe</a>
-          <a href="/dersler/index.html"><span class="dot sci" aria-hidden="true"></span>Fen Bilimleri</a>
-          <a href="/dersler/index.html"><span class="dot soc" aria-hidden="true"></span>Sosyal Bilgiler</a>
-          <a href="/dersler/index.html"><span class="dot eng" aria-hidden="true"></span>İngilizce</a>
+    <section class="ixl-section" id="dersler">
+      <div class="wrap">
+        <h2 class="ixl-h2">Kapsamlı K–12 müfredat</h2>
+        <div class="subjects">
+          <a href="/dersler/matematik.html"><span class="dot math"></span>Matematik</a>
+          <a href="/dersler/turkce/index.html"><span class="dot ela"></span>Türkçe</a>
+          <a href="/dersler/index.html"><span class="dot sci"></span>Fen Bilimleri</a>
+          <a href="/dersler/index.html"><span class="dot soc"></span>Sosyal Bilgiler</a>
+          <a href="/dersler/index.html"><span class="dot eng"></span>İngilizce</a>
         </div>
       </div>
     </section>
 
-    <section class="section soft">
-      <div class="container reveal">
-        <div class="section-head">
-          <h2 class="section-title">Öğretmenler ve aileler tarafından tercih edilir</h2>
-        </div>
-        <div class="trust-grid">
-          <div class="trust-item">
-            <strong>12</strong>
-            <span>sınıf seviyesi — ilkokuldan mezuniyete</span>
-          </div>
-          <div class="trust-item">
+    <section class="ixl-section soft">
+      <div class="wrap">
+        <h2 class="ixl-h2">Öğretmenler ve aileler tarafından tercih edilir</h2>
+        <div class="trust">
+          <div>
             <strong>1.000+</strong>
-            <span>MEB uyumlu kazanım ve beceri yolu</span>
+            <span>MEB uyumlu kazanım ve beceri</span>
           </div>
-          <div class="trust-item">
-            <strong>7/24</strong>
-            <span>test, video destek ve panel erişimi</span>
+          <div>
+            <strong>12 sınıf</strong>
+            <span>ilkokuldan mezuniyete öğrenme yolu</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section ink" id="deneyim">
-      <div class="container reveal">
-        <div class="section-head">
-          <h2 class="section-title">Sürükleyici öğrenme deneyimi</h2>
-        </div>
-        <div class="feature-row">
+    <section class="ixl-section deep" id="deneyim">
+      <div class="wrap">
+        <h2 class="ixl-h2">Sürükleyici öğrenme deneyimi</h2>
+        <div class="features">
           <article class="feature">
-            <div class="feature-icon" aria-hidden="true">A</div>
+            <div class="feature-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 3h18v2H3V3zm2 4h14v14H5V7zm2 2v10h10V9H7z"/></svg>
+            </div>
             <h3>Analitik</h3>
             <p>Gerçek zamanlı sınıf ve öğrenci içgörüleri.</p>
-            <a href="/ogretmen-paneli/index.html">Raporlara git →</a>
+            <a href="/ogretmen-paneli/index.html">İncele →</a>
           </article>
           <article class="feature">
-            <div class="feature-icon" aria-hidden="true">Ö</div>
+            <div class="feature-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7l3-7z"/></svg>
+            </div>
             <h3>Öneriler</h3>
             <p>Eksik kazanıma göre sıradaki doğru beceri.</p>
-            <a href="/ogrenci/panel.html">Öğrenci paneli →</a>
+            <a href="/ogrenci/panel.html">İncele →</a>
           </article>
           <article class="feature">
-            <div class="feature-icon" aria-hidden="true">S</div>
+            <div class="feature-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v5l4 2-.8 1.4L11 13V7h2z"/></svg>
+            </div>
             <h3>Seviye belirleme</h3>
             <p>Kısa teşhis ile güçlü ve zayıf alanları netleştir.</p>
-            <a href="/seviye-belirle.html">Analizi başlat →</a>
+            <a href="/seviye-belirle.html">İncele →</a>
           </article>
           <article class="feature">
-            <div class="feature-icon" aria-hidden="true">★</div>
+            <div class="feature-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2L12 16.8 5.7 20.8 8 13.6 2 9.2h7.6L12 2z"/></svg>
+            </div>
             <h3>Ödüller</h3>
             <p>Seriler, rozetler ve motivasyon takibi.</p>
-            <a href="/oduller.html">Ödülleri gör →</a>
+            <a href="/oduller.html">İncele →</a>
           </article>
+        </div>
+        <div class="deep-cta">
+          <a class="ixl-btn ixl-btn-green ixl-btn-lg" href="/kayit.html">Üye ol</a>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container reveal">
-        <div class="promo-grid">
-          <article class="promo highschool">
+    <section class="ixl-section">
+      <div class="wrap">
+        <div class="promos">
+          <article class="promo hs">
             <h3>e-kurs.com lise için</h3>
             <p>9–12. sınıf ve YKS yolunda kendi başarı rotanı oluştur.</p>
-            <a class="btn btn-white" href="/siniflar/9-sinif/index.html">İncele</a>
+            <a class="ixl-btn ixl-btn-white" href="/siniflar/9-sinif/index.html">İncele</a>
           </article>
-          <article class="promo independent">
+          <article class="promo ind">
             <h3>Bağımsız öğrenenler için</h3>
-            <p>Evde, kurs dışında veya tekrar döneminde kendi hızında çalış.</p>
-            <a class="btn btn-white" href="/kayit.html">Ücretsiz dene</a>
+            <p>Evet, e-kurs.com yetişkinler ve evde çalışanlar için de!</p>
+            <a class="ixl-btn ixl-btn-white" href="/kayit.html">İncele</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section soft" id="siniflar">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2 class="section-title">Her seviye için hazır beceriler</h2>
-          <p class="section-lead">Sınıfını aç, dersini seç, kazanım testine geç.</p>
-        </div>
+    <section class="ixl-section soft" id="siniflar">
+      <div class="wrap">
+        <h2 class="ixl-h2">Her seviye için hazır beceriler</h2>
+        <div class="grades">
 
-        <div class="grade-list">
-          <details class="grade reveal" open>
+          <details class="grade" open>
             <summary>
-              <span class="grade-num">1</span>
-              <span class="grade-copy">
+              <span class="gnum">1</span>
+              <span class="gcopy">
                 <h3>1. Sınıf</h3>
                 <p>Rakamlar, toplama-çıkarma, harfler, okuma ve temel hayat bilgisi.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/1-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/1-sinif/matematik.html">Matematik <span class="count">beceriler</span></a>
-                <a href="/siniflar/1-sinif/turkce.html">Türkçe <span class="count">beceriler</span></a>
-                <a href="/siniflar/1-sinif/hayat-bilgisi.html">Hayat Bilgisi</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/1-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/1-sinif/matematik.html">Matematik <span class="n">beceriler</span></a>
+              <a href="/siniflar/1-sinif/turkce.html">Türkçe <span class="n">beceriler</span></a>
+              <a href="/siniflar/1-sinif/hayat-bilgisi.html">Hayat Bilgisi</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">2</span>
-              <span class="grade-copy">
+              <span class="gnum">2</span>
+              <span class="gcopy">
                 <h3>2. Sınıf</h3>
                 <p>Doğal sayılar, okuduğunu anlama, İngilizce başlangıç ve videolu konular.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/2-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/2-sinif/matematik/">Matematik</a>
-                <a href="/siniflar/2-sinif/turkce.html">Türkçe</a>
-                <a href="/siniflar/2-sinif/ingilizce.html">İngilizce</a>
-                <a href="/testler/2-sinif-deneme-sinavi.html">Deneme sınavı</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/2-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/2-sinif/matematik/">Matematik</a>
+              <a href="/siniflar/2-sinif/turkce.html">Türkçe</a>
+              <a href="/siniflar/2-sinif/ingilizce.html">İngilizce</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">3</span>
-              <span class="grade-copy">
+              <span class="gnum">3</span>
+              <span class="gcopy">
                 <h3>3. Sınıf</h3>
                 <p>Çarpma-bölme, paragraf, fen gözlemleri ve sosyal bilgiler temelleri.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/3-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/3-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/3-sinif/turkce.html">Türkçe</a>
-                <a href="/testler/index.html">Testler</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/3-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/3-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/3-sinif/turkce.html">Türkçe</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">4</span>
-              <span class="grade-copy">
+              <span class="gnum">4</span>
+              <span class="gcopy">
                 <h3>4. Sınıf</h3>
                 <p>Kesirler, okuma-anlama, fen deneyleri ve ilkokul kapanış becerileri.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/4-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/4-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/4-sinif/turkce.html">Türkçe</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/4-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/4-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/4-sinif/turkce.html">Türkçe</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">5</span>
-              <span class="grade-copy">
+              <span class="gnum">5</span>
+              <span class="gcopy">
                 <h3>5. Sınıf</h3>
                 <p>Ortaokula geçiş: kesirler, paragraf, fen ve sosyal bilgiler.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/5-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/5-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/5-sinif/turkce.html">Türkçe</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/5-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/5-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/5-sinif/turkce.html">Türkçe</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">6</span>
-              <span class="grade-copy">
+              <span class="gnum">6</span>
+              <span class="gcopy">
                 <h3>6. Sınıf</h3>
                 <p>Oran, cebir başlangıcı, fen kavramları ve okuma stratejileri.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/6-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/6-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/6-sinif/turkce.html">Türkçe</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/6-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/6-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/6-sinif/turkce.html">Türkçe</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">7</span>
-              <span class="grade-copy">
+              <span class="gnum">7</span>
+              <span class="gcopy">
                 <h3>7. Sınıf</h3>
                 <p>Rasyonel sayılar, dil bilgisi, fen ve sosyal bilimler derinliği.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/7-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/7-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/7-sinif/turkce.html">Türkçe</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/7-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/7-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/7-sinif/turkce.html">Türkçe</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">8</span>
-              <span class="grade-copy">
+              <span class="gnum">8</span>
+              <span class="gcopy">
                 <h3>8. Sınıf · LGS</h3>
                 <p>LGS odaklı matematik, Türkçe, fen ve inkılap bilgisi.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/8-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/8-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/8-sinif/turkce.html">Türkçe</a>
-                <a href="/testler/index.html">LGS testleri</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/8-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/8-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/8-sinif/turkce.html">Türkçe</a>
+              <a href="/testler/index.html">LGS testleri</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">9</span>
-              <span class="grade-copy">
+              <span class="gnum">9</span>
+              <span class="gcopy">
                 <h3>9. Sınıf</h3>
                 <p>Lise temelleri: cebir, dil ve anlatım, biyoloji başlangıcı.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/9-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/9-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/9-sinif/turkce.html">Türkçe</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/9-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/9-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/9-sinif/turkce.html">Türkçe</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">10</span>
-              <span class="grade-copy">
+              <span class="gnum">10</span>
+              <span class="gcopy">
                 <h3>10. Sınıf</h3>
                 <p>Geometri, kimya, tarih ve paragraf becerileri.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/10-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/10-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/10-sinif/turkce.html">Türkçe</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/10-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/10-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/10-sinif/turkce.html">Türkçe</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">11</span>
-              <span class="grade-copy">
+              <span class="gnum">11</span>
+              <span class="gcopy">
                 <h3>11. Sınıf</h3>
                 <p>İleri matematik, fizik ve YKS hazırlık temelleri.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/11-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/11-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/11-sinif/turkce.html">Türkçe</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/11-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/11-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/11-sinif/turkce.html">Türkçe</a>
+            </div></div>
           </details>
 
-          <details class="grade reveal">
+          <details class="grade">
             <summary>
-              <span class="grade-num">12</span>
-              <span class="grade-copy">
+              <span class="gnum">12</span>
+              <span class="gcopy">
                 <h3>12. Sınıf · YKS</h3>
                 <p>Mezuniyet ve YKS için yoğun tekrar, deneme ve konu netleştirme.</p>
               </span>
-              <span class="grade-open">Aç</span>
             </summary>
-            <div class="grade-body">
-              <div class="skill-links">
-                <a href="/siniflar/12-sinif/index.html">Sınıf ana sayfa</a>
-                <a href="/siniflar/12-sinif/matematik.html">Matematik</a>
-                <a href="/siniflar/12-sinif/turkce.html">Türkçe</a>
-                <a href="/testler/index.html">Deneme sınavları</a>
-              </div>
-            </div>
+            <div class="gbody"><div class="skills">
+              <a href="/siniflar/12-sinif/index.html">Sınıf ana sayfa</a>
+              <a href="/siniflar/12-sinif/matematik.html">Matematik</a>
+              <a href="/siniflar/12-sinif/turkce.html">Türkçe</a>
+              <a href="/testler/index.html">Deneme sınavları</a>
+            </div></div>
           </details>
+
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container reveal">
-        <div class="section-head">
-          <h2 class="section-title">İhtiyacın olan tam beceriler</h2>
-          <p class="section-lead">Ders planı veya sınav hazırlığı için konu konu beceriler hazır.</p>
-        </div>
+    <section class="ixl-section">
+      <div class="wrap">
+        <h2 class="ixl-h2">İhtiyacın olan tam beceriler</h2>
         <div class="plans">
           <article class="plan">
             <h3>MEB kazanımları</h3>
             <p>Her sınıf için müfredata hizalı beceri yolları.</p>
-            <a href="/siniflar/index.html">Sınıfları gör →</a>
+            <a href="/siniflar/index.html">Beceri planını bul →</a>
           </article>
           <article class="plan">
             <h3>Konu anlatımları</h3>
@@ -397,12 +348,9 @@
       </div>
     </section>
 
-    <section class="section soft" id="ogretmen">
-      <div class="container reveal">
-        <div class="section-head">
-          <h2 class="section-title">Öğretmenlere kişiselleştirilmiş öğretim araçları</h2>
-          <p class="section-lead">e-kurs.com öğretmenlere sınıfı yönetmek için gereken her şeyi verir.</p>
-        </div>
+    <section class="ixl-section soft" id="ogretmen">
+      <div class="wrap">
+        <h2 class="ixl-h2">e-kurs.com öğretmenlere kişiselleştirilmiş öğretim için gereken her şeyi verir</h2>
         <div class="tools">
           <article class="tool">
             <h3>Kapsamlı müfredat</h3>
@@ -428,8 +376,8 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container reveal">
+    <section class="ixl-section">
+      <div class="wrap">
         <div class="quote">
           <blockquote>
             “Matematikten korkan öğrencilerim bile birkaç haftada cesaret kazandı. İleri seviyedekiler de her zaman yeni bir zorluk buluyor.”
@@ -439,17 +387,17 @@
       </div>
     </section>
 
-    <section class="cta-band">
-      <div class="container">
+    <section class="cta">
+      <div class="wrap">
         <h2>Bugün öğrenmeye başla</h2>
-        <a class="btn btn-green" href="/kayit.html">Üye ol</a>
+        <a class="ixl-btn ixl-btn-green ixl-btn-lg" href="/kayit.html">Hemen üye ol</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
+  <footer class="ixl-footer">
+    <div class="wrap">
+      <div class="links">
         <a href="/giris.html">Giriş yap</a>
         <a href="/kayit.html">Üyelik</a>
         <a href="/siniflar/index.html">Sınıflar</a>
@@ -457,7 +405,6 @@
         <a href="/testler/index.html">Testler</a>
         <a href="/ogretmen-paneli/index.html">Öğretmenler</a>
         <a href="/veli-paneli.html">Veliler</a>
-        <a href="/ogrenci/panel.html">Öğrenci paneli</a>
       </div>
       <p>© e-kurs.com — MEB uyumlu K–12 öğrenme platformu</p>
     </div>
