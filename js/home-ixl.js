@@ -1,4 +1,6 @@
 (function () {
+  document.documentElement.classList.add("js-ready");
+
   var nav = document.querySelector(".nav");
   var toggle = document.querySelector(".menu-toggle");
 

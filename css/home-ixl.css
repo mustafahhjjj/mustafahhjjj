@@ -192,9 +192,9 @@ button { font: inherit; cursor: pointer; }
 /* Hero — one composition, brand first */
 .hero {
   position: relative;
-  min-height: min(92vh, 760px);
+  min-height: min(88vh, 720px);
   display: grid;
-  align-items: end;
+  align-items: center;
   overflow: hidden;
   color: #fff;
   isolation: isolate;
@@ -278,6 +278,14 @@ button { font: inherit; cursor: pointer; }
   gap: 0.75rem;
   margin-top: 1.6rem;
   animation: rise-in 1s ease 0.2s both;
+}
+
+/* Keep hero copy readable before/without animation frames */
+.hero-brand,
+.hero-title,
+.hero-lead,
+.hero-actions {
+  opacity: 1;
 }
 
 .hero .btn-green { box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22); }
@@ -771,9 +779,13 @@ button { font: inherit; cursor: pointer; }
 
 /* Reveal motion */
 .reveal {
-  opacity: 0;
-  transform: translateY(18px);
+  opacity: 1;
+  transform: translateY(14px);
   transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js-ready .reveal:not(.is-in) {
+  opacity: 0;
 }
 
 .reveal.is-in {
@@ -782,8 +794,8 @@ button { font: inherit; cursor: pointer; }
 }
 
 @keyframes rise-in {
-  from { opacity: 0; transform: translateY(22px); }
-  to { opacity: 1; transform: none; }
+  from { transform: translateY(18px); }
+  to { transform: none; }
 }
 
 @keyframes hero-drift {
