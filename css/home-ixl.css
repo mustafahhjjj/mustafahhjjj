@@ -182,7 +182,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
   color: #fff;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(8, 40, 24, 0.82) 0%, rgba(8, 40, 24, 0.55) 42%, rgba(8, 40, 24, 0.25) 100%),
+    linear-gradient(105deg, rgba(6, 32, 20, 0.92) 0%, rgba(6, 32, 20, 0.78) 38%, rgba(6, 32, 20, 0.35) 68%, rgba(6, 32, 20, 0.15) 100%),
     url("/assets/img/hero-classroom.jpg") center / cover no-repeat,
     linear-gradient(135deg, #0b5c36, #1a8f5a 45%, #0e7c86);
 }
@@ -193,6 +193,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
   padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(3.25rem, 7vw, 5rem);
   max-width: 640px;
   animation: heroIn 0.85s ease both;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
 }
 
 .hero-brand {
@@ -210,6 +211,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.15;
+  color: #fff;
 }
 
 .hero-lead {
@@ -217,7 +219,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
   max-width: 34rem;
   font-size: 1.12rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.92);
+  color: #f3fff8;
 }
 
 .hero .btn-green {
@@ -262,6 +264,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.2;
+  color: var(--ink);
 }
 
 .section-lead {
@@ -270,6 +273,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
   font-weight: 600;
 }
 
+.section.ink .section-title { color: #fff; }
 .section.ink .section-lead { color: rgba(255, 255, 255, 0.88); }
 
 /* Subjects strip */
@@ -384,7 +388,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
 
 .promo {
   position: relative;
-  min-height: 220px;
+  min-height: 240px;
   padding: 1.75rem;
   border-radius: 8px;
   overflow: hidden;
@@ -392,6 +396,7 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
   display: grid;
   align-content: end;
   gap: 0.55rem;
+  background-color: #14532d;
   background-size: cover;
   background-position: center;
   isolation: isolate;
@@ -402,20 +407,16 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.72));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.78));
 }
 
 .promo.highschool {
-  background-image:
-    linear-gradient(135deg, rgba(11, 92, 54, 0.55), rgba(0, 0, 0, 0.35)),
-    url("/assets/img/promo-highschool.jpg");
+  background-image: url("/assets/img/promo-highschool.jpg");
   background-color: #14532d;
 }
 
 .promo.independent {
-  background-image:
-    linear-gradient(135deg, rgba(14, 116, 144, 0.5), rgba(0, 0, 0, 0.35)),
-    url("/assets/img/promo-independent.jpg");
+  background-image: url("/assets/img/promo-independent.jpg");
   background-color: #0e7490;
 }
 
@@ -669,16 +670,24 @@ button { font: inherit; cursor: pointer; background: none; border: 0; padding: 0
   font-size: 0.92rem;
 }
 
-/* Reveal motion */
+/* Reveal motion — visible by default so content never stays blank */
 .reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-
-.reveal.in {
   opacity: 1;
   transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal.is-pending {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .reveal.in,
+  .reveal.is-pending.in {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
 }
 
 /* Responsive */

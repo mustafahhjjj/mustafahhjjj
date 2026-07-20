@@ -19,10 +19,15 @@
   }
 
   var reveals = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window) || !reveals.length) {
+  if (!reveals.length) return;
+
+  if (!("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     reveals.forEach(function (el) { el.classList.add("in"); });
     return;
   }
+
+  reveals.forEach(function (el) { el.classList.add("is-pending"); });
 
   var io = new IntersectionObserver(
     function (entries) {
