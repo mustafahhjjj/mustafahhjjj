@@ -1,240 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>e-kurs.com | MEB Uyumlu K-12 Öğrenme Platformu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="1. sınıftan 12. sınıfa kadar MEB uyumlu dersler, testler, deneme sınavları ve videolu konu anlatımları.">
-  <style>
-    :root {
-      --green: #16a34a;
-      --green-dark: #15803d;
-      --blue: #2563eb;
-      --orange: #f59e0b;
-      --text: #14213d;
-      --muted: #5b6475;
-      --line: #e5e7eb;
-      --bg: #f6fbff;
-      --card: #ffffff;
-      --shadow: 0 14px 36px rgba(15, 23, 42, .09);
-      --radius: 20px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 48%, #ffffff 100%);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.55;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1160px, calc(100% - 28px)); margin: 0 auto; }
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 6px 18px rgba(15,23,42,.04);
-    }
-    .nav { min-height: 70px; display: flex; align-items: center; gap: 18px; }
-    .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; font-size: 1.1rem; }
-    .logo-mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 12px; background: var(--green); color: #fff; }
-    .nav-links { margin-left: auto; display: flex; align-items: center; gap: 18px; font-weight: 800; color: #334155; }
-    .nav-links a:hover { color: var(--green-dark); }
-    .btn {
-      display: inline-flex;
-      min-height: 46px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 900;
-      text-align: center;
-      transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
-    }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(15,23,42,.12); }
-    .btn-primary { background: var(--green); color: #fff; }
-    .btn-primary:hover { background: var(--green-dark); }
-    .btn-light { background: #fff; color: var(--green-dark); border-color: #bbf7d0; }
-    .btn-blue { background: var(--blue); color: #fff; }
-    .hero { padding: 52px 0 38px; background: radial-gradient(circle at 8% 12%, #dcfce7, transparent 30%), radial-gradient(circle at 90% 10%, #dbeafe, transparent 32%); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) 390px; gap: 26px; align-items: start; }
-    .eyebrow { display: inline-flex; padding: 8px 14px; border-radius: 999px; background: #ecfdf5; color: var(--green-dark); font-weight: 900; border: 1px solid #bbf7d0; }
-    h1 { margin: 16px 0 12px; font-size: clamp(2.25rem, 5vw, 4rem); line-height: 1.05; letter-spacing: 0; }
-    .lead { max-width: 720px; margin: 0; color: var(--muted); font-size: 1.08rem; font-weight: 700; }
-    .quick-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-top: 22px; }
-    .quick-grid a {
-      min-height: 58px;
-      display: grid;
-      place-items: center;
-      padding: 10px;
-      border-radius: 16px;
-      background: #fff;
-      border: 1px solid #dbeafe;
-      color: #18345f;
-      font-weight: 900;
-      text-align: center;
-      box-shadow: 0 8px 18px rgba(37, 99, 235, .08);
-    }
-    .quick-grid a:hover { border-color: var(--green); background: #f0fdf4; color: var(--green-dark); }
-    .start-card, .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .start-card { padding: 22px; display: grid; gap: 12px; }
-    .start-card h2 { margin: 0; font-size: 1.45rem; }
-    .start-card p { margin: 0; color: var(--muted); font-weight: 700; }
-    .start-links { display: grid; gap: 10px; }
-    .section { padding: 46px 0; }
-    .section.alt { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .section-head { margin-bottom: 20px; }
-    .section-head h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 3vw, 2.25rem); }
-    .section-head p { margin: 0; color: var(--muted); font-weight: 700; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .card { padding: 22px; display: grid; gap: 10px; }
-    .card h3 { margin: 0; font-size: 1.22rem; }
-    .card p { margin: 0; color: var(--muted); font-weight: 700; }
-    .link-list { display: grid; gap: 8px; margin: 6px 0; padding: 0; list-style: none; }
-    .link-list a { display: flex; justify-content: space-between; align-items: center; min-height: 42px; padding: 8px 10px; border-radius: 12px; background: #f8fafc; border: 1px solid #e2e8f0; font-weight: 900; color: #334155; }
-    .link-list a:hover { background: #eff6ff; color: #1d4ed8; }
-    .badge { display: inline-flex; width: fit-content; padding: 6px 10px; border-radius: 999px; background: #ecfdf5; color: var(--green-dark); font-size: .78rem; font-weight: 900; }
-    .footer { padding: 34px 0; background: #111827; color: #fff; }
-    .footer p { color: #d1d5db; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 18px; font-weight: 800; }
-    @media (max-width: 960px) {
-      .hero-grid, .grid-3 { grid-template-columns: 1fr; }
-      .quick-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .nav { flex-wrap: wrap; padding: 10px 0; }
-      .nav-links { width: 100%; margin-left: 0; overflow-x: auto; padding-bottom: 4px; }
-    }
-    @media (max-width: 600px) {
-      .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .btn { width: 100%; }
-      .hero { padding-top: 34px; }
-    }
-  </style>
+  <title>e-kurs.com | MEB Uyumlu K-12 Öğrenme Platformu</title>
+  <link rel="stylesheet" href="css/home.css?v=20260725">
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav container" aria-label="Ana menü">
-    <a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="logo-mark">e</span><span>e-kurs.com</span></a>
-    <div class="nav-links">
-      <a href="/siniflar/index.html">Sınıflar</a>
-      <a href="/dersler/index.html">Dersler</a>
-      <a href="/testler/index.html">Testler</a>
-      <a href="/ogrenci/panel.html">Öğrenci Paneli</a>
-      <a href="/ogretmen-paneli/index.html">Öğretmen Paneli</a>
-      <a href="/giris.html">Giriş Yap</a>
-    </div>
-  </nav>
-</header>
-<main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">MEB uyumlu K-12 öğrenme sistemi</span>
-        <h1>Sınıfını seç, derse gir, testi çöz.</h1>
-        <p class="lead">e-kurs.com; 1. sınıftan 12. sınıfa kadar sınıf, ders, konu, videolu anlatım, test ve deneme akışını tek yerde toplayan sade ve hızlı çalışma alanıdır.</p>
-        <div class="quick-grid" aria-label="Sınıf seçimi">
-          <a href="/siniflar/1-sinif/index.html">1. Sınıf</a>
-          <a href="/siniflar/2-sinif/index.html">2. Sınıf</a>
-          <a href="/siniflar/3-sinif/index.html">3. Sınıf</a>
-          <a href="/siniflar/4-sinif/index.html">4. Sınıf</a>
-          <a href="/siniflar/5-sinif/index.html">5. Sınıf</a>
-          <a href="/siniflar/6-sinif/index.html">6. Sınıf</a>
-          <a href="/siniflar/7-sinif/index.html">7. Sınıf</a>
-          <a href="/siniflar/8-sinif/index.html">8. Sınıf LGS</a>
-          <a href="/siniflar/9-sinif/index.html">9. Sınıf</a>
-          <a href="/siniflar/10-sinif/index.html">10. Sınıf</a>
-          <a href="/siniflar/11-sinif/index.html">11. Sınıf YKS</a>
-          <a href="/siniflar/12-sinif/index.html">12. Sınıf</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Ana menü">
+      <a class="logo" href="/index.html" aria-label="e-kurs.com ana sayfa"><span class="logo-mark">e</span><span>e-kurs.com</span></a>
+      <button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="main-menu"><span></span><span></span><span></span></button>
+      <div class="nav-menu" id="main-menu">
+        <a href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a><a href="/ogrenci/panel.html">Ödev Yardımı</a><a href="/giris.html">Giriş Yap</a><a class="btn btn-primary nav-cta" href="/uyelik">Ücretsiz Başla</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-sky" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">MEB uyumlu K-12 öğrenme sistemi</span>
+          <h1>Sınıfını seç, derse gir, testi çöz.</h1>
+          <p class="lead">e-kurs.com; 1. sınıftan 12. sınıfa kadar sınıf, ders, konu, videolu anlatım, test ve deneme akışını tek yerde toplayan sade ve hızlı çalışma alanıdır.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="/siniflar/index.html">Sınıfını Seç</a><a class="btn btn-secondary" href="/testler/index.html">Testleri İncele</a></div>
+        </div>
+        <div class="hero-visual" aria-label="e-kurs öğrenme seçenekleri">
+          <article class="cloud-card cloud-blue"><strong>Kapsamlı K-12 müfredatı</strong><span>Dersler • Konular • Testler</span></article>
+          <article class="cloud-card cloud-purple"><strong>Her öğrenci için güvenli sistem</strong><span>Ödev • Rapor • Gelişim</span></article>
+          <article class="cloud-card cloud-green"><strong>Kişiye özel dijital öğretmen</strong><span>Öneriler • Kazanım planı</span></article>
+          <div class="illustration" aria-hidden="true"><span class="book">e</span><span class="pencil"></span><span class="plant">✦</span></div>
         </div>
       </div>
-      <aside class="start-card" aria-label="Hızlı başlangıç">
-        <h2>Hızlı başlangıç</h2>
-        <p>JavaScript gerektirmeyen doğrudan çalışan bağlantılar.</p>
-        <div class="start-links">
-          <a class="btn btn-primary" href="/siniflar/2-sinif/matematik/">Videolu 2. Sınıf Matematik</a>
-          <a class="btn btn-light" href="/siniflar/1-sinif/matematik.html">1. Sınıf Matematik</a>
-          <a class="btn btn-blue" href="/testler/2-sinif-deneme-sinavi.html">2. Sınıf Deneme</a>
+    </section>
+
+    <section class="section promo-section" aria-label="Öğrenme seçenekleri">
+      <div class="container promo-grid">
+        <article class="promo-card"><span class="promo-icon">A+</span><div><h2>Lise öğrencileri için güçlü temel</h2><p>Dersleri ünite ünite öğren, test çöz ve eksiklerini gör.</p><a href="/siniflar/9-sinif/index.html">Liseyi incele <span aria-hidden="true">→</span></a></div></article>
+        <article class="promo-card"><span class="promo-icon warm">✓</span><div><h2>Bağımsız öğrenenler için e-kurs</h2><p>Evde, okulda veya telefonda her gün kısa çalışmalar yap.</p><a href="/uyelik">Ücretsiz başla <span aria-hidden="true">→</span></a></div></article>
+      </div>
+    </section>
+
+    <section class="section grades" id="siniflar">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">1–12. sınıf</span><h2>Sınıfını seç, derse başla</h2><p>Her seviyeye uygun ders, konu, videolu anlatım ve testlere tek adımda ulaş.</p></div>
+        <div class="grade-grid" aria-label="Sınıf seçimi">
+          <a href="/siniflar/1-sinif/index.html"><b>1</b><span>1. Sınıf</span></a><a href="/siniflar/2-sinif/index.html"><b>2</b><span>2. Sınıf</span></a><a href="/siniflar/3-sinif/index.html"><b>3</b><span>3. Sınıf</span></a><a href="/siniflar/4-sinif/index.html"><b>4</b><span>4. Sınıf</span></a><a href="/siniflar/5-sinif/index.html"><b>5</b><span>5. Sınıf</span></a><a href="/siniflar/6-sinif/index.html"><b>6</b><span>6. Sınıf</span></a><a href="/siniflar/7-sinif/index.html"><b>7</b><span>7. Sınıf</span></a><a href="/siniflar/8-sinif/index.html"><b>8</b><span>8. Sınıf LGS</span></a><a href="/siniflar/9-sinif/index.html"><b>9</b><span>9. Sınıf</span></a><a href="/siniflar/10-sinif/index.html"><b>10</b><span>10. Sınıf</span></a><a href="/siniflar/11-sinif/index.html"><b>11</b><span>11. Sınıf YKS</span></a><a href="/siniflar/12-sinif/index.html"><b>12</b><span>12. Sınıf</span></a>
         </div>
-      </aside>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <h2>Öne çıkan çalışma yolları</h2>
-        <p>En çok kullanılan sınıf, ders, konu ve deneme bağlantıları gerçek sayfalara gider.</p>
+    <section class="section pathways">
+      <div class="container">
+        <div class="section-head"><h2>Dersler ve beceri planları</h2><p>En çok kullanılan sınıf, ders, konu ve deneme bağlantıları gerçek sayfalara gider.</p></div>
+        <div class="card-grid">
+          <article class="card"><span class="card-icon blue">1</span><h3>1. Sınıf Matematik</h3><p>Büyük puntolu, çocuk dostu konu ve test akışı.</p><ul><li><a href="/siniflar/1-sinif/index.html">1. sınıf ana sayfa <span>→</span></a></li><li><a href="/siniflar/1-sinif/matematik.html">Matematik sayfası <span>→</span></a></li><li><a href="/siniflar/1-sinif/matematik/rakamlari-tanima-test.html">Rakamları tanıma testi <span>→</span></a></li></ul><a class="btn btn-secondary card-action" href="/siniflar/1-sinif/matematik.html">1. Sınıfı Aç</a></article>
+          <article class="card"><span class="card-icon green">▶</span><h3>2. Sınıf Matematik</h3><p>Tema, konu, test ve videolu destek bir arada.</p><ul><li><a href="/siniflar/2-sinif/matematik/">Matematik sayfası <span>→</span></a></li><li><a href="/siniflar/2-sinif/matematik/dogal-sayilar.html">Doğal sayılar videolu konu <span>→</span></a></li><li><a href="/siniflar/2-sinif/matematik/dogal-sayilar-test.html">Doğal sayılar testi <span>→</span></a></li></ul><a class="btn btn-primary card-action" href="/siniflar/2-sinif/matematik/">2. Sınıf Matematiği Aç</a></article>
+          <article class="card"><span class="card-icon orange">✓</span><h3>Deneme ve soru bankası</h3><p>Deneme sınavları ve sınıf testleri için hızlı geçiş.</p><ul><li><a href="/testler/2-sinif-deneme-sinavi.html">2. sınıf deneme <span>→</span></a></li><li><a href="/testler/3-sinif-deneme-sinavi.html">3. sınıf deneme <span>→</span></a></li><li><a href="/testler/index.html">Tüm testler <span>→</span></a></li></ul><a class="btn btn-secondary card-action" href="/testler/index.html">Testleri Aç</a></article>
+        </div>
       </div>
-      <div class="grid-3">
-        <article class="card">
-          <span class="badge">Geri getirilen sayfa</span>
-          <h3>1. Sınıf Matematik</h3>
-          <p>Büyük puntolu, çocuk dostu konu ve test akışı.</p>
-          <ul class="link-list">
-            <li><a href="/siniflar/1-sinif/index.html">1. sınıf ana sayfa <span>→</span></a></li>
-            <li><a href="/siniflar/1-sinif/matematik.html">Matematik sayfası <span>→</span></a></li>
-            <li><a href="/siniflar/1-sinif/matematik/rakamlari-tanima-test.html">Rakamları tanıma testi <span>→</span></a></li>
-          </ul>
-          <a class="btn btn-light" href="/siniflar/1-sinif/matematik.html">1. Sınıfı Aç</a>
-        </article>
-        <article class="card">
-          <span class="badge">Videolu anlatım</span>
-          <h3>2. Sınıf Matematik</h3>
-          <p>Dünkü ayrıntılı şablon: tema, konu, test ve videolu destek.</p>
-          <ul class="link-list">
-            <li><a href="/siniflar/2-sinif/matematik/">Matematik sayfası <span>→</span></a></li>
-            <li><a href="/siniflar/2-sinif/matematik/dogal-sayilar.html">Doğal sayılar videolu konu <span>→</span></a></li>
-            <li><a href="/siniflar/2-sinif/matematik/dogal-sayilar-test.html">Doğal sayılar testi <span>→</span></a></li>
-          </ul>
-          <a class="btn btn-primary" href="/siniflar/2-sinif/matematik/">2. Sınıf Matematiği Aç</a>
-        </article>
-        <article class="card">
-          <span class="badge">Test merkezi</span>
-          <h3>Deneme ve soru bankası</h3>
-          <p>Deneme sınavları ve sınıf testleri için hızlı geçiş.</p>
-          <ul class="link-list">
-            <li><a href="/testler/2-sinif-deneme-sinavi.html">2. sınıf deneme <span>→</span></a></li>
-            <li><a href="/testler/3-sinif-deneme-sinavi.html">3. sınıf deneme <span>→</span></a></li>
-            <li><a href="/testler/index.html">Tüm testler <span>→</span></a></li>
-          </ul>
-          <a class="btn btn-blue" href="/testler/index.html">Testleri Aç</a>
-        </article>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Panel ve raporlar</h2>
-        <p>Öğrenci, öğretmen ve sınıf merkezine hızlı geçiş.</p>
+    <section class="section tools-section">
+      <div class="container split-layout">
+        <div><div class="section-head left"><h2>Öğretmen, veli ve öğrenci araçları</h2><p>Günlük görevlerden sınıf takibine kadar herkes için sade ve anlaşılır çalışma alanları.</p></div><div class="tool-list"><a href="/ogrenci/panel.html"><span>Ö</span><div><strong>Öğrenci Paneli</strong><small>Günlük görev, öneriler ve başarı bahçesi.</small></div><b>→</b></a><a href="/ogretmen-paneli/index.html"><span>Ö</span><div><strong>Öğretmen Paneli</strong><small>Canlı sınıf, kazanım takibi ve veli raporları.</small></div><b>→</b></a><a href="/siniflar/index.html"><span>S</span><div><strong>Sınıflar</strong><small>1. sınıftan 12. sınıfa kadar ders sayfaları.</small></div><b>→</b></a></div></div>
+        <div class="progress-card" aria-label="Örnek gelişim göstergeleri"><span class="eyebrow">Gelişim özeti</span><h3>Başarı adım adım görünür</h3><p>Düzenli çalışmalar, tamamlanan konular ve test sonuçları tek bakışta takip edilir.</p><div><label><span>Günlük hedef</span><b>%80</b></label><i style="--value:80%"></i></div><div><label><span>Konu ilerlemesi</span><b>%64</b></label><i style="--value:64%"></i></div><div><label><span>Test başarısı</span><b>%72</b></label><i style="--value:72%"></i></div></div>
       </div>
-      <div class="grid-3">
-        <article class="card"><h3>Öğrenci Paneli</h3><p>Günlük görev, öneriler ve başarı bahçesi.</p><a class="btn btn-light" href="/ogrenci/panel.html">Öğrenci Panelini Aç</a></article>
-        <article class="card"><h3>Öğretmen Paneli</h3><p>Canlı sınıf, kazanım takibi ve veli raporları.</p><a class="btn btn-light" href="/ogretmen-paneli/index.html">Öğretmen Panelini Aç</a></article>
-        <article class="card"><h3>Sınıflar</h3><p>1. sınıftan 12. sınıfa kadar ders sayfaları.</p><a class="btn btn-light" href="/siniflar/index.html">Sınıfları Aç</a></article>
-      </div>
-    </div>
-  </section>
-</main>
-<footer class="footer">
-  <div class="container">
-    <div class="logo"><span class="logo-mark">e</span><span>e-kurs.com</span></div>
-    <p>Türkiye K-12 öğrencileri için sınıf, ders, tema, soru bankası ve deneme odaklı öğrenme platformu.</p>
-    <div class="footer-links">
-      <a href="/siniflar/index.html">Sınıflar</a>
-      <a href="/dersler/index.html">Dersler</a>
-      <a href="/testler/index.html">Testler</a>
-      <a href="/giris.html">Giriş Yap</a>
-    </div>
-  </div>
-</footer>
+    </section>
+
+    <section class="section testimonial" id="yorumlar"><div class="container"><div class="section-head"><h2>Kullanıcılarımız ne söylüyor?</h2><p>e-kurs ile düzenli çalışmayı günlük rutine dönüştüren ailelerden.</p></div><blockquote><span>“</span><p>Günlük soru çözme ve ödül sistemi çocuğumun çalışma alışkanlığını artırdı.</p><footer>Ayşe K. <small>5. sınıf velisi</small></footer></blockquote></div></section>
+
+    <section class="section final-cta"><div class="container cta-box"><div><h2>Öğrenmeye bugün başla</h2><p>Sınıfını seç, dersine gir ve kendi hızında ilerle.</p></div><a class="btn btn-primary" href="/uyelik">Ücretsiz Başla</a></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a class="logo" href="/index.html"><span class="logo-mark">e</span><span>e-kurs.com</span></a><p>Türkiye K-12 öğrencileri için sınıf, ders, tema, soru bankası ve deneme odaklı öğrenme platformu.</p></div><div><h3>Öğrenme</h3><a href="/siniflar/index.html">Sınıflar</a><a href="/dersler/index.html">Dersler</a><a href="/testler/index.html">Testler</a></div><div><h3>Hesabım</h3><a href="/ogrenci/panel.html">Ödev Yardımı</a><a href="/ogretmen-paneli/index.html">Öğretmen Paneli</a><a href="/giris.html">Giriş Yap</a></div></div><div class="container copyright">© 2026 e-kurs.com</div></footer>
+  <script src="js/home.js?v=20260725"></script>
 </body>
 </html>
